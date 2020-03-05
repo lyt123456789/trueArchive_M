@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>2014年崇川区政府办理领导批示的批办单</title>
+<meta charset="utf-8" />
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px;text-align: center;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+<div class="warp">
+
+<table class="infotan" width="800px" cellspacing="0" align="center"style="border:1px;">
+<caption>
+	<br/>
+	<strong style="font-size:28px;margin-right:5px;">
+	2014年崇川区政府办理领导批示的批办单&nbsp;&nbsp;</strong>
+	<br/>
+	<br/>
+</caption>
+<tr>
+	<td width="90px"  align="center" valign="middle" style="font-size:20px;height:60px;border:1px solid ;">单&nbsp;&nbsp;&nbsp;位	</td>
+	<td width="300px" style="border:1px solid ;"> 
+	  <input id="dw" name="dw" style="width:250px;text-align: center" zname="来文单位" type="text"/>
+	</td>
+	<td width="105px" align="center" valign="middle" style="font-size:20px;border:1px solid ;">
+	来信日期	</td>
+	<td width="274px" style="border:1px solid ;"> 
+	  <input id="lxrq" name="lxrq" style="width:250px;text-align: center" zname="来信日期" type="text" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/>	</td>
+</tr>
+<tr>
+<td   align="center" valign="middle" style="font-size:20px;width:100px;height:60px;border:1px solid ;">文件标题</td>
+<td colspan="3"><input id="bt" name="bt" style="width:650px;text-align: center" zname="文件标题" type="text"/>
+</td>
+</tr>
+<tr>
+	<td  align="center" valign="middle" style="font-size:20px;height:250px;border:1px solid ;">事&nbsp;&nbsp;&nbsp;由</td>
+	<td colspan="3" style="border:1px solid ;">
+<input id="sy" name="sy" style="width:650px;text-align: center" zname="事由" type="text"/>
+	</td>
+	</tr>
+	<tr>
+	<td align="center" valign="middle" style="font-size:20px;height:180px;border:1px solid ;">拟办<br>意见</td>
+	<td colspan="3" style="border:1px solid ;">&nbsp;</td>
+	</tr>
+	<tr>
+	<td align="center" valign="middle" style="font-size:20px;height:400px;border:1px solid ;text-align:center"><p>领</p>
+	  <p>导</p>
+	  <p>批</p>
+	  <p>示</p>
+	  <p>意</p>
+	  <p>见</p></td>
+	<td colspan="3" align="center" valign="middle" style="font-size:20px;height:125px;border:1px solid ;">&nbsp;</td>
+	</tr>
+	<tr>
+	<td  align="center" valign="middle" style="font-size:20px;height:180px;border:1px solid ;text-align:center">
+          <p>办</p>
+	  <p>理</p>
+	  <p>结</p>
+	  <p>果</p></td>
+	<td colspan="3" align="center" valign="middle" style="font-size:20px;height:125px;border:1px solid ;">&nbsp;<div >
+<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+	        </div></td>
+	</tr>
+	
+</table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value=""> 
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

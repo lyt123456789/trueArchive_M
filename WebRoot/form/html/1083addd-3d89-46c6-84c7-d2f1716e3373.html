@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>办文单</title>
+<link href="${ctx}/dwz/style/css/ued.base.css" rel="stylesheet" type="text/css" />
+<link href="${ctx}/dwz/style/css/ued.demo.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />  
+<script src="${ctx}/widgets/plugin/js/base/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+<script src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" type="text/javascript"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+<script src="${ctx}/widgets/plugin/js/sea.js"></script>  
+<script language="javascript" type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>
+		
+<!--以下必须-->
+<script src="${ctx}/form/jsp/widgets/common/js/doublelist.js" type="text/javascript"></script>
+<script type="text/javascript" defer="defer">
+	window.onload=function(){
+		var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+		var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+		var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+		var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+		var instanceId = '${instanceId}';
+		if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+		if(instanceId.length==13){registerTag();}//注册标签选中效果
+	};
+</script>
+<!--以上必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 5px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+legend {
+	color: #000;
+}
+legend{float:left;margin-bottom:5px;margin-top:5px;background:#F1F5F6;height:25px; line-height:25px; text-align: center; padding-left:10px; padding-right:10px; border:#B8D0D6 1px solid;}
+fieldset,img {
+	border: 0;
+}
+
+img {
+	vertical-align: middle;
+}
+
+button,input,select,textarea {
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+section,article,aside,header,footer,nav,dialog,figure {
+	display: block;
+}
+
+.pagescon {
+	padding: 5px;
+	background: #EBF6FC;
+	overflow: hidden;
+	border: 1px #B8B8B8 solid;
+}
+
+.infotan td {
+	border: 1px solid #CCCCCC;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 1em;
+}
+
+.mt5 {
+	margin-top: 5px;
+}
+
+.texts {
+	height: 28px;
+	line-height: 28px;
+	border: 1px #999999 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.bgs {
+	background: #F1F5F6;
+	font-weight: bold;
+}
+
+.ls {
+	text-align: right;
+}
+.docformTableNoBD td{
+	border:0 none;
+}
+.txt_shuru{width:200px;height:28px;}
+
+.ty_ul{ border-bottom:1px solid #CCC; overflow:hidden;*zoom:1; padding:0px; margin-top:10px; margin-bottom:10px; }
+.ty_ul li{ border-bottom:1px solid #F00; float:left; padding:0px; padding-bottom:5px; padding-left:5px; } 
+
+.btn_an{ border:1px solid #ccc; padding:5px 15px; background:#F1F5F6; cursor:pointer}
+</style>
+</head>
+
+<body>
+<h1 align="center"><font size="5">南通市通州区农村环境长效管理工作领导小组办公室</font></h1>
+<h1 align="center"><font size="5"><strong> 办 交 单</strong></font></h1>
+<h1 align="center"><font size="2"><strong> 通农环办【</strong>
+<input name="nhbbh" type="text" id="nhbbh" style="width:40px " value="" />
+</font><font size="2"><strong> 】号</strong></font></h1>
+
+
+<table class="infotan mt5" width="100%">
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">交办单位</td>
+		<td colspan="3" class="tdcol">
+		   <select name="jbdw" id="jbdw">
+                            </select>
+
+		</td>
+		
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">地点</td>
+		<td colspan="3" class="tdcol" ><input name="didian" type="text" id="didian" style=" width:96%" value="" /></td>
+		
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">  法律法规</td>
+		<td  colspan="3" class="tdcol">《<input name="flmc" type="text" id="flmc" style="width:300px " value="" />》
+		第<input name="fltiao" type="text" id="fltiao" style="width:50px" value="" />条
+		第<input name="flkuan" type="text" id="flkuan" style="width:50px" value="" /> 款</td>
+		
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">交办事项描述</td>
+		<td  colspan="3" class="tdcol"><input name="jbsxms" type="text" id="jbsxms" style=" width:96%" value="" />		</td>
+		
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls"><p>&nbsp;</p>
+	    <p>整改要求</p></td>
+		<td colspan="3" class="tdcol" ><textarea name="zgyq" id="zgyq" style=" width:96%; height:100px"></textarea></td>
+		
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">要求整改时间</td>
+		<td  colspan="3" class="tdcol"><input name="zgyqsj" type="text" id="zgyqsj" style=" width:96%" onclick="WdatePicker({dateFmt:'yyyy年MM月dd日'})" readonly="readonly" /></td>
+		
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">联系人</td>
+		<td colspan="3" class="tdcol" ><input name="lxr" type="text" id="lxr" style=" width:96%" value="" /></td>
+		
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">联系电话</td>
+		<td colspan="3" class="tdcol"><input name="lxdh" type="text" id="lxdh" style=" width:96%" value="" /></td>
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls"><p>时间</p>
+	    </td>
+		<td width="80%" ><span class="tdcol">
+		  <input name="sj" type="text" id="sj" style=" width:96%"onclick="WdatePicker({dateFmt:'yyyy年MM月dd日'})" readonly="readonly" />
+		</span></td>
+		
+		
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls"><p>上传附件</p>
+	    </td>
+		<td width="80%" >
+		<span id="attshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}att" docguid="${instanceId}" showId="attshow" ismain="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+		</td>
+		
+	</tr>
+</table>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+<script type="text/javascript">
+function Calendar(beginYear, endYear, language, patternDelimiter, date2StringPattern, string2DatePattern) {
+	this.beginYear = beginYear || 1990;
+	this.endYear   = endYear   || 2020;
+	this.language  = language  || 0;
+	this.patternDelimiter = patternDelimiter     || "-";
+	this.date2StringPattern = date2StringPattern || Calendar.language["date2StringPattern"][this.language].replace(/\-/g, this.patternDelimiter);
+	this.string2DatePattern = string2DatePattern || Calendar.language["string2DatePattern"][this.language];
+	
+	this.dateControl = null;
+	this.panel  = this.getElementById("__calendarPanel");
+	this.iframe = window.frames["__calendarIframe"];
+	this.form   = null;
+	
+	this.date = new Date();
+	this.year = this.date.getFullYear();
+	this.month = this.date.getMonth();
+	
+	this.colors = {"bg_cur_day":"#00CC33","bg_over":"#EFEFEF","bg_out":"#FFCC00"}
+};
+
+Calendar.language = {
+	"year"   : ["\u5e74", "", "", "\u5e74"],
+	"months" : [
+				["\u4e00\u6708","\u4e8c\u6708","\u4e09\u6708","\u56db\u6708","\u4e94\u6708","\u516d\u6708","\u4e03\u6708","\u516b\u6708","\u4e5d\u6708","\u5341\u6708","\u5341\u4e00\u6708","\u5341\u4e8c\u6708"],
+				["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"],
+				["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"],
+				["\u4e00\u6708","\u4e8c\u6708","\u4e09\u6708","\u56db\u6708","\u4e94\u6708","\u516d\u6708","\u4e03\u6708","\u516b\u6708","\u4e5d\u6708","\u5341\u6708","\u5341\u4e00\u6708","\u5341\u4e8c\u6708"]
+				],
+	"weeks"  : [["\u65e5","\u4e00","\u4e8c","\u4e09","\u56db","\u4e94","\u516d"],
+				["Sun","Mon","Tur","Wed","Thu","Fri","Sat"],
+				["Sun","Mon","Tur","Wed","Thu","Fri","Sat"],
+				["\u65e5","\u4e00","\u4e8c","\u4e09","\u56db","\u4e94","\u516d"]
+		],
+	"clear"  : ["\u6e05\u7a7a", "Clear", "Clear", "\u6e05\u7a7a"],
+	"today"  : ["\u4eca\u5929", "Today", "Today", "\u4eca\u5929"],
+	"close"  : ["\u5173\u95ed", "Close", "Close", "\u95dc\u9589"],
+	"date2StringPattern" : ["yyyy-MM-dd", "yyyy-MM-dd", "yyyy-MM-dd", "yyyy-MM-dd"],
+	"string2DatePattern" : ["ymd","ymd", "ymd", "ymd"]
+};
+
+Calendar.prototype.draw = function() {
+	calendar = this;
+	
+	var _cs = [];
+	_cs[_cs.length] = '<form id="__calendarForm" name="__calendarForm" method="post">';
+	_cs[_cs.length] = '<table id="__calendarTable" width="100%" border="0" cellpadding="3" cellspacing="1" align="center">';
+	_cs[_cs.length] = ' <tr>';
+	_cs[_cs.length] = '  <th><input class="l" name="goPrevMonthButton" type="button" id="goPrevMonthButton" value="&lt;" \/><\/th>';
+	_cs[_cs.length] = '  <th colspan="5"><select class="year" name="yearSelect" id="yearSelect"><\/select><select class="month" name="monthSelect" id="monthSelect"><\/select><\/th>';
+	_cs[_cs.length] = '  <th><input class="r" name="goNextMonthButton" type="button" id="goNextMonthButton" value="&gt;" \/><\/th>';
+	_cs[_cs.length] = ' <\/tr>';
+	_cs[_cs.length] = ' <tr>';
+	for(var i = 0; i < 7; i++) {
+		_cs[_cs.length] = '<th class="theader">';
+		_cs[_cs.length] = Calendar.language["weeks"][this.language][i];
+		_cs[_cs.length] = '<\/th>';	
+	}
+	_cs[_cs.length] = '<\/tr>';
+	for(var i = 0; i < 6; i++){
+		_cs[_cs.length] = '<tr align="center">';
+		for(var j = 0; j < 7; j++) {
+			switch (j) {
+				case 0: _cs[_cs.length] = '<td class="sun">&nbsp;<\/td>'; break;
+				case 6: _cs[_cs.length] = '<td class="sat">&nbsp;<\/td>'; break;
+				default:_cs[_cs.length] = '<td class="normal">&nbsp;<\/td>'; break;
+			}
+		}
+		_cs[_cs.length] = '<\/tr>';
+	}
+	_cs[_cs.length] = ' <tr>';
+	_cs[_cs.length] = '  <th colspan="2"><input type="button" class="b" name="clearButton" id="clearButton" \/><\/th>';
+	_cs[_cs.length] = '  <th colspan="3"><input type="button" class="b" name="selectTodayButton" id="selectTodayButton" \/><\/th>';
+	_cs[_cs.length] = '  <th colspan="2"><input type="button" class="b" name="closeButton" id="closeButton" \/><\/th>';
+	_cs[_cs.length] = ' <\/tr>';
+	_cs[_cs.length] = '<\/table>';
+	_cs[_cs.length] = '<\/form>';
+	
+	this.iframe.document.body.innerHTML = _cs.join("");
+	this.form = this.iframe.document.forms["__calendarForm"];
+
+	this.form.clearButton.value = Calendar.language["clear"][this.language];
+	this.form.selectTodayButton.value = Calendar.language["today"][this.language];
+	this.form.closeButton.value = Calendar.language["close"][this.language];
+	
+	this.form.goPrevMonthButton.onclick = function () {calendar.goPrevMonth(this);}
+	this.form.goNextMonthButton.onclick = function () {calendar.goNextMonth(this);}
+	this.form.yearSelect.onchange = function () {calendar.update(this);}
+	this.form.monthSelect.onchange = function () {calendar.update(this);}
+	
+	this.form.clearButton.onclick = function () {calendar.dateControl.value = "";calendar.hide();}
+	this.form.closeButton.onclick = function () {calendar.hide();}
+	this.form.selectTodayButton.onclick = function () {
+		var today = new Date();
+		calendar.date = today;
+		calendar.year = today.getFullYear();
+		calendar.month = today.getMonth();
+		calendar.dateControl.value = today.format(calendar.date2StringPattern);
+		calendar.hide();
+	}
+};
+
+Calendar.prototype.bindYear = function() {
+	var ys = this.form.yearSelect;
+	ys.length = 0;
+	for (var i = this.beginYear; i <= this.endYear; i++){
+		ys.options[ys.length] = new Option(i + Calendar.language["year"][this.language], i);
+	}
+};
+
+Calendar.prototype.bindMonth = function() {
+	var ms = this.form.monthSelect;
+	ms.length = 0;
+	for (var i = 0; i < 12; i++){
+		ms.options[ms.length] = new Option(Calendar.language["months"][this.language][i], i);
+	}
+};
+
+Calendar.prototype.goPrevMonth = function(e){
+	if (this.year == this.beginYear && this.month == 0){return;}
+	this.month--;
+	if (this.month == -1) {
+		this.year--;
+		this.month = 11;
+	}
+	this.date = new Date(this.year, this.month, 1);
+	this.changeSelect();
+	this.bindData();
+};
+
+Calendar.prototype.goNextMonth = function(e){
+	if (this.year == this.endYear && this.month == 11){return;}
+	this.month++;
+	if (this.month == 12) {
+		this.year++;
+		this.month = 0;
+	}
+	this.date = new Date(this.year, this.month, 1);
+	this.changeSelect();
+	this.bindData();
+};
+
+Calendar.prototype.changeSelect = function() {
+	var ys = this.form.yearSelect;
+	var ms = this.form.monthSelect;
+	for (var i= 0; i < ys.length; i++){
+		if (ys.options[i].value == this.date.getFullYear()){
+			ys[i].selected = true;
+			break;
+		}
+	}
+	for (var i= 0; i < ms.length; i++){
+		if (ms.options[i].value == this.date.getMonth()){
+			ms[i].selected = true;
+			break;
+		}
+	}
+};
+
+Calendar.prototype.update = function (e){
+	this.year  = e.form.yearSelect.options[e.form.yearSelect.selectedIndex].value;
+	this.month = e.form.monthSelect.options[e.form.monthSelect.selectedIndex].value;
+	this.date = new Date(this.year, this.month, 1);
+	this.changeSelect();
+	this.bindData();
+};
+
+Calendar.prototype.bindData = function () {
+	var calendar = this;
+	var dateArray = this.getMonthViewDateArray(this.date.getFullYear(), this.date.getMonth());
+	var tds = this.getElementsByTagName("td", this.getElementById("__calendarTable", this.iframe.document));
+	for(var i = 0; i < tds.length; i++) {
+  		tds[i].style.backgroundColor = calendar.colors["bg_over"];
+		tds[i].onclick = null;
+		tds[i].onmouseover = null;
+		tds[i].onmouseout = null;
+		tds[i].innerHTML = dateArray[i] || "&nbsp;";
+		if (i > dateArray.length - 1) continue;
+		if (dateArray[i]){
+			tds[i].onclick = function () {
+				if (calendar.dateControl){
+					calendar.dateControl.value = new Date(calendar.date.getFullYear(),
+														calendar.date.getMonth(),
+														this.innerHTML).format(calendar.date2StringPattern);
+				}
+				calendar.hide();
+			}
+			tds[i].onmouseover = function () {this.style.backgroundColor = calendar.colors["bg_out"];}
+			tds[i].onmouseout  = function () {this.style.backgroundColor = calendar.colors["bg_over"];}
+			var today = new Date();
+			if (today.getFullYear() == calendar.date.getFullYear()) {
+				if (today.getMonth() == calendar.date.getMonth()) {
+					if (today.getDate() == dateArray[i]) {
+						tds[i].style.backgroundColor = calendar.colors["bg_cur_day"];
+						tds[i].onmouseover = function () {this.style.backgroundColor = calendar.colors["bg_out"];}
+						tds[i].onmouseout  = function () {this.style.backgroundColor = calendar.colors["bg_cur_day"];}
+					}
+				}
+			}
+		}//end if
+	}//end for
+};
+
+Calendar.prototype.getMonthViewDateArray = function (y, m) {
+	var dateArray = new Array(42);
+	var dayOfFirstDate = new Date(y, m, 1).getDay();
+	var dateCountOfMonth = new Date(y, m + 1, 0).getDate();
+	for (var i = 0; i < dateCountOfMonth; i++) {
+		dateArray[i + dayOfFirstDate] = i + 1;
+	}
+	return dateArray;
+};
+
+Calendar.prototype.show = function (dateControl, popuControl) {
+	if (this.panel.style.visibility == "visible") {
+		this.panel.style.visibility = "hidden";
+	}
+	if (!dateControl){
+		throw new Error("arguments[0] is necessary!")
+	}
+	this.dateControl = dateControl;
+	popuControl = popuControl || dateControl;
+
+	this.draw();
+	this.bindYear();
+	this.bindMonth();
+	if (dateControl.value.length > 0){
+		this.date  = new Date(dateControl.value.toDate(this.patternDelimiter, this.string2DatePattern));
+		this.year  = this.date.getFullYear();
+		this.month = this.date.getMonth();
+	}
+	this.changeSelect();
+	this.bindData();
+
+	var xy = this.getAbsPoint(popuControl);
+	this.panel.style.left = xy.x + "px";
+	this.panel.style.top = (xy.y + dateControl.offsetHeight) + "px";
+	this.panel.style.visibility = "visible";
+};
+
+Calendar.prototype.hide = function() {
+	this.panel.style.visibility = "hidden";
+};
+
+Calendar.prototype.getElementById = function(id, object){
+	object = object || document;
+	return document.getElementById ? object.getElementById(id) : document.all(id);
+};
+
+Calendar.prototype.getElementsByTagName = function(tagName, object){
+	object = object || document;
+	return document.getElementsByTagName ? object.getElementsByTagName(tagName) : document.all.tags(tagName);
+};
+
+Calendar.prototype.getAbsPoint = function (e){
+	var x = e.offsetLeft;
+	var y = e.offsetTop;
+	while(e = e.offsetParent){
+		x += e.offsetLeft;
+		y += e.offsetTop;
+	}
+	return {"x": x, "y": y};
+};
+
+/**
+ * @param   d the delimiter
+ * @param   p the pattern of your date
+ * @author  meizz
+ * @author  kimsoft add w+ pattern
+ */
+Date.prototype.format = function(style) {
+	var o = {
+		"M+" : this.getMonth() + 1, //month
+		"d+" : this.getDate(),      //day
+		"h+" : this.getHours(),     //hour
+		"m+" : this.getMinutes(),   //minute
+		"s+" : this.getSeconds(),   //second
+		"w+" : "\u65e5\u4e00\u4e8c\u4e09\u56db\u4e94\u516d".charAt(this.getDay()),   //week
+		"q+" : Math.floor((this.getMonth() + 3) / 3),  //quarter
+		"S"  : this.getMilliseconds() //millisecond
+	}
+	if (/(y+)/.test(style)) {
+		style = style.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+	}
+	for(var k in o){
+		if (new RegExp("("+ k +")").test(style)){
+			style = style.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length));
+		}
+	}
+	return style;
+};
+
+/**
+ * @param d the delimiter
+ * @param p the pattern of your date
+ * @rebuilder kimsoft
+ * @version build 2006.12.15
+ */
+String.prototype.toDate = function(delimiter, pattern) {
+	delimiter = delimiter || "-";
+	pattern = pattern || "ymd";
+	var a = this.split(delimiter);
+	var y = parseInt(a[pattern.indexOf("y")], 10);
+	//remember to change this next century ;)
+	if(y.toString().length <= 2) y += 2000;
+	if(isNaN(y)) y = new Date().getFullYear();
+	var m = parseInt(a[pattern.indexOf("m")], 10) - 1;
+	var d = parseInt(a[pattern.indexOf("d")], 10);
+	if(isNaN(d)) d = 1;
+	return new Date(y, m, d);
+};
+
+document.writeln('<div id="__calendarPanel" style="position:absolute;visibility:hidden;z-index:9999;background-color:#FFFFFF;border:1px solid #666666;width:200px;height:216px;">');
+document.writeln('<iframe name="__calendarIframe" id="__calendarIframe" width="100%" height="100%" scrolling="no" frameborder="0" style="margin:0px;"><\/iframe>');
+var __ci = window.frames['__calendarIframe'];
+__ci.document.writeln('<!DOCTYPE html PUBLIC "-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN" "http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd">');
+__ci.document.writeln('<html xmlns="http:\/\/www.w3.org\/1999\/xhtml">');
+__ci.document.writeln('<head>');
+__ci.document.writeln('<meta http-equiv="Content-Type" content="text\/html; charset=utf-8" \/>');
+__ci.document.writeln('<title>Web Calendar(UTF-8) Written By KimSoft<\/title>');
+__ci.document.writeln('<style type="text\/css">');
+__ci.document.writeln('<!--');
+__ci.document.writeln('body {font-size:12px;margin:0px;text-align:center;}');
+__ci.document.writeln('form {margin:0px;}');
+__ci.document.writeln('select {font-size:12px;background-color:#EFEFEF;}');
+__ci.document.writeln('table {border:0px solid #CCCCCC;background-color:#FFFFFF}');
+__ci.document.writeln('th {font-size:12px;font-weight:normal;background-color:#FFFFFF;}');
+__ci.document.writeln('th.theader {font-weight:normal;background-color:#666666;color:#FFFFFF;width:24px;}');
+__ci.document.writeln('select.year {width:64px;}');
+__ci.document.writeln('select.month {width:60px;}');
+__ci.document.writeln('td {font-size:12px;text-align:center;}');
+__ci.document.writeln('td.sat {color:#0000FF;background-color:#EFEFEF;}');
+__ci.document.writeln('td.sun {color:#FF0000;background-color:#EFEFEF;}');
+__ci.document.writeln('td.normal {background-color:#EFEFEF;}');
+__ci.document.writeln('input.l {border: 1px solid #CCCCCC;background-color:#EFEFEF;width:20px;height:20px;}');
+__ci.document.writeln('input.r {border: 1px solid #CCCCCC;background-color:#EFEFEF;width:20px;height:20px;}');
+__ci.document.writeln('input.b {border: 1px solid #CCCCCC;background-color:#EFEFEF;width:100%;height:20px;}');
+__ci.document.writeln('-->');
+__ci.document.writeln('<\/style>');
+__ci.document.writeln('<\/head>');
+__ci.document.writeln('<body>');
+__ci.document.writeln('<\/body>');
+__ci.document.writeln('<\/html>');
+__ci.document.close();
+document.writeln('<\/div>');
+var calendar = new Calendar();
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

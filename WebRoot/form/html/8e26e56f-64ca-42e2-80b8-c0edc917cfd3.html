@@ -1,0 +1,246 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>如皋市因公赴市外出差使用自备车费用结算单</title>
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+</head>
+
+<style>
+.infotan td{text-align:center;}
+</style>
+<body>
+<div class="warp">
+
+<table class="infotan" width="819px" cellspacing="0" align="center"style="border:1px ;">
+<caption>
+	<br/>
+	<strong style="font-size:28px;margin-right:5px;">
+	如皋市因公赴市外出差使用自备车费用结算单&nbsp;</strong>
+	<br/>
+	<br/>
+</caption>
+<tr>
+	<td colspan="7"  align="right" valign="middle" style="text-align:right;border:none;font-size:18px;line-height:35px;">
+	<input type="text" id="rq" name="rq" style="width:120px;" zname="日期"   onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+	</td>
+</tr>
+<tr>
+	<td  align="center" valign="middle"style="width:110px;font-size:18px;line-height:35px;border:1px solid ;">
+	申请人
+	</td>
+	<td style="border:1px solid ;width:110px;"> 
+	<input type="text" id="sqr" name="sqr" style="width:70px;" zname="申请人" />
+	</td>
+	<td  align="center" valign="middle" style="width:130px;font-size:18px;line-height:35px;border:1px solid ;">
+	所在部门
+	</td>
+	<td style="border:1px solid ;width:140px;"> 
+	<input type="text" id="szbm" name="szbm" style="width:100px;" zname="所在部门" />
+	</td>
+	<td  align="center" valign="middle"  style="width:90px;font-size:18px;line-height:35px;border:1px solid ;">
+	用车时间
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	<input type="text" id="ycsj" name="ycsj" style="width:120px;" zname="用车时间"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd hh:mm'})" />
+	</td>
+</tr>
+<tr>
+	<td  align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+    车号
+	</td>
+	<td style="border:1px solid ;"> 
+	<input type="text" id="ch" name="ch" style="width:70px;" zname="车号" />
+	</td>
+	<td  align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	目的地
+	</td>
+	<td style="border:1px solid ;"> 
+	<input type="text" id="mdd" name="mdd" style="width:100px;" zname="目的地" />
+	</td>
+	<td  align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	往返里程
+	</td>
+	<td colspan="2"  align="center"  style="width:120px;font-size:18px;line-height:35px;border:1px solid ;"> 
+	<input type="text" id="wflc" name="wflc" style="width:60px;" zname="往返里程" />
+	 
+ 	公里
+	</td>
+</tr>
+<tr>
+	<td  rowspan="3" align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+   	用车事由
+	</td>
+	<td colspan="3"  rowspan="3" style="border:1px solid ;"> 
+	 <textarea style="width: 400px;height: 100px;;line-height:30px" id="ycsy" name="ycsy" zname="用车事由"></textarea>
+	</td>
+	 
+	<td  align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+	包干标准
+	</td> 
+	<td  align="center" colspan="2" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+    1.50元/公里
+	</td>
+</tr>
+<tr>
+	<td  align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+	包干金额
+	</td>
+	<td   colspan="2"  align="center"  style="width:120px;font-size:18px;line-height:35px;border:1px solid ;"> 
+	 <input type="text" id="bgje" name="bgje" style="width:70px;" zname="包干金额" />
+	   元
+	</td>
+</tr>
+<tr>
+	<td  align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+	出差补助
+	</td>
+	<td  colspan="2"   align="center"  style="width:120px;font-size:18px;line-height:35px;border:1px solid ;"> 
+	  <input type="text" id="ccbz" name="ccbz" style="width:70px;" zname="出差补助" />
+	 元
+	</td>
+</tr>
+<tr>
+	<td  align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+	补贴合计
+	</td>
+	<td   colspan="4" align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;border-right: none;">
+	(大写)
+	 <input type="text" id="bthj_dx" name="bthj_dx" style="width:350px;" zname="补贴合计(大写)" />
+	</td>
+	<td colspan="3" align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;border-left: none;">
+	￥
+	 <input type="text" id="bthj_xx" name="bthj_xx" style="width:70px;" zname="补贴合计(小写)" />元
+	</td>
+</tr>
+<tr>
+	<td rowspan="2" align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+	党政办意见
+	</td>
+	 <td  rowspan="2" style="border:1px solid ;"> 
+	</td>
+	<td     align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+	分管领导意见
+	</td>
+	 <td  colspan="2" style="border:1px solid ;"> 
+	</td>
+	<td  align="center"  valign="middle"style="width:90px;font-size:18px;line-height:35px;border:1px solid ;">
+  	经领人
+	</td>
+	 <td  style="border:1px solid ;width:130px;"> 
+	 <input type="text" id="jlr" name="jlr" style="width:100px;" zname="经领人" />
+	</td>
+</tr>
+<tr>
+	<td     align="center" valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+	主要领导审批
+	</td>
+	 <td  colspan="2" style="border:1px solid ;"> 
+	</td>
+	<td  align="center"  valign="middle"style="font-size:18px;line-height:35px;border:1px solid ;">
+   报销日期
+	</td>
+	 <td  style="border:1px solid ;"> 
+	  <input type="text" id="bxrq" name="bxrq" style="width:100px;" zname="报销日期"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+	</td>
+</tr>
+<tr>
+	<td colspan="7"  align="left" valign="middle" style="text-align:left;border:none;font-size:18px;line-height:35px;">
+	附:证明往返行程的有效票据。
+	</td>
+</tr>
+
+</table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value=""> 
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+</html>

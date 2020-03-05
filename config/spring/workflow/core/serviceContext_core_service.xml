@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">	
+	
+	<bean id="tableInfoService" class="cn.com.trueway.workflow.core.service.impl.TableInfoServiceImpl">
+		<property name="tableInfoDao"  ref="tableInfoDao"/>
+		<property name="workflowBasicFlowDao"  ref="workflowBasicFlowDao"/>
+		<property name="pendingDao"  ref="pendingDao"/>
+		<property name="jdbcBase"  ref="jdbcBase"/>
+		<property name="itemDao"  ref="itemDao"/>
+		<property name="attachmentDao"  ref="attachmentDao"/>
+		<property name="flowDao"  ref="flowDao"/>
+		<property name="employeeDao"  ref="employeeDao"/>
+		<property name="employeeLeaderDao"  ref="employeeLeaderDao"/>		
+		<property name="zwkjFormDao"  ref="zwkjFormDao"/>
+		<property name="tableInfoExtendDao"  ref="tableInfoExtendDao"/>
+	</bean> 
+	
+</beans>

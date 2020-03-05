@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>政府信息依申请公开办理反馈单</strong>
+</p>
+<table width="819" class="infotan">
+  <tr>
+      <td  height="50" valign="middle" align="center" class="bgs ls" width="20%;"> 申请人<br/>(个人或单位)</td>
+	  <td  class="tdcol docformTableNoBD" width="30%;"><input type="text" id="sqr" name="sqr"  style="width:200px" zname="申请人"/></td>
+	  <td  height="50" valign="middle" align="center" class="bgs ls" width="20%;"> 身份证号<br/>(个人)</td>
+	  <td  class="tdcol docformTableNoBD" width="30%;"><input type="text" id="sfzh" name="sfzh" style="width:200px" zname="身份证号" value=""/></td>
+  </tr>
+  <tr>
+      <td  height="72" valign="middle" align="center" class="bgs ls">联系电话</td>
+	  <td  class="tdcol docformTableNoBD"> <input type="text" id="lxdh" name="lxdh" style="width:200px" zname="联系电话"/> </td>
+	  <td  height="72" valign="middle" align="center" class="bgs ls">通讯地址</td>
+	  <td  class="tdcol docformTableNoBD"> <input type="text" id="txdz" name="txdz" style="width:200px" zname="通讯地址"/> </td>
+   </tr>
+   <tr>
+	  <td  height="72" valign="middle" align="center" class="bgs ls">收件时间</td>
+	  <td  class="tdcol docformTableNoBD"> <input type="text" id="sjsj" name="sjsj" style="width:200px" zname="收件时间" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/> </td>
+      <td  height="72" valign="middle" align="center" class="bgs ls">到期时间</td>
+	  <td  class="tdcol docformTableNoBD">
+	  	<input type="text" id="dqsj" name="dqsj" style="width:200px" zname="到期时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/>
+	  </td>
+   </tr>
+
+</table>
+</div>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">  
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

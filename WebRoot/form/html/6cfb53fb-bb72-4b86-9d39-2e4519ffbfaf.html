@@ -1,0 +1,244 @@
+<head>
+<title>表单元素说明</title>
+<link type="text/css" rel="stylesheet"  href="${ctx}/dwz/style/css/ued.base.css"  />
+<link type="text/css" rel="stylesheet" href="${ctx}/dwz/style/css/ued.demo.css"  />
+<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/base/jquery.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/sea.js"></script>  
+<script type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>  
+			
+<!--以下必须-->
+<script type="text/javascript" src="src/mapSelected.js" ></script>
+<script type="text/javascript" src="${ctx}/form/jsp/widgets/common/js/doublelist.js" ></script>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 5px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+legend {
+	color: #000;
+}
+legend{float:left;margin-bottom:5px;margin-top:5px;background:#F1F5F6;height:25px; line-height:25px; text-align: center; padding-left:10px; padding-right:10px; border:#B8D0D6 1px solid;}
+fieldset,img {
+	border: 0;
+}
+
+img {
+	vertical-align: middle;
+}
+
+button,input,select,textarea {
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+section,article,aside,header,footer,nav,dialog,figure {
+	display: block;
+}
+
+.pagescon {
+	padding: 5px;
+	background: #EBF6FC;
+	overflow: hidden;
+	border: 1px #B8B8B8 solid;
+}
+
+.infotan td {
+	border: 1px solid #CCCCCC;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 1em;
+}
+
+.mt5 {
+	margin-top: 5px;
+}
+
+.texts {
+	height: 28px;
+	line-height: 28px;
+	border: 1px #999999 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.bgs {
+	background: #F1F5F6;
+	font-weight: bold;
+}
+
+.ls {
+	text-align: right;
+}
+.docformTableNoBD td{
+	border:0 none;
+}
+.txt_shuru{width:200px;height:28px;}
+
+.ty_ul{ border-bottom:1px solid #CCC; overflow:hidden;*zoom:1; padding:0px; margin-top:10px; margin-bottom:10px; }
+.ty_ul li{ border-bottom:1px solid #F00; float:left; padding:0px; padding-bottom:5px; padding-left:5px; } 
+
+.btn_an{ border:1px solid #ccc; padding:5px 15px; background:#F1F5F6; cursor:pointer}
+</style>
+</head>
+
+<body>
+<center style="font-size:25px;">
+  <p>会议通知记录  </p>
+</center>
+<div align="right">
+  <h1>编号：
+    <input type="text" id="bh" name="bh"/>
+  </h1>
+</div>
+<table width="100%" height="440" class="infotan mt5">
+
+
+	
+		<tr>
+         <td width="18%" height="72" valign="middle" class="bgs ls">会议召开单位：</td>
+	     <td width="20%" class="tdcol docformTableNoBD"><input type="text" id="hyzkdw" name="hyzkdw"  />	  </td>
+	     <td width="14%" class="bgs ls">通知人：</td>
+	     
+		 <td width="18%" height="72" valign="middle" ><input type="text" id="tzr" name="tzr" /></td>
+	     <td width="14%" valign="middle" class="bgs ls"><p>接收人：</p>          </td>
+	     <td width="23%" colspan="2" class="tdcol docformTableNoBD"><input type="text" id="jsr" name="jsr" /></td>
+  </tr>
+    
+    
+    <tr>
+    	<td width="16%" height="42" valign="middle" class="bgs ls">接通知时间：</td>
+        <td>
+<input type="text"  name="jtzsj"  id="jtzsj"   onclick="WdatePicker({dateFmt:'yyyy年MM月dd日'})" /></td>
+        <td  class="bgs ls"> 接受形式：</td>
+        <td colspan="4"> &nbsp;&nbsp;&nbsp;
+		<input type="checkbox" id="cdh" name="cdh" value="电话"/>电话 &nbsp;&nbsp;&nbsp;
+		<input type="checkbox" id="cwj" name="cwj" value="文件"/>文件 &nbsp;&nbsp;&nbsp;
+		<input type="checkbox" id="ccz" name="ccz" value="传真"/>传真 &nbsp;&nbsp;&nbsp;
+		<input type="checkbox" id="cwl" name="cwl" value="网络"/>网络&nbsp;&nbsp;&nbsp;		</td>
+    </tr>
+
+
+<tr>
+		<td width="16%" height="64" valign="middle" class="bgs ls">会议时间：</td>
+	<td ><input type="text"  name="hysj"  id="hysj"   onclick="WdatePicker({dateFmt:'yyyy年MM月dd日'})" /></td>
+    <td height="64" class="bgs ls">会议地点：</td>
+    <td height="64" colspan="4" ><input type="text" id="hydd" name="hydd"  style="width:95%"/>&nbsp;</td>
+  </tr>
+	<tr>
+	  <td height="72" valign="middle" class="bgs ls">会议内容：</td>
+	  <td colspan="6" class="tdcol docformTableNoBD"><textarea type="text"  id="hynr" name="hynr"  style="width:95%;height:50px"></textarea></td>
+  </tr>
+    
+      
+     <tr>
+    	<td width="16%" height="42" valign="middle" class="bgs ls">要求参加对象：</td>
+        <td colspan="6"><textarea type="text"  id="yqcjdx" name="yqcjdx"  style="width:95%;height:50px"></textarea></td>
+    </tr>
+	
+
+<tr>
+		<td width="16%" height="65" valign="middle" class="bgs ls">领导批示：</td>
+	    <td colspan="6" class="tdcol docformTableNoBD">
+<div>
+<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}ldps" instanceId="${instanceId}" currentStepId="${processId}" isSatisfied="false"/>
+</div></td>
+  </tr> 
+  
+
+<tr>
+		<td width="16%" height="65" valign="middle" class="bgs ls">处理意见：</td>
+	    <td colspan="6" class="tdcol docformTableNoBD">
+<div>
+<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}clyj" instanceId="${instanceId}" currentStepId="${processId}" isSatisfied="false"/>
+</div></td>
+  </tr>
+</table>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+<input type="hidden" id="keyword" name="keyword" value="空" />
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

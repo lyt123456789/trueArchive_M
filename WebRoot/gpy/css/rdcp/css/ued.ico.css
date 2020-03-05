@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+.word{ background:url(../images/ico/word.gif) left center no-repeat; padding-left:20px;}
+.excel{ background:url(../images/ico/excel.gif) left center no-repeat; padding-left:20px;}
+.ppt{ background:url(../images/ico/ppt.gif) left center no-repeat; padding-left:20px;}
+.music{background:url(../images/ico/music.gif) left center no-repeat; padding-left:20px;}
+.video{background:url(../images/ico/video.gif) left center no-repeat; padding-left:20px;}
+.pic{background:url(../images/ico/pic.gif) left center no-repeat; padding-left:20px;}
+.rar{background:url(../images/ico/rar.gif) left center no-repeat; padding-left:20px;}
+.file{background:url(../images/ico/file.gif) left center no-repeat; padding-left:20px;}
+

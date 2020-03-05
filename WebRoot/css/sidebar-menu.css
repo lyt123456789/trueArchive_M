@@ -1,0 +1,134 @@
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #E4EAF4
+}
+
+.sidebar-menu > li {
+    position: relative;
+    margin: 0;
+    padding: 0
+}
+
+.sidebar-menu > li > a {
+	display: block;
+    overflow: hidden;
+    padding: 0 20px 0 10px;
+    height: 53px;
+    line-height: 53px;
+    font-size: 15px;
+    color: #000000;
+    font-weight: normal;
+}
+.sidebar-menu > li > a span{
+	font-size:15px;
+}
+.sidebar-menu > li > a > .fa {
+    width: 20px;
+	    margin-top: 18px;
+    font-size: 18px;
+}
+
+.sidebar-menu > li:hover > a, .sidebar-menu > li.active > a {
+    background: #d2ecff;
+    color: #008cee;
+    border-left-color: #3c8dbc
+}
+
+.sidebar-menu > li > .treeview-menu {
+    margin: 0 1px;
+    background: none;
+    overflow:auto;
+}
+
+.sidebar-menu > li .label, .sidebar-menu > li .badge {
+    margin-top: 3px;
+    margin-right: 5px
+}
+
+.sidebar-menu li.header {
+    line-height: 43px;
+    height: 41px;
+    color: #008CEE;
+    padding-right: 3px;
+    padding-left: 3px;
+    margin-left: 13px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sidebar-menu li > a > .fa-angle-left {
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin-right: 10px;
+    margin-top: 3px
+}
+
+.sidebar-menu li.active > a > .fa-angle-left {
+    transform: rotate(-90deg)
+}
+
+.sidebar-menu li.active > .treeview-menu {
+    display: block
+}
+.sidebar-menu li.active .none{
+	display:inline;
+}
+.sidebar-menu li.active .shows{
+	display:none;
+}
+.sidebar-menu li:hover .none{
+	display:inline;
+}
+.sidebar-menu li:hover .shows{
+	display:none;
+}
+.sidebar-menu a {
+    color: #b8c7ce;
+    text-decoration: none
+}
+
+.sidebar-menu .treeview-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 5px
+}
+
+.sidebar-menu .treeview-menu .treeview-menu {
+    padding-left: 20px
+}
+
+.sidebar-menu .treeview-menu > li {
+    margin: 0
+}
+
+.sidebar-menu .treeview-menu > li > a {
+    padding: 5px 5px 5px 10px;
+    display: block;
+    font-size: 15px;
+    color: #343434;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 0px;
+    list-style: none;
+	cursor:pointer;
+}
+
+.sidebar-menu .treeview-menu > li > a > .fa {
+    width: 20px;
+	font-size: 12px;
+}
+.sidebar-menu .treeview-menu > li > a > .fa-angle-right{
+	font-size:18px;
+}
+.sidebar-menu .treeview-menu > li > a > .fa-angle-left, .sidebar-menu .treeview-menu > li > a > .fa-angle-down {
+    width: auto
+}
+
+.sidebar-menu .treeview-menu > li.active > a, .sidebar-menu .treeview-menu > li > a:hover {
+    color: #008cee
+}

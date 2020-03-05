@@ -1,0 +1,213 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px 5px 5px 5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:17px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+</style>
+
+</head>
+
+<body>
+<div class="warp">
+	<br/>
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+
+</p>
+<table width="819px;"  class="infotan" align="center">
+	<caption>
+	<center style="font-size:28px;line-height:35px; text-align:center;padding-top:30px;">
+	<strong>江苏省教育国际交流服务中心网络新闻发布单</strong>
+	<br/>
+	<br/>
+	</center>
+	</caption>
+
+<tr>
+<td  valign="middle" colspan="1" style="width:20%;height:60px;"><div align="center">部门</div></td>
+<td  style="width:30%;height:60px;" colspan="2" ><div align="left"><input id="bm" name="bm" zname="部门" type="text"  value="" readonly="readonly" /></div></td>
+<td  colspan="1" valign="middle" style="width:20%;height:60px;"><div align="center">所属项目</div></td>
+<td  style="width:30%;height:60px;" colspan="2"><div align="left"><input id="ssxm" name="ssxm" zname="所属项目" type="text" /></div</td>
+</tr>
+<tr>
+<td  valign="middle" colspan="1"><div align="center">信息类别</div></td>
+<td width="170" colspan="5" style="higth:10px;"><div align="left">
+<select  id="xxlb" name="xxlb" value="信息类别"></select></div>
+</tr>
+<tr>
+<td width="220"  colspan="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;拟发平台</td>
+</tr>
+
+<tr>
+<td colspan="2" style="width:30%;border-bottom:none;height:20px;border-right:none;" ><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教育厅网站</div></td>
+<td valign="middle" colspan="1" style="width:20%;border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px">文件标题</td>
+<td colspan="2" valign="middle" style="width:40%;border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px"><div align="center">
+<input id="jyt" name="jyt" zname="教育厅" type="text" value="" /></div>
+</td>
+<td  valign="middle" colspan="1" style="width:20%;border-bottom:none;border-top:none;border-left:none;height:20px"><div align="center">附件文稿及照片</div></td>
+</tr>
+
+<tr>
+<td colspan="2" style="border-bottom:none;height:20px;border-right:none;border-top:none;" ><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中心网站</div></td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px">文件标题</td>
+<td colspan="2" valign="middle" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px"><div align="center">
+<input id="zx" name="zx" zname="中心网站" type="text" value="" /></div>
+</td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;height:20px"><div align="center">附件文稿及照片</div></td>
+</tr>
+
+<tr>
+<td colspan="2" style="border-bottom:none;height:20px;border-right:none;border-top:none;" ><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目专题网站</div></td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px">文件标题</td>
+<td colspan="2" valign="middle" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px"><div align="center">
+<input style="width:40px" id="xmzt" name="xmzt" zname="项目专题网站" type="text" value="" /></div>
+</td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;height:20px"><div align="center">附件文稿及照片</div></td>
+</tr>
+
+<tr>
+<td colspan="2" style="border-bottom:none;height:20px;border-right:none;border-top:none;" ><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中心微博</div></td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px">文件标题</td>
+<td colspan="2" valign="middle" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px"><div align="center">
+<input style="width:40px" id="xxwb" name="xxwb" zname="中心微博" type="text" value="" /></div>
+</td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;height:20px"><div align="center">附件文稿及照片</div></td>
+</tr>
+
+<tr>
+<td colspan="2" style="border-bottom:none;height:20px;border-right:none;border-top:none;" ><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中心微信</div></td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px">文件标题</td>
+<td colspan="2" valign="middle" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px"><div align="center">
+<input style="width:40px" id="xxwx" name="xxwx" zname="中心微信" type="text" value="" /></div>
+</td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;height:20px"><div align="center">附件文稿及照片</div></td>
+</tr>
+
+<tr>
+<td colspan="2" style="border-bottom:none;height:20px;border-right:none;border-top:none;" ><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目（部门）微博</div></td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px">文件标题</td>
+<td colspan="2" valign="middle" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px"><div align="center">
+<input style="width:40px" id="xmwb" name="xmwb" zname="项目（部门）微博" type="text" value="" /></div>
+</td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;height:20px"><div align="center">附件文稿及照片</div></td>
+</tr>
+
+<tr>
+<td colspan="2" style="border-bottom:none;height:20px;border-right:none;border-top:none;" ><div align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目（部门）微信</div></td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px">文件标题</td>
+<td colspan="2" valign="middle" style="border-bottom:none;border-top:none;border-left:none;border-right:none;height:20px"><div align="center">
+<input style="width:40px" id="xmwx" name="xmwx" zname="项目（部门）微信" type="text" value="" /></div>
+</td>
+<td  valign="middle" colspan="1" style="border-bottom:none;border-top:none;border-left:none;height:20px"><div align="center">附件文稿及照片</div></td>
+</tr>
+
+<tr>
+<td colspan="6" style="border-bottom:none;border-top:none;height:20px" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其他网络平台（以附件的形式详细说明）</td>
+</tr>
+<tr style="height:200px">
+<td colspan="6" style="height:200px;border-top:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea id="qtwl" name="qtwl" zname="其他网络" style="width:580px;height:180px" ></textarea></td>
+</tr>
+<tr>
+<td  colspan="6">&nbsp;&nbsp;&nbsp;&nbsp;备注说明：教育厅网站及其微博微信平台最后需打印纸质定稿文稿请主任或书籍签字交办公室提交厅网站发布。</td>
+
+</tr>
+
+
+
+
+</table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

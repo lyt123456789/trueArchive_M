@@ -1,0 +1,27 @@
+[
+    {
+        "chkDisabled": false,
+        "id": "{0A40364D-FFFF-FFFF-927A-40ED00000338}",
+        "name": "信息中心",
+        "open": true,
+        "type": "folder"
+    },
+    {
+        "id": "{0A403603-FFFF-FFFF-8365-34A800000001}",
+        "name": "李书燕",
+        "pId": "{0A40364D-FFFF-FFFF-927A-40ED00000338}",
+        "type": "file"
+    },
+    {
+        "id": "{0A40364D-FFFF-FFFF-927A-F6970000033B}",
+        "name": "中威公司",
+        "pId": "{0A40364D-FFFF-FFFF-927A-40ED00000338}",
+        "type": "file"
+    },
+    {
+        "id": "{0A40364D-FFFF-FFFF-927C-3EC90000033C}",
+        "name": "瞿卫东",
+        "pId": "{0A40364D-FFFF-FFFF-927A-40ED00000338}",
+        "type": "file"
+    }
+]

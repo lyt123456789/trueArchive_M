@@ -1,0 +1,29 @@
+[
+	{
+		"name":"所有",
+		"domId":"allOrg",
+		"searchOption":null,
+		"apiUrl":"ztree_getFullJsonTree.do",
+		"level":0,
+		"isCustomGroup":false,
+		"isRole":"0"
+	},
+	{
+		"name":"常用组",
+		"domId":"groupOrg1",
+		"searchOption":null,
+		"apiUrl":"ztree_getUserGroups.do",
+		"level":1,
+		"isCustomGroup":true,
+		"isRole":"0"
+	},
+	{
+		"name":"角色",
+		"domId":"roleOrg1",
+		"searchOption":null,
+		"apiUrl":"ztree_getUserGroups.do",
+		"level":1,
+		"isCustomGroup":true,
+		"isRole":"1"
+	}
+]

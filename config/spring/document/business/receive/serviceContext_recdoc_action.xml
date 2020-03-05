@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+        	
+	<bean id="receiveDocAction" class="cn.com.trueway.document.business.action.ReceiveDocAction">
+		<property name="receiveDocService" ref="receiveDocService"/>
+		<property name="selectTreeService"  ref="selectTreeService"/>
+		<property name="docExchangeClient"  ref="docExchangeClient"/>
+		<property name="itemService"  ref="itemService"/>
+		<property name="workflowBasicFlowService"  ref="workflowBasicFlowService"/>
+		<property name="tableInfoService"  ref="tableInfoService"/>
+		<property name="zwkjFormService"  ref="zwkjFormService"/>
+		<property name="departmentService"  ref="departmentService"/>
+		<property name="fieldMatchingService"  ref="fieldMatchingService"/>
+		<property name="attachmentService"  ref="attachmentService"/>
+		<property name="flowService"  ref="flowService"/>
+	</bean>
+	
+	
+	<bean id="fieldMatchingAction" class="cn.com.trueway.document.business.action.FieldMatchingAction">
+		<property name="fieldMatchingService" ref="fieldMatchingService"/>
+		<property name="itemService" ref="itemService"/>
+		<property name="zwkjFormService" ref="zwkjFormService"/>
+		<property name="fieldInfoService" ref="fieldInfoService"/>
+		<property name="tableInfoService" ref="tableInfoService"/>
+	</bean>
+	
+	<bean id="toRecDocAction" class="cn.com.trueway.document.business.action.ToRecDocAction">
+		<property name="toRecDocService" ref="toRecDocService"/>
+		<property name="departmentService" ref="departmentService"/>
+		<property name="fieldMatchingService" ref="fieldMatchingService"/>
+		<property name="itemService" ref="itemService"/>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService"/>
+		<property name="tableInfoService" ref="tableInfoService"/>
+		<property name="flowService" ref="flowService"/>
+		<property name="attachmentService" ref="attachmentService"/>
+		<property name="receiveDocService" ref="receiveDocService"/>
+		<property name="zwkjFormService" ref="zwkjFormService"/>
+	</bean>
+	
+</beans>
+	

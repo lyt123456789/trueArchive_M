@@ -1,0 +1,946 @@
+/*********************head part*****************/
+.font-logo,.tab-close{
+    background:url(../images/portal-all.png) 0 0 no-repeat;
+}
+.header{
+    width:auto;
+    height:87px;
+    background:#203b7e url(../images/topbg.jpg) center top no-repeat;
+    position: relative;
+}
+.font-logo{
+    width:205px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    text-indent: -999em;
+    background-position: 0 -165px;
+    top:14px;
+    left:96px;
+}
+/****************tab*********************/
+.tablist{
+    position: absolute;
+    left:96px;
+    bottom: 0;
+    margin-bottom: -1px;
+}
+.tablist li{
+    float: left;
+    height:29px;
+    margin-left: 1px;
+}
+.tablist li div{
+
+}
+.tab-l{
+    width:auto;
+    height:29px;
+    padding-left:25px;
+    background:url(../images/navbg-blue.png) left top no-repeat;
+    color:#ffffff;
+    font-size: 14px;
+    font-family: "黑体";
+    cursor: pointer;
+    position: relative;
+}
+.tab-r{
+    width:auto;
+    height:29px;
+    padding-right:40px;
+    background:url(../images/navbg-blue.png) right top no-repeat;
+    z-index: 100;
+}
+.tab-m{
+    width:auto;
+    height:29px;
+    line-height: 29px;
+    min-width: 60px;
+}
+.tab-close{
+    width:9px;
+    height:9px;
+    display: block;
+    position: absolute;
+    background-position: right -164px;
+    right:11px;
+    top:10px;
+}
+.tabon .tab-l{
+    color:#7a7a7a;
+    background:url(../images/navbg-white.png) left top no-repeat;
+}
+.tabon .tab-r{
+    background:url(../images/navbg-white.png) right top no-repeat;
+}
+.tabon .tab-close{
+    background-position: right -175px;
+}
+/***************************************end********************************/
+.container{
+    padding-left:96px;
+}
+.footer{
+    width:auto;
+    height:30px;
+    background-color: #6a97d6;
+}
+.footer p{
+    text-align: center;
+    color:#fff;
+    line-height: 30px;
+    font-family: "微软雅黑";
+}
+.cb{
+    clear: both;
+}
+/*****************************天气***********************/
+.faster{
+    padding:0 9px 0 15px;
+}
+.fastable{
+    border-top:1px solid #d1d7db;
+    border-bottom: 1px solid #d1d7db;
+    height:30px;
+    padding:3px 0;
+    line-height: 30px;
+}
+.fasted{
+    width:59px;
+    float: left;
+    border-right:1px solid #d1d7db;
+    text-align: center;
+}
+.fasted a{
+    color:#4e5a64;
+}
+.fasted-item2,.fasted-item3{
+    width:79px;
+}
+.fasted-item4{
+    border:none;
+}
+.fastcon{
+    height:225px;
+    overflow: hidden;
+}
+/******************左侧导航******************************/
+.guidewrap{
+    width:96px;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    background-color: #f2f2f2;
+}
+.guidecontent{
+    width:100%;
+}
+.uparrow,.downarrow{
+    display: block;
+    height:22px;
+    width:100%;
+    background:#fff;
+}
+.slidewrap{
+    width:100%;
+    overflow: hidden;
+}
+#guideList{
+    overflow: hidden;
+}
+#guideList li{
+    height:101px;
+    overflow: hidden;
+}
+#guideList li a{
+    width:83px;
+    height:93px;
+    display: block;
+    margin:0 auto;
+    background:url(../images/item-boder.jpg) left bottom repeat-x;
+}
+#guideList li a span{
+    width:100%;
+    height:83px;
+    background:url(../images/icons.png) 0 0 no-repeat;
+    display: block;
+    margin-top:8px;
+}
+#guideList li .gwgl-icon{
+    background-position: 0 -84px;
+}
+#guideList li.hover .gwgl-icon{
+    background-position: 0 0;
+}
+#guideList li .psfk-icon{
+    background-position: -84px -84px;
+}
+#guideList li.hover .psfk-icon{
+    background-position: -84px 0;
+}
+#guideList li .rwgl-icon{
+    background-position: -168px -84px;
+}
+#guideList li.hover .rwgl-icon{
+    background-position: -168px 0;
+}
+#guideList li .tzgg-icon{
+    background-position: -252px -84px;
+}
+#guideList li.hover .tzgg-icon{
+    background-position: -252px 0;
+}
+#guideList li .gzdt-icon{
+    background-position: -420px -84px;
+}
+#guideList li.hover .gzdt-icon{
+    background-position: -420px 0;
+}
+#guideList li .zhsw-icon{
+    background-position: -504px -84px;
+}
+#guideList li.hover .zhsw-icon{
+    background-position: -504px 0;
+}
+#guideList li .sjly-icon{
+    background-position: -588px -84px;
+}
+#guideList li.hover .sjly-icon{
+    background-position: -588px 0;
+}
+#guideList li .dzxf-icon{
+    background-position: -672px -84px;
+}
+#guideList li.hover .dzxf-icon{
+    background-position: -672px 0;
+}
+#guideList li .xxyd-icon{
+    background-position: 0 -252px;
+}
+#guideList li.hover .xxyd-icon{
+    background-position: 0 -168px;
+}
+#guideList li .sqgk-icon{
+    background-position: -84px -252px;
+}
+#guideList li.hover .sqgk-icon{
+    background-position: -84px -168px;
+}
+#guideList li .dhrx-icon{
+    background-position: -168px -252px;
+}
+#guideList li.hover .dhrx-icon{
+    background-position: -168px -168px;
+}
+#guideList li .dzkq-icon{
+    background-position: -252px -252px;
+}
+#guideList li.hover .dzkq-icon{
+    background-position: -252px -168px;
+}
+#guideList li .jxkh-icon{
+    background-position: -336px -252px;
+}
+#guideList li.hover .jxkh-icon{
+    background-position: -336px -168px;
+}
+#guideList li .zlgx-icon{
+    background-position: -420px -252px;
+}
+#guideList li.hover .zlgx-icon{
+    background-position: -420px -168px;
+}
+#guideList li .lyb-icon{
+    background-position: -504px -252px;
+}
+#guideList li.hover .lyb-icon{
+    background-position: -504px -168px;
+}
+#guideList li .xtsz-icon{
+    background-position: -588px -252px;
+}
+#guideList li.hover .xtsz-icon{
+    background-position: -588px -168px;
+}
+/******add by Perhaps*************/
+#guideList li .bkdy-icon{
+    background-position: -756px -84px;
+}
+#guideList li.hover .bkdy-icon{
+    background-position: -756px 0;
+}
+#guideList li .clgl-icon{
+    background-position: -840px -84px;
+}
+#guideList li.hover .clgl-icon{
+    background-position: -840px 0;
+}
+#guideList li .dsj-icon{
+    background-position: -672px -252px;
+}
+#guideList li.hover .dsj-icon{
+    background-position: -672px -168px;
+}
+#guideList li .dzjc-icon{
+    background-position: -756px -252px;
+}
+#guideList li.hover .dzjc-icon{
+    background-position: -756px -168px;
+}
+#guideList li .gzjh-icon{
+    background-position: -840px -252px;
+}
+#guideList li.hover .gzjh-icon{
+    background-position: -840px -168px;
+}
+#guideList li .gzrw-icon{
+    background-position: 0 -420px;
+}
+#guideList li.hover .gzrw-icon{
+    background-position: 0 -336px;
+}
+#guideList li .gzrz-icon{
+    background-position: -84px -420px;
+}
+#guideList li.hover .gzrz-icon{
+    background-position: -84px -336px;
+}
+#guideList li .hygl-icon{
+    background-position: -168px -420px;
+}
+#guideList li.hover .hygl-icon{
+    background-position: -168px -336px;
+}
+#guideList li .rctx-icon{
+    background-position: -252px -420px;
+}
+#guideList li.hover .rctx-icon{
+    background-position: -252px -336px;
+}
+#guideList li .tsjy-icon{
+    background-position: -336px -420px;
+}
+#guideList li.hover .tsjy-icon{
+    background-position: -336px -336px;
+}
+#guideList li .txl-icon{
+    background-position: -420px -420px;
+}
+#guideList li.hover .txl-icon{
+    background-position: -420px -336px;
+}
+#guideList li .wsdc-icon{
+    background-position: -504px -420px;
+}
+#guideList li.hover .wsdc-icon{
+    background-position: -504px -336px;
+}
+#guideList li .xxzl-icon{
+    background-position: -588px -420px;
+}
+#guideList li.hover .xxzl-icon{
+    background-position: -588px -336px;
+}
+#guideList li .ywlt-icon{
+    background-position: -672px -420px;
+}
+#guideList li.hover .ywlt-icon{
+    background-position: -672px -336px;
+}
+#guideList li .zcgl-icon{
+     background-position: -756px -420px;
+ }
+#guideList li.hover .zcgl-icon{
+    background-position: -756px -336px;
+}
+#guideList li .zdgz-icon{
+    background-position: -840px -420px;
+}
+#guideList li.hover .zdgz-icon{
+    background-position: -840px -336px;
+}
+#guideList li .zxks-icon{
+    background-position: 0 -588px;
+}
+#guideList li.hover .zxks-icon{
+    background-position: 0 -504px;
+}
+#guideList li .zcgl-icon{
+    background-position: -84px -588px;
+}
+#guideList li.hover .zcgl-icon{
+    background-position: -84px -504px;
+}
+#guideList li .nbyj-icon{
+    background-position: -168px -588px;
+}
+#guideList li.hover .nbyj-icon{
+    background-position: -168px -504px;
+}
+#guideList li .ycc-icon{
+    background-position: -252px -588px;
+}
+#guideList li.hover .ycc-icon{
+    background-position: -252px -504px;
+}
+/*********end*********************/
+.arrow{
+    display: block;
+    width:96px;
+    height:30px;
+    background:url(../images/arrow.jpg) 0 0 no-repeat;
+}
+.uparrow{
+
+}
+.uparrow:hover{
+    background-position: -97px 0;
+}
+.downarrow{
+    background-position: 0 -31px;
+}
+.downarrow:hover{
+    background-position: -97px -31px;
+}
+/************************二级菜单*********************************/
+.sub-layout{
+    width:307px;
+    height:auto;
+    position:absolute;
+    z-index:1000;
+    left:0;
+    top:0;
+}
+.sub-top{
+    width:100%;
+    height:13px;
+    background:url(../images/subtop.png) right top no-repeat;
+}
+.sub-middle{
+    padding:0 15px;
+    height:auto;
+    background:url(../images/submiddle.png) right top repeat-y;
+    min-height: 200px;
+}
+.sub-bottom{
+    width:100%;
+    height:16px;
+    background:url(../images/subbottom.png) right top no-repeat;
+}
+.sub-middle{
+    padding-top: 15px;
+}
+.sub-row{
+}
+.sub-row h3{
+    font-weight: bold;
+    color:#224585;
+    padding-left: 12px;
+    background: url(../images/bluearrow.png) 0 4px no-repeat;
+    margin-bottom: 15px;
+}
+.sub-row ul{
+    padding-left: 12px;
+}
+.sub-row ul li{
+    float: left;
+    margin-bottom: 12px;
+}
+.sub-row ul li a{
+    padding:0 8px;
+    display: block;
+    font-size: 12px;
+    height:14px;
+    line-height: 14px;
+    border-left:1px solid #747474;
+    color:#747474;
+}
+.sub-row ul li a:hover{
+    text-decoration: underline;
+}
+.triangle{
+    width:7px;
+    height:8px;
+    background: url(../images/triangle.png) 0 0 no-repeat;
+    position: absolute;
+    left:-4px;
+    top:41px;
+}
+/************************面包屑***************************/
+.bread{
+    height:42px;
+    line-height: 42px;
+    color:#6a7883;
+    font-size: 12px;
+    padding-left:25px;
+    position: relative;
+}
+.bread i{
+    width:5px;
+    height:9px;
+    display: block;
+    position: absolute;
+    left:0;
+    top:17px;
+    background:url(../images/portal-all.png) left -220px no-repeat;
+}
+/*******************表格**********************************/
+.tb-form{
+    width:100%;
+}
+.tb-form td{
+    border:1px solid #d1d7db;
+    vertical-align: middle;
+    color:#4e5a64;
+    padding:5px;
+    font-size: 12px;
+}
+.col-l{
+    width:151px;
+    background-color:#e8eff9;
+    text-align: center;
+}
+.normalIpt{
+    width:359px;
+    height:24px;
+    border:1px solid #d1d7db;
+    background-color:#f2f2f2;
+    text-indent: 2em;
+    line-height: 24px;
+    color:#4e5a64;
+}
+.red{
+    font-style: normal;
+    color:red;
+    margin-left: 10px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top:9px;
+    position:relative;
+}
+.sex-radio{
+    height:20px;
+    padding-right:26px;
+    line-height: 20px;
+    background:url(../images/portal-all.png) right -72px no-repeat;
+    margin-left: 38px;
+    display: inline-block;
+}
+.sex-checked{
+    background-position: right -95px;
+}
+.txta{
+    width:100%;
+    border:1px solid #d1d7db;
+    background-color: #f2f2f2;
+    resize: none;
+    line-height: 20px;
+    text-indent: 2em;
+}
+.h60{
+    height:60px;
+}
+.h200{
+    height:200px;
+}
+/***************************按钮****************************/
+.btngroup{
+    display: inline-block;
+    cursor: pointer;
+}
+.btns{
+    display: inline-block;
+    height:24px;
+    line-height: 24px;
+    padding-left: 2px;
+    padding-right:2px;
+    position: relative;
+}
+.btn-l{
+    width:2px;
+    height:24px;
+    position: absolute;
+    left:0;
+    top:0;
+    background:url(../images/btnborder.png) 0 0 no-repeat;
+}
+.btn-m{
+    padding-left: 23px;
+    padding-right:10px;
+    height:24px;
+    line-height: 24px;
+    color:#fff;
+    position: relative;
+}
+.btn-m1 {
+    padding-left: 10px;
+    padding-right:10px;
+    height:24px;
+    line-height: 24px;
+    color:#fff;
+    position: relative;
+}
+.btn-mr{
+    padding-right: 23px;
+    padding-left:10px;
+    height:24px;
+    line-height: 24px;
+    color:#fff;
+    position: relative;
+}
+.btn-r{
+    width:2px;
+    height:24px;
+    position: absolute;
+    right:0;
+    top:0;
+    background:url(../images/btnborder.png) 0 0 no-repeat;
+}
+.btns i{
+    position: absolute;
+    display: inline-block;
+    background: url(../images/btnborder.png) 0 0 no-repeat;
+}
+/****green  button****************/
+.greenbtn .btn-l{
+    background-position: 0 0;
+}
+.greenbtn .btn-m,.greenbtn .btn-mr{
+    background-color: #59b85c;
+}
+.greenbtn .btn-r,.greenbtn .btn-mr{
+    background-position: -3px 0;
+}
+.hover .greenbtn .btn-l{
+    background-position: 0 -26px;
+}
+.hover .greenbtn .btn-m,.hover .greenbtn .btn-mr{
+    background-color: #4c9c4f;
+}
+.hover .greenbtn .btn-r,.hover .greenbtn .btn-mr{
+    background-position: -3px -26px;
+}
+/****azure  button****************/
+.azurebtn .btn-l{
+    background-position: -6px 0;
+}
+.azurebtn .btn-m{
+    background-color: #64c3df;
+}
+.azurebtn .btn-r{
+    background-position: -9px 0;
+}
+.hover .azurebtn .btn-l{
+    background-position: -6px -26px;
+}
+.hover .azurebtn .btn-m{
+    background-color: #57a8c0;
+}
+.hover .azurebtn .btn-r{
+    background-position: -9px -26px;
+}
+/****red  button****************/
+.redbtn .btn-l{
+    background-position: -12px 0;
+}
+.redbtn .btn-m{
+    background-color: #fe6e6e;
+}
+.redbtn .btn-r{
+    background-position: -15px 0;
+}
+.hover .redbtn .btn-l{
+    background-position: -12px -26px;
+}
+.hover .redbtn .btn-m{
+    background-color: #dc6161;
+}
+.hover .redbtn .btn-r{
+    background-position: -15px -26px;
+}
+/****yellow  button****************/
+.yellowbtn .btn-l{
+    background-position: -18px 0;
+}
+.yellowbtn .btn-m{
+    background-color: #edbc07;
+}
+.yellowbtn .btn-r{
+    background-position: -21px 0;
+}
+.hover .yellowbtn .btn-l{
+    background-position: -18px -26px;
+}
+.hover .yellowbtn .btn-m{
+    background-color: #d5aa09;
+}
+.hover .yellowbtn .btn-r{
+    background-position: -21px -26px;
+}
+/****************blue button**************************/
+.bluebtn .btn-l{
+    background-position: -24px 0;
+}
+.bluebtn .btn-m{
+    background-color: #83a6de;
+}
+.bluebtn .btn-m1{
+    background-color: #83a6de;
+}
+.bluebtn .btn-r{
+    background-position: -27px 0;
+}
+.hover .bluebtn .btn-l{
+    background-position: -24px -26px;
+}
+.hover .bluebtn .btn-m{
+    background-color: #7290c0;
+}
+.hover .bluebtn .btn-m1{
+    background-color: #7290c0;
+}
+.hover .bluebtn .btn-r{
+    background-position: -27px -26px;
+}
+/*****************************gray button*****************/
+.graybtn .btn-l{
+    background-position: -30px 0;
+}
+.graybtn .btn-m{
+    background-color: #d1d1d1;
+}
+.graybtn .btn-r{
+    background-position: -33px 0;
+}
+.hover .graybtn .btn-l{
+    background-position: -30px -26px;
+}
+.hover .graybtn .btn-m{
+    background-color: #b0b0b0;
+}
+.hover .graybtn .btn-r{
+    background-position: -33px -26px;
+}
+/*****************************button icon****************************/
+.submit-icon i{
+    width:13px;
+    height:13px;
+    left:5px;
+    top:5px;
+    background-position: -16px -51px;
+}
+.add-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: 0px -51px;
+}
+.print-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: 0px -65px;
+}
+.edit-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -16px -65px;
+}
+.browse-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -16px -80px;
+}
+.bumen-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -94px -85px;
+}
+.collect-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -30px -51px;
+}
+.delete-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -30px -82px;
+}
+.upload-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: 0px -82px;
+}
+.shangceng-icon i{
+    width:12px;
+    height:14px;
+    left:5px;
+    top:5px;
+    background:url(../images/shangcengico.png) 0 0 no-repeat;
+}
+.search-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -76px -64px;
+}
+.subscribe-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -76px -79px;
+}
+.export-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -108px -50px;
+}
+.previous-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -108px -67px;
+}
+.detailed-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:3px;
+    background-position: -45px -48px;
+}
+.preview-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -60px -65px;
+}
+.next-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -76px -50px;
+}
+.back-icon i{
+    width:16px;
+    height:16px;
+    left:5px;
+    top:5px;
+    background-position: -92px -51px;
+}
+.unsubscribe-icon i{
+    width:16px;
+    height:16px;
+    left:5px;
+    top:5px;
+    background-position: -46px -62px;
+}
+.cancel-icon i{
+    width:15px;
+    height:15px;
+    left:5px;
+    top:5px;
+    background-position: -62px -80px;
+}
+.save-icon i{
+    width: 14px;
+    height: 13px;
+    background-position: -62px -51px;
+    left:5px;
+    top:5px;
+}
+.person-icon i{
+    width: 15px;
+    height: 15px;
+    background-position: -31px -66px;
+    left:5px;
+    top:5px;
+}
+.datetime-icon i{
+    width: 16px;
+    height:16px;
+    background-position: -92px -68px;
+    left:3px;
+    top:3px;
+}
+.eye-icon i{
+    width: 15px;
+    height: 13px;
+    background-position: -46px -78px;
+    left:3px;
+    top:7px;
+}
+.left-icon i {
+background: url(../images/sanjiao-left.png) no-repeat;
+width:5px;
+height:8px;
+left:8px;
+top:8px;
+}
+.right-icon i{
+background: url(../images/sanjiao-right.png) no-repeat;
+width:5px;
+height:8px;
+display:block;
+right:8px;
+top:8px;
+}
+.lunhui-icon i{
+background: url(../images/lunhui.png) no-repeat;
+width:16px;
+height:16px;
+left:5px;
+top:5px;
+line-height:16px;
+text-align:center;
+}
+/*****************************add****************************/
+.fabu-icon i{
+    width:15px;
+    height:16px;
+    left:5px;
+    top:5px;
+    background-position: -111px -83px;
+}
+.bianhao-icon i{
+    width:16px;
+    height:16px;
+    left:5px;
+    top:5px;
+    background-position: -60px -33px;
+}
+.huanyuan-icon i{
+    width:15px;
+    height:16px;
+    left:5px;
+    top:5px;
+    background-position: -76px -33px;
+}
+.huishou-icon i{
+    width:16px;
+    height:16px;
+    left:5px;
+    top:5px;
+    background-position: -90px -32px;
+}

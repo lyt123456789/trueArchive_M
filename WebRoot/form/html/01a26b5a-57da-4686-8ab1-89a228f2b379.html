@@ -1,0 +1,178 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 16px;
+				min-height: 1600px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:6px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+</head>
+<body>
+<div style="height:950px;">
+<br/>
+<p style="font-size:40px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>网络新闻发布</strong>
+</p>
+<br/>
+<br/>
+<table width="819" class="infotan" align="center" cellspacing="0">
+	<tr>
+        <td  height="72"  width="20%" colspan="2" valign="middle" style="font-size:18px;text-align:left;"  >&nbsp;&nbsp;&nbsp;&nbsp;部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门</td>
+	  	<td width="30%"  style="font-size:18px;" >
+	  		<input type="text" id="bm" name="bm" style="width:40px;line-height:17px;" zname="部门" /></td>	
+	  </td>
+	  <td  height="72" valign="middle"  width="20%" style="font-size:18px;text-align:center;" >所属项目</td>
+	  <td width="30%" style="font-size:18px;>
+	  	<input type="text" id="ssxm" name="ssxm" style="width:40px;line-height:17px;" zname="所属项目" /></td>	
+ 	</tr>
+ 		<tr>
+ 			<td colspan="2" height="72"  width="20%" style="font-size:18px;text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;信息类别</td>
+ 			<td  colspan="5" style="font-size:18px;text-align:left;" >
+			<select  id="xxlb" name="xxlb"  style="width:180px;" zname="信息类别"></select>
+			</td>
+		</tr>
+ 	<tr>
+		<td   height="72" colspan="7" style="font-size:18px;text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;拟发平台</td>
+	</tr>
+	<tr>
+		<td   height="72" colspan="7" style="font-size:18px;text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;教育厅网站
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;文件标题：<input type="text" id="jyt" name="jyt" style="line-height:17px;width:280px;" zname="教育厅"/>（附件文稿及照片）
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;中心网站
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;文件标题：<input type="text" id="zx" name="zx" style="line-height:17px;width:280px;" zname="中心网站"/>（附件文稿及照片）
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;项目专题网站
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件标题：<input type="text" id="xmzt" name="xmzt" style="line-height:17px;width:280px;" zname="项目专题"/>（附件文稿及照片）
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;中心微博
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;文件标题：<input type="text" id="xxwb" name="xxwb" style="line-height:17px;width:280px;" zname="中心微博"/>（附件文稿及照片）
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;中心微信
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;文件标题：<input type="text" id="xxwx" name="xxwx" style="line-height:17px;width:280px;" zname="中心微信"/>（附件文稿及照片）
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;项目（部门）微博
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件标题：<input type="text" id="xmwb" name="xmwb" style="line-height:17px;width:280px;" zname="项目（部门）微博"/>（附件文稿及照片）
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;项目（部门）微信  
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文件标题：<input type="text" id="xmwx" name="xmwx" style="line-height:17px;width:280px;" zname="项目（部门）微信  "/>（附件文稿及照片）
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;其他网络平台（以附件的形式详细说明）  
+		<br/>
+		&nbsp;&nbsp;&nbsp;&nbsp;<textarea id="qtwl" name="qtwl" style="width: 80%;height:280px;" zname="其他网络" ></textarea>
+		
+		</td>
+		 
+	</tr>
+	<tr>
+		<td   height="72" colspan="7" style="font-size:18px;text-align:left;">
+		&nbsp;&nbsp;&nbsp;&nbsp;备注说明：教育厅网站及其微博微信平台最后需打印纸质定稿文稿请主任或书籍签字交办公室提交厅网站发布。
+		</td>
+		  
+	</tr>
+
+	
+
+	
+	
+	
+	
+   
+</table>
+</div>
+<INPUT userdefine=hidden id="instanceId" name="instanceId" value=""> 
+<INPUT userdefine=hidden id="formId" name="formId" value=""> 
+<INPUT userdefine=hidden id="workFlowId" name="workFlowId" value="">   
+<INPUT userdefine=hidden id="processId" name="processId" value="">  
+
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+					downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" 
+					uploadCallback="loadCss" deleteCallback="loadCss"/>
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="../../css/common.css" rel="stylesheet" type="text/css" media="screen"/>
+	
+    	
+    <!--[if lt IE 9]><script src="../../js/jquery-1.11.1.min.js" type="text/javascript"></script><![endif]-->
+    <!--[if gte IE 9]><!--><script src="../../js/jquery-2.1.1.min.js" type="text/javascript"></script><!--<![endif]-->
+	<link rel="stylesheet" type="text/css" href="../../plugins/jquery.treeview/css/tree_common.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+
+<div class="tw-usertree-choice">
+	<div class="tw-usertree-wrap">
+		<div class="tw-usertree-tabs">
+			<ul class="tw-tabs-nav">
+	            <li class="tw-nav-item tw-active">
+	            	<a href="javascript: void(0)">本部门</a>
+	            </li>
+	            <li class="tw-nav-item">
+	            	<a href="javascript: void(0)">所有部门</a>
+	            </li>
+	            <li class="tw-nav-item">
+	            	<a href="javascript: void(0)">所有用户</a>
+	            </li>
+	            <li class="tw-nav-act"><span onclick="addAll()" class="tw-btn-primary tw-btn-sm">添加全部</span></li>
+	        </ul>
+	        <div class="tw-tabs-bd">
+	            <div class="tw-tab-panel">
+	            	<div class="tw-panel-cnt">
+	            		<div class="tw-usertree-search">
+	            			<input type="text" class="tw-form-text" />
+	            			<button class="tw-btn-primary"><i class="tw-icon-search"></i> 搜索</button>
+	            		</div>
+	            		<div class="JS_treeBox">
+
+							<ul class="treeview filetree">
+								<li id="{BFA8006A-0000-0000-1AC4-235800000015}" class="hasChildren expandable">
+									<div class="hitarea hasChildren-hitarea expandable-hitarea "></div>
+									<span class="folder">
+										<a id="{BFA8006A-0000-0000-1AC4-235800000015}" href="javascript:;" onclick="check(this,0)" style="text-decoration:none;">县、市、区规划局</a>
+									</span>
+								</li>
+								<li id="{7F000001-FFFF-FFFF-99EE-7FEE00000022}" class="collapsable">
+									<div class="hitarea hasChildren-hitarea  collapsable-hitarea"></div>
+									<span class="folder">
+										<a id="{7F000001-FFFF-FFFF-99EE-7FEE00000022}" href="javascript:;" onclick="check(this,0)" style="text-decoration:none;" class="">局领导</a>
+									</span>
+									<ul style="display: block;">
+										<li id="{BFA811EA-0000-0000-4560-F0CE000015A7}">
+											<span class="file checked">
+												<a id="{BFA811EA-0000-0000-4560-F0CE000015A7}" href="javascript:;" onclick="check(this,1)" style="text-decoration:none;">安学军</a>
+											</span>
+										</li>
+										<li id="{BFA811EA-0000-0000-455C-8B5700001072}">
+											<span class="file">
+												<a id="{BFA811EA-0000-0000-455C-8B5700001072}" href="javascript:;" onclick="check(this,1)" style="text-decoration:none;">李跃梅</a>
+											</span>
+										</li>
+									</ul>
+								</li>
+							</ul>
+				
+	            			
+	            		</div>
+	            	</div>
+	            </div>
+	            <div class="tw-tab-panel">
+	            	<div class="tw-panel-cnt">
+						<ul id="ownOrg" class="tw-usertree-ul filetree"></ul>
+	            	</div>
+	            </div>
+	            <div class="tw-tab-panel">
+	            	<div class="tw-panel-cnt">
+						所有用户
+	            	</div>
+	            </div>
+	        </div>
+		</div>
+	</div>
+	<div class="tw-usertree-select">
+		<div class="tw-mod">
+			<div class="tw-hd">已经选择 <span>(<b>17</b>)</span><span class="tw-act">清除全部</span></div>
+			<div class="tw-bd">
+				<ul class="tw-usertree-list">
+					<li>
+						<span>何中</span> <i class="tw-usertree-del tw-icon-times-circle"></i>
+					</li>
+					<li>
+						<span>鞠海林</span> <i class="tw-usertree-del tw-icon-times-circle"></i>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script src="../../plugins/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../plugins/jquery.treeview/jquery.treeview.js"></script>
+<script type="text/javascript" src="../../plugins/jquery.treeview/jquery.treeview.async.js"></script>
+<script src="../../js/common-ui.js" type="text/javascript"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+
+		$('.tw-usertree-tabs').tab();
+
+		$('.JS_treeBox').slimScroll();
+		$("#ownOrg").treeview({
+			   url: "http://61.155.85.74:2711/trueMailV1.0/departmentTree_getContent.do?isowner=1&callback=?"
+		});
+	});
+</script>
+
+
+</body>
+
+</html>

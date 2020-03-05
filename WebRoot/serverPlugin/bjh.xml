@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin name="bwd" zhName="获取最新办文单" jar="bwd.jar"
+	class="cn.com.trueway.serverplugin.bjh.Bjh" returnMethod = "getBjh">
+
+	<server id="1" name="getBjh" zhName="获得办文单">
+		<inputFields>
+		</inputFields>
+		<outputFields>
+			<field name="bwdStr" zhName="返回办文单" type="varchar" length="50" />
+		</outputFields>
+	</server>
+
+</plugin>

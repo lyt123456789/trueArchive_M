@@ -1,0 +1,80 @@
+@charset "utf-8";
+*{      
+	margin: 0px;
+	padding: 0px;	
+}
+body,table{  
+	font-size: 13px;
+	font-family: '宋体';
+}
+body{   
+	background-color:#FFF; 
+	over-flow-x:hidden;
+	text-align: center;
+}
+.tbl_index{
+	border-collapse: collapse;
+	font-size: 13px;
+	font-family: "宋体";
+	width: 90%;
+	margin-top: 10px;
+	color: #363636;
+	table-layout: fixed;
+	word-wrap:break-word;
+	word-break:break-all; 
+}
+.tbl_index td{
+	padding: 1px 0px 1px 0px;
+}
+.tbl_index .td_time{
+	color:#8E3534;
+	padding-bottom:3px;
+}
+.tbl_index .td_more{
+	padding-top: 10px;
+	color: #363636;
+}
+.tbl_index .td_1{
+	white-space:nowrap;
+	word-break:keep-all;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	color: #363636;  /************文本超出省略号颜色****************/
+}
+.tbl_index .td_2{
+	text-align: right;
+}
+.tbl_index .td_3{
+	width: 70px;
+	text-align: right;
+}
+.tbl_index .td_4{
+	color: #363636;
+}
+
+
+/********表格外超链接样式*********/
+a {
+	TEXT-DECORATION: none;
+	color: #363636;   /*有超链接的字的颜色*/
+}
+a:link {
+	color: #363636;
+	text-decoration: none;
+}
+a:hover,a:active {
+	color: #F19373;
+	text-decoration: none;
+}
+/*****************/
+
+
+.w-here{  /*公用标题行1*/
+	background:url(../imgs/index_blue/l-right-here-bg.gif) repeat-x; line-height:29px; height:29px; color:#FFF; width: 100%;text-align: left;
+}
+.w-here .w-here-box{ /*公用标题行2*/
+	background:url(../imgs/index_blue/l-right-here--ico1.gif) no-repeat bottom left; margin-left:10px;
+}
+.w-here .w-here-box span{	/*公用标题行3*/
+	background:url(../imgs/index_blue/l-right-here-ico2.gif) no-repeat center left; display:block; padding-left:20px; margin-left:10px;
+}

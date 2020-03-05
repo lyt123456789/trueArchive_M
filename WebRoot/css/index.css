@@ -1,0 +1,192 @@
+ .layui-layer {
+	    background-color:#eee;
+    }   
+    .layui-layer-content {
+        overflow-y:hidden!important;
+    } 
+     #sidebar{
+    	width: 210px;
+    left: 0;
+    }
+    .toggleCollapse{
+    	height:43px;
+    	backgorund:#E4EAF4;
+    }
+    .toggleCollapse h2{
+    	line-height:43px;
+    		height:41px;
+    	color:#008CEE;
+    	padding-right: 3px;
+    	padding-left: 3px;
+    	margin-left:13px;
+    	font-size:15px;
+    	font-weight:bold;
+    	border-bottom:3px solid #008CEE;
+    }
+    /* /* /* /* /* /* /* /*  */ */ */ */ */ */ */ */
+    
+     *{
+            margin:0;
+            padding:0;
+         
+        }
+        #sidebar_s {
+            display: none;
+            width: 24px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 21;
+        }
+        #sidebar_s .none{
+        display:inline-block;
+        margin-right:5px;
+        }
+        .toggleCollapse {
+            height: 180px;
+            overflow:initial;
+            background: #E4EAF4;
+            border-bottom:2px solid #d3dbe8 ;
+                   font-family: Microsoft Yahei;
+        }
+        .toggleCollapse h2 {
+            float:left;
+            line-height: 43px;
+            height: 41px;
+            color: #008CEE;
+            padding-right: 3px;
+            padding-left: 3px;
+            margin-left: 13px;
+            font-size: 15px;
+            font-weight: bold;
+            border-bottom: 3px solid #008CEE;
+        }
+        .toggleico{
+            float: right;
+            margin-top: 18px;
+            margin-right: 11px;
+            cursor: pointer;
+        }
+        .accordion{
+            background: #e4eaf4;
+        }
+        .accordion .accordionHeader h2 {
+            display: block;
+            overflow: hidden;
+            padding: 0 20px 0 25px;
+            height: 53px;
+            line-height: 53px;
+            font-size:16px;
+            color:#000000;
+            font-weight: normal;
+                   font-family: Microsoft Yahei;
+        }
+        .accordion .accordionHeader h2.collapsable{
+            background: #d2ecff;
+            color: #008cee;
+        }
+        .accordion .accordionHeader h2.collapsable .shows{
+            display: none;
+        }
+        .accordion .accordionHeader h2.collapsable .none{
+            display: inline-block;
+        }
+        .accordion .accordionHeader h2 img{
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .accordion .accordionHeader h2 img.toclose{
+            float: right;
+            margin-top: 22px;
+            margin-right: 0;
+        }
+        .tree{
+                  font-family: Microsoft Yahei;
+        }
+        .tree li a{
+            display: block;
+             padding: 10px;
+               font-family: Microsoft Yahei;
+            background: url("img/menu/listico.png") no-repeat left center;
+            height: 20px;
+            line-height: 20px;
+            margin-left: 35px;
+            list-style: none;
+            padding-left: 25px;
+        }
+        .tree li a{
+                text-decoration: none;
+            color: #343434;
+            font-size: 15px;
+        }
+        .tree div, .tree a, .tree span{
+          height: 40px;
+            line-height: 20px;
+        }
+        .tree .selected a{
+            color: #008cee;
+            background: url("img/menu/listico_act.png") no-repeat left center;
+        }
+        .none{
+            display: none;
+        }
+    
+    #splitBar{
+    	width:0px;
+    	margin-left:3px;
+    }
+    .accordion .accordionHeader h2{
+    	background:none;
+    }
+    .accordion .accordionHeader{
+    background:none;
+    }
+    .tree div div{
+    	display:none;
+    }
+ 	.tabsPage .tabsPageHeader{
+ 		height:45px;
+ 		background:#E1E6EB;
+ 	}
+ 	/* .tabsPage .tabsPageHeaderContent{
+ 	height:45px;
+ 	} */
+ 	.tabsPage .tabsPageHeader ul{
+ 	height:35px;
+ 	padding-top:10px;
+ 	}
+ 	.tabsPage .tabsPageHeader li{
+ 	height:35px;
+
+ 	background:none;
+ 	}
+ 	.tabsPage .tabsPageHeader li a{
+ 	height:35px;
+ 	 	margin-left:15px;
+ 	line-height:35px;
+ 		background:#D3DBE4;
+ 		
+ 	border-top-left-radius:6px;
+ 	 	border-top-right-radius:6px;
+ 	}
+ 	.tabsPage .tabsPageHeader li span{
+ 		background:#D3DBE4;
+ 			height:35px;
+ 			line-height:35px;
+ 			text-align:center;
+ 			
+ 	border-top-left-radius:6px;
+ 		 	border-top-right-radius:6px;
+ 	}
+ 	.tabsPage .tabsPageHeader li .close, .tabsPage .tabsPageHeader li.hover .close, .tabsPage .tabsPageHeader li.selected .close{
+ 		background-position: 0px -50px;
+ 	}
+ 	.tabsPage .tabsPageHeader li.selected a{
+ 		background:#fff;
+ 	}
+ 	.tabsPage .tabsPageHeader li.selected span{
+ 		background:#fff;
+ 	}
+ 	.accordion .accordionContent{
+ 		background:#F5F8FA
+ 	}

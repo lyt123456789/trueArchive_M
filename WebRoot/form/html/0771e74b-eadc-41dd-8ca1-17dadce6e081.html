@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px;color:red;border-color:#FF0000;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+        <!--以下必须-->
+        <script type="text/javascript" defer="defer">
+            window.onload = function() {
+                var listValues = '<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+                var selects = '<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+                var limitValue = '<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+                var valuestr = '<%=request.getParameter("values")==null?"":request.getParameter("values")%>';
+                var instanceId = '${instanceId}';
+                if (instanceId.length != 13) tagvalues(listValues, selects, limitValue, valuestr, instanceId); //标签赋值，权限控制
+                if (instanceId.length == 13) {
+                } //注册标签选中效果
+            };
+        </script>
+        <!--以上必须-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+<body>
+ <div class="warp"></div>
+ <p style="font-size:40px;line-height:35px;text-align:center;padding-top:30px; color:#FF0000;;font-weight:bold">启东市政府信息中心稿纸</p>
+ <br/>
+  <table class="infotan" width="819px" cellspacing="0" align="center" style="border-top:2px solid ;"> 
+   <tbody>
+    <tr> 
+     <td width="10%" valign="middle" style="text-align:center;border:1px  solid;height:160px;border-left:none">签发</td> 
+     <td width="15%" valign="middle" style="text-align:center;border:1px  solid ;"><input style="width:110px;" type="text" id="qf" name="qf"  value="" /></td> 
+     <td width="10%" style="line-height:30px;padding:5px;border:1px  solid ;"> 会签</td> 
+     <td width="15%" align="center" valign="middle" style="text-align:center;border:1px  solid ;"><input style="width:110px;" type="text" id="hq" name="hq"  value="" /></td> 
+	  <td width="10%" style="line-height:30px;padding:5px;border:1px  solid ;">核稿</td> 
+     <td width="15%" align="center" valign="middle" style="text-align:center;border:1px  solid ;border-right:none;"><input style="width:110px;" type="text" id="hg" name="hg"  value="" /></td>
+    </tr> 
+    <tr> 
+     <td align="center" valign="middle" style="text-align:center;height:80px; border:1px solid ;border-left:none;border-right:none">文件标题</td> 
+     <td colspan="6" style="border-right:none;border-left:none"><textarea id="wjbt" name="wjbt" zname="文件标题" style="height:60px;"></textarea></td> 
+    </tr> 
+    <tr> 
+     <td valign="middle" style="text-align:center;height:160px; border:1px solid ;border-left:none">发文机关</td> 
+     <td colspan="6" style="border:1px solid ;border-right:none"> <textarea id="fwjg" name="fwjg" zname="发文机关" style="height:100px;"></textarea> </td> 
+    </tr>  
+	 <tr> 
+     <td width="10%" valign="middle" style="text-align:center;border:1px  solid;height:60px;border-left:none">拟稿单位</td> 
+     <td width="15%" valign="middle" style="text-align:center;border:1px  solid ;"><input style="width:110px;" type="text" id="ngdw" name="ngdw"  value="" /></td> 
+     <td width="10%" style="line-height:30px;padding:5px;border:1px  solid ;"> 拟稿人</td> 
+     <td width="15%" align="center" valign="middle" style="text-align:center;border:1px  solid ;"><input style="width:110px;" type="text" id="ngr" name="ngr"  value="" /></td> 
+	  <td width="10%" style="line-height:30px;padding:5px;border:1px  solid ;">拟稿日期</td> 
+     <td width="15%" align="center" valign="middle" style="text-align:center;border:1px  solid ;border-right:none"><input style="width:110px;" type="text" id="ngrq" name="ngrq"  value="" /></td>
+    </tr> 
+    <tr> 
+     <td width="10%" valign="middle" style="text-align:center;border:1px  solid;height:60px;border-left:none">审核人</td> 
+     <td width="15%" valign="middle" style="text-align:center;border:1px  solid ;"><input style="width:110px;" type="text" id="shr" name="shr"  value="" /></td> 
+     <td width="10%" style="line-height:30px;padding:5px;border:1px  solid ;"> 初校</td> 
+     <td width="15%" align="center" valign="middle" style="text-align:center;border:1px  solid ;"><input style="width:110px;" type="text" id="cj" name="cj"  value="" /></td> 
+	  <td width="10%" style="line-height:30px;padding:5px;border:1px  solid ;">终校</td> 
+     <td width="15%" align="center" valign="middle" style="text-align:center;border:1px  solid ;border-right:none"><input style="width:110px;" type="text" id="zj" name="zj"  value="" /></td>
+    </tr> 
+   </tbody>
+  </table> 
+  <input type="hidden" id="instanceId" name="instanceId" value="" /> 
+  <input type="hidden" id="formId" name="formId" value="" /> 
+  <input type="hidden" id="workFlowId" name="workFlowId" value="" /> 
+  <input type="hidden" id="processId" name="processId" value="" />  
+  <script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script> 
+  <script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script> 
+  <script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+	
+	function SetData()
+    {
+		var file = 'C:/Users/zhujx/Desktop/TrueGenerator/TrueGenerator/help/process/true/17F647D2-A7AD-44C3-915D-B8AB95777044.true';
+    	ShowData.SetTrueFilePath(file);
+}
+
+</script> 
+ </body>
+</html>

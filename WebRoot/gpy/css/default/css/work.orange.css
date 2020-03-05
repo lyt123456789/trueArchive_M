@@ -1,0 +1,50 @@
+/**2011.08.06 new add css**/
+.pagecontextBox{background:url(../images/86.bg_03.gif) repeat-x 0 0; padding-top:8px; border:1px solid #CCCCCC;}
+.pagecontext{background:url(../images/86.bg_10.gif) repeat-x bottom left; padding:0 5px 5px;}
+.jQtabs{}
+.tab-menu-box{ overflow:hidden; zoom:1; height:27px; padding-left:20px;}
+.tab-menu-box li.jQtabmenu{color:#333; font-weight:bold; float:left; display:inline; cursor:pointer;background:url(../images/86_08.gif) no-repeat right -27px; margin:0 2px;}
+.tab-menu-box li.jQtabmenu span{padding-left:10px; padding-right:5px; margin-right:5px; display:block; font-weight:normal; line-height:27px;background:url(../images/86_08.gif) no-repeat;}
+.tab-menu-box li.jQtabone{background:url(../images/orange_tabmenu.gif) no-repeat right -27px; color:#763B03;/**need edit color **/}
+.tab-menu-box li.jQtabone span{background:url(../images/orange_tabmenu.gif) no-repeat; margin-right:5px; padding-left:10px; padding-right:5px; font-weight:bold;}
+.jQtabcontent{display:none;}
+
+.table-f td{ line-height:30px; padding:3px 5px;}
+.table-f thead td,.table-f thead th{border:1px solid #BDBDBD; background:url(../images/86.bg_06.gif) repeat-x; height:28px; line-height:28px; text-align:center; color:#000; font-weight:bold;}
+.table-f .snum{width:50px;}
+.table-f .num{width:80px;}
+.table-f .lnum{width:100px;}
+.table-f .sdate{width:90px;}
+.table-f .date{width:120px;}
+.table-f .name{width:150px;}
+.table-f .title{width:180px;}
+.table-f tbody tr.even td{background-color:#EFEFEF;}
+.table-f tbody tr.odd td{background-color:#FFF;}
+.table-f tbody tr.hover td{ background-color:#E8E5C4;/**need edit color **/}
+
+.leftTitle{background:url(../images/orange_title.gif) no-repeat right -60px;/**need edit images **/}
+.leftTitle h2{background:url(../images/orange_title.gif) no-repeat;/**need edit images **/ margin-right:10px; height:60px; line-height:60px; padding-left:70px; color:#FFF; font-size:16px; font-family:'\u5fae\u8f6f\u96c5\u9ed1',Tahoma, Geneva, sans-serif; font-weight:bold;}
+
+.bread-box{background:url(../images/86.bread_03.gif) repeat-x; border:1px solid #BCBCBC;}
+.bread{background:url(../images/orange_breadico.gif) no-repeat center left;/**need edit images **/ line-height:32px; padding-left:35px;}
+
+.pagesplit{overflow:hidden; zoom:1; height:22px; line-height:22px; margin:8px 30px;}
+.pagesplit li{float:left;}
+.pagesplit .splitmsg{float:left; color:#A75A03;/**need edit color **/ width:50%;}
+.pagesplit a.splitBtn{background:url(../images/orange_pages.gif) no-repeat right -20px;/**need edit images **/border:1px solid #CE6703;/**need edit color **/ float:left; margin:0 2px; cursor:pointer;}
+.pagesplit a.splitBtn span{background:url(../images/orange_pages.gif) no-repeat;/**need edit images **/ margin-right:5px; padding-left:5px; line-height:20px; display:block; color:#FFF;}
+.pagesplit a:hover.splitBtn{background:url(../images/o.orange_pages.gif) no-repeat right -20px;/**need edit images **/border:1px solid #c00;/**need edit color **/ float:left; margin:0 2px; cursor:pointer;}
+.pagesplit a:hover.splitBtn span{background:url(../images/o.orange_pages.gif) no-repeat;/**need edit images **/ margin-right:5px; padding-left:5px; line-height:20px; display:block; color:#FFF;}
+.pagesplit .splitGotoInput{margin:0 10px;}
+.pagesplit .splitGotoInput input{width:30px; height:18px; margin:0 2px;}
+
+.table-bc thead th,.table-bc thead td{line-height:300%;font-size:16px; font-family:'\u5fae\u8f6f\u96c5\u9ed1',Tahoma, Geneva, sans-serif; font-weight:bold; color:#A75A03;/**need edit color **/ text-align:center;}
+.table-bc td{border:1px solid #CCC; padding-left:15px;padding-right:5px;}
+.table-bc td.hottitle{background:url(../images/orange_hottitle.gif) no-repeat;/**need edit images **/ height:36px; line-height:36px; padding-left:50px; color:#FFF; font-size:14px; font-weight:bold; border:1px solid #DC6B00;/**need edit color **/}
+.flowerline{background:url(../images/86.table_04.gif) repeat-x center left; height:30px;}
+.table-bc td.title{background:url(../images/86.table_05.gif) repeat-x; height:36px; line-height:36px;  color:#A75A03;/**need edit color **/ font-weight:bold;}
+
+img.print_btn{width:113; height:31; background:url(../images/orange_print.gif) no-repeat center top;/**need edit images **/ cursor:pointer;}
+img.gotop_btn{width:113; height:31; background:url(../images/orange_gotop.gif) no-repeat center top;/**need edit images **/ cursor:pointer;}
+img:hover.print_btn{width:113; height:31; background:url(../images/o.orange_print.gif) no-repeat center top;/**need edit images **/}
+img:hover.gotop_btn{width:113; height:31; background:url(../images/o.orange_gotop.gif) no-repeat center top;/**need edit images **/}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+	id    : 映射flash中的对象名 (必填)
+	name  : 信息栏目名称 (必填)
+	x	  : 元件的x坐标 (默认为0)
+	y	  : 元件的y坐标 (默认为0)
+	angle : 元件的显示角度 (默认为0)
+	event : 是否会触事件 (默认为true)
+	parent： 是否有有父级（默认为空）
+-->
+<config>
+	<item id="mc_suptitle" name="南通市市府办" x="19" y="717" angle="0" event="false" parent=""/>
+	<item id="mc_date" name="日历信息" x="180" y="270" angle="0" event="true" parent=""/>
+	<item id="mc_tv" name="视频信息" x="-30" y="250" angle="0" event="true" parent=""/>
+	<item id="mc_box" name="文件盒" x="420" y="318" angle="0" event="false" parent=""/>
+	<item id="mc_box_c1" name="信息审核" x="53" y="-62" angle="0" event="true" parent="mc_box"/>
+	<item id="mc_box_c3" name="公文审批" x="98" y="-13" angle="0" event="true" parent="mc_box"/>
+	<item id="mc_box_c2" name="公文传阅" x="26" y="-8" angle="0" event="true" parent="mc_box"/>
+	<item id="mc_box_mask" name="前面的遮罩" x="-1.4" y="26.4" angle="0" event="false" parent="mc_box"/>
+	<item id="mc_user" name="用户信息" x="620" y="310" angle="0" event="true" parent=""/>
+	<item id="mc_file1" name="监察系统" x="750" y="240" angle="0" event="true" parent=""/>
+	<item id="mc_file2" name="监察系统" x="800" y="240" angle="0" event="true" parent=""/>
+	<item id="mc_file3" name="监察系统" x="850" y="240" angle="0" event="true" parent=""/>
+	<item id="mc_file4" name="监察系统" x="900" y="240" angle="0" event="true" parent=""/>
+	<item id="mc_file5" name="其他系统" x="950" y="240" angle="0" event="true" parent=""/>
+	<item id="mc_news" name="通讯录" x="24" y="482" angle="0" event="true" parent=""/>
+	<item id="mc_books" name="书" x="300" y="408" angle="0" event="false" parent=""/>
+	<item id="mc_book_c1" name="人员去向" x="51" y="15" angle="0" event="true" parent="mc_books"/>
+	<item id="mc_book_c2" name="领导模块" x="208" y="14" angle="0" event="true" parent="mc_books"/>
+	<item id="mc_fax" name="文稿资料库" x="760" y="340" angle="0" event="true" parent=""/>
+	<item id="mc_close" name="注销" x="860" y="696" angle="0" event="true" parent=""/>
+	<item id="mc_choose" name="切换" x="940" y="696" angle="0" event="true" parent=""/>
+	<item id="mc_epwd" name="修改密码" x="886" y="646" angle="0" event="true" parent=""/>
+	<item id="choose_btn_mc" name="切换风格" x="866" y="906" angle="0" event="true" parent=""/>
+</config>

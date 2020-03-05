@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <menu id='83A2296292F046298F45A135DC83E21B'  name='领导模块'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='83A2296292F046298F45A135DC83E21B']]>
+    </url>
+    <img>
+      <![CDATA[F:\AS3lab\20101224\menubar\src\001.png]]>
+    </img>
+    <subnav></subnav>
+  </menu>
+  <menu id='3F239CCD4E4C417D97269D46882AE87B'  name='公文管理'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='3F239CCD4E4C417D97269D46882AE87B']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav>
+      <menu id='2C1C91D64D394DE6AAFFEFAD48CC3E94'  name='问号管理测试'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3F239CCD4E4C417D97269D46882AE87B']]>
+        </url>
+        <img>
+          <![CDATA[F:\AS3lab\20101224\menubar\src\BoA11.png]]>
+        </img>
+      </menu>
+      <menu id='865A97C21046466AA8A47B90A3F65272'  name='待办公文'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3F239CCD4E4C417D97269D46882AE87B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='C4904C869DC8467A91E9C439EA492057'  name='起草公文'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3F239CCD4E4C417D97269D46882AE87B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='6F299EECD67B425B95717CE3330F834C'  name='办结公文'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3F239CCD4E4C417D97269D46882AE87B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='411599F9C1C84A0886576E7A97B759CB'  name='已收公文'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3F239CCD4E4C417D97269D46882AE87B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='2549AB8A8C35453AA7A40C1E9E1E13EB'  name='待收公文'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3F239CCD4E4C417D97269D46882AE87B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='3E2052AB881A4717909FA7965061DB31'  name='流程跟踪列表'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3F239CCD4E4C417D97269D46882AE87B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='825C049A51EF4B79B33C5FA226C25DAF'  name='传阅列表'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3F239CCD4E4C417D97269D46882AE87B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+  <menu id='645DD3C0DEAC4C49B08740FF7118DF9B'  name='信息发布'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+    </url>
+    <img>
+
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav>
+      <menu id='ED4913386F8B4862B2E99DDD689072CC'  name='统计'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='D89C796D3D71440B920C90B4379EDAD6'  name='通知公告'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='DD01AC4BF060449A87DE94421E78CFDF'  name='南通新闻'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='1582BD3CE87444468A0601EA35F63E2C'  name='一周热点'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='A65CF53E771F45B3A5AD1C183C826515'  name='部门信息'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='6F1DBC55DDFE43E2954C26E2BC06330A'  name='党建信息'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='F1E746848DC54A48B734DA53012D6390'  name='公务员之家'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='584453AE8DC241D39A1462B347C78C02'  name='十二五规划'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='203629BFFC044E9DA3166E26C5042700'  name='沿海开发'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='8EC3A1BF09BB4883877E23F6F0657398'  name='图片新闻'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='3C6BAB52B1074C2B894EB375F5C8525A'  name='信息审核'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='D9A9CF71DE5E42F990D10E7307A27942'  name='栏目管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='645DD3C0DEAC4C49B08740FF7118DF9B']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+  <menu id='091642B2849345F9BDE002B55680E6BF'  name='文稿资料库'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav>
+      <menu id='B9D10E28B6664C1CAD6467D226FCF052'  name='上传排行'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='AF00280A6B9C4401AB4602BB420B99A0'  name='目录统计'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='694B6E19E28D4BC5BBBBA1A5DADA11CD'  name='热点排行'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='D79712865F9946D49D98B8A5A6D77645'  name='领导讲话'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='4BFC901501994CD89231B83164839720'  name='重要会议文稿'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='70CF72BADE2148CF84519D42012C40D2'  name='重要活动文稿'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='58EDAD66436E4820B08BAC49280262CF'  name='调研报告'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='C357E45F07D64EB6B619B2356A4FDE2C'  name='情况交流'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='07D9AFB19A9E4ADBA4A030066DDCEF23'  name='组织工作'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='FD8DF8055E1243719E24F2A346551586'  name='其他文稿'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='D76F81501C634DA699AEDFBC324CE53F'  name='其他工作'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='CAEE0867222440FE8C3CA3311507BE05'  name='文件共享管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='091642B2849345F9BDE002B55680E6BF']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+  <menu id='838DE1AED104499B878D6879202BC7A0'  name='车辆管理'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='838DE1AED104499B878D6879202BC7A0']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav>
+      <menu id='819320B214C44818979F796F5C877825'  name='出车申请'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='838DE1AED104499B878D6879202BC7A0']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='FF7990D824AE457697A6ED75BAC7580B'  name='车辆维修申请'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='838DE1AED104499B878D6879202BC7A0']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='9B12CF236E044FBCAD2CA0411F66E0AA'  name='车辆保养申请'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='838DE1AED104499B878D6879202BC7A0']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='A657BDB9404A451B9E39A0F6D95B0F6E'  name='出车申请审批'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='838DE1AED104499B878D6879202BC7A0']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='8B3968F33DA34336BC3249A3F115475E'  name='车辆登记'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='838DE1AED104499B878D6879202BC7A0']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='D3D6238CB6F74DE0BEA76127129CDD8F'  name='出车申请管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='838DE1AED104499B878D6879202BC7A0']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='8EB1B2ACE28C4F719A584AB71030676F'  name='维修申请管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='838DE1AED104499B878D6879202BC7A0']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='DAB9317F8E2C405582B944F5133B10BE'  name='保养申请管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='838DE1AED104499B878D6879202BC7A0']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+  <menu id='4F5198CC2788478E9C23511211693146'  name='我的日程'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='4F5198CC2788478E9C23511211693146']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav>
+      <menu id='7D4CD2242B784286A5A0E4CEF61C9737'  name='日程安排'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='4F5198CC2788478E9C23511211693146']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='01CF306256ED4B9C96ADC968FD21999C'  name='日程提醒'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='4F5198CC2788478E9C23511211693146']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+  <menu id='009A1CC9C15A4E699B6CDDE4C025C2F3'  name='会议安排'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='009A1CC9C15A4E699B6CDDE4C025C2F3']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav>
+      <menu id='C48E712A0BF94CF89365D4D92031CA93'  name='会议申请'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='009A1CC9C15A4E699B6CDDE4C025C2F3']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='A251F4DEF2264895AA269E0127622014'  name='申请信息查询'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='009A1CC9C15A4E699B6CDDE4C025C2F3']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='7DD9569A74D4474E87404F7A2AC2468B'  name=' 待审核会议'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='009A1CC9C15A4E699B6CDDE4C025C2F3']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='616481BAA05543F6A0ADF59976940FD2'  name='退回'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='009A1CC9C15A4E699B6CDDE4C025C2F3']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='72AFE2A8F0FF4E0A8B7CA333FE316131'  name='历史记录'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='009A1CC9C15A4E699B6CDDE4C025C2F3']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='DEFAD21B47AC4954BC0F657259816DF8'  name='会议管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='009A1CC9C15A4E699B6CDDE4C025C2F3']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+  <menu id='106CA6B69DB044B5921F8E60694A4C8B'  name='通讯录'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='106CA6B69DB044B5921F8E60694A4C8B']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav></subnav>
+  </menu>
+  <menu id='7BBDADBEDD414C2E880AEF0C7F37DBE7'  name='人员去向'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='7BBDADBEDD414C2E880AEF0C7F37DBE7']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav>
+      <menu id='6344F89DC75C453FBFA8BCA94F9489BC'  name='人员去向管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='7BBDADBEDD414C2E880AEF0C7F37DBE7']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='BEA09EEDEE8642EE983833D82A5F23CF'  name='人员去向查询'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='7BBDADBEDD414C2E880AEF0C7F37DBE7']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='2ED0BD29C98A401B920C98EC1081FBCE'  name='人员今日去向'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='7BBDADBEDD414C2E880AEF0C7F37DBE7']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='0DC0D1624CE84232BA42CBDBBCD11A22'  name='个人状态修改'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='7BBDADBEDD414C2E880AEF0C7F37DBE7']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+  <menu id='4E1DA6C0CAF745C6B570E0317A690FD1'  name='工作计划'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='4E1DA6C0CAF745C6B570E0317A690FD1']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav>
+      <menu id='68F9F1945CC94CD6BA85E3B201B9E2E0'  name='内容审核'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='4E1DA6C0CAF745C6B570E0317A690FD1']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='5F9D93C4B2CF44319D2A5381AE911D80'  name='栏目管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='4E1DA6C0CAF745C6B570E0317A690FD1']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='CA6ACEFA279A40B7B9A9EA0B586C3FD4'  name='test'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='4E1DA6C0CAF745C6B570E0317A690FD1']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+  <menu id='5B38B05B287B44678801CBB482D161DE'  name='系统设置'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+    </img>
+    <subnav>
+      <menu id='AF6153B8FC2349CF8AEF3181A6FC3CED'  name='应用管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='0D37A2CD75D14796B94B1F65BE54A334'  name='角色管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='026E4831C715439BA014BB163AFEB12C'  name='日志管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='F397289AF6A946F6B4E24D3FF22F08FC'  name='角色授权'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='59F00105F24948CF9DB4F323A4ED08DE'  name='人员授权'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='173B5A17FA364399884729B87E4F0D39'  name='元素分配'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='4D3149FE6DFB4B75AC555065A59BDA64'  name='元素管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='5A2142BCD4034ECFBF33A7100017B66C'  name='门户管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='9B07EFD49E8746DEA91DCE526517ECDE'  name='元素部门分配'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='AB4F28C185394ACB92E23132108DBA0A'  name='门户管理'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+      <menu id='BDF949C7DB8D484987082B78A24BB0EB'  name='单点登录系统'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='5B38B05B287B44678801CBB482D161DE']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menunull']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+  <menu id='3A45C39CB8C548AFA4F470B390D54904'  name='工作日志'  >
+    <url>
+      <![CDATA[/oa/employeeright_showMain.do?rightId='3A45C39CB8C548AFA4F470B390D54904']]>
+    </url>
+    <img>
+      <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+    </img>
+    <subnav>
+      <menu id='05D0B17B4E9040238507C88DC862F280'  name='新建工作日志'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3A45C39CB8C548AFA4F470B390D54904']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='AE603DA143284DEA89AD021381F1EAF9'  name='个人工作日志'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3A45C39CB8C548AFA4F470B390D54904']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='5C6178137A9E485E9979D002F38DB7FA'  name='下属工作日志'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3A45C39CB8C548AFA4F470B390D54904']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='68F3BB4B11614E5BA219B7C30BC2A3A8'  name='配置领导下属关系'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3A45C39CB8C548AFA4F470B390D54904']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='C51ADBF369B143CAB11A7C18B32C0E78'  name='日志填报率'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3A45C39CB8C548AFA4F470B390D54904']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+      <menu id='03AA62B8F0D6488FA45C4A0B2E1BFB2A'  name='设置工作日'   >
+        <url>
+          <![CDATA[/oa/employeeright_showMain.do?rightId='3A45C39CB8C548AFA4F470B390D54904']]>
+        </url>
+        <img>
+          <![CDATA['E:\eclipse\jw\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\oa\/widgets/webID/red/portal/index/images/menu/']]>
+        </img>
+      </menu>
+    </subnav>
+  </menu>
+</data>

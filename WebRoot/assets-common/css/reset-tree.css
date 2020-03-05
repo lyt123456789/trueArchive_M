@@ -1,0 +1,167 @@
+/*css reset.css*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption,input{margin:0; padding:0; border:0; outline:0; font-weight:inherit; font-style:inherit; font-family:inherit;  vertical-align:baseline;}
+html,body{
+  height: 100%;
+}
+body{ font-family: 'microsoft yahei', Arial, sans-serif;  font-size:16px; color: #333;height: 96%;} 
+ol, ul{ list-style:none}
+table{ border-collapse: collapse;}
+caption, th, td{ font-weight:normal}
+blockquote:before, blockquote:after,  q:before, q:after{ content:''}
+blockquote, q{quotes:""""}
+a{ text-decoration:none;color: inherit;}
+img{ border:0; display:block;max-width: 100%;}
+cite,b,em,i{ font-style:normal;}
+.fl{float: left;}
+.fr{float: right;}
+
+.content{
+  width: 840px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+.left-box{
+  width: 590px;
+}
+.infor-tab {
+    height: 35px;
+    border-bottom: 1px solid #bdbdbd;
+}
+.infor-tab .name {
+    width: 90px;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    float: left;
+    text-align: center;
+}
+.infor-tab .name.act {
+    background: #f1f1f1;
+    height: 35px;
+    line-height: 35px;
+    border-right: 1px solid #bdbdbd;
+    border-left: 1px solid #bdbdbd;
+    border-top: 1px solid #bdbdbd;
+    font-size: 16px;
+    font-weight: 600;
+}
+.panel {
+    border: 1px solid #bdbdbd;
+    border-top: 0;
+    height: 420px;
+    overflow-y: auto;
+}
+.search-box{
+	margin-left:345px;
+  	margin: 0 295px;
+  	width: 240px;
+  	height: 26px;
+  	border: 1px solid #d0d0d0;
+  	position: relative;
+}
+.search-box .search-input{
+  border: 0;
+  height: 26px;
+  padding: 1 10px;
+  width: 79%;
+}
+.search-btn{
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  color: #fff;
+  height: 26px;
+  line-height: 26px;
+  background: #008def;
+  right: 0;
+  top: 0;
+  border: 0;
+  cursor: pointer;
+}
+.tree-ul{
+  margin-top: 15px;
+}
+.tree-head{
+  height: 36px;
+  line-height: 36px;
+  background: #f1f1f1;
+  padding: 0 10px;
+  color: #3d9cef;
+  font-size: 16px;
+}
+.user-list{
+  overflow: hidden;
+  padding: 0 10px;
+}
+.user-list li{
+  float: left;
+  width: 20%;
+  margin-top: 10px;
+}
+.right-box{
+  width: 200px;
+  border: 1px solid #bdbdbd;
+  height: 485px;
+}
+.choose-box{
+  height: 30px;
+  background: #f1f1f1;
+  padding: 0 10px;
+  line-height: 30px;
+}
+.blue-color{
+  color: #008def;
+}
+.clear-all{
+  font-size: 14px;
+}
+.choose-ul{
+  padding: 10px;
+}
+.choose-ul li{
+  margin-bottom: 10px;
+}
+.checkbox{
+  position: relative;
+}
+.checks{
+    opacity: 0;
+    margin-right: 5px;
+}
+input[type="checkbox"]:checked + label:before,
+input[type="checkbox"]:not(:checked) + label:before {
+  background: url(../img/check-icon.png);
+  content: " ";
+  height: 18px;
+  left: 0;
+  top: 2px;
+  position: absolute;
+  width: 18px;
+}
+input[type="checkbox"]:checked + label:before {
+ background: url(../img/checked-icon.png);
+}
+.choose-ul .checks{
+  float: right;
+}
+.choose-ul .checkbox{
+    display: inline-block;
+    width: 145px;
+    margin-right: 8px;
+}
+.choose-ul input[type="checkbox"]:checked + label:before,.choose-ul input[type="checkbox"]:not(:checked) + label:before{
+  right: 0;
+  left: auto;
+}
+.cancel-btn{
+  background: url(../img/clear-btn.png) no-repeat;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  float: right;
+  margin-top: 4px;
+}
+.n-right{
+  margin-top: 230px;
+  margin-left: 12px;
+}

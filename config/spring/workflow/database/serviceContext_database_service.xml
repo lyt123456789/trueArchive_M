@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">	
+	
+	<bean id="fieldInfoService" class="cn.com.trueway.workflow.core.service.impl.FieldInfoServiceImpl">
+		<property name="fieldInfoDao"  ref="fieldInfoDao"/>
+	</bean> 
+	<bean id="templateService" class="cn.com.trueway.workflow.core.service.impl.TemplateServiceImpl">
+		<property name="templateDao"  ref="wftemplateDao"/>
+		<property name="jdbcBase"  ref="jdbcBase"/>
+		<property name="tableInfoService"  ref="tableInfoService"/>
+		<property name="commentService"  ref="commentService"/>
+		<property name="itemService"  ref="itemService"/>
+	</bean> 
+	<bean id="labelService" class="cn.com.trueway.workflow.core.service.impl.LabelServiceImpl">
+		<property name="labelDao"  ref="labelDao"/>
+	</bean> 
+	<bean id="dictionaryService" class="cn.com.trueway.workflow.core.service.impl.DictionaryServiceImpl">
+		<property name="dictionaryDao"  ref="dictionaryDao"/>
+	</bean> 
+	<bean id="customStatusService" class="cn.com.trueway.workflow.core.service.impl.CustomStatusServiceImpl">
+		<property name="customStatusDao"  ref="customStatusDao"/>
+	</bean> 
+	<bean id="itemService" class="cn.com.trueway.workflow.core.service.impl.ItemServiceImpl">
+		<property name="itemDao"  ref="itemDao"/>
+		<property name="itemRelationDao"  ref="itemRelationDao"/>
+	</bean> 
+	
+	<bean id="formPermitService" class="cn.com.trueway.workflow.core.service.impl.FormPermitServiceImpl">
+		<property name="formPermitDao"  ref="formPermitDao"/>
+		<property name="workflowBasicFlowDao"  ref="workflowBasicFlowDao"/>
+		<property name="zwkjFormDao"  ref="zwkjFormDao"/>
+		<property name="groupDao"  ref="groupDao"/>
+		<property name="departmentDao"  ref="departmentDao"/>
+		<property name="employeeDao"  ref="employeeDao"/>
+	</bean> 
+	
+	<bean id="workflowCalendarService" class="cn.com.trueway.workflow.core.service.impl.WorkflowCalendarServiceImpl">
+		<property name="workflowCalendarDao"  ref="workflowCalendarDao"/>
+		<property name="selectTreeDao"  ref="selectTreeDao"/>
+	</bean> 
+	
+	<bean id="workflowBasicFlowService" class="cn.com.trueway.workflow.core.service.impl.WorkflowBasicFlowServiceImpl">
+		<property name="workflowNoteDao"  ref="workflowNoteDao"/>
+		<property name="workflowSoftRouteDao"  ref="workflowSoftRouteDao"/>
+		<property name="workflowBasicFlowDao"  ref="workflowBasicFlowDao"/>
+		<property name="tableInfoDao"  ref="tableInfoDao"></property>
+		<property name="zwkjFormDao"  ref="zwkjFormDao"></property>
+		<property name="wftemplateDao"  ref="wftemplateDao"></property>
+		<property name="labelDao"  ref="labelDao"></property>
+		<property name="groupDao"  ref="groupDao"></property>
+		<property name="formPermitDao"  ref="formPermitDao"></property>
+		<property name="attachmentTypeFZDao"  ref="attachmentTypeFZDao"></property>
+		<property name="templateDao"  ref="wftemplateDao"/>
+	</bean> 
+	
+	<bean id="attachmentTypeService" class="cn.com.trueway.workflow.core.service.impl.AttachmentTypeServiceImpl">
+		<property name="attachmentTypeDao"  ref="attachmentTypeDao"/>
+	</bean> 
+	
+	<bean id="pendingService" class="cn.com.trueway.workflow.core.service.impl.PendingServiceImpl">
+		<property name="pendingDao"  ref="pendingDao"/>
+		<property name="calendarService"  ref="workflowCalendarService"/>
+		<property name="itemRelationDao"  ref="itemRelationDao"/>
+		<property name="itemDao"  ref="itemDao"/>
+		<property name="tableInfoDao"  ref="tableInfoDao"/>
+		<property name="workflowBasicFlowDao"  ref="workflowBasicFlowDao"/>
+		<property name="trueJsonDao"  ref="trueJsonDao"/>
+	</bean> 
+	
+	<bean id="itemRelationService" class="cn.com.trueway.workflow.core.service.impl.ItemRelationServiceImpl">
+		<property name="itemRelationDao"  ref="itemRelationDao"/>
+	</bean> 
+	
+	<bean id="employeeRoleService" class="cn.com.trueway.workflow.set.service.impl.EmployeeRoleServiceImpl">
+		<property name="employeeRoleDao"  ref="employeeRoleDao"/>
+	</bean> 
+	
+	<bean id="replayService" class="cn.com.trueway.workflow.core.service.impl.ReplayServiceImpl">
+		<property name="replayDao"  ref="replayDao"/>
+	</bean> 
+	
+	<bean id="noticeInfoService" class="cn.com.trueway.workflow.core.service.impl.NoticeInfoServiceImpl">
+		<property name="noticeInfoDao"  ref="noticeInfoDao"/>
+		<property name="tableInfoDao"  ref="tableInfoDao"/>
+	</bean> 
+	
+	<bean id="filingService" class="cn.com.trueway.workflow.core.service.impl.FilingServiceImpl">
+		<property name="filingDao"  ref="filingDao"/>
+	</bean> 
+
+	<bean id="employeeLeaderService" class="cn.com.trueway.workflow.set.service.impl.EmployeeLeaderServiceImpl">
+		<property name="employeeLeaderDao"  ref="employeeLeaderDao"/>
+	</bean> 
+	
+	<bean id="doArticlePostService" class="cn.com.trueway.workflow.core.service.impl.DoArticlePostServiceImpl">
+		<property name="doArticlePostDao"  ref="doArticlePostDao"/>
+		<property name="pendingDao"  ref="pendingDao"/>
+	</bean> 
+	
+	<bean id="dataCenterService" class="cn.com.trueway.workflow.core.service.impl.DataCenterServiceImpl">
+		<property name="dataCenterDao"  ref="dataCenterDao"/>
+	</bean> 
+	
+	<bean id="pushService" class="cn.com.trueway.workflow.set.service.impl.PushServiceImpl">
+		<property name="pushDao"  ref="pushDao"/>
+	</bean> 
+		
+	<bean id="integrateService" class="cn.com.trueway.workflow.core.service.impl.IntegrateServiceImpl">
+		<property name="integrateDao"  ref="integrateDao"/>
+	</bean> 
+	
+	<bean id="tableInfoExtendService" class="cn.com.trueway.workflow.core.service.impl.TableInfoExtendServiceImpl">
+		<property name="tableInfoExtendDao"  ref="tableInfoExtendDao"/>
+		<property name="groupDao"  ref="groupDao"/>
+		<property name="tableInfoDao"  ref="tableInfoDao"/>
+	</bean>
+	
+	<bean id="depConfigService" class="cn.com.trueway.workflow.core.service.impl.DepConfigServiceImpl">
+		<property name="depConfigDao"  ref="depConfigDao"/>
+	</bean> 
+	
+	<bean id="monitorService" class="cn.com.trueway.workflow.core.service.impl.MonitorServiceImpl">
+		<property name="monitorDao"  ref="monitorDao"/>
+	</bean>
+	
+	<bean id="thirdpartyInterfaceLogService" class="cn.com.trueway.workflow.set.service.impl.ThirdpartyInterfaceLogServiceImpl">
+		<property name="thirdpartyInterfaceLogDao"  ref="thirdpartyInterfaceLogDao"/>
+	</bean> 
+</beans>

@@ -1,0 +1,77 @@
+.tw-layout ul {
+    padding:10px 14px;
+}
+.fl {
+    display:inline;
+}
+.tw-layout .box-hover {
+    border-color: #74ae39;
+    background-color: #f5f8fa; 
+}
+.tw-layout .edit-mod {
+    border-color: #74ae39;
+}
+.tw-piclist {
+    width: 102px;
+    height: 120px;
+    padding: 5px;
+    margin: 0 14px 12px 0;
+    border: 1px solid #e5e5e5;
+    background-color: #fff; 
+    overflow:hidden;
+    position: relative;  	
+}
+.tw-piclist .pic {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin:10px 20px;
+    position:relative;
+    display:block;
+    overflow:hidden;	
+}
+.tw-piclist .pic img{
+	width:50px;
+	position:relative;
+}
+.tw-piclist .name {
+    font-size:14px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color:#333;	
+}
+.tw-layout .box-hover .name {
+    color:#690;
+}
+.tw-check{
+	border-color: #74ae39;
+	background-color: #f5f8fa; 
+}
+.tw-check .icon-daren-m {
+    background: url(../img/icons/but.gif) no-repeat;
+    height: 38px;
+    width: 38px;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    filter: alpha(opacity=80);
+    opacity: .8;
+    z-index: 101;
+}
+.tw-check .icon-daren-m {
+    background-position: -390px -80px;
+}
+.tw-piclist .hbc {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    z-index: 102;
+    cursor:pointer;
+}
+.tw-piclist .hbc i {
+    color:#5eb95e;
+}

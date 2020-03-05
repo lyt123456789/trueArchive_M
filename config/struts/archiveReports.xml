@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="reports" extends="common-default">
+		<action name="rep_*" class="cn.com.trueway.archives.reports.action.ReportsAction" method="{1}">
+		    <result name="workStatisticsReportsJsp">/WEB-INF/pages/archives/reports/workStatisticsReports.jsp</result>
+		    <result name="aimStatisticsReportsJsp">/WEB-INF/pages/archives/reports/aimStatisticsReports.jsp</result>
+		    <result name="otherAimStatisticsReportsJsp">/WEB-INF/pages/archives/reports/otherAimStatisticsReports.jsp</result>
+		    <result name="mainStatisticsJsp">/WEB-INF/pages/archives/reports/mainStatistics.jsp</result>
+		    <result name="archiveStatisticsReportsJsp">/WEB-INF/pages/archives/reports/archiveStatisticsReports.jsp</result>
+		    <result name="formatsStatisticsReportsJsp">/WEB-INF/pages/archives/reports/formatsStatisticsReports.jsp</result>
+		</action>
+	</package>
+</struts>

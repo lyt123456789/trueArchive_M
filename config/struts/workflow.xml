@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="workflow" extends="common-default">
+		
+		<action name="mobileTerminalInterface_*" class="mobileTerminalInterfaceAction" method="{1}">
+			<result name="addWF">/WEB-INF/pages/workflow/main/add.jsp</result>
+			<result name="display">/WEB-INF/pages/workflow/display.jsp</result>
+			<result name="makeImg">/WEB-INF/pages/workflow/tiaozhuan.jsp</result>
+			<result name="workflow_home">/WEB-INF/pages/workflow/main/workflow_home.jsp</result>
+			<result name="add">/WEB-INF/pages/workflow/main/add.jsp</result>	
+			<result name="workflowimg_open">/WEB-INF/pages/workflow/main/workflow_img.jsp</result>
+			<result name="modify">/WEB-INF/pages/workflow/main/modify.jsp</result>	
+			<result name="wfMainList">/WEB-INF/pages/workflow/main/wfMainList.jsp</result>	
+			<result name="toCopyWorkFlow">/WEB-INF/pages/workflow/main/copy.jsp</result>	
+			<result name="toLineCondition">/WEB-INF/pages/workflow/main/toLineCondition.jsp</result>
+			<result name="uploadZip">/WEB-INF/pages/workflow/main/uploadZip.jsp</result>
+			<result name="initWfMain">/WEB-INF/pages/workflow/main/initWfMain.jsp</result>
+			<result name="workFlowScan">/workFlowScan.jsp</result>
+			<result name="getChildWfNodeList">/WEB-INF/pages/workflow/main/getChildWfNodeList.jsp</result>
+			<result name="workflow_list">/WEB-INF/pages/workflow/main/workflow_list.jsp</result>
+		</action>
+		
+		<action name="pending_*" class="pendingAction" method="{1}">
+			<result name="pendingList">/WEB-INF/pages/workflow/pendingList.jsp</result>
+		</action>
+		
+		<action name="replay_*" class="replayAction" method="{1}">
+			<result name="replayList">/WEB-INF/pages/workflow/todo/replayList.jsp</result>
+		</action>
+		
+		<action name="filing_*" class="filingAction" method="{1}">
+		    <result name="getFilingList">/WEB-INF/pages/workflow/todo/getFilingList.jsp</result>
+		</action>
+		
+		<action name="doArticlePost_*" class="doArticlePostAction" method="{1}">
+		    <result name="doArticlePostList">/WEB-INF/pages/workflow/todo/doArticlePostList.jsp</result>
+		    <result name="doArticlePostFwList">/WEB-INF/pages/workflow/todo/doArticlePostFwList.jsp</result>
+		    <result name="doArticlePostQtList">/WEB-INF/pages/workflow/todo/doArticlePostQtList.jsp</result>
+		</action>
+		
+		<action name="dataCenter_*" class="dataCenterAction" method="{1}">
+		    <result name="busModuleList">/WEB-INF/pages/workflow/database/busModuleList.jsp</result>
+		    <result name="addBusMod">/WEB-INF/pages/workflow/database/addBusMod.jsp</result>
+		    <result name="updateBusMod">/WEB-INF/pages/workflow/database/updateBusMod.jsp</result>
+		    <result name="dataDicList">/WEB-INF/pages/workflow/database/dataDicList.jsp</result>
+		    <result name="dataDicTable">/WEB-INF/pages/workflow/database/dataDicTable.jsp</result>
+		    <result name="addDataDic">/WEB-INF/pages/workflow/database/addDataDic.jsp</result>
+		    <result name="updateDataDic">/WEB-INF/pages/workflow/database/updateDataDic.jsp</result>
+		    <result name="setDataDic">/WEB-INF/pages/workflow/database/setDataDic.jsp</result>
+		    <result name="dataDicMatch">/WEB-INF/pages/workflow/database/dataDicMatch.jsp</result>
+		    <result name="addMatch">/WEB-INF/pages/workflow/database/addMatch.jsp</result>
+		    <result name="updateMatch">/WEB-INF/pages/workflow/database/updateMatch.jsp</result>
+		    <result name="toCopyUrl">/WEB-INF/pages/workflow/database/copyUrl.jsp</result>
+		    <result name="toSendListFromData">/WEB-INF/pages/workflow/database/sendListFromData.jsp</result>
+		    <result name="setPermit">/WEB-INF/pages/workflow/database/setPermit.jsp</result>
+		</action>
+		
+		<action name="push_*" class="cn.com.trueway.workflow.set.action.PushAction" method="{1}">
+			<result name="checkPushServer">/WEB-INF/pages/workflow/push/checkPushServer.jsp</result>
+		</action>
+	</package>
+</struts>

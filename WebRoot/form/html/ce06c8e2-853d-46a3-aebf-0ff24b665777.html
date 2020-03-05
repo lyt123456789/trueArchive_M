@@ -1,0 +1,233 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>会议（活动）审批表</title>
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+.infotan td{text-align:center;}
+</style>
+</head>
+<body>
+<div class="warp">
+
+<table class="infotan" width="819px" cellspacing="0" align="center"style="border:1px ;">
+<caption>
+	<br/>
+	<strong style="font-size:28px;margin-right:5px;">
+	会议（活动）审批表&nbsp;</strong>
+	<br/>
+	<br/>
+</caption>
+<tr>
+	<td colspan="2" align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	召集条线(部门)
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	<input type="text" id="zjtx" name="zjtx" style="width:500px;" zname="召集条线(部门)" />
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center" valign="middle" style="font-size:18px;line-height:45px;border:1px solid ;">
+	<p>会议(活动)</p>
+	<p>主题(内容)</p>
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	 <textarea style="width: 500px;height: 70px;;line-height:30px" id="hyzt" name="hyzt" zname="会议(活动)主题(内容)"></textarea>
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center" valign="middle" style="font-size:18px;line-height:100px;border:1px solid ;">
+		出席对象
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	 <textarea style="width: 500px;height: 70px;;line-height:30px" id="cxdx" name="cxdx" zname="出席对象"></textarea>
+	
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	参加人数
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	<input type="text" id="cjrs" name="cjrs" style="width:500px;" zname="参加人数" />
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	会议(活动)时间
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	<input type="text" id="hysj" name="hysj" style="width:500px;" zname="会议(活动)时间"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd hh:mm'})" />
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	会议(活动)地点
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	<input type="text" id="hydd" name="hydd" style="width:500px;" zname="会议(活动)地点" />
+	</td>
+</tr>
+<tr>
+	<td rowspan="2" align="center" valign="middle" style="width:100px  ;font-size:18px;line-height:35px;border:1px solid ;">
+	<p>用餐</p><p>安排</p>
+	</td>
+	<td align="center" valign="middle" style="width:100px;font-size:18px;line-height:35px;border:1px solid ;">
+	人数
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	<input type="text" id="ycap_rs" name="ycaprs" style="width:500px;" zname="用餐安排_人数" />
+	</td>
+</tr>
+<tr>
+	
+	<td align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	标准
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	<input type="text" id="ycap_rs" name="ycapbz" style="width:500px;" zname="用餐安排_标准" />
+	</td>
+	
+</tr>
+<tr>
+	<td colspan="2" align="center" valign="middle" style="font-size:18px;line-height:305x;border:1px solid ;">
+	<p>条线主管领导</p>
+	<p>审&nbsp;&nbsp;批&nbsp;&nbsp;意&nbsp;&nbsp;见</p>
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	</td>
+</tr>
+<tr>
+	<td colspan="2" align="center" valign="middle" style="font-size:18px;line-height:45px;border:1px solid ;">
+	<p>主要领导</p>
+	<p>审批意见</p>
+	</td>
+	<td colspan="2" style="border:1px solid ;"> 
+	</td>
+</tr>
+<tr>
+	<td colspan="2" rowspan="3" align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	<p>党&nbsp;&nbsp;政&nbsp;&nbsp;办</p>
+	<p>安排情况</p>
+	</td>
+	<td align="center" valign="middle" style="width:160px;font-size:18px;line-height:35px;border:1px solid ;">
+	会议室
+	</td>
+	<td style="width:559px"> 
+	<input type="text" id="hys" name="hys" style="width:350px;" zname="会议室" />
+	</td>
+</tr>
+<tr>
+
+	<td align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	<p>就餐</p>
+	<p>地点</p>
+	</td>
+	<td > 
+	 <textarea style="width:350px;height: 50px;;line-height:30px" id="jcdd" name="jcdd" zname="就餐地点"></textarea>
+	</td>
+</tr>
+<tr>
+	<td align="center" valign="middle" style="font-size:18px;line-height:35px;border:1px solid ;">
+	<p>就餐</p>
+	<p>标准</p>
+	</td>
+	<td > 
+	 <textarea style="width: 350px;height: 50px;;line-height:30px" id="jcbz" name="jcbz" zname="就餐标准"></textarea>
+	</td>
+</tr>
+</table>
+</div>
+<INPUT userdefine=hidden id="instanceId" name="instanceId" value=""> 
+<INPUT userdefine=hidden id="formId" name="formId" value=""> 
+<INPUT userdefine=hidden id="workFlowId" name="workFlowId" value="">   
+<INPUT userdefine=hidden id="processId" name="processId" value=""> 
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Microsoft YaHei";
+}
+div {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.clearfix:after {
+  display: block;
+  content: ".";
+  visibility: hidden;
+  height: 0;
+  clear: both;
+}

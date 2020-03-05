@@ -1,0 +1,9 @@
+/*设置左边通用树的图片*/
+.filetree li { padding: 3px 0 2px 16px; }
+.filetree span.folder, .filetree span.file { padding: 1px 0 1px 16px; display: block; }
+.filetree span.folder { background: url(../imgs/tree/folder-open.png) 0 0 no-repeat; }  /*节点打开时显示的图片*/
+.filetree li.expandable span.folder { background: url(../imgs/tree/folder-closed.png) 0 0 no-repeat; } /*节点关闭时显示的图片*/ 
+.filetree span.file { background: url(../imgs/tree/file.png) 0 0 no-repeat; }
+
+
+

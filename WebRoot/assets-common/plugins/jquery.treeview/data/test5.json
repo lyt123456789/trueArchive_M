@@ -1,0 +1,24 @@
+[
+	{
+		"text":"<b class='checkbox'></b><a  data-id='{CUSTOM-0001}' href='javascript:;'>常用联系人A</a>",
+		"id":"{CUSTOM-0001}",
+		"expanded":true,
+		"hasChildren":true,
+		"classes":"folder",
+		"children":[
+			{"text":"<b class='checkbox'></b><a data-id='{BFA8003A-FFFF-FFFF-F33C-EB2F00000023}' href='javascript:;' >蒋烽</a>","id":"{BFA8003A-FFFF-FFFF-F33C-EB2F00000023}","hasChildren":false,"classes":"file"},
+			{"text":"<b class='checkbox'></b><a data-id='{BFA8003A-0000-0000-58E3-E2E000000044}' href='javascript:;' >龚超</a>","id":"{BFA8003A-0000-0000-58E3-E2E000000044}","hasChildren":false,"classes":"file"}
+		]
+	},
+	{
+		"text":"<b class='checkbox'></b><a  data-id='{CUSTOM-0001}' href='javascript:;'>常用联系人B</a>",
+		"id":"{CUSTOM-0002}",
+		"expanded":true,
+		"hasChildren":true,
+		"classes":"folder",
+		"children":[
+			{"text":"<b class='checkbox'></b><a data-id='{BFA8003A-FFFF-FFFF-F33C-EB2F00000023}' href='javascript:;' >蒋烽</a>","id":"{BFA8003A-FFFF-FFFF-F33C-EB2F00000023}","hasChildren":false,"classes":"file"},
+			{"text":"<b class='checkbox'></b><a data-id='{BFA8003A-FFFF-FFFF-F315-1ED900000008}' href='javascript:;' >朱慧</a>","id":"{BFA8003A-FFFF-FFFF-F315-1ED900000008}","hasChildren":false,"classes":"file"}
+		]
+	}
+]

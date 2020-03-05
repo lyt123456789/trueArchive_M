@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="archives" extends="common-default">
+		<action name="using_*" class="cn.com.trueway.archives.using.action.ArchiveUsingAction" method="{1}">
+		    <result name="toshowNode">/WEB-INF/pages/archives/using/showNode.jsp</result>
+		    <result name="toshowBasicdata">/WEB-INF/pages/archives/using/showBasicdata.jsp</result>
+		    <result name="addBasicData">/WEB-INF/pages/archives/using/addBasicData.jsp</result>
+		    <result name="updateBaiscData">/WEB-INF/pages/archives/using/updateBasicData.jsp</result>
+		     <result name="showUsingForm">/WEB-INF/pages/archives/using/usingForm.jsp</result>
+		     <result name="LendingList">/WEB-INF/pages/archives/using/lendingList.jsp</result>
+		     <result name="toVerifyJsp">/WEB-INF/pages/archives/using/verifyJsp.jsp</result>
+		     <result name="addUsingForm">/WEB-INF/pages/archives/using/addUsingForm.jsp</result>
+		     <result name="fjList">/WEB-INF/pages/archives/using/fjList.jsp</result>
+		     <result name="scanJsp">/WEB-INF/pages/archives/using/scanJsp.jsp</result>
+		     <result name="transferListJsp">/WEB-INF/pages/archives/using/transferListJsp.jsp</result>
+			<result name="transferForm">/WEB-INF/pages/archives/using/transferForm.jsp</result>
+			<result name="transferFormDetail">/WEB-INF/pages/archives/using/transferFormDetail.jsp</result>
+		</action>
+		
+		<action name="dataUsing_*" class="cn.com.trueway.archives.using.action.DataUsingAction" method="{1}">
+		    <result name="toSearchJsp">/WEB-INF/pages/archives/using/searchJsp.jsp</result>
+		    <result name="modelMenu4Key">/WEB-INF/pages/archives/using/modelMenu4Key.jsp</result>
+		</action>
+	</package>
+</struts>

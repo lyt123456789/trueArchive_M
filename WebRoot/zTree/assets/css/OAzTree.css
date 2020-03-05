@@ -1,0 +1,532 @@
+/* reset */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+p,
+blockquote,
+pre,
+hr,
+figure,
+table,
+caption,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+menu {
+  margin: 0;
+  padding: 0;
+}
+header,
+footer,
+section,
+article,
+aside,
+nav,
+hgroup,
+address,
+figure,
+figcaption,
+menu,
+details {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption,
+th {
+  text-align: left;
+  font-weight: normal;
+}
+html,
+body,
+fieldset,
+img,
+iframe,
+abbr {
+  border: 0;
+}
+i,
+cite,
+em,
+var,
+address,
+dfn {
+  font-style: normal;
+}
+[hidefocus],
+summary {
+  outline: 0;
+}
+li {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small {
+  font-size: 100%;
+}
+sup,
+sub {
+  font-size: 83%;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: inherit;
+}
+q:before,
+q:after {
+  content: none;
+}
+textarea {
+  overflow: auto;
+  resize: none;
+}
+label,
+summary {
+  cursor: default;
+}
+a,
+button {
+  cursor: pointer;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+em,
+strong,
+b {
+  font-weight: bold;
+}
+del,
+ins,
+u,
+s,
+a,
+a:hover {
+  text-decoration: none;
+}
+body,
+textarea,
+input,
+button,
+select,
+keygen,
+legend {
+  font: 12px/1.14 arial, \5b8b\4f53;
+  color: #333;
+  outline: 0;
+}
+body {
+  background: #fff;
+}
+a,
+a:hover {
+  color: #333;
+}
+::-webkit-scrollbar-track-piece {
+  background: #fff;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track-piece {
+  background: -webkit-gradient(linear, left);
+}
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:horizontal {
+  border-radius: 3px;
+  background: #bdbdbd;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8e8e8e;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #828181;
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+ul,
+li,
+a,
+span,
+i,
+div,
+p,
+button,
+select {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tw-usertree-choice .tw-usertree-select .tw-mod {
+  /* padding-bottom: 20px; */
+  margin-bottom: 0;
+}
+.tw-usertree-choice .tw-usertree-select .tw-mod .tw-bd {
+  padding: 10px;
+}
+.tw-search-bar {
+  padding: 6px 10px 10px 2px;
+}
+.ztree * {
+  font-size: 14px;
+}
+.ztree li {
+  padding: 0;
+  line-height: 1.5;
+  min-height: 30px;
+}
+.ztree li span {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+}
+.ztree li span.button {
+  width: 20px;
+  height: 30px;
+  display: inline-block;
+}
+.ztree li span.button.switch {
+  width: 20px;
+  height: 30px;
+  display: inline-block;
+}
+.ztree li span.button.chk {
+  width: 20px;
+  height: 30px;
+  display: inline-block;
+}
+/*file icon*/
+.ztree li span.button.ico_docu {
+  background-image: none;
+  width: 0;
+}
+.ztree li a {
+  padding: 2px 3px 0 0;
+  height: 26px;
+}
+.ztree li a:hover {
+  text-decoration: none;
+}
+.ztree li a.curSelectedNode {
+  background: 0 0;
+  border: none;
+  padding: 2px 3px 0 0;
+  opacity: 1;
+  height: 26px;
+  color: inherit;
+}
+/*folder icon*/
+.ztree li span.button.ico_open {
+  background-image: url(zTreeStyle/img/diy/dep.png);
+  background-position: 0 4px;
+}
+.ztree li span.button.ico_close {
+  background-image: url(zTreeStyle/img/diy/dep.png);
+  background-position: 0 4px;
+}
+.ztree li span.button.root_open {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 2px -113px;
+}
+.ztree li span.button.roots_open {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 4px -113px;
+}
+.ztree li span.button.bottom_open {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 4px -113px;
+}
+.ztree li span.button.root_close {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 2px -83px;
+}
+.ztree li span.button.roots_close {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 4px -83px;
+}
+.ztree li span.button.bottom_close {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 4px -83px;
+}
+.ztree li span.button.center_close {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 4px -83px;
+}
+.ztree li span.button.center_open {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 4px -113px;
+}
+.ztree li span.button.chk.checkbox_false_full {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 0 5px;
+}
+.ztree li span.button.chk.checkbox_false_full_focus {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 0 5px;
+}
+.ztree li span.button.chk.checkbox_true_full {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 0 -24px;
+}
+.ztree li span.button.chk.checkbox_true_full_focus {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 0 -24px;
+}
+.ztree li span.button.chk.checkbox_true_part {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 0 -54px;
+}
+.ztree li span.button.chk.checkbox_true_part_focus {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 0 -54px;
+}
+.ztree li span.button.chk.checkbox_false_disable {
+  background-image: url(zTreeStyle/img/diy/tree.png);
+  background-position: 0 -144px;
+}
+/*line icon*/
+.ztree li span.button.center_docu {
+  height: 30px;
+  background-image: url(zTreeStyle/img/diy/treeview-default-line.png);
+  background-position: 4px 1px;
+}
+.ztree li span.button.bottom_docu {
+  height: 30px;
+  background-image: url(zTreeStyle/img/diy/treeview-default-line.png);
+  background-position: 4px -1760px;
+}
+.ztree li ul.line {
+  background: url(zTreeStyle/img/diy/connect-line.png) 4px 0 repeat-y;
+}
+/*--------------------usertree-------------------*/
+.tw-gear {
+  display: inline-block;
+  margin-left: 5px;
+  width: 14px;
+  height: 14px;
+  background: url(../img/gear.png) left center no-repeat;
+  vertical-align: middle;
+}
+.tw-usertree-wrap {
+  padding: 10px;
+}
+.tw-usertree-left {
+  float: left;
+  overflow: hidden;
+  width: 25%;
+}
+.tw-usertree-right {
+  float: right;
+  overflow: hidden;
+  width: 75%;
+}
+.tw-usertree-group {
+  height: auto;
+  border: #bdbdbd 1px solid;
+}
+.tw-usertree-topbar {
+  margin-bottom: 10px;
+  height: 34px;
+  font-size: 16px;
+  line-height: 34px;
+}
+.tw-treeview {
+  display: inline-block;
+  margin-top: -5px;
+  margin-right: 5px;
+  width: 12px;
+  height: 16px;
+  background: url(../img/treeview-default.png) -80px 0 no-repeat;
+  vertical-align: middle;
+}
+.tw-usertree-group .tw-hd {
+  padding: 0 10px;
+  height: 34px;
+  border-bottom: 1px solid #bdbdbd;
+  background: #f7f7f7;
+  line-height: 34px;
+}
+.tw-usertree-group .tw-hd .tw-title {
+  float: left;
+  height: 34px;
+  font-size: 12px;
+  line-height: 34px;
+}
+.tw-usertree-group .tw-hd .tw-more {
+  float: right;
+  height: 34px;
+  line-height: 34px;
+}
+.tw-usertree-group .tw-bd {
+  padding: 10px;
+}
+.tw-usertree-group .tw-bd ul li {
+  padding: 0 5px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+}
+.tw-usertree-group .tw-bd ul li a {
+  font-size: 16px;
+}
+.tw-more i {
+  margin-top: 2px;
+  padding: 0 3px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.tw-more i.tw-icon-pencil {
+  color: #1ba8e2;
+}
+.tw-more i.tw-icon-plus-circle {
+  color: #e79535;
+}
+.tw-usertree-group .tw-icon-trash {
+  color: #f45e5e;
+}
+.tw-usertree-group .tw-usertree-del {
+  float: right;
+  display: none;
+  margin-top: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.tw-usertree-group .tw-bd ul li.active,
+.tw-usertree-group .tw-bd ul li.gray {
+  background: #f1f1f1;
+}
+.tw-usertree-group .tw-bd ul li.active a,
+.tw-usertree-group .tw-bd ul li.gray a {
+  color: #1b74c1;
+}
+.tw-usertree-topbar {
+  margin-left: 2%;
+}
+.tw-usertree-box {
+  width: 100%;
+  height: auto;
+  background: url(../img/user-tree-arrow.png) no-repeat center center;
+}
+.tw-usertree-list {
+  float: left;
+  margin-left: 2%;
+  width: 96%;
+  height: 100%;
+/*border:1px solid #bdbdbd*/ }
+.tw-usertree-select {
+  float: right;
+  margin-right: 2%;
+  width: 45%;
+  height: 100%;
+}
+.tw-usertree-select .tw-mod {
+  margin-bottom: 10px;
+  height: 100%;
+  border: 1px solid #bdbdbd;
+}
+.tw-usertree-topbar .tw-form-text {
+  width: 35%;
+}
+.tw-usertree-list-style .hd,
+.tw-usertree-select .tw-hd {
+  padding: 0 10px;
+  height: 34px;
+  border-bottom: 1px solid #bdbdbd;
+  background: #f7f7f7;
+  font-size: 12px;
+  line-height: 34px;
+}
+.tw-usertree-select .tw-hd span {
+  color: #4d8ad4;
+  font-weight: 400;
+}
+.tw-usertree-select .tw-hd .fr {
+  height: 34px;
+  line-height: 34px;
+  cursor: pointer;
+}
+.tw-usertree-list .bd,
+.tw-usertree-select .tw-bd {
+  padding: 10px;
+}
+.tw-usertree-search .tw-form-text {
+  width: 70%;
+}
+.tw-usertree-list-style {
+  height: 100%;
+  width: 45%;
+  margin-left: 2%;
+  float: left;
+  border: 1px solid #bdbdbd;
+}
+.tw-usertree-list-style .bd,
+.tw-usertree-select .tw-bd {
+  padding: 10px;
+}
+.tw-usertree-list {
+  border: 0 !important;
+  width: 100%;
+}
+.tw-usertree-group .tw-bd ul li a {
+  font-size: 14px;
+  color: #000;
+}
+.tw-usertree-group .tw-bd {
+  overflow-y: auto;
+}
+.tw-usertree-group .tw-bd ul li a {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 92%;
+  white-space: nowrap;
+  height: 30px;
+  line-height: 30px;
+}
+.tw-usertree-group .tw-bd ul li {
+  position: relative;
+  overflow: hidden;
+}
+.tw-usertree-group .tw-usertree-del {
+  position: absolute;
+  right: 5px;
+  top: 0;
+}
+/*# sourceMappingURL=OAzTree.css.map */

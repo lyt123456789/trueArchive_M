@@ -1,0 +1,101 @@
+.sug-name-wrap,
+.sug-link-wrap,
+.sug-button {
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: top;
+}
+.sug-name,
+.sug-link {
+    height: 28px;
+    line-height: 28px\0;
+    padding-top: 2px;
+}
+.sug-name,
+.sug-link {
+    width: 205px;
+    padding-left: 11px;
+    margin-left: 25px;
+    outline: none;
+    font-size: 13px;
+    border: 1px solid #cecece;
+}
+.sug-link {
+    width: 440px;
+    margin-left: 10px;
+}
+.sug-button {
+    height: 28px;
+    line-height: 28px;
+    width: 100px;
+    margin-left: 10px;
+    text-align: center;
+    color: #fff;
+    background-color: #38f;
+    cursor: pointer;
+}
+.sug-button:hover {
+    background-color: #07f;
+}
+.tw-pannel-content .tw-sug-content {
+    height: 80px;
+    width: 100%;
+    padding-top: 24px;
+    background-color: #f8f8f8;  
+}
+.tw-recom-content {
+    width: 100%;
+    text-align: center;
+}
+.one-class {
+    margin-top: -1px;
+    border-top: 1px solid #f5f5f5;
+    padding-bottom: 17px;
+}
+.class-title {
+    line-height: 50px;
+}
+.class-title,
+.class-recoms {
+    width:794px;
+    margin:0 auto;
+    text-align: left;
+}
+.recom-item {
+    display: inline-block;
+    zoom: 1;
+    width: 158px;
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+.recom-icon,
+.recom-text {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: middle;
+}
+.recom-icon {
+    height: 14px;
+    width: 14px;
+    background: url(../img/mine_set.png) no-repeat -16px -28px;
+}
+.item-added .recom-icon {
+    background-position: -32px -28px;
+}
+.recom-item:hover .recom-icon {
+    background-position: 0 -28px;
+}
+.recom-text {
+    margin-left: 10px;
+    width: 130px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

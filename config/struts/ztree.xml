@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="ztree" extends="common-default">
+		<action name="ztree_*" class="cn.com.trueway.workflow.set.action.PeopleTreeAction" method="{1}">
+			<result name="departmentTree">/WEB-INF/pages/workflow/zTree/departmentTree.jsp</result>
+			<result name="setUserGroup">/WEB-INF/pages/workflow/zTree/setUserGroup.jsp</result>
+			<result name="setLeader">/WEB-INF/pages/workflow/zTree/setLeader.jsp</result>
+			<result name="getCommonUseGroupList">/WEB-INF/pages/workflow/zTree/getCommonUseGroupList.jsp</result>
+			<result name="toAddCommonUseGroup">/WEB-INF/pages/workflow/zTree/addCommonUseGroup.jsp</result>
+			<result name="toUpdateCommonUseGroup">/WEB-INF/pages/workflow/zTree/updateCommonUseGroup.jsp</result>
+			<result name="toUserGroupList">/WEB-INF/pages/workflow/zTree/userGroupList.jsp</result>
+			<result name="departmentTreeNew">/WEB-INF/pages/workflow/zTree/departmentTreeNew.jsp</result>
+			<result name="showAllDeptTree">/WEB-INF/pages/workflow/zTree/showAllDeptTree.jsp</result>
+			<result name="departmentTreeDb">/WEB-INF/pages/workflow/zTree/departmentTreeDb.jsp</result>
+			<result name="departmentTreeQy">/WEB-INF/pages/workflow/zTree/departmentTreeQy.jsp</result>
+			
+		</action>
+	</package>
+</struts>

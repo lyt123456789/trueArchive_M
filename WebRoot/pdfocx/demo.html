@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo</title>
+</head>
+<body>
+<div style="width:1024px;margin:0 auto;">
+    <input TYPE="button" value="获得数据" onclick="getActiveData()"/>
+    <input TYPE="button" value="上一页" onclick="PreviousPage()"/>
+    <input TYPE="button" value="下一页" onclick="NetPage()"/>
+    <input TYPE="button" value="获得页码" onclick="GetPageCount()"/>
+    <br/>
+    <div id="hideform"></div>
+    <div id="OBJECTbox"></div>
+</div>
+<script src="jquery.min.1.7.2.js"></script>
+<script src="1.js"></script>
+<script language="javascript">
+var jsonurl='http://61.155.85.77:8902/trueWorkFlow/table_getFormValueOfMobile.do?userId={BFA811EA-0000-0000-4554-7F8B000002CB}&workflowId=D7148E14-F185-4807-A044-09FD741227AB&nodeId=3F1B002C-0038-4B33-B0E5-31DE619EDE74&instanceId=FC0E8AB5-B71F-4BEC-AF91-E418B310AD26&processId=C8505818-4A1B-4DBC-B097-3C7DDACBBE34&formId=F83EA553-A3D3-40B7-809C-881EE764C80D';
+var pdfurl='http://61.155.85.77:8902/trueWorkFlow/template_getWordForMobile.do?nodeId=3F1B002C-0038-4B33-B0E5-31DE619EDE74&instanceId=FC0E8AB5-B71F-4BEC-AF91-E418B310AD26';
+/**
+$.ajax({
+    url: url,
+    type: 'GET',
+    dataType: 'json',
+    timeout: 1000,
+    error: function(){
+        alert('Error loading json document');
+    },
+    success: function(data){
+        alert(data);
+        createForm(fjson);
+    }
+});
+**/
+/**
+* 当前节点用户信息
+**/
+var sendjson={
+      "processesid":"过程ID",
+      "userid":"用户id",
+      "username":"用户名",
+      "realname":"真实姓名",
+      "sendtime":"提交时间",
+      "datas":[]
+  };
+var cpage=1;
+
+setActiveData();
+
+
+/**
+* 获取用户输入的信息
+**/
+function getActiveData()
+{
+    var Data = ShowData.GetData();
+    var cdata=eval('('+Data+')');
+    sendjson.datas=Data;
+    alert(sendjson);
+}
+/**
+* 输入true文件信息
+**/
+function setActiveData()
+{
+    $('#OBJECTbox').html('<OBJECT id="ShowData" classid="clsid:ECCC5C8C-8DA0-4FAC-935A-CD5229A14BD7" width="1024" height="1448"></OBJECT>');
+    
+    var sjson = tjson;
+    //var sImage = "http://192.168.0.52/file.pdf";
+    var sImage = pdfurl;
+    ShowData.SetPDFUrl(sImage);
+    ShowData.SetJsonData(sjson);
+}
+/**
+* 下一页
+**/
+function NetPage()
+{
+    cpage++;
+    ShowData.NetPage();
+    var sjson = "";
+    ShowData.SetJsonData(sjson);
+}
+/**
+* 上一页
+**/
+function PreviousPage()
+{
+    cpage--;
+    ShowData.PreviousPage();
+}
+/**
+* 获得页码
+**/
+function GetPageCount()
+{
+    alert(ShowData.GetPageCount());
+    return ShowData.GetPageCount();
+}
+/**
+* 创建表单form
+**/
+function createForm(json){
+    var formjson=json[0];
+    //意见元素
+    //var ceList=formjson.ceList;
+    //表单元素
+    var feList=formjson.feList
+        i=0,l=feList.length;
+    var formhtml=[];
+    for(;i<l;i++){
+        if(feList[i].limit==2){
+            switch(feList[i].type){
+                case "text":
+                    formhtml.push('<lebel for="'+feList[i].name+'">'+feList[i].chinese+'</label><input name="'+feList[i].name+'" id="'+feList[i].name+'" value="'+feList[i].value+'" type="text" />');
+                break;
+                case "date":
+                    var d=new Date();
+                    var t=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate()+' '+d.getHours()+':'+d.getMinutes();
+                    formhtml.push('<lebel for="'+feList[i].name+'">'+feList[i].chinese+'</label><input name="'+feList[i].name+'" id="'+feList[i].name+'" value="'+t+'" type="text" />');
+                break;
+            };
+        }
+    }
+    $('#hideform').html(formhtml.join(''));
+}
+
+
+</script>
+</body>
+</html>
+
+
+

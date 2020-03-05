@@ -1,0 +1,458 @@
+<html>
+    
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:blue;}
+.infotan{width: 820px;margin:0 auto; border-color:blue;} 
+.infotan td{align="center";height:30px;font-size:18px;border:1px #333 solid;padding:5px;color:blue;border-color:blue;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+var zsid= document.getElementById("zsid").value;
+var zsdw = document.getElementById("zsdw").value;
+var value = zsid+"*"+ zsdw ;
+value = encodeURI(value);
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zsdw").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+var csid= document.getElementById("csid").value;
+var csdw = document.getElementById("csdw").value;
+var value = csid+"*"+ csdw ;
+value = encodeURI(value);
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("csdw").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+
+
+</script>
+<!--以上必须-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+
+<body>
+	<div class="warp">
+		<table class="infotan" width=819px cellspacing="0" align="center" style="border-top:2px solid blue;">
+			<caption>
+				<br/>
+				 <p style="font-size:40px;line-height:35px; color:blue; text-align:center;padding-top:30px;">
+				   <strong >
+                                      建设用地规划许可证办理工作单
+			           </strong>
+				</p>
+				
+					<p>&nbsp;</p><p>&nbsp;</p>
+                         <span style="float:left;color:blue;">归档号：<input type="text" id="gdh" name="gdh" zname="归档号" value=""/></span>
+                         <span style="float:right;color:blue;">规土许：<input type="text" id="gtx" name="gtx" zname="规土许" value=""/></span>
+                          
+			</caption>
+                        <tr>
+                           <td >受理编号&nbsp;&nbsp;<input type="text" id="slbh" name="slbh" znama="受理编号"/></td>
+                           <td colspan="2" >收件日期&nbsp;&nbsp;<textarea id="sjrq" name="sjrq" style="width:80px; height:45px;text-align:left;" zname="收件日期"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /></textarea></td>
+                           <td >承诺办件日期&nbsp;&nbsp;<textarea id="cnbjrq" name="cnbjrq" style="width:80px; height:45px;text-align:left;" zname="承诺办件日期"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /></textarea></td>
+                        </tr>
+                        <tr>
+                           <td >建设单位</td>
+                           <td colspan="2" > <input type="text" id="jsdw" name="jsdw" znama="建设单位"/> </td>
+                           <td>报建员&nbsp;&nbsp;<input type="text" id="bjy" name="bjy" znama="报建员"/></td>
+                          </tr>
+                         <tr>
+                           <td  >项目名称</td>
+                           <td colspan="2" > <input type="text" id="xmmc" name="xmmc" znama="项目名称"/> </td>
+                           <td>联系电话&nbsp;&nbsp;<input type="text" id="lxdh" name="lxdh" znama="联系电话"/></td>
+                          </tr>
+                          <tr>
+                           <td  >建筑地点</td>
+                           <td colspan="2" > <input type="text" id="jzdd" name="jzdd" znama="建筑地点"/> </td>
+                           <td>缓办日期&nbsp;&nbsp;<textarea id="cnbjrq" name="cnbjrq" style="width:80px; height:45px;text-align:left;" zname="承诺办件日期"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /></textarea></td>
+                          </tr>
+                          <tr>
+                           <td >现状用地性质</td>
+                           <td width=""> 
+                                <span>
+				<select id="xzydxz" name="xzydxz" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                           <td >与现状地形图</td>
+                           <td width=""> 
+                                <span>
+				<select id="yxzdxt" name="yxzdxt" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td >与选址阶段情况</td>
+                           <td width=""> 
+                                <span>
+				<select id="yxzjdqk" name="yxzjdqk" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                           <td >其它影响因素</td>
+                           <td width=""> 
+                                <span>
+				<select id="qtyxys" name="qtyxys" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td colspan="2">建、构筑物拆除情况</td>
+                           
+                           
+                           <td colspan="2" width=""> 
+                                <span>
+				<select id="jgzwccqk" name="jgzwccqk" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                         <tr>
+                           <td >用地范围</td>
+                           <td width=""> 
+                                <span>
+				<select id="ydfw" name="ydfw" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                           <td >用地性质</td>
+                           <td width=""> 
+                                <span>
+				<select id="ydxz1" name="ydxz1" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td >选址意见书</td>
+                           <td width=""> 
+                                <span>
+				<select id="xzyjs" name="xzyjs" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                           <td >相关批准规划</td>
+                           <td width=""> 
+                                <span>
+				<select id="xgpzgh" name="xgpzgh" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td colspan="2">其他部门意见</td>
+                           <td colspan="2" width=""> 
+                                <span>
+				<select id="qtbmyj" name="qtbmyj" style="height: 24px;width: 170px;" >
+				<option value="0" >未处理</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td >用地位置</td>
+                           <td colspan="3" width=""> 
+                                <input type="text" id="ydwz" name="ydwz" znama="用地位置"/>
+                           </td>
+                          </tr>
+                          <tr>
+                           <td >用地面积</td>
+                           <td colspan="3" width=""> 
+                                <input type="text" id="ydmj" name="ydmj" znama="用地面积"/>
+                           </td>
+                          </tr>
+                            <tr>
+                           <td >用地性质</td>
+                           <td colspan="3" width=""> 
+                                <input type="text" id="ydxz2" name="ydxz2" znama="用地性质2"/>
+                           </td>
+                          </tr>
+                            <tr>
+                           <td >建筑规模</td>
+                           <td colspan="3" width=""> 
+                                <input type="text" id="jzgm" name="jzgm" znama="建筑规模"/>
+                           </td>
+                          </tr>
+
+                           <tr>
+                           <td >附件及附图名称</td>
+                           <td colspan="3" width=""> 
+                              <textarea id="fjname" name="fjname" style="width:600px; height:50px;" zname="fjname"></textarea>                           </td>
+                          </tr>
+                           <tr>
+                           <td >基本意见</td>
+                           <td colspan="3" width=""> 
+                                <span>
+				<select id="jbyj" name="jbyj" style="height: 24px;width: 170px;" >
+				<option value="0" >准予许可</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td >详细意见</td>
+                           <td colspan="3" width=""> 
+                              <textarea id="xxyj" name="xxyj" style="width:600px; height:50px;" zname="fjname"></textarea>                           </td>
+                          </tr>
+                           <tr>
+                           <td >处室负责人审核意见</td>
+                           <td colspan="3" width=""> 
+                                <span>
+				<select id="csfzrshyj" name="csfzrshyj" style="height: 24px;width: 170px;" >
+				<option value="0" >原则同意</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                         <tr>
+                           <td >会办会结论</td>
+                           <td colspan="3" width=""> 
+                              <textarea id="hbhjl" name="hbhjl" style="width:600px; height:50px;" zname="fjname"></textarea>                           </td>
+                          </tr>
+                           <tr>
+                          <tr>
+                           <td >会办会结论意见</td>
+                           <td colspan="3" width=""> 
+                                <span>
+				<select id="hbhjlyj" name="hbhjlyj" style="height: 24px;width: 170px;" >
+				<option value="0" >原则同意</option>
+				<option value="1" >已处理</option>
+				<option value="2" >全部</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td >是否暂停</td>
+                           <td colspan="3" width=""> 
+                                <span>
+				<select id="sfzt" name="sfzt" style="height: 24px;width: 170px;" >
+				<option value="0" >是</option>
+				<option value="1" >否</option>
+				
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td >复核人意见</td>
+                           <td colspan="3" width=""> 
+                                <span>
+				<select id="fhryj" name="fhryj" style="height: 24px;width: 170px;" >
+				<option value="0" >同意</option>
+				<option value="1" >不同意</option>
+				<option value="2" >需改进</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td >批准人意见</td>
+                           <td colspan="3" width=""> 
+                                <span>
+				<select id="pzryj" name="pzryj" style="height: 24px;width: 170px;" >
+				<option value="0" >同意</option>
+				<option value="1" >不同意</option>
+				<option value="2" >需改进</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                          <tr>
+                           <td >建设单位反馈意见</td>
+                           <td colspan="3" width=""> 
+                                <span>
+				<select id="jsdwfkyj" name="jsdwfkyj" style="height: 24px;width: 170px;" >
+				<option value="0" >同意</option>
+				<option value="1" >不同意</option>
+				<option value="2" >需改进</option>
+				</select>
+				</span>	
+                           </td>
+                          </tr>
+                         <tr>
+                           <td >审查人<input type="text" id="scr" name="scr" zname="审查人"/></td>
+                           <td >审核人<input type="text" id="shr" name="shr" zname="审核人"/></td>
+                           <td >批准人<input type="text" id="pzr" name="pzr" zname="批准人"/></td>
+                           <td >制证人<input type="text" id="zzr" name="zzr" zname="制证人"/></td>
+                
+                          </tr>
+                          <tr>
+                           <textarea id="scrq" name="scrq" style="width:80px; height:45px;text-align:left;" zname="审查日期"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /></textarea>
+                           <textarea id="shrq" name="shrq" style="width:80px; height:45px;text-align:left;" zname="审核日期"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /></textarea>	                
+                           <textarea id="pzrq" name="pzrq" style="width:80px; height:45px;text-align:left;" zname="批准日期"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /></textarea>
+                           <textarea id="zzrq" name="zzrq" style="width:80px; height:45px;text-align:left;" zname="制证日期"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /></textarea>
+                          </tr>
+
+
+
+			</table>
+
+		
+		
+
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+	</div
+	><INPUT userdefine=hidden id="instanceId" name="instanceId" value="">
+	<INPUT userdefine=hidden id="formId" name="formId" value="">
+	<INPUT userdefine=hidden id="workFlowId" name="workFlowId" value="">
+	<INPUT userdefine=hidden id="processId" name="processId" value="">
+	<input userdefine=hidden id="keyword" name="keyword" value="空" />
+	<INPUT userdefine=hidden id="csid" name="csid" value="">
+	<INPUT userdefine=hidden id="zsid" name="zsid" value="">
+
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

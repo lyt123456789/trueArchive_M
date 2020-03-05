@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="specialAction" class="cn.com.trueway.mobileInterface.spacial.SpecialAction" singleton="false" autowire="byName">
+		<property name="specialService" ref="specialService" ></property>
+		<property name="tableInfoService" ref="tableInfoService" ></property>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService" ></property>
+		<property name="attachmentService" ref="attachmentService" ></property>
+		<property name="dictionaryService" ref="dictionaryService" ></property>
+		<property name="flowService" ref="flowService" ></property>
+	</bean>
+	
+	<bean id="tableForMobileAction" class="cn.com.trueway.mobileInterface.table.TableForMobileAction" singleton="false" autowire="byName">
+		<property name="tableInfoService" ref="tableInfoService" ></property>
+		<property name="pendingService" ref="pendingService" ></property>
+		
+	</bean>
+	
+</beans>
+	

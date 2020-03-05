@@ -1,0 +1,378 @@
+<html>
+    
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;  cellspacing:0}
+.infotan{width: 820px;margin:0 auto; } 
+.infotan td{height:30px;line-height:30px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:100px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+        <!--以下必须-->
+        <script type="text/javascript" defer="defer">
+            window.onload = function() {
+                var listValues = '<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+                var selects = '<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+                var limitValue = '<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+                var valuestr = '<%=request.getParameter("values")==null?"":request.getParameter("values")%>';
+                var instanceId = '${instanceId}';
+                if (instanceId.length != 13) tagvalues(listValues, selects, limitValue, valuestr, instanceId); //标签赋值，权限控制
+                if (instanceId.length == 13) {
+                    registerTag();
+                } //注册标签选中效果
+            };
+        </script>
+        <!--以上必须-->
+    </head>
+    
+    <body >
+        <div class="warp" >
+          
+            <table width="819" class="infotan" align="center">
+				<tr>
+					<td colspan="2" align="center">
+						<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+							<strong>染色工艺与管理试卷</strong>	</p>
+						</td>
+				</tr>
+				 <tr>
+                    <td width="665" height="72" align="right" style="font-size:18px">
+                        <div align="right">
+                           得分                        </div>                    </td>
+					 <td width="143" height="72"  class="tdcol docformTableNoBD" style="font-size:18px">
+                        <input type="text" id="num" name="num"   style="width:100px;height:23px" zname="得分" /></td>
+                </tr>
+				<tr>
+                    <td  height="72" style="font-size:18px;"  valign="middle" align="left" colspan="2">
+                        <div align="left">
+                            一、判断题    </div> </td>
+                </tr>
+				 <tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           1、为了提高活性染料的上染率，在上染过程中可采用提高染液温度的方法来达到． 
+						<select id="pd1" name="pd1" style="width:50px" zname="判断题1">
+							<option></option>
+							<option>√</option>
+							<option>X</option>
+                        </select> 
+						   </div> </td>
+                        
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           2、一般商品染料采用三段命名法，即冠称、署名、色称.
+						   <select id="pd2" name="pd2" style="width:50px" zname="判断题2">
+							<option></option>
+							<option>√</option>
+							<option>X</option>
+                           </select>    
+						   </div> 
+						   </td>
+       
+                </tr>
+				<tr>
+                    <td  height="72" align="left"  valign="middle" style="font-size:18px;"  colspan="2">
+                        <div align="left">
+                            二、单选题                        </div>                  </td>
+                </tr>
+				 <tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           1、下列染料染色的染品中，色泽最浓艳的是
+						   <select id="xz1" name="xz1" style="width:50px" zname="选择题1">
+							<option></option>
+							<option>A</option>
+							<option>B</option>
+							<option>C</option>
+							<option>D</option>
+                        </select>    
+						 </div> 
+						   </td>
+                   
+                                        
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (A) 直接染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (B) 硫化染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (C) 还原染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (D) 活性染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           2、下列染料中最适宜染中、淡色的是 
+						   <select id="xz2" name="xz2" style="width:50px" zname="选择题2">
+							<option></option>
+							<option>A</option>
+							<option>B</option>
+							<option>C</option>
+							<option>D</option>
+                        </select> 
+						 </div> 
+						 </td>
+                  
+                                        
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (A) 直接染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (B) 硫化染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (C) 还原染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (D) 活性染料                        </div>                    </td>   
+                </tr>
+				
+				<tr>
+                    <td  height="72" style="font-size:18px;"  valign="middle" align="left" colspan="2">
+                        <div align="left">
+                            三、多选题                        </div>                    </td>
+                </tr>
+				 <tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                          1、下列染料中，染色后不能用二甲基甲酰胺从织物上萃取下来的是
+						  <input type="checkbox" name="xz3">A
+						  <input type="checkbox" name="xz3">B
+						  <input type="checkbox" name="xz3">C
+						  <input type="checkbox" name="xz3">D
+						   </div> 
+						   </td>
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (A) 直接染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (B) 阳离子染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                          (C) 还原染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (D) 活性染料                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           2、红、黄、蓝三原色的余色分别为  
+						 <input type="checkbox" name="xz4">A
+						  <input type="checkbox" name="xz4">B
+						  <input type="checkbox" name="xz4">C
+						  <input type="checkbox" name="xz4">D
+						  </div> 
+						 </td>
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                          (A) 紫、绿、橙                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                          (B) 黑、棕、青                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (C) 绿、紫、橙                        </div>                    </td>   
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           (D) 绿、棕、橙                        </div>                    </td>   
+                </tr>
+				<tr>
+                    <td  height="72" style="font-size:18px;"  valign="middle" align="left" colspan="2">
+                        <div align="left">
+                            四、填空题                        </div>                    </td>
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           1、如果红、黄、蓝三原色等量拼混可得
+						   <input id="tk1" name="tk1" zname="填空1" type="text"  style="width:300px;"/>
+						                           </div>                    </td>
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           2、 能使染料摩尔吸光度由小变大的现象，称为
+						   <input id="tk2" name="tk2" zname="填空2" type="text" style="width:300px;"/>   </div>   </td>
+                  
+                </tr>
+				<tr>
+                    <td  height="72" style="font-size:18px;"  valign="middle" align="left" colspan="2">
+                        <div align="left">
+                            五、简答题                        </div>                    </td>
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                           1、酸性媒染染料染色时，常用的媒染剂是什么？具有哪些特性？  </div>   </td>
+                </tr>
+				<tr>
+				    <td height="42" valign="middle" style="font-size:18px;" align="left" colspan="2">
+                        <div align="left">
+                          <textarea name="jd1" cols="5" id="jd1" style="width: 720px; height: 185px;" zname="简答题1"></textarea>
+                        </div>                    </td>
+                </tr>
+            </table>
+    </div>
+        <INPUT type="hidden" id="instanceId" name="instanceId" value="">
+        <INPUT type="hidden" id="formId" name="formId" value="">
+        <INPUT type="hidden" id="workFlowId" name="workFlowId" value="">
+        <INPUT type="hidden" id="processId" name="processId" value="">
+	 <INPUT type="hidden" id="csid" name="csid" value="">
+	  <INPUT type="hidden" id="zsid" name="zsid" value="">
+    </body>
+    <script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js">
+    </script>
+    <script src="/trueWorkFlow/dwz/style/js/jquery.tab.js">
+    </script>
+    <script type="text/javascript">
+        //以下必须有
+        function loadCss() {
+            seajs.use('lib/form',
+            function() {
+                $('input[mice-btn]').cssBtn();
+                $('input[mice-input]').cssInput();
+                $('select[mice-select]').cssSelect();
+            });
+        }
+        //以上必须有
+        function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zs").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("cs").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+    </script>
+
+</html>

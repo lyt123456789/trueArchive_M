@@ -1,0 +1,96 @@
+/*css reset.css*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption,input{margin:0; padding:0; border:0; outline:0; font-weight:inherit; font-style:inherit; font-family:inherit;  vertical-align:baseline;}
+html,body{
+	height: 100%;
+}
+body{ font-family: 'microsoft yahei', Arial, sans-serif;  font-size:14px; color: #333;}
+ol, ul{ list-style:none}
+table{ border-collapse: collapse;}
+caption, th, td{ font-weight:normal}
+blockquote:before, blockquote:after,  q:before, q:after{ content:''}
+blockquote, q{quotes:""""}
+a{ text-decoration:none;color: inherit;}
+img{ border:0; max-width: 100%;}
+cite,b,em,i{ font-style:normal;}
+
+.clearfix:after{ content:"."; display:block; height:0; clear:both; visibility:hidden; font-size:0; line-height:0;}
+.clear {clear: both;}
+
+
+.cb{ clear:both; height:0; line-height:0; font-size:0;  overflow: hidden; }
+.inlineblock{ display: inline-block;}
+.w1200{ width: 1200px; margin: 0 auto; }
+.w1000{ width: 1000px; margin: 0 auto; }
+.fr{ float: right;}
+.fl{ float: left;}
+.rel{position: relative;}
+.abs{position: absolute;}
+.tc{text-align: center;}
+/* 边距*/
+.m0{ margin:0;}
+.mt5{ margin-top: 5px;}
+.mt10{ margin-top: 10px;}
+.mt15{ margin-top: 15px;}
+.mt20{ margin-top: 20px;}
+.mt25{ margin-top: 25px;}
+.mb5{ margin-bottom: 5px;}
+.mb10{ margin-bottom: 10px;}
+.mb15{ margin-bottom: 15px;}
+.mb20{ margin-bottom:20px;}
+.ml5{ margin-left: 5px;}
+.ml10{ margin-left: 10px;}
+.ml15{ margin-left: 15px;}
+.ml20{ margin-left:20px;}
+.ml30{ margin-left:30px;}
+.ml40{ margin-left:40px;}
+.mr5{ margin-right: 5px;}
+.mr10{ margin-right: 10px;}
+.mr15{ margin-right: 15px;}
+.mr20{ margin-right: 20px;}
+
+.p0{ padding: 0;}
+.pt5{ padding-top: 5px;}
+.pt10{ padding-top: 10px;}
+.pt15{ padding-top: 15px;}
+.pt20{ padding-top: 20px;}
+.pb5{ padding-bottom: 5px;}
+.pb10{ padding-bottom: 10px;}
+.pb15{ padding-bottom: 15px;}
+.pb20{ padding-bottom:20px;}
+.pl5{ padding-left: 5px;}
+.pl10{ padding-left: 10px;}
+.pl15{ padding-left: 15px;}
+.pl20{ padding-left:20px;}
+.pr5{ padding-right: 5px;}
+.pr10{ padding-right: 10px;}
+.pr15{ padding-right: 15px;}
+.pr20{ padding-right: 20px;}
+
+/* 文字颜色*/
+.c3{ color:#333;}
+.c6{ color:#666;}
+.c9{ color:#999;}
+.cf{ color:#fff;}
+.color_orange{ color:#dd5012;}
+.red-color{color: #ff0000;}
+
+/* 文字排列*/
+.tal{text-align: left;}
+.tac{text-align: center;}
+.tar{text-align: right;}
+
+/* 鼠标类型*/
+.cp{ cursor:pointer;}
+.cm{ cursor:move;}
+
+/* 背景颜色*/
+.bgf{ background: #fff;}
+.bgf2{ background: #f2f2f2;}
+
+/* 内容溢出*/
+.of{ overflow:auto;}
+.ofh{ overflow:hidden;}
+.ofx{ overflow:auto; overflow-x:hidden;}
+.ofy{ overflow:auto; overflow-y:hidden;}
+
+

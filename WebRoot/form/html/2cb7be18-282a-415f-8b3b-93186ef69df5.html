@@ -1,0 +1,132 @@
+<html>
+ <head> 
+  <title>表单元素说明</title> 
+  <!--以下必须--> 
+  <style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{
+	margin: 0;
+	padding: 0px;
+}
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "方正小标宋_GBK", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+small {
+	font-size: 12px;
+}
+ul,ol {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{line-height:30px;font-size:16px;border:1px #333 solid;padding:5px;text-align: left;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;}
+.infotan td select{width:120px;}
+.infotan td textarea{width:100%;height:180px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style> 
+  <script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script> 
+  <!--以上必须--> 
+  <style>
+.infotan td {
+	text-align:left;
+}
+.topinfotan td {
+	line-height: 30px;
+	text-align:left;
+        padding:8px;
+}
+</style> 
+ </head> 
+ <body> 
+  <center> 
+   <strong style="font-size:28px; font-family:华文中宋; color:red;">政府信息中心会议纪要稿纸</strong><br/>
+      <strong style="font-size:24px; font-family:华文中宋; color:black;">第&nbsp;<input style="width:48px;border-bottom:1px #cccccc dotted;" type="text" id="dc" name="dc" zname="第次" value="" />&nbsp;次&nbsp;</strong>
+	<br/>
+	<br/>
+  </center> 
+  <table class="infotan" width="819px" cellspacing="0" align="center" style="border-top:1px solid red;"> 
+   <tbody>
+    <tr> 
+     <td valign="middle" style="text-align:center;font-size:16px;height:100px;border:1px solid red; color:red; border-left:none" >分送</td> 
+     <td colspan="7" style="border:1px solid red; border-right:none"> 
+	 <textarea id="zs" name="zs" style="height:10px;"  zname="分送"></textarea>
+	 </td> 
+    </tr> 
+    <tr> 
+     <td valign="middle" style="text-align:center;font-size:16px;height:100px;border:1px solid red; color:red; border-left:none">签发</td> 
+     <td colspan="7" style="border:1px solid red; border-right:none"> 
+	 <textarea id="qf" name="qf" style="height:10px;" zname="签发"></textarea> 
+	 </td> 
+    </tr> 
+    <tr> 
+     <td valign="middle" style="text-align:center;font-size:16px;height:100px;border:1px solid red; color:red; border-left:none">会签</td> 
+     <td colspan="7" style="border:1px solid red; border-right:none"> 
+	 <textarea id="hq" name="hq" style="height:10px;" zname="会签"></textarea> 
+	 </td> 
+    </tr> 
+	   <tr> 
+     <td valign="middle" style="text-align:center;font-size:16px;height:100px;border:1px solid red; color:red; border-left:none">核稿</td> 
+     <td colspan="7" style="border:1px solid red; border-right:none"> 
+	 <textarea id="hg" name="hg" style="height:10px;" zname="核稿"></textarea> 
+	 </td> 
+    </tr>  
+	  <tr> 
+     <td  valign="middle" style="text-align:center;height:50px;border:1px solid red; color:red; border-left:none">记录整理</td> 
+     <td  colspan="3" style="border:1px solid red;"><input style="width=180px;" type="text" id="jlzl" name="jlzl" zname="记录整理" value="" /></td> 
+     <td valign="middle" style="text-align:center;font-size:16px; height:18px; border:1px solid red; color:red;">校对</td> 
+     <td colspan="3" style="border:1px solid red; border-right:none"> <input style="width=180px" type="text" id="jd" name="jd" zname="校对" value="" /> </td> 
+    </tr> 
+   </tbody>
+  </table> 
+  <input userdefine=hidden id="instanceId" name="instanceId" value="" /> 
+  <input userdefine=hidden id="formId" name="formId" value="" /> 
+  <input userdefine=hidden id="workFlowId" name="workFlowId" value="" /> 
+  <input userdefine=hidden id="processId" name="processId" value="" />  
+  <script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script> 
+  <script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script> 
+  <script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script> 
+ </body>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

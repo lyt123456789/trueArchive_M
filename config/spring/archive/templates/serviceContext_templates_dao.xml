@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="dataTempDao" class="cn.com.trueway.archives.templates.dao.impl.DataTempDaoImpl" scope="prototype"></bean>
+	<bean id="structureDao" class="cn.com.trueway.archives.templates.dao.impl.StructureDaoImpl" ></bean>
+	<bean id="businessManageDao" class="cn.com.trueway.archives.templates.dao.impl.BusinessManageDaoImpl" ></bean>
+	<bean id="metaDataDao" class="cn.com.trueway.archives.templates.dao.impl.MetaDataDaoImpl" ></bean>
+	<bean id="dataManageDao" class="cn.com.trueway.archives.templates.dao.impl.DataManageDaoImpl"></bean>
+	<bean id="dataReceptionDao" class="cn.com.trueway.archives.templates.dao.impl.DataReceptionDaoImpl"></bean>
+</beans>

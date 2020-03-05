@@ -1,0 +1,190 @@
+<html>
+<head>
+<title></title><style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{height:30px;border:1px #333 solid;padding:4px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:85%;}
+.infotan td select{width:60px;}
+
+</style>	
+		
+<!--以下必须-->
+<script type="text/javascript" defer>
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+.tt{
+	font-family:"方正大标宋简体";
+	font-size:22px;
+}
+.tl{
+font-family:"仿宋_GB2312";
+	text-align:center;
+	font-size:16px;
+}
+.tr{
+font-family:"仿宋_GB2312";
+	text-align:center;
+	font-size:16px;
+}
+</style>
+</HEAD>
+<body>
+	<div class="warp">	
+	<table class="infotan" width="819" cellspacing="0" align="center">		
+		<tr>
+			<td width="150" style="border:0px solid black;height:0px;"></td>
+			<td width="29" style="border:0px solid black;height:0px;"></td>
+			<td width="200" style="border:0px solid black;height:0px;"></td>
+			<td width="190" style="border:0px solid black;height:0px;"></td>
+			<td width="250" style="border:0px solid black;height:0px;"></td>			
+		</tr>
+		<tr>
+			<td colspan="5" class="tt" align="center" style="height:70px; border:0px solid black;">
+				国投公司年休假审批单
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" style="font-size:16px;text-align:right;border:0px;font-family:'楷体_GB2312';">年度</td>
+			<td class="tr" style="border:0px;">
+				<select id="nd" name="nd" zname="年度">
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="tl" style="height:80px;">姓&nbsp;&nbsp;名</td>
+			<td class="tl">
+				<textarea id="xm" name="xm" zname="姓名"></textarea>
+			</td>
+			<td class="tl">所在部门、单位</td>
+			<td class="tl">
+				<textarea id="szbm" name="szbm" zname="所在部门、单位"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="tl" rowspan="3">拟休假起止日期</td>
+			<td class="tl" style="border:0;height:55px">
+				<textarea id="nxjksrq" name="nxjksrq" zname="拟休假开始日期"></textarea>
+			</td>
+			<td rowspan="3" class="tl">拟休假天数</td>
+			<td rowspan="3" class="tl">
+				<textarea id="nxjts" name="nxjts" zname="拟休假天数"></textarea>
+			</td>
+		</tr>
+		<tr>			
+			<td style="text-align:center;height:10px;border:0">
+				~
+			</td>
+		</tr>
+		<tr>			
+			<td class="tl" style="height:55px;border-top:0px;">
+				<textarea id="nxjjsrq" name="nxjjsrq" zname="拟休假结束日期"></textarea>
+			</td>
+        </tr>
+		<tr>
+			<td colspan="2" class="tl" style="height:80px;">应休年假天数</td>
+			<td class="tl">
+				<textarea id="yxnjts" name="yxnjts" zname="应休年假天数"></textarea>
+			</td>
+			<td class="tl">本年度已休年假天数</td>
+			<td class="tl">
+				<textarea id="bndyxnjts" name="bndyxnjts" zname="本年度已休年假天数"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" style="height:260px;">部门、单位</br>负责人意见</td>
+			<td colspan="4"></td>			
+		</tr>
+		
+		<tr>
+			<td class="tl" style="height:260px;">分管领导</br>审批意见</td>
+			<td colspan="4"></td>	
+		</tr>
+		<tr>
+			<td class="tl" style="height:260px;">主要领导</br>审批意见</td>
+			<td colspan="4"></td>	
+		</tr>
+	</table>
+
+<div style="display:none">
+	<span id="fjshow"></span>
+	<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

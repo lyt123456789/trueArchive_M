@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="tableInfoAction" class="cn.com.trueway.workflow.core.action.TableInfoAction" singleton="false" autowire="byName">
+		<property name="tableInfoService" ref="tableInfoService" />
+		<property name="fieldInfoService" ref="fieldInfoService" />
+		<property name="zwkjFormService" ref="zwkjFormService" />
+		<property name="departmentService" ref="departmentService" />
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService" />
+		<property name="groupService" ref="groupService" />
+		<property name="pendingService" ref="pendingService"/>
+		<property name="formPermitService" ref="formPermitService"/>
+		<property name="formAction" ref="formAction"/>
+		<property name="docNumberService" ref="docNumberService"/>
+		<property name="docExchangeClient" ref="docExchangeClient"/>
+		<property name="commentService" ref="commentService"/>
+		<property name="serverPluginService" ref="serverPluginService"/>
+		<property name="templateService" ref="templateService"/>
+		<property name="labelService" ref="labelService"/>
+		<property name="dictionaryService" ref="dictionaryService"/>
+		<property name="attachmentService" ref="attachmentService"/>
+		<property name="itemRelationService" ref="itemRelationService"/>
+		<property name="employeeService" ref="employeeService"/>
+		<property name="dataBaseOracle" ref="dataBaseOracle"/>
+		<property name="employeeRoleService" ref="employeeRoleService"/>
+		<property name="selectTreeService" ref="selectTreeService"/>
+		<property name="sendDocService" ref="sendDocService"/>
+		<property name="fieldMatchingService" ref="fieldMatchingService"/>
+		<property name="docNumberManagerService" ref="docNumberManagerService"/>
+		<property name="meetingInfoService" ref="meetingInfoService" />
+		<property name="attachmentTypeService" ref="attachmentTypeService" />
+		<property name="flowService" ref="flowService" />
+		<property name="replayService" ref="replayService" />
+		<property name="employeeLeaderService" ref="employeeLeaderService" />
+		<property name="trueJsonService" ref="trueJsonService" />
+		<property name="exchangeReceiveService" ref="exchangeReceiveService" />
+		<property name="integrateService" ref="integrateService" /> 
+		<property name="tableInfoExtendService" ref="tableInfoExtendService" />
+		<property name="archiveWebService" ref="archiveWebService" />
+		<property name="businessService" ref="businessService" />
+		<property name="ztreeService" ref="ztreeService" />
+		<property name="thirdpartyInterfaceLogService" ref="thirdpartyInterfaceLogService" />
+	</bean>
+</beans>

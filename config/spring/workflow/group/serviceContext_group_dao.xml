@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="groupDao" class="cn.com.trueway.workflow.set.dao.impl.GroupDaoImpl">
+	</bean>
+	<bean id="employeeDao" class="cn.com.trueway.workflow.set.dao.impl.EmployeeDaoImpl">
+	</bean>
+	<bean id="departmentDao" class="cn.com.trueway.workflow.set.dao.impl.DepartmentDaoImpl">
+	</bean>
+	<bean id="ztreeDao" class="cn.com.trueway.workflow.set.dao.impl.ZtreeDaoImpl">
+	</bean>
+	<bean id="employeeSpellDao" class="cn.com.trueway.workflow.set.dao.impl.EmployeeSpellDaoImpl">
+	</bean>
+	<bean id="userNodesPermissionDao" class="cn.com.trueway.workflow.set.dao.impl.UserNodesPermissionDaoImpl">
+	</bean>
+	<bean id="menuDao" class="cn.com.trueway.sys.dao.impl.MenuDaoImpl"></bean>
+	
+	<bean id="roleDao" class="cn.com.trueway.sys.dao.impl.RoleDaoImpl"></bean>
+	
+	<bean id="menuRoleDao" class="cn.com.trueway.sys.dao.impl.MenuRoleDaoImpl"></bean>
+	
+	<bean id="roleUserDao" class="cn.com.trueway.sys.dao.impl.RoleUserDaoImpl"></bean>
+	
+	<bean id="roleEmployeeDao" class=" cn.com.trueway.sys.dao.impl.RoleEmployeeDaoImpl"></bean>
+</beans>

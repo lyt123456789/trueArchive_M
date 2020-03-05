@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence  
+    http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">  
+	
+	<persistence-unit name="persistenceUnit" transaction-type="RESOURCE_LOCAL">
+	
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<!-- workflow -->
+		<class>cn.com.trueway.document.Step</class>
+		<!-- business -->
+		<class>cn.com.trueway.document.business.model.CheckInRecDoc</class>
+		<class>cn.com.trueway.document.business.model.Depgroup</class>
+		<class>cn.com.trueway.document.business.model.ItemSelect</class>
+		<class>cn.com.trueway.document.business.model.Doc</class>
+		<class>cn.com.trueway.document.business.model.DocBw</class>
+		<class>cn.com.trueway.document.business.model.RecDoc</class>
+		<class>cn.com.trueway.document.business.model.DocXgDepartment</class>
+		<class>cn.com.trueway.document.business.model.RecShip</class>
+		
+		<!-- docxg -->
+		<class>cn.com.trueway.document.business.docxg.client.vo.GwDepart</class>
+		<class>cn.com.trueway.document.business.docxg.client.vo.GwDepartext</class>
+		<class>cn.com.trueway.document.business.docxg.client.vo.DepRelationShip</class>
+		<class>cn.com.trueway.document.business.docxg.client.vo.DocxgFieldMap</class>
+		<class>cn.com.trueway.document.business.model.ReceiveProcessShip</class>
+		<class>cn.com.trueway.document.business.model.ReceiveXml</class>
+		
+		<!-- component -->
+		<class>cn.com.trueway.document.component.docNumberManager.model.po.DocNumberDoc</class>
+		<class>cn.com.trueway.document.component.docNumberManager.model.po.DocNumberFlow</class>
+		<class>cn.com.trueway.document.component.docNumberManager.model.po.DocNumberModel</class>
+		<class>cn.com.trueway.document.component.docNumberManager.model.po.DocNumberStrategy</class>
+		<class>cn.com.trueway.document.component.docNumberManager.model.po.DocNumberType</class>
+		<class>cn.com.trueway.document.component.docNumberManager.model.po.DocNumberWhFw</class>
+		<class>cn.com.trueway.document.component.docNumberManager.model.po.DocNumberWhBw</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.ReceiveAttachments</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.ReceiveAttachmentsext</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.SendAttachments</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.SendAttachmentsext</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.SendAttachmentsHistory</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.Attachmentsext_type</class>
+		<class>cn.com.trueway.document.component.taglib.comment.model.po.Comment</class>
+		<class>cn.com.trueway.document.component.taglib.comment.model.po.CommentAtt</class>
+		<class>cn.com.trueway.document.component.taglib.comment.model.po.CommentMobile</class>
+		<class>cn.com.trueway.document.component.taglib.comment.model.po.PersonalComment</class>
+		<class>cn.com.trueway.document.component.docNumberManager.model.vo.DocNumber</class>
+		
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.AttachmentTypeFZ</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.AttachmentTypeBind</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.AttachmentTypeWfMainShip</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.AttachFileType</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.AttachmentTypeSub</class>
+		
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.CutPages</class>
+		
+		<!-- 短信发送-->
+		<class>cn.com.trueway.ldbook.pojo.MsgSend</class>
+		
+		<!-- database -->
+		<class>cn.com.trueway.workflow.core.pojo.WfTableInfo</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfFieldInfo</class>
+		
+		<!-- 类似于外网办件内容 -->
+		<class>cn.com.trueway.workflow.core.pojo.DzJcdb</class>
+		<class>cn.com.trueway.workflow.core.pojo.DzJcdbShip</class>
+		
+		<class>cn.com.trueway.workflow.core.pojo.TrueJson</class>
+		<class>cn.com.trueway.workflow.core.pojo.TrueJsonLog</class>
+
+		<!--  工作流主表-->
+		<class>cn.com.trueway.workflow.core.pojo.BasicFlow</class>
+		<!-- 节点 -->
+		<class>cn.com.trueway.workflow.core.pojo.Node</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfHistoryNode</class>
+		<!-- 路由 -->
+		<class>cn.com.trueway.workflow.core.pojo.SoftRoute</class>
+
+		<class>cn.com.trueway.workflow.core.pojo.Sw</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfTemplate</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfLabel</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfDictionary</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfCustomStatus</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfTest</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfItem</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfItemRelation</class>
+		<class>cn.com.trueway.workflow.core.pojo.ItemDepBinding</class>
+		<class>cn.com.trueway.workflow.core.pojo.DelayResult</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfFormPermit</class>
+		<class>cn.com.trueway.workflow.core.pojo.AttachmentType</class>
+		<class>cn.com.trueway.workflow.core.pojo.DoFile</class>
+		<class>cn.com.trueway.workflow.core.pojo.DoFileReceive</class>
+		<class>cn.com.trueway.workflow.core.pojo.DofileFavourite</class>
+		
+		<class>cn.com.trueway.workflow.core.pojo.PersonMessage</class>
+		<class>cn.com.trueway.workflow.core.pojo.Employee</class>
+		<class>cn.com.trueway.workflow.core.pojo.Department</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfCyName</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfBackNode</class>
+		<class>cn.com.trueway.workflow.core.pojo.PushMessage</class>
+		
+		<class>cn.com.trueway.workflow.core.pojo.Reply</class>
+		<class>cn.com.trueway.workflow.core.pojo.MonitorInfoBean</class>
+		
+		<class>cn.com.trueway.workflow.core.pojo.FileDownloadLog</class>
+		<!-- 表单 -->
+		<class>cn.com.trueway.workflow.set.pojo.FormTagMapColumn</class>
+		<class>cn.com.trueway.workflow.set.pojo.InnerUser</class>
+		<class>cn.com.trueway.workflow.set.pojo.EmployeeSpe</class>
+		<class>cn.com.trueway.workflow.set.pojo.EmployeeRole</class>
+		<class>cn.com.trueway.workflow.set.pojo.InnerUserMapEmployee</class>
+		<class>cn.com.trueway.workflow.set.pojo.ZwkjForm</class>
+		<class>cn.com.trueway.workflow.set.pojo.TagBean</class>
+		<class>cn.com.trueway.workflow.set.pojo.Procedure</class>
+		<class>cn.com.trueway.workflow.set.pojo.WfMainRole</class>
+		<class>cn.com.trueway.workflow.set.pojo.DepartmentLeader</class>
+		<class>cn.com.trueway.workflow.set.pojo.EmployeeLeaderShip</class>
+		<class>cn.com.trueway.workflow.set.pojo.EmployeeSpell</class>
+		<class>cn.com.trueway.workflow.set.pojo.FormStyle</class>
+		<class>cn.com.trueway.workflow.set.pojo.ThirdpartyInterfaceLog</class>
+		<!-- 流程定义相关实体 -->
+		<class>cn.com.trueway.workflow.core.pojo.WfMain</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfNode</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfLine</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfChild</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfXml</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfFiling</class>
+		
+		<class>cn.com.trueway.workflow.set.pojo.CommonGroup</class>
+		<class>cn.com.trueway.workflow.set.pojo.CommonGroupUsers</class>
+		
+		<class>cn.com.trueway.workflow.set.pojo.Leader</class>
+		
+		<!-- 数据中心 -->
+		<class>cn.com.trueway.workflow.core.pojo.BusModule</class>
+		<class>cn.com.trueway.workflow.core.pojo.DataDic</class>
+		<class>cn.com.trueway.workflow.core.pojo.DataDicTable</class>
+		<class>cn.com.trueway.workflow.core.pojo.DataDicMatch</class>
+		<class>cn.com.trueway.workflow.core.pojo.ColumnMapColumn</class>
+		<class>cn.com.trueway.workflow.core.pojo.DataDicColumnMatch</class>
+		<class>cn.com.trueway.workflow.core.pojo.ColumnPermit</class>
+		<class>cn.com.trueway.workflow.webService.pojo.WebServiceInfo</class>
+		
+		<!-- 表单 -->
+		<class>cn.com.trueway.workflow.set.pojo.Allow</class>
+		<class>cn.com.trueway.workClander.pojo.Workday</class>
+		
+		<!-- 待办实体 -->
+		<class>cn.com.trueway.workflow.core.pojo.Pending</class>
+		<class>cn.com.trueway.workflow.core.pojo.TodoMessage</class>
+		<class>cn.com.trueway.workflow.business.pojo.Library</class>
+		<class>cn.com.trueway.workflow.business.pojo.PressMsg</class>
+		
+		<class>cn.com.trueway.workflow.core.pojo.ReadedEndPending</class>
+		
+		
+		<class>cn.com.trueway.workflow.core.pojo.Pending1</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfProcess</class>
+		<class>cn.com.trueway.workflow.core.pojo.GetProcess</class>
+        <class>cn.com.trueway.workflow.core.pojo.EndInstanceId</class>
+		<!-- 协商实体 -->
+		<class>cn.com.trueway.workflow.core.pojo.WfConsult</class>
+		<class>cn.com.trueway.workflow.core.pojo.AssistMapEmployee</class>
+		
+		<class>cn.com.trueway.workflow.version.pojo.VersionManager</class>
+		
+		<class>cn.com.trueway.functions.car.entity.ClOut</class>
+		<class>cn.com.trueway.functions.meeting.entity.Chry4Out</class>
+		<class>cn.com.trueway.functions.meeting.entity.Hytz</class>
+		<class>cn.com.trueway.functions.meeting.entity.Chry</class>
+		<class>cn.com.trueway.functions.meeting.entity.Hyqj</class>
+		<class>cn.com.trueway.functions.meeting.entity.Sgtjhytz</class>
+		<class>cn.com.trueway.functions.workflow.entity.vo.Pend4BreezeVo</class>
+		
+		<!-- 服务器插件 -->
+		<class>cn.com.trueway.workflow.set.pojo.ServerPlugin</class>
+		<class>cn.com.trueway.workflow.set.pojo.UserGroup</class>
+		<!--extra-->
+		<class>cn.com.trueway.extra.meeting.bean.MeetingApply</class>
+		<class>cn.com.trueway.extra.meeting.bean.MeetingphoApply</class>
+		<class>cn.com.trueway.extra.meeting.bean.MeetingApplyOut</class>
+		
+		
+		<class>cn.com.trueway.workflow.core.pojo.Replay</class>
+		<class>cn.com.trueway.workflow.core.pojo.NoticeInfo</class>
+		
+		<!-- log 日志 -->
+		<class>cn.com.trueway.workflow.log.pojo.Log</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfRecallLog</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfDuBanLog</class>
+		<!-- 推送实体  -->
+		<class>cn.com.trueway.workflow.set.pojo.PushEntity</class>
+		
+		<class>cn.com.trueway.workflow.core.pojo.FollowShip</class>
+		<!-- 文号  -->
+		<class>cn.com.trueway.document.component.docNumberManager.model.po.DocNumOnlyWh</class>
+		<class>cn.com.trueway.workflow.business.pojo.HandRoundShip</class>
+		<class>cn.com.trueway.workflow.core.pojo.AccessLog</class>
+		
+		<class>cn.com.trueway.workflow.socket.pojo.SocketLog</class>
+		<class>cn.com.trueway.workflow.core.pojo.AutoSend</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfInterfaceCheck</class>
+		<!-- <class>cn.com.trueway.unifiledUserMng.entity.RoleUser</class> -->
+		<class>cn.com.trueway.workflow.core.pojo.OfficeInfoView</class>
+		<class>cn.com.trueway.workflow.core.pojo.WfOnlineEditStatus</class>
+		<class>cn.com.trueway.workflow.core.pojo.EmployeeLeave</class>
+		<class>cn.com.trueway.document.component.taglib.attachment.model.po.SendAttHistoryLog</class>
+		<!-- 档案利用系统 -->
+		<class>cn.com.trueway.archives.using.pojo.ArchiveNode</class>
+		<class>cn.com.trueway.archives.using.pojo.Basicdata</class>
+		<class>cn.com.trueway.archives.using.pojo.ArchiveMsg</class>
+		<class>cn.com.trueway.archives.using.pojo.Transferform</class>
+		<class>cn.com.trueway.archives.using.pojo.Transferstore</class>
+		<!-- 档案管理系统 -->
+		
+		<class>cn.com.trueway.sys.pojo.Menu</class>
+		<class>cn.com.trueway.sys.pojo.Role</class>
+ 		<class>cn.com.trueway.sys.pojo.RoleUser</class>
+ 		<class>cn.com.trueway.sys.pojo.MenuRoleShip</class>
+		
+		<class>cn.com.trueway.archives.templates.pojo.EssTree</class>
+		<class>cn.com.trueway.archives.templates.pojo.EssBusiness</class>
+		<class>cn.com.trueway.archives.templates.pojo.EssStructureModel</class>
+		<class>cn.com.trueway.archives.templates.pojo.EssStructure</class>
+		<class>cn.com.trueway.archives.templates.pojo.EssMetaData</class>
+		<class>cn.com.trueway.archives.templates.pojo.EssModelTags</class>
+		<class>cn.com.trueway.archives.templates.pojo.EssTag</class>
+		<class>cn.com.trueway.archives.templates.pojo.EssProp</class>
+		<class>cn.com.trueway.archives.templates.pojo.EssPropValue</class>
+		<class>cn.com.trueway.archives.templates.pojo.MrzPojo</class>
+		
+		
+		
+		<class>cn.com.trueway.archives.manage.pojo.TreeNodeOfRole</class>
+		<class>cn.com.trueway.archives.manage.pojo.TreeDataOfRole</class>
+		<class>cn.com.trueway.archives.manage.pojo.TrueArchiveRole</class>
+		<class>cn.com.trueway.archives.manage.pojo.CasualUser</class>
+		<!-- <class>cn.com.trueway.archives.manage.pojo.Menu</class>
+		<class>cn.com.trueway.archives.manage.pojo.RoleMenu</class>
+		<class>cn.com.trueway.archives.manage.pojo.RoleEmployee</class> -->
+		<class>cn.com.trueway.archives.manage.pojo.CasualUserDataRange</class>
+		<class>cn.com.trueway.archives.manage.pojo.BtnDictionary</class>
+		<class>cn.com.trueway.archives.manage.pojo.BtnOfRole</class>
+		
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect" /> 
+			<property name="hibernate.cache.provider_class" value="org.hibernate.cache.EhCacheProvider" /> 
+			<property name="hibernate.cache.use_second_level_cache" value="true" />
+			<property name="hibernate.cache.use_query_cache" value="true" /> 
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+		</properties>
+	</persistence-unit>
+</persistence>

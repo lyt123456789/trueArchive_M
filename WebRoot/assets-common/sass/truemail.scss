@@ -1,0 +1,178 @@
+
+// just for trueMail
+
+// tm-
+
+
+
+@import "base";
+
+
+.tm-layout-left{
+    width: 30%;
+    float: left;
+}
+.tm-layout-right{
+    width: 70%;
+    float: left;
+    border-left: 1px solid #eee;
+}
+.tm-container{
+    padding: 0;
+}
+.tm-table-form{
+    th{
+        background: #e8eff9;
+        text-align: right;
+        em{
+            color: $red;
+            margin: 0 5px;
+            font-style: normal;
+        }
+    }
+   .tw-form-text{
+        width: 80%;
+    } 
+}
+
+.tm-table-list{
+    a{
+        font-weight: bolder;
+    }
+    .tw-fixtable-header th,
+    .tw-fixtable thead th{
+        border-right:none;
+    }
+    .tw-fixtable-tbody td,
+    .tw-fixtable tbody td{
+        border-right:none;
+        border-bottom: 1px solid #d1d7db;
+    }
+    .tw-fixtable-thead table{
+        border-right: 1px solid #d1d7db;
+    }
+    .tw-fixtable-tbody table{
+        border-right: 1px solid #d1d7db;
+    }
+    .tm-open{
+        a{
+            font-weight: normal;
+        }
+    }
+}
+
+.tm-message{
+    margin: 40px 0 0 80px;
+}
+.tm-message .tw-icon-check-circle{
+    font-size: 60px;
+    color: #E6EFC2;
+    float: left;
+    margin-top: 10px;
+}
+.tm-message .tm-msg-cnt{
+    margin-left: 80px;
+    line-height: 2;
+}
+.tm-message .tm-msg-cnt h3{
+    color: #59b85c
+}
+.tm-message .tm-msg-cnt a{
+    /*text-decoration: underline;*/
+}
+
+
+[class*=tm-icon-]{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    background: url(../img/icons/tm-icon.png) no-repeat;
+}
+.tm-icon-status{
+    background-position: 0 -20px;
+}
+
+.tm-open{
+    .tm-icon-status{
+        background-position: 0 -0px;
+    }
+}
+
+.tm-icon-status-o{
+    background-position: 0 0px;
+}
+.tm-icon-attr{
+    background-position: 0 -40px;
+}
+.tm-icon-star{
+    background-position: 0 -60px;
+}
+.tm-icon-unstar{
+    background-position: 0 -80px;
+}
+
+.tm-add-attach{
+    display: inline-block;
+    margin: 4px 0;
+    color: #3268b5;
+    i{
+        color: #3268b5;
+    }
+}
+
+.tm-attach-list{
+    background: #dee8f7;
+    width: 80%;
+    li{
+        padding: 5px 10px;
+    }
+    .tm-attach-name{
+        color: #4e5a64;
+        cursor: pointer;
+        margin-right: 5px;
+        b{
+            margin-left: 5px;
+            font-weight: normal;
+            color: #7c868e;
+        }
+    }
+    a{
+        color: #2163bd;
+    }
+}
+
+
+.tm-form{
+    background: #eff5fe;
+    padding-top: 10px;
+    .tw-form-label{
+        color: #4e5a64;
+    }
+    .tw-form-text{
+        width: 80%;
+    }
+}
+
+
+.tm-form-static{
+    background: #eff5fe;
+    padding-top: 10px;
+    .tw-form-item{
+        margin-bottom: 0;
+    }
+    .tw-form-label{
+        color: #4e5a64;
+    }
+    .tw-form-field{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 20px;
+    }
+}
+.tm-mail-contain{
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #d1d7db;
+}
+

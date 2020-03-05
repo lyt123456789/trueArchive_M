@@ -1,0 +1,97 @@
+
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+body,td,th {
+	font-size: 12px;
+}
+.table1{
+	border:#9FCBEF solid;border-width:1 0 0 1;line-height:20px;PADDING: 1px;
+}
+.td1 {
+	font-size: 12px;
+	border:#9FCBEF solid;
+	border-width:0 1 1 0;
+	background:url(../../widgets/images/sw/css_little/main_r10_c9.jpg) repeat-x top;
+	height: 26px;
+        PADDING-left: 2px
+}
+.td2 {
+	font-size: 12px;
+	border:#9FCBEF solid;
+	border-width:0 1 1 0;
+height: 26px;
+PADDING-left: 2px
+}
+
+
+.td3 {
+	font-size: 12px;
+	border:#9FCBEF solid;
+	border-width:0 1 1 0;
+	background-color:#DDF0FA;
+        height: 26px;
+PADDING-left: 2px
+}
+
+.td4 {
+	font-size: 12px;
+	border:#9FCBEF solid;
+	border-width:0 1 1 0;
+	background-color:#FEFDDC;
+        height: 26px;
+PADDING-left: 2px
+}
+.btn {
+BORDER-RIGHT: #9FCAEF 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #9FCAEF 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 12px; BORDER-LEFT: #9FCAEF 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #9FCAEF 1px solid;background:#D7EDF9;
+}
+
+.bd {StartColorStr=#ffffff, EndColorStr=#B4D7F3); 
+BORDER-RIGHT: #9FCAEF 1px solid;  BORDER-TOP: #9FCAEF 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #9FCAEF 1px solid; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #9FCAEF 1px solid
+}
+
+.bd2 {FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#D7EDF9); 
+BORDER-RIGHT: #9FCAEF 1px solid;  BORDER-TOP: #9FCAEF 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #9FCAEF 1px solid; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #9FCAEF 1px solid
+}
+
+a:link {
+	color: #333333;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #333333;
+}
+a:hover {
+	text-decoration: underline;
+	color: #FF0000;
+}
+a:active {
+	text-decoration: none;
+	color: #FF0000;
+}
+
+.hs {color: #C00000}
+.hs a:link {
+	color: #333333;
+	text-decoration: none;
+}
+.hs a:visited {
+	text-decoration: none;
+	color: #333333;
+}
+.hs a:hover {font-size: 12px;
+        font-weight:600;
+	text-decoration: underline;
+	color: #FF0000;
+}
+.hs a:active {font-size: 14px;
+font-weight:600;
+	text-decoration: none;
+	color: #FF0000;
+}
+
+

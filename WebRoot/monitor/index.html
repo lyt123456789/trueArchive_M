@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit|ie-stand|ie-comp">
+<title>南京市信息中心</title>
+<meta name="description" content="" />
+<meta name="Keywords" content="" />
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="index-cont">
+		<div class="index-left fl">
+			<ul class="banjian-list">
+				<li>
+					<p class="bj-img"><img src="img/banjian-1.png"></p>
+					<p class="bj-tit">无归属办件</p>
+					<p class="bj-num"><span class="bj-dw">0</span>件</p>
+				</li>
+				<li>
+					<p class="bj-img"><img src="img/banjian-2.png"></p>
+					<p class="bj-tit">意见缺失件</p>
+					<p class="bj-num"><span class="bj-dw">1</span>件</p>
+				</li>
+				<li>
+					<p class="bj-img"><img src="img/banjian-3.png"></p>
+					<p class="bj-tit">附件缺失件</p>
+					<p class="bj-num"><span class="bj-dw">0</span>件</p>
+				</li>
+			</ul>
+			<div class="interface-box">
+				<div class="interface-cf">
+					<p class="cf-tit">接口异常检查</p>
+					<ul class="interface-ul">
+						<li>
+							<p class="ul-tit">打开待办公文</p>
+							<button class="ul-btn">接口异常</button>
+						</li>
+						<li>
+							<p class="ul-tit">获取历程信息</p>
+							<button class="ul-btn">接口异常</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="index-right fr">
+			<div class="chart-box" id="cpu-chart"></div>
+			<div class="chart-box" id="memory-chart" style="margin-top: 17px;"></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript">
+	var myChart1 = echarts.init(document.getElementById('cpu-chart'));
+	var option1 = {
+	    title: {
+	        text: 'CPU',
+	        left: '10px',
+	        top: '10px'
+	    },
+	    tooltip: {
+	        trigger : 'item',  
+            show:true,  
+            showDelay: 0,  
+            hideDelay: 0,  
+            transitionDuration:0,   
+            backgroundColor : '#fff',  
+            borderColor : '#dbe1f5',  
+            textStyle:{
+            	color: '#666'
+            },
+            borderRadius : 5,  
+            borderWidth: 1,  
+            padding: [5,10],
+            formatter: function (params,ticket,callback) {  
+                // console.log(params);  
+                 var res = params.name+'<br/>'+ params.seriesName +': ' + '<span style="color:#fa5d5d">'+params.value+'%</span>';  
+                 return res;  
+            }  
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '5%',
+	        containLabel: true
+	    },
+	    xAxis : [
+	        {
+	            type : 'category',
+	            boundaryGap : false,
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+                    textStyle: {
+                        color: '#72879b',
+                    }
+                },
+                axisTick:{
+			        show:false
+			    },
+	            data : ['8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00']
+	        }
+	    ],
+	    yAxis : [
+	        {
+	            type : 'value',
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+	                textStyle: {
+	                    color: '#72879b',
+
+	                }
+	            },
+	            splitLine: { 
+	            	lineStyle: {
+		            	color: '#f0f0f0'
+		            }
+		        },
+		        axisTick:{
+			        show:false
+			    },
+	        },
+	    ],
+	    series : [
+	        {
+	            name:'CPU使用率',
+	            type:'line',
+	            symbol: 'circle',
+	            symbolSize: 6,
+	            areaStyle: {color: '#d6f4ed'},
+	            lineStyle: {color: '#0abb92'},
+	            itemStyle: {color: '#0abb92'},
+	            data:[20, 85, 70, 40, 25, 45, 55, 40, 55, 30, 10]
+	        }
+	    ]
+	};
+	myChart1.setOption(option1);
+
+	var myChart2 = echarts.init(document.getElementById('memory-chart'));
+	var option2 = {
+	    title: {
+	        text: '内存',
+	        left: '10px',
+	        top: '10px'
+	    },
+	    tooltip: {
+	        trigger : 'item',  
+            show:true,  
+            showDelay: 0,  
+            hideDelay: 0,  
+            transitionDuration:0,   
+            backgroundColor : '#fff',  
+            borderColor : '#dbe1f5',  
+            textStyle:{
+            	color: '#666'
+            },
+            borderRadius : 5,  
+            borderWidth: 1,  
+            padding: [5,10],
+            formatter: function (params,ticket,callback) {  
+                // console.log(params);  
+                 var res = params.name+'<br/>'+ params.seriesName +': ' + '<span style="color:#fa5d5d">'+params.value+'%</span>';  
+                 return res;  
+            }  
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '5%',
+	        containLabel: true
+	    },
+	    xAxis : [
+	        {
+	            type : 'category',
+	            boundaryGap : false,
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+                    textStyle: {
+                        color: '#72879b',
+                    }
+                },
+	            data : ['8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00']
+	        }
+	    ],
+	    yAxis : [
+	        {
+	            type : 'value',
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+	                textStyle: {
+	                    color: '#72879b',
+
+	                }
+	            },
+	            splitLine: { 
+	            	lineStyle: {
+		            	color: '#f0f0f0'
+		            }
+		        }
+	        },
+	    ],
+	    series : [
+	        {
+	            name:'内存使用率',
+	            type:'line',
+	            symbol: 'circle',
+	            symbolSize: 6,
+	            areaStyle: {color: '#e4edff'},
+	            lineStyle: {color: '#3e82ff'},
+	            itemStyle: {color: '#3e82ff'},
+	            data:[20, 85, 70, 40, 25, 45, 55, 40, 55, 30, 10]
+	        }
+	    ]
+	};
+	myChart2.setOption(option2);
+
+</script>
+</html>

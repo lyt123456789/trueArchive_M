@@ -1,0 +1,248 @@
+@charset "utf-8";
+*{
+	padding: 0px;
+	margin: 0px;
+}
+body,table{  
+	font-size: 12px;
+	font-family: '宋体';
+}
+body{   
+	background-color:#FFF; 
+	over-flow-x:hidden;
+	text-align: center;
+}
+
+.TableList{ /*表格上左边线*/
+	background-color:#FFF; 
+ 	color:#000;
+ 	border: 1px solid #999999;
+ 	text-align: center;
+ 	border-collapse: collapse;
+ 	width: 100%;
+}
+.TableList .header{ /*表格tr高度*/
+	background-color: #009AD3;
+	font-weight: bold;
+}
+
+.TableList tr{ /*表格tr高度*/
+	height: 30px;
+}
+.TableList td{ /*表格td右下边线*/
+	padding:2px;
+	border:  solid #999999;
+	border-width:0 1px 1px 0;
+}
+.TableList .td_common{/*表格单击事件 TD原有样式*/
+	background-color: #FFF;
+}
+.TableList .td_selected{/*表格单击事件 TD选中样式*/
+	background:url(../images/blue-selected.png) no-repeat center; 
+}
+
+img{
+	cursor: pointer;
+}
+.status1_div {  /*完成情况层*/
+	display: none;
+	width: 80px;
+	border: 1px solid #9FCBEE;
+	background-color: white;
+	position: absolute;
+	text-align: center;
+}
+.status2_div{ /*紧急程度层*/
+	display: none;
+	width: 80px;
+	border: 1px solid #9FCBEE;
+	background-color: white;
+	position: absolute;
+	text-align: center;
+}
+.div_operate{ /*操作菜单层*/
+	display: none;
+	width: 70px;
+	border: 1px solid #9FCBEE;
+	background-color: white;
+	position: absolute;
+}
+.div_operate a{ /*操作菜单层超链接*/
+	color: blue;
+}
+.menu_a{ /* 紧急程度 完成情况 菜单*/
+	color: #FFF;
+	text-decoration: none;
+	cursor: pointer;
+	height: 14px;
+}
+
+/*******完成情况 菜单选项默认样式*****************/
+.menu_wcqk{ color: 	#000;height: 14px;}		/*必须设置height，否则程序出错*/
+/*******紧急程度 菜单选项默认样式*****************/
+.menu_jjcd{ color: #000;height: 14px;}  /*必须设置height，否则程序出错*/
+
+a{  
+	cursor:pointer;
+	text-decoration: none;
+}
+
+.shiwu_div{ /*添加事务 层*/
+	display: none;
+	width: 0px;
+	height:0px;
+	border: 1px solid #999999;
+	background-color: #FFF;
+	position: absolute;
+	filter:alpha(opacity=90);
+	opacity:0.9;
+	text-align: center;
+} 
+.shiwu_div table{ /*添加事务层-表格*/
+	border-collapse: collapse;
+	color: #000;
+	padding-top: 10px;
+	margin: auto;
+}
+.title_div{ /*添加事务层和修改事务层-标题层*/
+	background:url(../imgs/l-right-here-bg.gif) repeat-x; 
+	line-height:29px; 
+	height:29px; 
+	color:#FFF; 
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.date_div,.time_div{  /*添加事务层-时间、日期层*/
+	display: none;
+	width: 250px;
+	height:75px;
+	border: 1px solid #999999;
+	background-color: #FFF;
+	position: absolute;
+	z-index: 1000;
+	padding-top: 10px;
+	text-align: center;
+	color: #000;
+}
+.shiwu_update_div{ /*修改事务层*/
+	display: none;
+	width: 450px;
+	height:300px;
+	border: 1px solid #999999;
+	background-color: #FFF;
+	position: absolute;
+	text-align: center;
+}
+.shiwu_update_div table{ /*修改事务层-表格*/
+	border-collapse: collapse;
+	color: #000;
+	padding-top: 10px;
+	margin: auto;
+}
+.tr_time input{ /*添加事务层 修改事务层-input标签(年月日)*/
+	width: 30px;
+}
+.w-here{  /*公用标题行1*/
+	background:url(../imgs/l-right-here-bg.gif) repeat-x; 
+	line-height:30px; 
+	height:30px; 
+	color:#000; 
+	text-align: left;
+	border: 1px solid #999999;
+}
+.w-here .w-here-box{ /*公用标题行2*/
+	background:url(../imgs/l-right-here--ico1.gif) no-repeat 0px center; 
+	margin-left:0px;
+}
+.w-here .w-here-box span{	/*公用标题行3*/
+	/*background:url(../imgs/l-right-here-ico2.gif) no-repeat center left; */
+	display:block;
+	padding-left:20px; 
+	margin-left:10px;
+}
+
+.menu{ /*菜单行*/
+	background-color: #FFF;
+	/*padding: 2px 1% 2px 2%;*/
+	padding: 2px 5px 2px 5px;
+	height: auto; 	
+	color: #FFF;
+	/*width: 95.9%;*/
+	width: 99%;
+	text-align: left;
+	margin-top: 5px;
+	border:solid #999999;
+	border-width: 1px 1px 1px 1px;
+}
+.menu table{ /*菜单行表格样式*/
+	color: #000;
+	border-collapse: collapse;
+}
+.btn{  /*按钮样式*/
+	background:transparent url(../imgs/button-bg.gif) repeat-x; 
+	border:#250303 solid 1px; 
+	height:25px; 
+	line-height:25px; 
+	color:#FFF;
+	cursor: pointer;
+	padding: 0 5px 0 5px;
+}
+.morning_time{ /*0-6点按钮*/
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/********************************以下为月页面专用样式***********************************************/
+.dayinmonth_div{ /*月页面中 表格中 日期TD中 显示当前日期的层*/
+	width: 100%;
+	background-color: #E2E7EA;
+	text-align: center;
+}
+
+.TableList .td_dayinmonth{ /*月页面month.jsp中当月有效日期td的样式*/
+	background-color: #FFF;
+}
+
+.TableList .month_td{ /*月页面日期td高度*/
+	height: 74px;	
+}
+
+/********************************以下为日程提醒页面专用样式***********************************************/
+.remind_type{ /*日程提醒页面 提醒方式Tr样式*/
+	background-color: #F1EFF0;
+}
+
+.t1 td{   /*隔行变色样式1*/
+ 	background-color:#FFFFFF;
+ }
+ .t2 td{	/*隔行变色样式2*/
+ 	background-color:#EFEFEF;
+ }
+ .t3 td{	/*隔行变色样式2*/
+ 	background-color:#D9F1FD;
+ }
+.tbl_header td{ /*日程提醒页面表格第一行tr、td样式*/
+ 	font-size: 12px ;
+ 	font-family: "宋体 ";
+ 	font-weight: bold;
+ 	background-image: url(../imgs/cblue_thead_bg.gif);
+ }
+ 
+ input.btn{border:#B7B7B5 solid 1px; height:22px; line-height:20px; background:url(../imgs/btn-bg.jpg) center repeat-x;color:#333;}
+ button.btn{border:#B7B7B5 solid 1px; height:22px; line-height:20px; background:url(../imgs/btn-bg.jpg) center repeat-x;color:#333;}
+    html, body
+{
+height: 100%;
+background-repeat: repeat-y;
+background-position: right top;
+scrollbar-base-color: #ffffff;
+scrollbar-track-color: #ffffff;
+scrollbar-face-color: #DEDEDE;
+scrollbar-highlight-color: #E5E5E5;
+scrollbar-3dlight-color: #ffffff;
+scrollbar-darkshadow-color: #E5E5E5;
+scrollbar-shadow-color: #9CAFC4;
+scrollbar-arrow-color: #ffffff;
+} 
+ 

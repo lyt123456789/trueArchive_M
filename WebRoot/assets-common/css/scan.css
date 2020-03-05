@@ -1,0 +1,181 @@
+﻿@charset "utf-8";
+html,body,.wrapper,.tw-container  {height:100%;}
+.pd8 {padding-top:8px!important;}
+body {
+	background-color:#f8f8f8;
+    overflow:hidden;
+}
+.tw-container-aside {
+	width:10%;
+	float:left;
+	overflow:hidden;
+	height:100%;
+}
+.tw-aside-box {
+	background-color:#FFF;
+	height:100%;
+	overflow-y:auto;
+}
+.tw-container-main {
+	width:90%;
+	float:right;
+	overflow:hidden;
+	height:100%;
+    position:relative;	
+}
+.tw-main-left {
+	width:40%;
+	float:left;
+	overflow:hidden;
+}
+.tw-main-right {
+	width:60%;
+	float:right;
+	overflow:hidden;
+}
+.tw-scan {
+	text-align:center;
+	display:none;
+}
+.tw-scan p {
+	color:#439be2;
+	font-size:14px;
+	height:24px;
+	line-height:24px;
+	margin-top:10px;
+}
+.tw-main-list {
+	border-left:#d5d5d5 1px solid;
+	padding-top:10px;
+    min-height:260px;
+	max-height:490px;
+    overflow-y:auto;	
+}
+.tw-main-list li {
+	min-height:24px;
+	line-height:24px;
+	margin-bottom:10px;
+	font-size:14px;
+	color:#000;
+	margin-left:10%;
+	padding-left:28px;
+	background:url(../image/scan.png) left 1px no-repeat;	
+}
+.tw-main-list .success {
+	background:url(../image/success.png) left 1px no-repeat;
+}
+.tw-main-list .fail {
+	background:url(../image/fail.png) left 1px no-repeat;
+}
+.tw-aside-menu {
+	width:60px;
+	margin:0 auto;
+	padding-top:15px;
+}
+.tw-aside-menu li {
+	padding-bottom:28px;
+	margin-bottom:5px;
+	background:url(../image/arrow-down.png) center bottom no-repeat;
+	text-align:center;
+}
+.tw-aside-menu li a{
+	text-decoration:none;
+	display:block;
+	font-size:12px;
+	height:50px;
+	width:60px;
+	padding:5px 0px;
+	background:url(../image/aside-menuBg.png) center center no-repeat;
+	color:#FFF;
+	background-size:60px 60px;
+}
+.tw-aside-menu li.active a{
+	background:url(../image/aside-menuActive.png) center center no-repeat;	
+	background-size:60px 60px;	
+}
+.tw-aside-menu li p {
+	width:50px;
+	margin:0 auto;
+}
+.tw-aside-menu li.end {
+	background:none;
+	padding:0;
+}
+.tw-aside-menu li i img {
+	height:18px;
+}
+.tw-main-box {
+	width:800px;
+	height:500px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-400px;
+	margin-top:-250px;
+}
+.scan-btn {
+    width: 111px;
+	margin:100px auto;
+    height: 38px;
+    line-height: 38px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 0 0 2px #00B2E2;
+	background-color: #1E9FFF;
+	border-radius: 2px;
+}
+.scan-btn:hover {
+    opacity: .8;
+    filter: alpha(opacity=80);
+    color: #fff;	
+}
+.tw-result {
+	margin:100px auto;
+    width:100px;
+    position:relative;
+    font-size:14px;	
+    padding: 10px 10px 10px 80px;
+	border:#d5d5d5 1px solid;
+	background-color:#FFF;
+}
+.tw-result  i {
+	position:absolute;
+    height: 32px;
+    width: 32px;
+	left: 25px;
+    top: 5px;	
+}
+.tw-result  span.success i {
+    background: url(../image/default.png) -256px 0 no-repeat;	
+}
+.tw-result  span.fail i {
+    background: url(../image/default.png) -288px 0 no-repeat;
+}
+.tw-main-list li.subli {
+	margin-left:14%!important;
+    min-height: 20px;
+    line-height: 20px;
+    font-size:12px;
+    background:none;
+    position:relative;	
+}
+.tw-main-list li.subli:before {
+	content:"";
+	position:absolute;
+	top:2px;
+	left:0;
+	width:16px;
+	height:16px;
+	background:url(../image/scan.png) left 1px no-repeat;
+	background-size:100% 100%;
+}
+.tw-main-list .success.subli:before {
+	background:url(../image/success.png) left 1px no-repeat;
+	background-size:100% 100%;	
+}
+.tw-main-list .fail.subli:before {
+	background:url(../image/fail.png) left 1px no-repeat;
+	background-size:100% 100%;	
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:jaxws="http://cxf.apache.org/jaxws"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+							http://cxf.apache.org/jaxws
+		   					http://cxf.apache.org/schemas/jaxws.xsd">
+	 
+	<bean id="dataTempService" class="cn.com.trueway.archives.templates.service.impl.DataTempServiceImpl">
+		<property name="dataTempDao" ref="dataTempDao"></property>
+	</bean> 
+	<bean id="structureService" class="cn.com.trueway.archives.templates.service.impl.StructureServiceImpl" >
+		<property name="structureDao"  ref="structureDao" />
+	</bean>
+	<bean id="businessManageService" class="cn.com.trueway.archives.templates.service.impl.BusinessManageServiceImpl" >
+		<property name="businessManageDao"  ref="businessManageDao" />
+	</bean>
+	<bean id="metaDataService" class="cn.com.trueway.archives.templates.service.impl.MetaDataServiceImpl" >
+		<property name="metaDataDao"  ref="metaDataDao" />
+	</bean>
+	<bean id="dataManageService" class="cn.com.trueway.archives.templates.service.impl.DataManageServiceImpl">
+		<property name="dataManageDao" ref="dataManageDao"></property>
+	</bean> 
+	<bean id="dataReceptionService" class="cn.com.trueway.archives.templates.service.impl.DataReceptionServiceImpl">
+		<property name="dataReceptionDao" ref="dataReceptionDao"></property>
+	</bean> 
+	<!-- 数据对接 -->
+	<bean id="dataReceptionWebService" class="cn.com.trueway.archives.templates.service.impl.DataReceptionWebServiceImpl">
+		<property name="dataTempService" ref="dataTempService"></property>
+	</bean>
+	<!--配置服务访问地址-->
+	<jaxws:server address="/dataReceptionWebService">
+        <jaxws:serviceBean>
+        	<!--配置服务-->
+            <ref bean="dataReceptionWebService" />
+        </jaxws:serviceBean>
+    </jaxws:server>
+	
+</beans>

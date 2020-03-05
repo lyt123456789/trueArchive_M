@@ -1,0 +1,34 @@
+[
+	{
+		"name":"所有",
+		"domId":"allOrg",
+		"searchOption":{
+			"domId":"mc",
+			"apiUrl":"ztree_getEmpsOfNodeJsonTree.do"
+		},
+		"apiUrl":"ztree_getEmpsOfNodeJsonTree.do",
+		"level":0,
+		"isCustomGroup":false,
+		"isRole":"0"
+	},
+	{
+		"name":"常用",
+		"domId":"groupOrg1",
+		"searchOption":null,
+		"apiUrl":"ztree_getUserGroups.do",
+		"level":1,
+		"isCustomGroup":true,
+		"expandAll":true,
+		"isRole":"0"
+	},
+	{
+		"name":"角色",
+		"domId":"roleOrg1",
+		"searchOption":null,
+		"apiUrl":"ztree_getUserGroups.do",
+		"level":1,
+		"isCustomGroup":true,
+		"expandAll":true,
+		"isRole":"1"
+	}
+]

@@ -1,0 +1,22 @@
+
+[
+    {
+        "chkDisabled": false,
+        "id": "9BD29DA1C9164B0FB0D09093A721E974",
+        "name": "测试",
+        "open": false,
+        "type": "folder"
+    },
+    {
+        "id": "{0A40364D-FFFF-FFFF-927A-F6970000033B}",
+        "name": "中威公司",
+        "pId": "9BD29DA1C9164B0FB0D09093A721E974",
+        "type": "file"
+    },
+    {
+        "id": "{0A40364D-FFFF-FFFF-927A-F69700000332}",
+        "name": "中威公司2",
+        "pId": "9BD29DA1C9164B0FB0D09093A721E974",
+        "type": "file"
+    }
+]

@@ -1,0 +1,240 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:17px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+
+function chooseroom(){
+	if(document.getElementById("kssj").value.replace(/(^\s*)|(\s*$)/g, "")==""){ 
+		alert("请先选择会议开始时间！");
+		document.getElementById("kssj").focus();
+		return;
+	}else if(document.getElementById("jssj").value.replace(/(^\s*)|(\s*$)/g, "")==""){
+		alert("请先选择会议结束时间！");
+		document.getElementById("jssj").focus();
+		return;
+	}else if(document.getElementById("kssj").value.replace(/(^\s*)|(\s*$)/g, "")>
+		document.getElementById("jssj").value.replace(/(^\s*)|(\s*$)/g, "")){
+		alert("会议结束时间应大于会议开始时间！");
+		return;
+	}
+	var beginTime = document.getElementById("kssj").value.replace(/(^\s*)|(\s*$)/g, "");
+	var winoption ="dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+	var ret = window.showModalDialog('http://61.155.85.78:9584/functions/meeting_selroom.do?beginTime='+beginTime, null, winoption);
+	if(ret != null){
+		document.getElementById("hys").value = ret.split("@#@")[1];
+		document.getElementById("hysdid").value = ret.split("@#@")[0];
+	}
+}	
+
+function choosebcyry(){
+	var winoption ="dialogHeight:800px;dialogWidth:700px;status:no;scroll:no;resizable:no;center:yes";
+	var ret=window.showModalDialog("http://61.155.85.78:9584/functions/meeting_getSettingTree.do?t="+new Date().getTime(),null,winoption);	
+	if(ret){
+		var userNames = '';
+		var userIds = '';
+		$.each(ret.data,function(k,v){
+		        userNames += v.name+"、";
+		        userIds += v.value+",";
+		});
+		userNames=userNames.substring(0,userNames.length-1);
+		userIds=userIds.substring(0,userIds.length-1);
+                document.getElementById("yqchdx").value = userNames;
+                document.getElementById("yqchdxid").value = userIds;
+	}
+}
+</script>
+<!--以上必须-->
+<style>
+.infotan td {
+	text-align:center;
+}
+.topinfotan td {
+	line-height: 30px;
+	text-align:left;
+        padding:5px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="warp">
+<center>
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>南通滨海园区会议受理单</strong></p>
+</center>
+
+<table align="center" width="819" class="infotan">
+<tr>
+      <td  valign="middle" style="font-size:18px;line-height: 50px;" width="20%;">单位名称</td>
+	  <td  colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;">
+		<input name="dwmc" type="text" id="dwmc" style="width:600px;line-height:17px;font-size:16px" zname="单位名称"  />
+	</td>
+  </tr>
+  <tr>
+      <td  valign="middle" style="font-size:18px;line-height: 50px;" >开始时间</td>
+	  <td  class="tdcol docformTableNoBD" style="font-size:18px;" >
+		<input id="kssj" name="kssj" zname="开始时间" type="text" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/>
+	  </td>
+	  <td  valign="middle" style="font-size:18px;" >结束时间</td>
+	  <td  class="tdcol docformTableNoBD" style="font-size:18px;" >
+		<input id="jssj" name="jssj" zname="结束时间" type="text" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/>
+	  </td>
+  </tr>
+  <tr>
+      <td  valign="middle" style="font-size:18px;line-height: 50px;" >参会人数</td>
+	  <td  class="tdcol docformTableNoBD" style="font-size:18px;" >
+		<input id="chrs" name="chrs" style="line-height:17px;font-size:16px" zname="参会人数" type="text" onkeyup="this.value=this.value.replace(/\D/g,'')" onblur="this.value=this.value.replace(/\D/g,'')"/>
+	  </td>
+	  <td  valign="middle" style="font-size:18px;" >会议室</td>
+	  <td  class="tdcol docformTableNoBD" style="font-size:18px;" >
+		<input id="hys" name="hys" style="line-height:17px;font-size:16px" zname="会议室" type="text" readonly="readonly" onclick="chooseroom();"/>
+	</td>
+  </tr>  
+	<tr>
+		<td valign="middle" style="font-size:18px;line-height: 100px;" >园区参会对象</td>
+		<td colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;">
+			<textarea name="yqchdx" id="yqchdx" style="width:96% ; height:96px;font-size:16px" zname="园区参会对象" ></textarea>
+			<input type="button" value="选择人员" id="choosezcr" onclick="choosebcyry();" /></td>
+	</tr>
+	
+	<tr>
+		<td valign="middle" style="font-size:18px;line-height: 100px;" >其他单位参会对象</td>
+		<td colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;">
+		<textarea name="qtdwchdx" id="qtdwchdx" style="width:96% ; height:96px;font-size:16px" zname="其他单位参会对象" ></textarea>
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td valign="middle" style="font-size:18px;line-height: 100px;" >服务需求内容</td>
+		<td colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;">
+			<input type="checkbox" name="fwxqnr" value="迎宾接待服务" serial="3,1,60" >迎宾接待服务&nbsp;&nbsp;</input>
+			<input type="checkbox" name="fwxqnr" value="话筒音响及全场设备">话筒音响及全场设备&nbsp;&nbsp;</input>
+			<input type="checkbox" name="fwxqnr" value="常规绿植摆放">常规绿植摆放&nbsp;&nbsp;</input>
+			<input type="checkbox" name="fwxqnr" value="茶水服务">茶水服务&nbsp;&nbsp;</input><br/>
+			<input type="checkbox" name="fwxqnr" value="瓷杯">瓷杯&nbsp;&nbsp;</input>
+			<input type="checkbox" name="fwxqnr" value="一次性纸杯">一次性纸杯&nbsp;&nbsp;</input>
+			<input type="checkbox" name="fwxqnr" value="同声翻译">同声翻译&nbsp;&nbsp;</input>
+			<input type="checkbox" name="fwxqnr" value="会议用纸、用笔">会议用纸、用笔&nbsp;&nbsp;</input>
+			<input type="checkbox" name="fwxqnr" value="租用投影仪">租用投影仪&nbsp;&nbsp;</input><br/>
+<input type="checkbox" name="fwxqnr" value="会务材料">会务材料&nbsp;&nbsp;</input>
+
+		</td>
+	</tr>
+	<tr>
+		<td  valign="middle" style="font-size:18px;line-height: 200px;" >会议主题</td>
+		<td  colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;">
+		<textarea name="hyzt" id="hyzt" style="width:96% ; height:190px;font-size:16px" zname="会议主题" ></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td  valign="middle" style="font-size:18px;line-height: 200px;" >备注</td>
+		<td  colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;">
+		<textarea name="bz" id="bz" style="width:96% ; height:190px;font-size:16px" zname="备注" ></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td  valign="middle" style="font-size:18px;" >附件</td>
+		<td  colspan="3"  class="tdcol docformTableNoBD" style="font-size:18px;height:60px">
+		<span id="attshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="attshow" ismain="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+		</td>
+	</tr>
+</table>
+</div>
+<INPUT type="hidden" id="hysdid" name="hysdid" zname="会议室的ID" value=""> 
+<INPUT type="hidden" id="yqchdxid" name="yqchdxid" zname="园区参会对象id" value="">  
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value=""> 
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

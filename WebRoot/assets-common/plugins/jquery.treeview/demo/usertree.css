@@ -1,0 +1,156 @@
+.tw-gear {
+  background: url(../img/gear.png) left center no-repeat;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;  
+}
+
+.tw-usertree-wrap {
+  padding:5px 10px 0px 10px;
+}
+
+.tw-usertree-left {
+  width:25%;
+  float:left;
+  overflow:hidden;
+}
+.tw-usertree-right {
+  width:75%;
+  float:right;
+  overflow:hidden;
+}
+.tw-usertree-group {
+  border:#bdbdbd 1px solid;
+  /*height:459px;*/
+}
+.tw-usertree-topbar {
+  font-size:16px;
+  height:34px;
+  line-height:34px;
+  margin-bottom:10px;
+}
+.tw-treeview {
+  background: url(../img/treeview-default.png) -80px 0 no-repeat;
+  width:12px;
+  height:16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -5px;
+}
+.tw-usertree-group .tw-hd {
+  height:34px;
+  line-height:34px;
+  padding:0px 10px;
+  border-bottom:1px solid #bdbdbd;
+  background:#f7f7f7;
+}
+.tw-usertree-group .tw-hd .tw-title {
+  height:34px;
+  line-height:34px;
+  font-size:12px;
+  float:left;
+}
+.tw-usertree-group .tw-hd .tw-more {
+ float:right;
+ height:34px;
+ line-height:34px; 
+}
+.tw-usertree-group .tw-bd {
+  padding:10px;
+}
+.tw-usertree-group .tw-bd ul li {
+  height:30px;
+  line-height:30px;
+  font-size:16px;
+  padding:0px 5px;
+}
+.tw-usertree-group .tw-bd ul li a {
+  font-size:16px;
+}
+.tw-more i {
+  font-size:16px;
+  margin-top:2px;
+  cursor:pointer;
+  padding:0px 3px;
+}
+.tw-more i.tw-icon-pencil {
+  color:#1ba8e2;
+}
+.tw-more i.tw-icon-plus-circle {
+  color:#e79535;
+}
+.tw-usertree-group .tw-icon-trash {
+  color:#f45e5e;
+}
+.tw-usertree-group .tw-usertree-del {
+  float:right;
+  font-size:16px;
+  margin-top:6px;
+  cursor:pointer;
+  display:none;
+}
+.tw-usertree-group .tw-bd ul li.gray,
+.tw-usertree-group .tw-bd ul li.active {
+  background:#f1f1f1;
+}
+.tw-usertree-group .tw-bd ul li.gray a,
+.tw-usertree-group .tw-bd ul li.active a {
+  color:#1b74c1;
+}
+.tw-usertree-topbar {
+  margin-left:2%;
+}
+
+.tw-usertree-box {
+  /*height:459px;*/
+  width:100%;
+  background:url(../img/user-tree-arrow.png) no-repeat center center;
+}
+.tw-usertree-list {
+  height:100%;
+  width:45%;
+  margin-left:2%;
+  float:left;
+  border:1px solid #bdbdbd;
+}
+.tw-usertree-select {
+  height:100%;
+  width:45%;
+  margin-right:2%;
+  float:right;
+}
+.tw-usertree-select  .tw-mod {
+  border:1px solid #bdbdbd;
+  margin-bottom:10px;
+  height:100%;
+}
+.tw-usertree-topbar .tw-form-text{
+  width:35%;
+}
+.tw-usertree-list-style .hd,.tw-usertree-select .tw-hd {
+  height:34px;
+  line-height:34px;
+  padding:0px 10px;
+  border-bottom:1px solid #bdbdbd;
+  background:#f7f7f7;  
+  font-size: 12px;
+}
+	
+.tw-usertree-select .tw-hd span {
+  font-weight:normal;
+  color:#4d8ad4;
+}
+.tw-usertree-select .tw-hd .fr {
+  height:34px;
+  line-height:34px;
+  cursor:pointer;  
+}
+.tw-usertree-list .bd,.tw-usertree-select .tw-bd {
+  padding:10px;
+}
+.tw-usertree-search .tw-form-text {
+  width:70%;
+}

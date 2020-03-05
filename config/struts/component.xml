@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="component" extends="common-default">
+		
+		<!-- 附件标签配置 Start-->
+		<action name="attachment_*" class="attachmentAction" method="{1}">
+			<result name="test">/WEB-INF/pages/document/component/tiglib/attachment/test.jsp</result>
+			<result name="uploadAtts">/WEB-INF/pages/document/component/tiglib/attachment/uploadAtts.jsp</result>
+			<result name="uploadAttsext">/WEB-INF/pages/document/component/tiglib/attachment/uploadAttsext.jsp</result>
+			<result name="viewDoc">/WEB-INF/pages/document/component/tiglib/attachment/viewDoc.jsp</result>
+			<result name="onlineEditDoc">/WEB-INF/pages/document/component/tiglib/attachment/onlineEditDoc.jsp</result>
+			<result name="onlinePrintDoc">/WEB-INF/pages/document/component/tiglib/attachment/onlinePrintDoc.jsp</result>
+			<result name="viewHistory">/WEB-INF/pages/document/component/tiglib/attachment/viewHistory.jsp</result>
+			<result name="toModifyAtts">/WEB-INF/pages/document/component/tiglib/attachment/toModifyAtts.jsp</result>
+			<result name="captureAtt">/WEB-INF/pages/document/component/tiglib/attachment/captureAtt.jsp</result>
+			<result name="openWebUploader">/WEB-INF/pages/document/component/tiglib/attachment/webUploader.jsp</result>
+			<result name="openUploadtemplate">/WEB-INF/pages/document/component/tiglib/attachment/openUploadtemplate.jsp</result>
+		</action>
+		<!-- 附件标签配置 end-->
+		
+		<!-- 意见标签配置 Start-->
+		<action name="comment_*" class="commentAction"  method="{1}">
+			<result name="test">/WEB-INF/pages/document/component/tiglib/comment/test.jsp</result>
+			<result name="writeComment">/WEB-INF/pages/document/component/tiglib/comment/WriteComment.jsp</result>
+			<result name="showPersonalComments">/WEB-INF/pages/document/component/tiglib/comment/showPersonalComments.jsp</result>
+			<result name="toUpdate">/WEB-INF/pages/document/component/tiglib/comment/toUpdate.jsp</result>
+			<result name="openUpload">/WEB-INF/pages/document/component/tiglib/comment/openUpload.jsp</result>
+			<result name="openDoc">/WEB-INF/pages/document/component/tiglib/comment/openDoc.jsp</result>
+			<result name="tolist">/WEB-INF/pages/document/component/tiglib/comment/list.jsp</result>
+		</action>
+		<!-- 意见标签配置 end-->
+		
+		<!-- 文号标签配置 Start-->
+		<action name="docNumber_*" class="docNumberAction"  method="{1}">
+			<result name="docModel">/WEB-INF/pages/document/component/tiglib/docNumber/docNumberModel.jsp</result>
+			<result name="unuseddocnumber">/WEB-INF/pages/document/component/tiglib/docNumber/docNumberUnused.jsp</result>
+			<result name="attach">/WEB-INF/pages/document/component/tiglib/docNumber/docNumber4Attach.jsp</result>
+			<result name="docModOnlyWh">/WEB-INF/pages/document/component/tiglib/docNumber/docNumModOnlyWh.jsp</result>
+			<result name="docModelOfMobile">/WEB-INF/pages/document/component/tiglib/docNumber/docNumberOfMobile.jsp</result>
+			<result name="unuserddocnumberMobile">/WEB-INF/pages/document/component/tiglib/docNumber/docNumberUnusedOfMobile.jsp</result>
+			
+		</action>
+		<!-- 文号标签配置 end-->
+		<!-- 文号管理 begin -->
+		<action name="docNumberManager_*" class="docNumberManagerAction" method="{1}">
+			<result name="docNumberBigClass">/WEB-INF/pages/document/component/docNumberManager/docNumberBigClass.jsp</result>
+			<result name="docNumberBigEdit">/WEB-INF/pages/document/component/docNumberManager/docNumberBigEdit.jsp</result>
+			<result name="toModelCreate">/WEB-INF/pages/document/component/docNumberManager/docNumberModelCreate.jsp</result>
+			<result name="tobigWhupdate">/WEB-INF/pages/document/component/docNumberManager/bigWhadd.jsp</result>
+			<result name="docNumberSmallClass">/WEB-INF/pages/document/component/docNumberManager/docNumberSmallClass.jsp</result>
+			<result name="docNumberSmallEdit">/WEB-INF/pages/document/component/docNumberManager/docNumberSmallEdit.jsp</result>
+			<result name="tosmallWhupdate">/WEB-INF/pages/document/component/docNumberManager/smallWhadd.jsp</result>
+			<result name="docNumberModelManage">/WEB-INF/pages/document/component/docNumberManager/docNumberModelManage.jsp</result>
+			<result name="deleteModels"  type="redirect">docNumberManager_docNumberModelManage.do</result>
+			<result name="toUpdateModel">/WEB-INF/pages/document/component/docNumberManager/updateModel.jsp</result>
+			<result name="updateModel">/WEB-INF/pages/document/component/docNumberManager/updateModel.jsp</result>
+			<result name="docNumberBindDefine">/WEB-INF/pages/document/component/docNumberManager/docNumberBindDefine.jsp</result>
+			<result name="define4bind">/WEB-INF/pages/document/component/docNumberManager/define4bind.jsp</result>
+			<result name="docNumManager">/WEB-INF/pages/document/component/docNumberManager/docNumManager.jsp</result>
+			<result name="docNumAdd">/WEB-INF/pages/document/component/docNumberManager/docNumAdd.jsp</result>
+			<result name="toStrategyList">/WEB-INF/pages/document/component/docNumberManager/docNumberStrategy.jsp</result>
+			<result name="toStrategyManageList">/WEB-INF/pages/document/component/docNumberManager/docNumberStrategyManger.jsp</result>
+			<result name="editStrategy">/WEB-INF/pages/document/component/docNumberManager/docNumberStrategyEdit.jsp</result>
+			<result name="dj">/WEB-INF/pages/document/component/docNumberManager/sendDJ.jsp</result>
+		</action>
+		<!-- 文号管理 end -->
+		
+	</package>
+</struts>

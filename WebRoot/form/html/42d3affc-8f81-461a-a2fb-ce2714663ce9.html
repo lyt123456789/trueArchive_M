@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<% 
+java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm"); 
+java.util.Date currentTime = new java.util.Date();//得到当前系统时间 
+String str_date1 = formatter.format(currentTime); //将日期时间格式化 
+request.setAttribute("str_date1",str_date1);
+%> 
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+</style>
+</head>
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>南通市国土资源局延期申请批办单</strong></p>
+
+<table width="819" class="infotan">
+	<tr>
+        <td  height="72"  width="120px" colspan="2" valign="middle" style="font-size:18px;text-align:center;"  >申请人</td>
+	  	<td  class="tdcol docformTableNoBD" width="40%;" style="font-size:18px;" >
+	  		<input type="text" id="sqren" name="sqren"  style="width:200px;line-height:17px;" value="${loginEmployee.employeeName}" zname="申请人"/>
+	  </td>
+	  <td  height="72" valign="middle" width="15%" style="font-size:18px;text-align:center;" >申请时间</td>
+	  <td   class="tdcol docformTableNoBD" width="30%" style="font-size:18px;" >
+	  	<input type="text" id="sqsj" name="sqsj" style="width:200px;line-height:17px;" zname="申请时间"   value="${str_date1}"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/></td>
+ 	</tr>
+ 	 
+ 	 <tr >
+    	<td    width="120px" colspan="2" valign="middle" style="height:72px;font-size:18px;text-align:center;"> 标　　题</td>
+        <td  style="font-size:18px;" >
+				  <input type="text" id="biaoti" name="biaoti"  style="width:240px;line-height:17px;" zname="标题"/>
+		</td>
+		 <td  height="72" valign="middle" width="15%" style="font-size:18px;text-align:center;" >寄送时间</td>
+	  <td   class="tdcol docformTableNoBD" width="30%" style="font-size:18px;" >
+	  	<input type="text" id="jssj" name="jssj" style="width:200px;line-height:17px;" zname="寄送时间"  value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/></td>
+		
+    </tr>
+    <tr>
+		<td width="120px"  colspan="2"  style="font-size:18px;width: 25px;" >附<br/><br/>件</td>
+	 	<td  colspan="4" style="font-size:18px;height:120px;padding:5px" >
+			<span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+					downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" 
+					uploadCallback="loadCss" deleteCallback="loadCss"/>
+	 </td>
+    </tr>
+	 <tr>
+    	<td  valign="middle" colspan="2" style="font-size:18px;width: 25px;" >负<br><br>责<br><br>人<br><br>审<br><br>核</td>
+        <td colspan="4" style="height:150px;font-size:18px;padding:5px">
+        	<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}nbyj" instanceId="${instanceId}nbyj" currentStepId="${processId}" isSatisfied="false" zname="拟办意见"/>
+		</td>
+    </tr>
+    <tr>
+    	<td  valign="middle"  colspan="2" style="font-size:18px;width: 25px;" >分<br/><br/>管<br/><br/>领<br/><br/>导<br/><br/>批<br/><br/>示</td>
+        <td colspan="4" style="height:300px;font-size:18px;padding:5px">
+        	<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}ldps" instanceId="${instanceId}ldps" currentStepId="${instanceId}ldps"  isSatisfied="false" zname="领导批示"/>
+		</td>
+    </tr>
+   
+</table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

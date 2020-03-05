@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<meta charset="utf-8"/>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "方正小标宋_GBK", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:45px;font-size:14px;border:1px #333 solid;padding:10px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:17px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+
+
+</script>
+<!--以上必须-->
+<style>
+.infotan td {
+	text-align:left;
+}
+.topinfotan td {
+	line-height: 30px;
+	text-align:left;
+        padding:5px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="warp" style="text-align:center">
+<center>
+<p style="font-size:29px;font-family:"方正小标宋_GBK";line-height:35px; text-align:center;padding-top:30px;">
+<strong>&nbsp;南&nbsp;通&nbsp;市&nbsp;教&nbsp;育&nbsp;局&nbsp;督&nbsp;办&nbsp;单&nbsp; </strong></p>
+</center>
+<br/>
+<br/>
+</div>
+
+<div align="center">
+<table  width="818" class="infotan"  border="2px"  cellspacing="0" cellpadding="0">
+ <tr >
+ 		<td height="40px" style="font-size:22px;text-align: center;height:40px;"><b>标题：</b></td>
+		<td colspan="3" style="font-size:18px;">
+		<input type="text" id="bt" name="bt" style="width:95%;" zname="标题" /></td>
+ </tr>
+    <tr >
+ 		<td width="18%" style="font-size:22px;text-align: center;height:40px;"><b>督办对象：</b></td>
+		<td width="32%" style="font-size:18px;">
+		<input type="text" id="dbdx" name="dbdx" style="width:95%;" zname="督办对象" /></td>
+		<td width="18%" style="font-size:22px;text-align: center;height:40px;"><b>督办时间：</b></td>
+		<td width="22%" style="font-size:18px;">
+		<input type="text" id="dbsj" name="dbsj" style="width:95%;" zname="督办时间" /></td>
+ </tr>
+ <tr >
+ 		<td style="font-size:22px;text-align: center;height:400px;"><b>督办原因：</b></td>
+		<td colspan="3" style="font-size:18px;">
+		<input type="text" id="dbyy" name="dbyy" style="width:95%;" zname="督办原因" /></td>
+ </tr>
+  <tr >
+ 		<td style="font-size:22px;text-align: center;height:600px;"><b>反馈情况：</b></td>
+		<td colspan="3" style="font-size:18px;">&nbsp;
+		</td>
+ </tr>
+</table>
+</div>
+<trueway:att zname="任务附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value=""> 
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

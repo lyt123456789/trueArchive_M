@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+		http://cxf.apache.org/jaxws 
+		http://cxf.apache.org/schemas/jaxws.xsd">
+	
+		<jaxws:client id="docDepartmentServiceClient"
+		address="http://192.168.5.103:9090/docxg/services/DepartmentService"
+		serviceClass="cn.ppsoho.webservice.docxg.department.service.DepartmentService">
+	</jaxws:client>
+	
+	<jaxws:client id="receiveDocServiceClient"
+		address="http://192.168.5.103:9090/docxg/services/ToBeReceivedService"
+		serviceClass="cn.ppsoho.webservice.docxg.receive.service.ToReceviceService">
+	</jaxws:client>
+	
+	<jaxws:client id="sendDocServiceClient"
+		address="http://192.168.5.103:9090/docxg/services/SendService"
+		serviceClass="cn.ppsoho.webservice.docxg.send.service.SendService">
+	</jaxws:client>
+	<jaxws:client id="untreadDocServiceClient"
+		address="http://192.168.5.103:9090/docxg/services/UntreadService"
+		serviceClass="cn.ppsoho.webservice.docxg.untread.service.UntreadService">
+	</jaxws:client>
+	<jaxws:client id="statisticsServiceClient"
+		address="http://192.168.5.103:9090/docxg/services/statistics"
+		serviceClass="cn.ppsoho.webservice.docxg.statistics.service.StatisticsService">
+	</jaxws:client> 
+	<jaxws:client id="rightServiceClient"
+		address="http://192.168.5.52:8082/rm/services/RightService"
+		serviceClass="cn.com.trueway.resourceInterface.service.RightService">
+	</jaxws:client>
+	<jaxws:client id="carServiceClient"
+		address="http://192.168.5.32:8084/car/services/services/CarInterfaceService"
+		serviceClass="cn.com.trueway.docxg.service.CarInterfaceService">
+	</jaxws:client>
+	<jaxws:client id="exchangeSendServiceClient"
+		address="http://192.168.5.188:19080/trueWorkFlowV2.1_CCQ_GZ/services/ExchangeSendService"
+		serviceClass="cn.com.trueway.workflow.webService.service.ExchangeSendService">
+	</jaxws:client>
+	
+	<jaxws:client id="exchangeReceiveServiceClient"
+		address="http://192.168.5.188:19080/trueWorkFlowV2.1_CCQ_GZ/services/ExchangeReceiveService"
+		serviceClass="cn.com.trueway.workflow.webService.service.ExchangeReceiveService">
+	</jaxws:client>
+	
+	
+</beans>

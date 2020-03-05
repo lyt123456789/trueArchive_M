@@ -1,0 +1,14 @@
+[
+	
+	{
+		"name":"所有部门",
+		"domId":"allOrg",
+		"searchOption":{
+			"domId":"mc",
+			"apiUrl":"ztree_getFullJsonTree.do"
+		},
+		"apiUrl":"ztree_getFullJsonTree.do",
+		"level":0,
+		"isCustomGroup":false
+	}
+]

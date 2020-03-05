@@ -1,0 +1,251 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<meta charset="utf-8" />
+<style>
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin:0;
+	padding:0px;
+}
+
+body,button,input,select,textarea {
+	font:12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+}
+
+address,cite,dfn,em,var {
+	font-style:normal;
+}
+
+code,kbd,pre,samp {
+	font-family:courier new, courier, monospace;
+}
+
+small {
+	font-size:12px;
+}
+
+ul,ol {
+	list-style:none;
+}
+
+a {
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:none;
+}
+
+/* .warp{
+				width:1024px;
+				max-width:1024px;
+				height:1448px;
+				min-height:1448px;
+				overflow:hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width:820px;margin:0 auto;} 
+.infotan td{font-size:18px;border:1px #333 solid;padding:5px;text-align: center;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;}
+
+/* .infotan .label{
+				font-size:18px;
+				text-align:center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+var zsid= document.getElementById("zsid").value;
+var zsdw = document.getElementById("zsdw").value;
+var value = zsid+"*"+ zsdw ;
+value = encodeURI(value);
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zsdw").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+var csid= document.getElementById("csid").value;
+var csdw = document.getElementById("csdw").value;
+var value = csid+"*"+ csdw ;
+value = encodeURI(value);
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("csdw").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+
+
+</script>
+<!--以上必须-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+
+<body>
+	<div class="warp">
+		<table class="infotan" width=819px cellspacing="0" align="center" style="border-top:2px solid red;">
+			<caption>
+				<br/>
+				<strong style="font-size:28px; font-family:华文中宋; color:red; margin-right:5px;">
+					崇川区人民政府发文稿纸&nbsp;&nbsp;</strong>
+				<br/>
+			</caption>
+			<tr>
+				<td width="10%"  align="center" valign="middle"  style="font-size:18px; height:35px; border:1px solid red; color:red; border-left:none;">文号</td>
+			        <td width="28%" colspan="2" style="border:1px solid red;color:red;font-size:18px">
+										<input style="width:30px;" type="text" id="wh" name="wh" zname="文号" value="" /></td>
+					
+				<td width="8%" style="font-size:18px; height:18px; border:1px solid red; color:red;">密级</td>
+				<td width="10%" style="border:1px solid red;"><select id="mj" name="mj" style="width:50px;"  zname="密级"></select></td>
+			        <td width="12%" style="font-size:18px; height:18px; border:1px solid red; color:red;">紧急程度</td>
+				<td width="10%" style="font-size:18px; border:1px solid red; color:red;"><select id="jjcd" name="jjcd" style="width:50px;" zname="紧急程度""></select></td>
+				<td width="12%" style="font-size:18px; border:1px solid red; color:red;">可否公开</td>
+				<td width="10%" style="border:1px solid red; border-right:none;"><select id="kfgk" name="kfgk"  style="width:50px;" zname="可否公开"  ></select></td>
+			</tr>
+                        <tr>
+                                <td align="center" valign="middle" style="font-size:18px; height:100px; border:1px solid red; color:red; border-left:none">签发</td>
+				<td colspan="3" style="border:1px solid red;">&nbsp;</td>
+				<td rowspan="2" style="font-size:18px; height:18px; border:1px solid red; color:red;">会签</td>
+				<td colspan="4" rowspan="2" style="border:1px solid red; border-right:none">&nbsp;</td>
+			</tr>
+                         <tr>
+				<td align="center" valign="middle" style="font-size:18px;height:200px; border:1px solid red; color:red; border-left:none">有关领导审核</td>
+				<td colspan="3"  style="border:1px solid red;">&nbsp;</td>
+			</tr>
+                        <tr>
+			      <td align="center" valign="middle"  style="font-size:18px; height:35px; border:1px solid red; color:red; border-left:none;height:100px;" >拟稿处室及拟稿人</td>
+			      <td colspan="3" style="border:1px solid red;color:red;"><textarea id="ngcsjngr" name="ngcsjngr" style="width:200px; height:85px;" zname="拟稿处室及拟稿人"></textarea></td>
+					
+				<td style="border:1px solid red;color:red;">拟稿部门及拟稿人</td>
+			 <td colspan="4" style="font-size:18px; height:18px; border:1px solid red; color:red;border-right:none;">
+			 <textarea id="ngbmjngr" name="ngbmjngr" style="width:200px; " zname="拟稿部门及拟稿人"></textarea>
+			 </td>
+		  </tr>
+                  <tr>
+				<td align="center" valign="middle" style="font-size:18px;  height:100px; border:1px solid red; color:red; border-left:none">标题</td>
+				<td colspan="8" style="border:1px solid red; border-right:none;">
+					<textarea id="bt" name="bt" style="width:500px; height:80px;" zname="标题"></textarea>				</td>
+			</tr>
+                          <tr>
+				<td align="center" valign="middle" style="font-size:18px;height:130px; border:1px solid red; color:red; border-left:none">主送<br>单位				</td>
+				<td colspan="3" style="border:1px solid red; border-right:none;">
+					<textarea id="zsdw" name="zsdw" style="width:200px; height:40px;" zname="主送单位"></textarea>				</td>
+			    <td style="border:1px solid red;color:red;">抄送<br>单位	</td>
+			    <td colspan="4" style="border:1px solid red; border-right:none""><textarea id="csdw" name="csdw" style="width:200px; height:40px;" zname="抄送单位"></textarea>
+                          </td>
+		   
+                        </tr>
+ 
+                       <tr style="display:none">
+				<td align="center" valign="middle"style="font-size:18px; height:95px; border:1px solid red; color:red; border-left:none">附件</td>
+				<td colspan="8" style="border:1px solid red; border-right:none; height:95px;">
+                                     <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+                                </td>
+			</tr>
+                        <tr>
+				<td align="center" valign="middle"style="font-size:18px; height:95px; border:1px solid red; color:red; border-left:none">附件</td>
+				<td colspan="8" style="border:1px solid red; border-right:none; height:95px;">
+                                     <textarea id="fjname" name="fjname" style="width:500px; height:80px;" zname="fjname"></textarea>
+                                     
+                                       </td>
+			</tr>
+			<tr>
+				<td height="100px" align="center" valign="middle"style="font-size:18px; border:1px solid red; color:red; border-left:none">主题词</td>
+				<td colspan="8" style="border:1px solid red; border-right:none;height:95px;">
+					<textarea id="ztc" name="ztc" style="width:500px; height:80px;" zname="主题词"></textarea></td>
+			</tr>
+                        <tr>
+				<td  align="center" valign="middle"style="font-size:18px; border:1px solid red; color:red; border-left:none; height:60px;">印发<br>日期</td>
+				<td colspan="3" style="border:1px solid red;">
+					<input id="yfrq" name="yfrq" style="width:100px; text-align:center" zname="印发日期" type="text" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />				</td>
+				<td align="center" valign="middle"  style="font-size:18px;  border:1px solid red; color:red; border-left:none">印发<br>份数</td>
+				<td colspan="4" style="border:1px solid red; border-right:none">
+					<input id="yffs" name="yffs" style="width:100px;; text-align:center" zname="印发份数" type="text" /></td>
+			</tr>
+                       <tr>
+				<td  align="center" valign="middle"style="font-size:18px;border:1px solid red; color:red; border-left:none; height:60px;">打印</td>
+				<td style="border:1px solid red" >
+				  <input style="width:10px;" type="text" id="dy" name="dy" zname="打印" value=""/>
+				</td>
+				<td colspan="2" style="border:1px solid red; color:red" >校对</td>
+				<td colspan="2" style="border:1px solid red; " ><input style="width:50px;" type="text" id="jd" name="jd" zname="校对" value=""/></td>
+				<td style="border:1px solid red; border-right:none; color:red">分发</td>
+		        <td colspan="2" style="border:1px solid red; border-right:none; "><input style=" width:100px;" type="text" id="ff" name="ff" zname="分发" value=""/></td>
+	            </tr>
+
+			
+</table>
+	</div
+	<INPUT userdefine=hidden id="instanceId" name="instanceId" value="">
+	<INPUT userdefine=hidden id="formId" name="formId" value="">
+	<INPUT userdefine=hidden id="workFlowId" name="workFlowId" value="">
+	<INPUT userdefine=hidden id="processId" name="processId" value="">
+	<input userdefine=hidden id="keyword" name="keyword" value="空" />
+	<INPUT userdefine=hidden id="csid" name="csid" value="">
+	<INPUT userdefine=hidden id="zsid" name="zsid" value="">
+
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

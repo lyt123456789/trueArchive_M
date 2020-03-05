@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';
+var meetingName='<%=request.getParameter("meetingName")==null?"":request.getParameter("meetingName")%>';
+var meetingInsId='<%=request.getParameter("meetingInsId")==null?"":request.getParameter("meetingInsId")%>';
+
+
+var instanceId = '${instanceId}';  
+if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+
+document.getElementById("hymc").value = meetingName;
+document.getElementById("hyslId").value = meetingInsId;
+
+</script>
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>南通市国土资源局会议请假单</strong>
+</p>
+<table width="819" class="infotan">
+<tr>
+        <td  height="72" valign="middle" style="font-size:18px;"> 会议名称：</td>
+   <td  colspan="3" style="font-size:18px;" ><input id="hymc" name="hymc"  style="width:200px" zname="会议名称" />
+  </td>
+ </tr>
+  <tr>
+        <td  height="72" valign="middle" style="font-size:18px;"> 请 假 人：</td>
+   <td  colspan="3" style="font-size:18px;" ><input id="qjr" name="qjr"  style="width:200px" zname="请假人" value="${loginEmployee.employeeName}" readonly="readonly" />
+  </td>
+ </tr>
+    <tr>
+     <td   valign="middle" style="font-size:18px;" >请假原因：</td>
+        <td colspan="3" style="height:200px;font-size:18px;">
+         <textarea style="width: 600px; height: 185px;" id="qjyy" name="qjyy" zname="请假原因"></textarea>
+</td>
+    </tr>
+    <tr>
+     <td   valign="middle" style="font-size:18px;" >审批意见：</td>
+        <td colspan="3" style="height:200px;font-size:18px;">
+         <textarea style="width: 600px; height: 185px;" id="spyj" name="spyj" zname="审批意见"></textarea>
+</td>
+    </tr>
+    <tr>
+     <td   valign="middle" style="font-size:18px;" >审批结果：</td>
+        <td colspan="3" style="height:200px;font-size:18px;">
+         <textarea style="width: 600px; height: 185px;" id="spjg" name="spjg" zname="审批结果"></textarea>
+</td>
+    </tr>
+    <tr>
+     <td  valign="middle" style="font-size:18px;" >备注：</td>
+        <td colspan="3"  style="height:200px;font-size:18px;">
+               <textarea style="width: 600px; height: 185px;" id="bz" name="bz" zname="备注"></textarea>
+</td>
+    </tr>   </table>
+</div>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">
+//会议实例ID
+<INPUT  id="hyslId" name="hyslId" value="">
+ 
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+//以下必须有
+function loadCss(){  
+    seajs.use('lib/form',function(){  
+$('input[mice-btn]').cssBtn();
+$('input[mice-input]').cssInput();
+$('select[mice-select]').cssSelect();
+    });
+}
+//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

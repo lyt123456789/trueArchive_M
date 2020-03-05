@@ -1,0 +1,51 @@
+.close-tab {
+    font-size: 10px;
+    position:absolute;
+    right: 5px;
+    top: 5px;
+    padding-left: 25px;
+    z-index: 100;
+    cursor: hand;
+    cursor: pointer;
+    color: #94A6B0;
+    display: none;
+}
+
+.topbar-collapse {
+    float:right;
+}
+
+.nav-tabs{
+	display:none;
+}
+
+.iframeClass {
+    z-index: 1;
+    visibility: inherit;
+    width: 100%;
+    frameborder: 'no';
+    border: 0;
+    marginwidth: 0;
+    marginheight: 0;
+    scrolling-x: 'no';
+    scrolling-y: auto;
+    allowtransparency: true;
+}
+.nav-tabs>li {
+    max-width:240px;
+}
+.nav-tabs>li>a {
+    max-width:240px;
+    cursor: default;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+	color:#363636;
+}
+.nav {
+    padding-right:90px;
+}
+.nav-tabs {
+    border-bottom:none;
+	background:#eee;
+}

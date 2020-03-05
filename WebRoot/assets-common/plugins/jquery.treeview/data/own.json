@@ -1,0 +1,22 @@
+[
+ {"text":"<a  data-id='{0A40364D-FFFF-FFFF-8DE7-EBF2000001ED}' href='javascript:;'>办公室</a>","id":"{0A40364D-FFFF-FFFF-8DE7-EBF2000001ED}","expanded":true,"hasChildren":true,"classes":"folder",
+"children":[
+ {"text":"<a data-id='{0A40364D-FFFF-FFFF-9234-EAA1000001F0}' href='javascript:;' >张勇</a>","id":"{0A40364D-FFFF-FFFF-9234-EAA1000001F0}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{0A40364D-FFFF-FFFF-A7B2-CE4700000006}' href='javascript:;' >姜忠</a>","id":"{0A40364D-FFFF-FFFF-A7B2-CE4700000006}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{0A40364D-FFFF-FFFF-9236-4A2A000001F1}' href='javascript:;' >马建忠</a>","id":"{0A40364D-FFFF-FFFF-9236-4A2A000001F1}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{0A40364D-FFFF-FFFF-A7B4-292500000007}' href='javascript:;' >秦顺华</a>","id":"{0A40364D-FFFF-FFFF-A7B4-292500000007}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{0A40364D-FFFF-FFFF-A7B4-78CE00000008}' href='javascript:;' >林丹</a>","id":"{0A40364D-FFFF-FFFF-A7B4-78CE00000008}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{0A40364D-FFFF-FFFF-A7B3-D8A400000009}' href='javascript:;' >屠明萍</a>","id":"{0A40364D-FFFF-FFFF-A7B3-D8A400000009}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{0A40364D-FFFF-FFFF-A7B5-296D0000000A}' href='javascript:;' >张建</a>","id":"{0A40364D-FFFF-FFFF-A7B5-296D0000000A}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{0A40364D-FFFF-FFFF-A7B5-75820000000B}' href='javascript:;' >卫锋</a>","id":"{0A40364D-FFFF-FFFF-A7B5-75820000000B}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{0A40364D-FFFF-FFFF-A7B4-C1020000000C}' href='javascript:;' >张俭华</a>","id":"{0A40364D-FFFF-FFFF-A7B4-C1020000000C}","hasChildren":false,"classes":"file"}
+]}
+]

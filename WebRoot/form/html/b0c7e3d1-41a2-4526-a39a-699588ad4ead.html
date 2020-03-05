@@ -1,0 +1,292 @@
+<html>
+    
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{align:center;font-size:16px;border:1px #333 solid;padding:5px;font-family:'仿宋_GB2312';}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:110px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+var zsid= document.getElementById("zsid").value;
+var zsdw = document.getElementById("zsdw").value;
+var value = zsid+"*"+ zsdw ;
+value = encodeURI(value);
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zsdw").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+var csid= document.getElementById("csid").value;
+var csdw = document.getElementById("csdw").value;
+var value = csid+"*"+ csdw ;
+value = encodeURI(value);
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("csdw").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+
+
+</script>
+<!--以上必须-->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+<style>
+</style>
+<body>
+	<div class="warp">
+		<table class="infotan" width=819px cellspacing="0" align="center" >
+			<caption>
+				<br/>
+				 <p style="border:0;font-size:22px;line-height:35px; color:#000;font-family:'方正大标宋简体';text-align:center;padding-top:30px;">
+				   国投公司印章使用审批单
+				</p>
+				
+					<p>&nbsp;</p>
+			</caption>
+			<tr>
+			    <td style="width:82px;border:0" ></td>
+			    <td style="width:82px;border:0" ></td>
+			    <td style="width:82px;border:0" ></td>
+			    <td style="width:82px;border:0" ></td>
+			    <td style="width:82px;border:0" ></td>
+                <td style="width:82px;border:0" ></td>
+                <td style="width:82px;border:0" ></td>
+                <td style="width:82px;border:0" ></td>
+                <td style="width:82px;border:0" ></td>
+                <td style="width:82px;border:0" ></td>					
+		    </tr>
+			<tr>
+				<td colspan="7" style="font-size:16px;text-align:right;border:0px;font-family:'楷体_GB2312';">日期</td>			  
+			    <td colspan="3" style="border:0px;text-align:center;font-family:'楷体_GB2312';">
+					<input style="width:270px;" type="text" id="djrq" name="djrq" zname="登记日期" value=""/>
+				</td>
+			</tr>		
+            <tr>
+				<td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					部门/单位
+				</td>
+			    <td colspan="3">
+					<input type="text" id="bmdw" name="bmdw" zname="部门/单位" value=""/>
+				</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					经办人
+				</td>
+			    <td colspan="3">
+					<input type="text" id="sqr" name="sqr" zname="申请人" value=""/>
+				</td>
+				
+			</tr>
+			 <tr>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					用印类别
+				</td>
+			    <td colspan="8">
+					<select id="yylb" name="yylb" zname="用印类别">
+					</select>
+				</td>
+			</tr>
+            <tr>
+			    <td colspan="2" rowspan="4" style="height:320px;text-align: center;vertical-align: middle;">
+					用印事项
+				</td>
+			    <td colspan="3" style="text-align: center;vertical-align: middle;height:80px;">
+					事项说明
+				</td>
+				<td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					份数
+				</td>
+			    <td colspan="3" style="text-align: center;vertical-align: middle;height:80px;">
+					联系单位/联系人/联系方式
+				</td>
+			</tr>	
+            <tr>
+			    <td colspan="3" style="height;80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="wjmca" name="wjmca" zname="文件名称1" value=""/>
+				</td>
+				<td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="fsa" name="fsa" zname="份数1" value=""/>
+				</td>
+				<td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="sma" name="sma" zname="说明1" value=""/>
+					</td>
+            </tr>
+            <tr>
+			    <td colspan="3" style="height;80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="wjmcb" name="wjmcb" zname="文件名称2" value=""/>
+				</td>
+				<td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="fsb" name="fsb" zname="份数2" value=""/>
+				</td>
+				<td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="smb" name="smb" zname="说明2" value=""/>
+				</td>
+            </tr>
+            <tr>
+			    <td colspan="3" style="height;80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="wjmcc" name="wjmcc" zname="文件名称3" value=""/>
+				</td>
+				<td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="fsc" name="fsc" zname="份数3" value=""/>
+				</td>
+				<td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="smc" name="smc" zname="说明3" value=""/>
+				</td>
+            </tr>
+            <tr>
+			    <td colspan="2" style="height:140px;text-align: center;vertical-align: middle;">
+					部门/单位<br/>负责人意</br>见
+				</td>
+			    <td colspan="8"></td>
+			</tr>
+            <tr>
+			    <td colspan="2" style="height:140px;text-align: center;vertical-align: middle;">
+					分管领导<br/>审批意见
+				</td>
+			    <td colspan="8"></td>
+			</tr>
+            <tr>
+			    <td colspan="2" style="height:140px;text-align: center;vertical-align: middle;">
+					主要领导<br/>审批意见
+				</td>
+			    <td colspan="8"></td>
+			</tr>
+            <tr>
+			    <td colspan="2" style="height:120px;text-align: center;vertical-align: middle;">
+					备注
+				</td>
+			    <td colspan="8">
+					<textarea id="bz" name="bz" zname="备注" value=""></textarea>
+				</td>
+			</tr>			
+</table>
+
+		
+		
+
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+	</div
+	><INPUT type="hidden" id="instanceId" name="instanceId" value="">
+	<INPUT type="hidden" id="formId" name="formId" value="">
+	<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">
+	<INPUT type="hidden" id="processId" name="processId" value="">
+
+
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+</html>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="fieldInfoAction" class="cn.com.trueway.workflow.core.action.FieldInfoAction" singleton="false" autowire="byName">
+		<property name="fieldInfoService" ref="fieldInfoService" ></property>
+	</bean>
+	
+	<bean id="dataBaseOracle" class="cn.com.trueway.workflow.core.action.DataBaseOracle" singleton="false" autowire="byName">
+	</bean>
+	
+	<bean id="templateAction" class="cn.com.trueway.workflow.core.action.TemplateAction" singleton="false" autowire="byName">
+		<property name="tableInfoService" ref="tableInfoService" ></property>
+		<property name="fieldInfoService" ref="fieldInfoService" ></property>
+		<property name="templateService" ref="templateService" ></property>
+		<property name="labelService" ref="labelService" ></property>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService" ></property>
+		<property name="flowService" ref="flowService" ></property>
+	</bean>
+	
+	<bean id="permitAction" class="cn.com.trueway.workflow.core.action.FormPermitAction" singleton="false" autowire="byName">
+		<property name="formPermitService" ref="formPermitService" ></property>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService"/>
+		<property name="groupService" ref="groupService"/>
+		<property name="zwkjFormService" ref="zwkjFormService"></property>
+	</bean>
+	
+	<bean id="dictionaryAction" class="cn.com.trueway.workflow.core.action.DictionaryAction" singleton="false" autowire="byName">
+		<property name="dictionaryService" ref="dictionaryService" ></property>
+	</bean>
+	
+	<bean id="customStatusAction" class="cn.com.trueway.workflow.core.action.CustomStatusAction" singleton="false" autowire="byName">
+		<property name="customStatusService" ref="customStatusService" ></property>
+	</bean>
+	
+	<bean id="itemAction" class="cn.com.trueway.workflow.core.action.ItemAction" singleton="false" autowire="byName">
+		<property name="itemService" ref="itemService" ></property>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService"/>
+		<property name="itemRelationService" ref="itemRelationService"/>
+	</bean>
+	
+	<bean id="attachmentTypeAction" class="cn.com.trueway.workflow.core.action.AttachmentTypeAction" singleton="false" autowire="byName">
+		<property name="attachmentTypeService" ref="attachmentTypeService" ></property>
+	</bean>
+	
+	<bean id="mobileTerminalInterfaceAction" class="cn.com.trueway.workflow.core.action.MobileTerminalInterfaceAction">
+		<property name="workflowCalendarService" ref="workflowCalendarService"/>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService"/>
+		<property name="selectTreeService" ref="selectTreeService"/>
+		<property name="zwkjFormService" ref="zwkjFormService"/>
+		<property name="templateService" ref="templateService"/>
+		<property name="dictionaryService" ref="dictionaryService"/>
+		<property name="customStatusService" ref="customStatusService"/>
+		<property name="groupService" ref="groupService"></property>
+		<property name="fieldInfoService" ref="fieldInfoService"></property>
+		<property name="tableInfoService" ref="tableInfoService"></property>
+		<property name="pendingService" ref="pendingService"></property>
+		<property name="employeeRoleService" ref="employeeRoleService"></property>
+		<property name="formPermitService" ref="formPermitService" ></property>
+		<property name="departmentService" ref="departmentService" ></property>
+		<property name="itemService" ref="itemService" ></property>
+		
+	</bean>
+	
+	<bean id="permitionAction" class="cn.com.trueway.workflow.core.action.PermitAction" singleton="false" autowire="byName">
+		<property name="formPermitService" ref="formPermitService" ></property>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService"/>
+		<property name="groupService" ref="groupService"/>
+		<property name="zwkjFormService" ref="zwkjFormService"></property>
+	</bean>
+	
+	<bean id="itemRelationAction" class="cn.com.trueway.workflow.core.action.ItemRelationAction" singleton="false" autowire="byName">
+		<property name="itemRelationService" ref="itemRelationService" ></property>
+		<property name="itemService" ref="itemService" ></property>
+	</bean>
+	
+	<bean id="employeeRoleAction" class="cn.com.trueway.workflow.set.action.EmployeeRoleAction" singleton="false" autowire="byName">
+		<property name="employeeRoleService" ref="employeeRoleService" ></property>
+	</bean>
+	<bean id="personCommentAction" class="cn.com.trueway.workflow.core.action.PersonCommentAction" singleton="false" autowire="byName">
+		<property name="commentService" ref="commentService"/>
+	</bean>
+	
+	<bean id="replayAction" class="cn.com.trueway.workflow.core.action.ReplayAction">
+		<property name="replayService" ref="replayService"/>
+	</bean>
+	
+	<bean id="noticeInfoAction" class="cn.com.trueway.workflow.core.action.NoticeInfoAction">
+		<property name="noticeInfoService" ref="noticeInfoService"/>
+	</bean>
+
+	
+	<bean id="filingAction" class="cn.com.trueway.workflow.core.action.FilingAction">
+		<property name="filingService" ref="filingService"/>
+		<property name="pendingService" ref="pendingService"/>
+	</bean>
+
+	
+	<bean id="employeeLeaderAction" class="cn.com.trueway.workflow.set.action.EmployeeLeaderAction" singleton="false" autowire="byName">
+		<property name="employeeLeaderService" ref="employeeLeaderService" ></property>
+		<property name="dictionaryService" ref="dictionaryService"/>
+	</bean>
+
+    <bean id="doArticlePostAction" class="cn.com.trueway.workflow.core.action.DoArticlePostAction" singleton="false" autowire="byName">
+		<property name="doArticlePostService" ref="doArticlePostService" ></property>
+	</bean>
+	
+	<bean id="dataCenterAction" class="cn.com.trueway.workflow.core.action.DataCenterAction" singleton="false" autowire="byName">
+		<property name="dataCenterService" ref="dataCenterService" ></property>
+		<property name="tableInfoService" ref="tableInfoService" ></property>
+		<property name="fieldInfoService" ref="fieldInfoService" ></property>
+		<property name="itemService" ref="itemService" ></property>
+	</bean>
+	
+	<bean id="trueJsonAction" class="cn.com.trueway.workflow.core.action.TrueJsonAction" singleton="false" autowire="byName">
+		<property name="trueJsonService" ref="trueJsonService" ></property>
+	</bean>
+	
+	<bean id="pushAction" class="cn.com.trueway.workflow.set.action.PushAction">
+		<property name="pushService" ref="pushService" />
+	</bean>
+	
+	<bean id="tableInfoExtendAction" class="cn.com.trueway.workflow.core.action.TableInfoExtendAction">
+		<property name="tableInfoExtendService" ref="tableInfoExtendService"/>
+		<property name="departmentService" ref="departmentService" />
+		<property name="itemService" ref="itemService" />
+		<property name="tableInfoService" ref="tableInfoService" />
+		<property name="pendingService" ref="pendingService"/>
+		<property name="trueJsonService" ref="trueJsonService" />
+		<property name="formPermitService" ref="formPermitService"/>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService" />
+		<property name="zwkjFormService" ref="zwkjFormService" />
+	</bean>
+	
+	<bean id="depConfigAction" class="cn.com.trueway.workflow.core.action.DepConfigAction" singleton="false" autowire="byName">
+		<property name="depConfigService" ref="depConfigService" ></property>
+		<property name="departmentService" ref="departmentService" ></property>
+	</bean>
+	
+	<bean id="monitorAction" class="cn.com.trueway.workflow.core.action.MonitorAction" singleton="false" autowire="byName">
+		<property name="departmentService" ref="departmentService" />
+		<property name="itemService" ref="itemService" />
+		<property name="tableInfoService" ref="tableInfoService" />
+		<property name="pendingService" ref="pendingService"/>
+		<property name="trueJsonService" ref="trueJsonService" />
+		<property name="formPermitService" ref="formPermitService"/>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService" />
+		<property name="zwkjFormService" ref="zwkjFormService" />
+		<property name="tableInfoExtendService" ref="tableInfoExtendService"/>
+		<property name="monitorService" ref="monitorService"/>
+	</bean>
+	
+</beans>

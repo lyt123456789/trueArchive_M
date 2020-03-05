@@ -1,0 +1,171 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:17px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+
+
+</script>
+<!--以上必须-->
+<style>
+.infotan td {
+	text-align:center;
+}
+.topinfotan td {
+	line-height: 30px;
+	text-align:left;
+        padding:5px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="warp">
+<center>
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>滨海园区请假报告表</strong></p>
+</center>
+
+<table align="center" width="819" class="infotan">
+<tr>
+      <td  valign="middle" style="font-size:18px;" width="20%;"> 请假时间</td>
+	  <td  colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;">
+		<input name="kssj" type="text" id="kssj" style="width:200px;line-height:17px;" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" readonly="readonly" zname="开始时间" />
+		至
+		<input name="jssj" type="text" id="jssj" style="width:200px;line-height:17px;" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" readonly="readonly" zname="结束时间" />
+	</td>
+  </tr>
+  <tr>
+      <td  valign="middle" style="font-size:18px;" >请假人</td>
+	  <td  class="tdcol docformTableNoBD" style="font-size:18px;" >
+		<input name="qjr" type="text" id="qjr" style="width:200px;line-height:17px;" value="${loginEmployee.employeeName}" readonly="readonly" zname="请假人" />
+				</td>
+	  <td  valign="middle" style="font-size:18px;" >电话号码</td>
+	  <td  class="tdcol docformTableNoBD" style="font-size:18px;" >
+		<input name="dhhm" type="text" id="dhhm" style="width:200px;line-height:17px;" zname="电话号码"  />
+				</td>
+  </tr>
+    
+	<tr>
+		<td valign="middle" style="font-size:18px;line-height: 100px;" >同行人员</td>
+		<td  colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;"><textarea name="txry" id="txry" style="width:96% ; height:96px" zname="同行人员" ></textarea></td>
+	</tr>
+	<tr>
+		<td valign="middle" style="font-size:18px;line-height: 100px;" >目的地</td>
+		<td colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;"><textarea name="mdd" id="mdd" style="width:96% ; height:96px" zname="目的地" ></textarea></td>
+	</tr>
+	<tr>
+		<td  valign="middle" style="font-size:18px;line-height: 200px;" >请假事由</td>
+		<td  colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;"><textarea name="qjsy" id="qjsy" style="width:96% ; height:190px" zname="请假事由" ></textarea></td>
+	</tr>
+	<tr>
+		<td  valign="middle" style="font-size:18px;line-height: 100px;" >批准人</td>
+		<td  colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;"><textarea name="pzr" id="pzr" style="width:96% ; height:96px" zname="批准人" ></textarea></td>
+	    </td>
+	</tr>
+	<tr>
+		<td  valign="middle" style="font-size:18px;line-height: 200px;" >备注</td>
+		<td  colspan="3" class="tdcol docformTableNoBD" style="font-size:18px;"><textarea name="bz" id="bz" style="width:96% ; height:190px" zname="备注" ></textarea></td>
+	    </td>
+	</tr>
+	<tr>
+		<td  valign="middle" style="font-size:18px;" >附件</td>
+		<td  colspan="3"  class="tdcol docformTableNoBD" style="font-size:18px;height:60px">
+		<span id="attshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="attshow" ismain="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+		</td>
+	</tr>
+</table>
+</div>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">  
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

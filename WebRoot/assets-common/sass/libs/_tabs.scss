@@ -1,0 +1,82 @@
+/*
+*@module: tabs
+*@Author: juhailin 2015-11-11
+*@Update: 
+*/
+
+
+.#{$baseClass}tabs{
+
+	.#{$baseClass}tabs-nav{
+		position:relative;
+		padding: 0;
+		margin: 0;
+		font-size: 0;
+		border-bottom: 1px solid #ddd;
+	}
+	.#{$baseClass}nav-item{
+		position: relative;
+   		z-index: 1;
+   		display: inline-block;
+    	margin-bottom: -1px;
+    	list-style-type: none;
+    	margin-right: 10px;
+    	font-size: 14px;
+    	>a{
+    		
+		    // line-height: 1.5;
+		    // padding: .4em 1em;
+		    position: relative;
+    		display: block;
+    		height: 34px;
+    		line-height: 34px;
+    		padding: 0 13px;
+    		background: #e5e5e5;
+    		border-radius: 3px 3px 0 0;
+    		&:hover{
+    			text-decoration: none;
+    		}
+    	}
+    	&.#{$baseClass}active{
+    		a{
+				color: #fff;
+				background-color: $primary;
+				cursor: default;
+    		}
+    	}
+    	&:hover{
+    		.#{$baseClass}tab-del,
+    		.#{$baseClass}tab-insert{
+    			display: block;
+    		}
+    	}
+
+	}
+
+	.#{$baseClass}tabs-bd{
+		position: relative;
+		overflow: hidden;
+		border: 1px solid #ddd;
+		border-top: none;
+		z-index: 100;
+	}
+	.#{$baseClass}tab-panel{
+		display: none;
+		z-index: 99;
+		overflow-y: auto;
+		// padding: 10px 10px 15px;
+		// visibility: hidden;
+		.#{$baseClass}panel-cnt{
+			margin: 10px 10px 15px;
+		}
+		&.#{$baseClass}active{
+			display: block;
+			position: relative;
+			z-index: 100;
+			visibility: visible;
+		}
+	}
+}
+
+
+

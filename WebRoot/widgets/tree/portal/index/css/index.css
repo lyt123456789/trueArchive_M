@@ -1,0 +1,15 @@
+body,td{ font-size:12px;}
+td {text-align:left; vertical-align:top}
+.body{margin:0 auto;width:970px;}
+.left{width:293px;overflow:hidden; float:left}
+.right{width:666px;overflow:hidden; float:right}
+.zl{height:225px; overflow:hidden; background:url(../images/z1.jpg)}
+.z2{height:203px; overflow:hidden; background:url(../images/z2.jpg)}
+.if1 {width:282px; height:180px;margin:38px 0 0 5px}
+.if2 {width:285px; height:160px;margin:41px auto auto auto}
+.r1 {width:666px; height:30px;background:url(../images/r1.jpg)}
+.r_box {margin-top:5px; border:5px solid #ccc;padding:3px}
+.r_box .title {background:url(../images/r3.jpg); line-height:33px;font-size:14px; font-weight:bold}
+.r_box .title a{float:right}
+.r_box .title span{ width:150px;height:33px;color:#F12725; background:url(../images/r2.jpg) no-repeat;padding-left:22px;display:block;} 
+.r_box .conter {width:650px; height:138px;margin:4px auto}

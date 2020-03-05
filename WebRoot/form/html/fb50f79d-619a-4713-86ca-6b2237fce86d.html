@@ -1,0 +1,287 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:17px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+.infotan td {
+	text-align:center;
+}
+.topinfotan td {
+	line-height: 30px;
+	text-align:left;
+        padding:5px;
+}
+</style>
+</head>
+
+<body>
+<div class="warp">
+	<center>
+<p style="font-size:30px;line-height:35px;width:819;text-align:center;padding-top:30px;font-family:华文中宋;">
+		<strong style="font-family:华文中宋;">如皋工业园区（如城街道）文件传阅单
+		</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+	</center>
+	
+	<table align="center" width="825px" class="infotan" >
+		<tr>
+			<td width="14%" valign="middle" style="font-size:18px;line-height: 40px;">来文单位</td>
+			<td width="14%"  colspan="2" >
+				<input type="text" id="lwdw" name="lwdw" style="width:115px;line-height:16px" zname="来文单位" />
+			</td>
+			<td width="120px" valign="middle"  style="font-size:18px;line-height: 40px;">来文日期</td>
+			<td width="110px">
+			<input type="text" id="lwtime" name="lwtime" zname="来文日期" style="line-height:16px;width: 90px;border: 0px; border-bottom: 1px #cccccc dotted;" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+						</td>
+			<td width="100px" valign="middle"  style="font-size:18px;line-height: 40px;">来文字号</td>
+			<td width="9%">
+			<input type="text" id="lwzh" name="lwzh" style="width:70px;line-height:16px" zname="来文字号" />
+						</td>
+			<td width="100px" valign="middle"  style="font-size:18px;line-height: 40px;">紧急程度</td>
+			<td width="9%">
+				<select id="jjcd" name="jjcd" zname="紧急程度" style="width:50px;line-height:16px;"></select>
+			</td>		</tr>
+		<tr>
+			<td  style="font-size:18px;line-height: 45px;">文件标题</td>
+			<td colspan="8" style="font-size:18px;">
+				 <textarea id="wjbt" name="wjbt" style="width: 600px;height:45px;" zname="文件标题" ></textarea>
+			</td>
+		</tr>
+		
+		<tr>
+			<td valign="middle" style="font-size:18px;">传阅人</td>
+			<td valign="middle" style="font-size:18px;">传阅日期</td>
+			<td  rowspan="3" colspan="2" valign="middle" style="font-size:18px;">拟办意见：</td>
+			<td colspan="6" rowspan="3" class="tdcol docformTableNoBD">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="font-size:18px;line-height: 50px;height: 50px;"><input type="text"  id="cyra" name="cyra" style="width:100px;line-height:16px" zname="传阅人1"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text"  id="cyrqa" name="cyrqa" style="width:110px;line-height:16px" zname="传阅日期1" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  />
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="ls" style="font-size:18px;line-height: 50px;height: 50px;"><input type="text"  id="cyrb" name="cyrb" style="width:100px;line-height:16px" zname="传阅人2"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text"  id="cyrqb" name="cyrqb" style="width:110px;line-height:16px" zname="传阅日期2" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyrc" name="cyrc" style="width:100px;line-height:16px" zname="传阅人3"/></td>
+			<td >
+				<span class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqc" name="cyrqc" style="width:110px;line-height:16px" zname="传阅日期3" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+				</span>
+			</td>
+			<td  rowspan="13"colspan="2" valign="middle" style="font-size:18px;">领导批示：</td>
+			<td colspan="6" rowspan="13" class="tdcol docformTableNoBD">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrd" name="cyrd" style="width:100px;line-height:16px" zname="传阅人4"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqd" name="cyrqd" style="width:110px;line-height:16px" zname="传阅日期4" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyre" name="cyre" style="width:100px;line-height:16px" zname="传阅人5"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqe" name="cyrqe" style="width:110px;line-height:16px" zname="传阅日期5" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrf" name="cyrf" style="width:100px;line-height:16px" zname="传阅人6"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqf" name="cyrqf" style="width:110px;line-height:17px" zname="传阅日期6" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrg" name="cyrg" style="width:100px;line-height:16px" zname="传阅人7"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqg" name="cyrqg" style="width:110px;line-height:16px" zname="传阅日期7" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrh" name="cyrh" style="width:100px;line-height:16px" zname="传阅人8"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqh" name="cyrqh" style="width:110px;line-height:16px" zname="传阅日期8" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyri" name="cyri" style="width:100px;line-height:16px" zname="传阅人9"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqi" name="cyrqi" style="width:110px;line-height:16px" zname="传阅日期9" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrj" name="cyrj" style="width:100px;line-height:16px" zname="传阅人10"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqj" name="cyrqj" style="width:110px;line-height:17px" zname="传阅日期10" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45x;"><input type="text"  id="cyrk" name="cyrk" style="width:100px;line-height:16px" zname="传阅人11"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrqk" name="cyrqk" style="width:110px;line-height:16px" zname="传阅日期11" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrl" name="cyrl" style="width:100px;line-height:16px" zname="传阅人12"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrql" name="cyrql" style="width:110px;line-height:16px" zname="传阅日期12" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrm" name="cyrm" style="width:100px;line-height:16px" zname="传阅人13"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrqm" name="cyrqm" style="width:110px;line-height:16px" zname="传阅日期13" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrn" name="cyrn" style="width:100px;line-height:16px" zname="传阅人14"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrqn" name="cyrqn" style="width:110px;line-height:16px" zname="传阅日期14" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyro" name="cyro" style="width:100px;line-height:16px" zname="传阅人15"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrqo" name="cyrqo" style="width:110px;line-height:16px" zname="传阅日期15" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrp" name="cyrp" style="width:100px;line-height:16px" zname="传阅人16"/></td>
+			<td>
+				<span class="tdcol docformTableNoBD">
+					<input type="text" id="cyrqp" name="cyrqp" style="width:110px;line-height:16px" zname="传阅日期16" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+				</span>
+			</td>
+			<td colspan="2" rowspan="3" valign="middle" style="font-size:18px;">办理结果：</td>
+			<td colspan="6" rowspan="3" class="tdcol docformTableNoBD">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrq" name="cyrq" style="width:100px;line-height:16px" zname="传阅人17"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrqq" name="cyrqq" style="width:110px;line-height:16px" zname="传阅日期17" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 45px;"><input type="text"  id="cyrr" name="cyrr" style="width:100px;line-height:16px" zname="传阅人18"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrqr" name="cyrqr" style="width:110px;line-height:16px" zname="传阅日期18" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+			</td>
+		</tr>
+               <tr>
+  	<td style="font-size:16px;">附&nbsp;&nbsp;&nbsp;件</td>
+   	<td colspan="8"  style="font-size:16px;"><span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/></td>
+   </tr>
+   
+
+		
+	</table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

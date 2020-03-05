@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">	
+	
+	<bean id="eworkflowService" class="cn.com.trueway.functions.workflow.service.impl.EWorkFlowServiceImpl" scope="prototype">
+		<property name="eworkflowDao"  ref="eworkflowDao" />
+		<property name="employeeDao"  ref="employeeDao" />
+		<property name="departmentDao"  ref="departmentDao" />
+		<property name="itemDao"  ref="itemDao" />
+		<property name="tableInfoDao"  ref="tableInfoDao" />
+		<property name="pendingDao"  ref="pendingDao" />
+		<property name="replayDao"  ref="replayDao" />
+	</bean>
+</beans>

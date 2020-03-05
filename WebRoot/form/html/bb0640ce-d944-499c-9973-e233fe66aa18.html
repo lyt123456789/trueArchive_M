@@ -1,0 +1,274 @@
+<html>
+    
+<head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{align="center";height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px;color:red;border-color:#FF0000;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+var zsid= document.getElementById("zsid").value;
+var zsdw = document.getElementById("zsdw").value;
+var value = zsid+"*"+ zsdw ;
+value = encodeURI(value);
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zsdw").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+var csid= document.getElementById("csid").value;
+var csdw = document.getElementById("csdw").value;
+var value = csid+"*"+ csdw ;
+value = encodeURI(value);
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("csdw").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+
+
+</script>
+<!--以上必须-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+
+<body>
+	<div class="warp">
+		<table class="infotan" width=819px cellspacing="0" align="center" style="border-top:2px solid red;">
+			<caption>
+				<br/>
+				 <p style="font-size:40px;line-height:35px; color:#FF0000; text-align:center;padding-top:30px;">
+				   <strong >
+					南&nbsp;&nbsp;&nbsp;通&nbsp;&nbsp;&nbsp;市&nbsp;&nbsp;&nbsp;教&nbsp;&nbsp;&nbsp;育&nbsp;&nbsp;&nbsp;局&nbsp;&nbsp;&nbsp;发&nbsp;&nbsp;&nbsp;文&nbsp;&nbsp;&nbsp;稿&nbsp;&nbsp;&nbsp;纸
+			   	</strong>
+				</p>
+				<p>&nbsp;</p><p>&nbsp;</p>
+			</caption>
+			<tr>
+				<td  align="center" valign="middle"  style="font-size:18px; height:80px; border:1px solid red; color:red; border-left:none;">编&nbsp;&nbsp;&nbsp;&nbsp;号</td>
+			  <td  colspan="4" style="border:1px solid red;font-size:18px;color:black;">
+				<textarea style="height:40px;width:80%;" id="wh" name="wh" zname="文号"></textarea></td>
+				<td align="center" style="font-size:18px; height:18px; border:1px solid red; color:red;">密&nbsp;&nbsp;&nbsp;&nbsp;级</td>
+				<td  align="center" style="border:1px solid red;color:black;">
+				<select id="mj" name="mj" style="width:50px;"  zname="密级"></select></td>
+				<td align="center" style="font-size:18px; border:1px solid red; color:red;">可否公开</td>
+				<td  align="center" style="border:1px solid red; border-right:none;color:black;">
+				<select id="kfgk" name="kfgk"  style="width:50px;" zname="可否公开"  ></select></td>
+			</tr>
+   <tr>
+        <td align="center" valign="middle" style="height:100px;font-size:18px; border:1px solid red; color:red; border-left:none">拟&nbsp;&nbsp;&nbsp;&nbsp;稿<br/>部&nbsp;&nbsp;&nbsp;&nbsp;门</td>
+				<td colspan="4" style="border:1px solid red;color:black;">
+				<textarea id="ngbm" name="ngbm" zname="拟稿部门" style="width:80%;height:80px;"></textarea></td>
+				<td align="center" style="font-size:18px; height:18px; border:1px solid red; color:red;">拟稿人</td>
+				<td colspan="3" style="border:1px solid red;border-right:none;color:black;">
+				<textarea id="ngr" name="ngr" style="width:80%; height:80px;" zname="拟稿人"></textarea></td>
+			</tr>
+			<tr>
+			      <td align="center" valign="middle"  style="font-size:18px; height:100px; border:1px solid red; color:red; border-left:none;" >处&nbsp;&nbsp;&nbsp;&nbsp;室</br>核&nbsp;&nbsp;&nbsp;&nbsp;稿</td>
+			      <td colspan="4" style="border:1px solid red;border-right:none;color:black;">
+				  <textarea id="cshg" name="cshg" style="width:80%; height:80px;" zname="处室核稿"></textarea></td>
+					
+			 <td align="center" valign="middle" style="border:1px solid red;color:red;">法规处</br>核&nbsp;&nbsp;&nbsp;&nbsp;稿</td>
+			 <td  align="left" width="18%"  colspan="3"  style="font-size:18px;border:1px solid red;border-right:none;color:black;">
+				<textarea id="fgchg" name="fgchg" style="width:80%; height:80px;" zname="法规处核稿"></textarea>			 </td>
+       
+			</tr>
+			
+			<tr>
+				<td align="center" valign="middle" style="font-size:18px;  height:100px; border:1px solid red; color:red; border-left:none">会&nbsp;&nbsp;&nbsp;&nbsp;签</td>
+				<td colspan="8" style="border:1px solid red; border-right:none;height:80px;color:black;">
+				&nbsp;
+				</td>
+			</tr>
+			<tr>
+				<td align="center" valign="middle"style="font-size:18px; height:100px; border:1px solid red; color:red; border-left:none">领&nbsp;&nbsp;&nbsp;&nbsp;导<br/>签&nbsp;&nbsp;&nbsp;&nbsp;发</td>
+				<td colspan="8" style="border:1px solid red; border-right:none; height:80px;color:black;">
+				&nbsp;
+				</td>
+			</tr>
+			 <tr>
+				<td align="center" valign="middle" style="font-size:18px;  height:150px; border:1px solid red; color:red; border-left:none">标&nbsp;&nbsp;&nbsp;&nbsp;题</td>
+				<td colspan="8" style="border:1px solid red; border-right:none;height:150px;color:black;">
+					<textarea id="bt" name="bt" style="width:700px; height:120px;" zname="标题"></textarea>				
+				</td>
+			</tr>
+			<tr>
+				<td height="100px" align="center" valign="middle"style="height:100px;font-size:18px; border:1px solid red; color:red; border-left:none">主题词</td>
+				<td colspan="8" style="border:1px solid red; border-right:none;color:black;">
+					<textarea id="ztc" name="ztc" style="width:700px; height:80px;" zname="主题词"></textarea></td>
+			</tr>
+			  <tr>
+				<td align="center" valign="middle" style="font-size:18px;height:200px; border:1px solid red; color:red; border-left:none">主&nbsp;&nbsp;&nbsp;&nbsp;送<br>单&nbsp;&nbsp;&nbsp;&nbsp;位</td>
+				<td colspan="4" style="border:1px solid red;color:black;">
+					<textarea id="zsdw" name="zsdw" style="width:200px; height:140px;" zname="主送单位"></textarea>				
+					</td>
+			    <td align="center" style="border:1px solid red;color:red;">抄&nbsp;&nbsp;&nbsp;&nbsp;送<br>单&nbsp;&nbsp;&nbsp;&nbsp;位	</td>
+			    <td colspan="4" style="border:1px solid red; border-right:none;height:200px;color:black;">
+			        <textarea id="csdw" name="csdw" style="width:200px;height:140px;" zname="抄送单位"></textarea>
+             </td>
+		    </tr>
+				<tr>
+				<td align="center" valign="middle" style="font-size:18px;border:1px solid red; color:red; border-left:none; height:80px;">备&nbsp;&nbsp;&nbsp;&nbsp;案</td>
+				<td style="border:1px solid red; color:black;" >
+				  <textarea style="width:50px;height:40px;"  id="ba" name="ba" zname="备案" value=""></textarea>  
+				</td>
+				<td align="center" style="border:1px solid red; color:red" >打&nbsp;&nbsp;&nbsp;&nbsp;印<br>日&nbsp;&nbsp;&nbsp;&nbsp;期</td>
+				<td colspan="2" style="border:1px solid red; color:black;" >
+				<textarea style="width:50px;height:40px;" id="dyrq" name="dyrq" zname="打印日期" value=""></textarea>
+				</td>
+				<td align="center" colspan="2" style="border:1px solid red; border-right:none; color:red">缮&nbsp;&nbsp;&nbsp;&nbsp;印<br>份&nbsp;&nbsp;&nbsp;&nbsp;数</td>
+		    <td colspan="2" style="border:1px solid red; border-right:none; color:black;">
+		    <textarea style=" width:80%;height:40px;" id="syfs" name="syfs" zname="缮印份数" value=""></textarea>
+		    </td>
+			<tr>
+				<td align="center" valign="middle"style="font-size:18px; height:150px; border:1px solid red; color:red; border-left:none">备&nbsp;&nbsp;&nbsp;&nbsp;注</td>
+				<td colspan="8" style="border:1px solid red; border-right:none; height:95px;color:black;">
+                <textarea id="bz" name="bz" style="width:80%; height:120px;" zname="备注"></textarea>
+				</td>
+			</tr>
+	        <tr height="1px;">
+			<td width="10%" style="border:none;"></td>
+			<td width="15%" style="border:none;"></td>
+			<td width="10%" style="border:none;"></td>
+			<td width="10%" style="border:none;"></td>
+			<td width="5%"  style="border:none;"></td>
+			<td width="10%" style="border:none;"></td>
+			<td width="10%" style="border:none;"></td>
+			<td width="10%" style="border:none;"></td>
+			<td width="15%" style="border:none;"></td>
+			</tr>
+				
+	    </tr>
+</table>
+
+		
+		
+
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+	</div
+	<INPUT userdefine=hidden id="instanceId" name="instanceId" value="">
+	<INPUT userdefine=hidden id="formId" name="formId" value="">
+	<INPUT userdefine=hidden id="workFlowId" name="workFlowId" value="">
+	<INPUT userdefine=hidden id="processId" name="processId" value="">
+	<input userdefine=hidden id="keyword" name="keyword" value="空" />
+	<INPUT userdefine=hidden id="csid" name="csid" value="">
+	<INPUT userdefine=hidden id="zsid" name="zsid" value="">
+
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

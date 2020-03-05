@@ -1,0 +1,30 @@
+[
+	{
+		"name":"本部门",
+		"domId":"ownOrg",
+		"searchOption":null,
+		"apiUrl":"./zTree/tongzhou/own.json",
+		"level":1,
+		"isCustomGroup":false
+	},
+	{
+		"name":"所有部门",
+		"domId":"allOrg",
+		"searchOption":{
+			"domId":"mc",
+			"apiUrl":"./zTree/tongzhou/search.json"
+		},
+		"apiUrl":"./zTree/tongzhou/tongz-all.json",
+		"level":0,
+		"isCustomGroup":false
+	},
+	{
+		"name":"常用组",
+		"domId":"groupOrg1",
+		"searchOption":null,
+		"apiUrl":"./zTree/tongzhou/groupOrg.json",
+		"sortUrl":"http://61.155.85.74:4692/trueMailV1.0/departmentTree_toSetUserGroup.do",
+		"level":1,
+		"isCustomGroup":true
+	}
+]

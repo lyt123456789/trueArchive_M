@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+        	
+	<bean id="sendDocAction" class="cn.com.trueway.document.business.action.SendDocAction">
+		<property name="selectTreeService"  ref="selectTreeService"/>
+		<property name="sendDocService"  ref="sendDocService"/>
+		<property name="docExchangeClient"  ref="docExchangeClient"/>
+		<property name="attachmentService"  ref="attachmentService"/>
+		<property name="receiveDocService"  ref="receiveDocService"/>
+		<property name="docNumberManagerService"  ref="docNumberManagerService"/>
+		<property name="commentService"  ref="commentService"/>
+		<property name="fieldMatchingService"  ref="fieldMatchingService"/>
+		<property name="tableInfoService"  ref="tableInfoService"/>
+		<property name="flowService"  ref="flowService"/>
+	</bean>
+</beans>
+	

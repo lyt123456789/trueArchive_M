@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="renderer" content="webkit">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/layout-default.css" />
+	<script src="js/jquery.min.js" type="text/jscript"></script>
+	<script src="js/jquery-ui.js" type="text/jscript"></script>
+	<script src="js/jquery.layout.min.js" type="text/jscript"></script>
+	
+</head>
+<body>
+<h3>Loading...</h3>
+<!-- IFRAME as layout-pane -->
+<iframe class="ui-layout-center" src="frame1.html" frameborder="0" scrolling="auto"></iframe>
+
+<!-- IFRAME as layout-pane -->
+<iframe class="ui-layout-east" src="about:blank" longdesc="frame2.html" frameborder="0" scrolling="auto"></iframe>
+
+<script type="text/javascript">
+	function loadIframePage (pane, $Pane) {
+		if (!$Pane) $Pane = $('.ui-layout-'+ pane);
+		var $Iframe = $Pane.prop('tagName')=='IFRAME' ? $Pane : $Pane.find('IFRAME:first');
+		if (!$Iframe.length) return; // no iframe
+		var
+			src  = $Iframe.attr('src')
+		,	page = $Iframe.attr('longdesc')
+		;
+		if (page && src != page) $Iframe.attr('src',page);
+	}
+
+	var myLayout;
+
+	$(document).ready( function() {
+		myLayout = $("body").layout({
+		    east__minSize:	'20%'
+	    ,   east__maxSize:	'80%'		
+		,	east__size:			'50%'
+		,	center__minHeight:	200
+		,	spacing_closed:		8
+		,	initClosed:			false
+		,	maskContents:		true
+		,	onopen:				loadIframePage
+		,	east__resizeWhileDragging: true	
+		});
+		
+		//loadIframePage('east');
+	});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="autoSendAction" class="cn.com.trueway.workflow.core.action.AutoSendAction" singleton="false" autowire="byName">
+		<property name="autoSendService" ref="autoSendService" />
+		<property name="trueJsonService" ref="trueJsonService" />
+	</bean>
+</beans>

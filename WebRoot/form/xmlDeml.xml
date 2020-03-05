@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin name="sjzljy" zhName="数据质量平台" jar="sjzljy.jar"
+	class="com.huasoft.sjzljy" returnMethod = "getReturnDis">
+
+	<server id="1" name="xmjy" zhName="姓名校验">
+		<inputFields>
+			<field name="ZJID" zhName="主键ID" type="varchar" length="50"/>
+			<field name="XM" zhName="姓名" type="varchar" length="30"/>
+		</inputFields>
+		<outputFields>
+			<field name="ZJID" zhName="主键ID" type="varchar" length="50" />
+			<field name="XM" zhName="姓名" type="varchar" length="30" />
+			<field name="WTMS" zhName="问题描述" type="varchar"
+				length="500" />
+		</outputFields>
+	</server>
+
+	<server id="2" name="sfzhjy" zhName="身份证校验">
+		<inputFields>
+			<field name="ZJID" zhName="主键ID" type="varchar" length="50"/>
+			<field name="SFZH" zhName="身份证号" type="varchar" length="18"/>
+		</inputFields>
+		<outputFields>
+			<field name="ZJID" zhName="主键ID" type="varchar" length="50" />
+			<field name="SFZH" zhName="身份证号" type="varchar" length="18" />
+			<field name="WTMS" zhName="问题描述" type="varchar"
+				length="500" />
+		</outputFields>
+	</server>
+</plugin>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+        	
+	<bean id="formAction" class="cn.com.trueway.workflow.set.action.FormAction">
+		<property name="zwkjFormService" ref="zwkjFormService"></property>
+		<property name="tableInfoService" ref="tableInfoService"></property>
+		<property name="fieldInfoService" ref="fieldInfoService"></property>
+		<property name="dictionaryService" ref="dictionaryService"></property>
+		<property name="serverPluginService" ref="serverPluginService"></property>
+		<property name="serverPluginAction" ref="serverPluginAction"></property>
+		<property name="flowService" ref="flowService"></property>
+		
+	</bean>
+	<bean id="workdayAction" class="cn.com.trueway.workClander.action.WorkdayAction">
+		<property name="workdayService" ref="workdayService"></property>
+		<property name="tableInfoService" ref="tableInfoService"></property>
+	</bean>
+	
+	<bean id="procedureAction" class="cn.com.trueway.workflow.set.action.ProcedureAction">
+		<property name="zwkjFormService" ref="zwkjFormService"></property>
+	</bean>
+</beans>

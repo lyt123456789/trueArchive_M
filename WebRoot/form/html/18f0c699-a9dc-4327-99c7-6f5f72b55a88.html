@@ -1,0 +1,184 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+	width: 1024px;
+	max-width:1024px;
+	height: 1448px;
+	min-height: 1448px;
+	overflow: hidden;
+}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+</style>
+<script type="text/javascript">
+function choosejsy(){
+	var winoption ="dialogHeight:800px;dialogWidth:700px;status:no;scroll:no;resizable:no;center:yes";
+	var ret=window.showModalDialog("http://61.155.85.78:9493/functions/meeting_getSettingTree.do?isSingle=1&t="+new Date().getTime(),null,winoption);	
+	if(ret){
+		var userNames = '';
+		$.each(ret.data,function(k,v){
+		        userNames += v.name+",";
+		});
+		userNames=userNames.substring(0,userNames.length-1);
+                document.getElementById("jsy").value = userNames;
+	}
+}
+function chooseper(){
+	var winoption ="dialogHeight:800px;dialogWidth:700px;status:no;scroll:no;resizable:no;center:yes";
+	var ret=window.showModalDialog("http://61.155.85.78:9493/functions/meeting_getSettingTree.do?t="+new Date().getTime(),null,winoption);	
+	if(ret){
+		var userNames = '';
+		var userIds = '';
+		$.each(ret.data,function(k,v){
+		        userNames += v.name+",";
+		        userIds += v.value+",";
+		});
+		userNames=userNames.substring(0,userNames.length-1);
+		userIds=userIds.substring(0,userIds.length-1);
+                document.getElementById("personname").value = userNames;
+                document.getElementById("personid").value = userIds;	
+        }
+}
+</script>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>南通市国土资源局会议通知信息</strong>
+</p>
+<table  width="819" class="infotan" align="center">
+<tr>
+<td valign="middle"><div align="right" style="width: 170px">会议名称</div></td>
+<td colspan="3" style="width: 630px" ><input type="text" style="width: 600px" id="meetingname" name="meetingname" zname="会议名称" maxlength="50"/></td>				
+</tr>
+<tr>
+<td valign="middle"><div align="right">通知标题</div></td>
+<td colspan="3"><input type="text" style="width: 600px" id="newtitle" name="newtitle" zname="通知标题" maxlength="50"/></td>
+</tr>
+<tr>
+<td valign="middle"><div align="right">抬头</div></td>
+<td colspan="3"><input type="text" style="width: 600px" id="newtt" name="newtt" zname="抬头" maxlength="50"/></td>
+</tr>
+<tr>
+<td valign="middle"><div align="right">通知内容</div></td>
+<td colspan="3"><input type="text" style="width: 600px" id="newrl" name="newrl" zname="通知内容" maxlength="500"/></td>
+</tr>
+<tr>
+<td valign="middle"><div align="right">落款</div></td>
+<td colspan="3"><input type="text" style="width: 600px" id="newlk" name="newlk" zname="落款" maxlength="50"/></td>
+</tr>
+<tr>
+<td valign="middle"><div align="right">时间</div></td>
+<td colspan="3"><input type="text" style="width: 600px" id="newtime" name="newtime" zname="时间" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH时mm分'})"/></td>
+</tr>
+<tr>
+<td valign="middle"><div align="right" style="width: 170px">地点</div></td>
+<td style="width: 230px" ><input type="text" id="arr" name="arr" zname="地点" maxlength="50"/></td>
+<td valign="middle" style="width: 200px"><div align="right" >驾驶员</div></td>
+<td style="width: 230px;" ><input type="text" id="jsy" name="jsy" zname="驾驶员" maxlength="50" onclick="choosejsy();"/>
+</td>
+</tr>
+<tr>
+<td valign="middle"><div align="right">参会人员</div></td>
+<td colspan="3"  style="height:200px;font-size:18px;padding:5px;" ><textarea style="width:500px;" id="personname" name="personname" zname="参会人员" readonly="readonly" onclick="chooseper();"></textarea>
+</td>
+</tr>
+<tr>
+<td valign="middle"><div align="right">附件</div></td>
+<td colspan="3">
+<span id="fjshow"></span>
+<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</td>
+</tr>
+</table>
+</div>
+<INPUT type="hidden" id="personid" name="personid" zname="参会人员ID" value=""> 
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

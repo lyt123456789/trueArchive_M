@@ -1,0 +1,31 @@
+/**
+ *   页面布局样式表
+ * 详细元素非本样式表控制
+ **/
+a{color:#646464;}
+a:hover{color:#CF1B0A; text-decoration:none;}
+body{color:#646464;}
+
+.header{height:236px; background:url(../images/a.sign.headerbg.jpg) repeat-x 0 0;}
+.header .context{height:236px; background:url(../images/a.sign_01.gif) no-repeat center top;}
+.header .context2{height:236px; background:url(../images/0204.jpg) no-repeat center top;}
+
+.footer{height:157px; background:url(../images/a.sign.footerbg.jpg) repeat-x 0 0;}
+.footer .context{height:157px; background:url(../images/a.sign_10.gif) no-repeat center top;}
+
+#loginBox{ width:400px; height:210px; margin:0 auto; background-color:#FFF;}
+#loginBox .title{background:url(../images/l.login_03.gif) repeat-x 0 0; height:44px;}
+#loginBox .content{background:url(../images/l.login_07.gif) no-repeat center right; height:350px; position:relative; margin:0 30px;}
+#loginBox .content .formname{background:url(../images/l.login_09.gif) no-repeat; width:278px; height:57px; position:absolute; top:50px; left:0; z-index:3;}
+#loginBox .inputVM{position:absolute; left:10px; width:400px;}
+#loginBox .inputVM .box{height:26px; float:left; border:1px solid #CBCBCB;}
+#loginBox .inputVM .userico{ background:url(../images/l.login_13.gif) no-repeat center left;}
+#loginBox .inputVM .pwdico{ background:url(../images/l.login_16.gif) no-repeat center left;}
+#loginBox .inputVM .yzmico{}
+#loginBox .inputVM label{width:80px; line-height:26px; display:block; float:left; padding-left:35px;}
+#loginBox .inputVM input{width:240px; height:26px; overflow:hidden; _line-height:28px; padding:0 3px; border-width:0; background:url(../images/l.login_17.gif) repeat-x; vertical-align:middle;} 
+#loginBox .user{top:20px;}
+#loginBox .pwd{top:60px;}
+#loginBox .checkcode{top:100px;}
+#loginBox .checkcode input{width:100px;}
+#loginBox .formbtn{top:150px; height:30px;}

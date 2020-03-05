@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="setup" extends="common-default">
+		<action name="setup_*" class="setupAction" method="{1}">
+			<result name="login">/WEB-INF/pages/sys/setup/login.jsp</result>
+			<result name="licence_info">/WEB-INF/pages/sys/setup/licence_info.jsp</result>
+			<result name="sysprop_info">/WEB-INF/pages/sys/setup/sysprop_info.jsp</result>
+			<result name="database_info">/WEB-INF/pages/sys/setup/database_info.jsp</result>
+			<result name="setup_info">/WEB-INF/pages/sys/setup/setup_info.jsp</result>
+			
+		</action>
+		
+		<action name="setup" class="setupAction" method="login">
+			<result name="login">/WEB-INF/pages/sys/setup/login.jsp</result>
+		</action>
+	</package>
+</struts>

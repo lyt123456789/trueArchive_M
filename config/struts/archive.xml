@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="archive" extends="common-default">
+		
+		
+		<action name="model_*" class="modelAction" method="{1}">
+			<result name="index">/WEB-INF/pages/model/index.jsp</result>
+			<result name="welcome">/WEB-INF/pages/model/welcome.jsp</result>
+			<result name="toSearchJsp">/WEB-INF/pages/model/searchJsp.jsp</result>
+			<result name="modelMenu4Key">/WEB-INF/pages/model/modelMenu4Key.jsp</result>
+			<result name="modelMenu4Zh">/WEB-INF/pages/model/modelMenu4Zh.jsp</result>
+			<result name="modelMenu4QW">/WEB-INF/pages/model/modelMenu4QW.jsp</result>
+			<result name="searchList4Key">/WEB-INF/pages/model/searchList4Key.jsp</result>
+			<result name="searchList4Zh">/WEB-INF/pages/model/searchList4Zh.jsp</result>
+			<result name="searchList4QW">/WEB-INF/pages/model/searchList4QW.jsp</result>
+			<result name="showDetail">/WEB-INF/pages/model/showDetail.jsp</result>
+			<result name="metaDataList">/WEB-INF/pages/model/metaDataList.jsp</result>
+			<result name="manageJsp">/WEB-INF/pages/manage.jsp</result>
+			
+			<result name="index4zzcd">/WEB-INF/pages/model/index4zzcd.jsp</result>
+			<result name="applyCenterJsp">/WEB-INF/pages/model/applyCenter.jsp</result>
+		</action>
+		
+		
+	</package>
+	 <!--不拦截ws请求 -->
+     <constant name="struts.action.excludePattern" value="msgWebSocket"></constant>
+</struts>
+

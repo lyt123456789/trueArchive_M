@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="siteManage" extends="common-default">
+		<action name="siteManage_*" class="siteAction" method="{1}">
+			<result name="toShowAll">/WEB-INF/pages/unifiledUserMng/site/showAllSite.jsp</result>
+			<result name="toAddSite">/WEB-INF/pages/unifiledUserMng/site/addSite.jsp</result>
+			<result name="toUpdateSite">/WEB-INF/pages/unifiledUserMng/site/updateSite.jsp</result>
+			
+			<result name="showAllDep">/WEB-INF/pages/unifiledUserMng/department/showAllDep.jsp</result>
+			<result name="toAddDep">/WEB-INF/pages/unifiledUserMng/department/addDep.jsp</result>
+			<result name="toUpdateDep">/WEB-INF/pages/unifiledUserMng/department/updateDep.jsp</result>
+			
+			<result name="toShowAllEmp">/WEB-INF/pages/unifiledUserMng/employee/showAllEmp.jsp</result>
+			<result name="toShowEmp">/WEB-INF/pages/unifiledUserMng/employee/empTree.jsp</result>
+			<result name="addEmp">/WEB-INF/pages/unifiledUserMng/employee/addEmp.jsp</result>
+			<result name="changePW">/WEB-INF/pages/unifiledUserMng/employee/changePW.jsp</result>
+			<result name="updateEmp">/WEB-INF/pages/unifiledUserMng/employee/updateEmp.jsp</result>
+			<result name="showAllEmpForAuth">/WEB-INF/pages/unifiledUserMng/employee/showAllEmpForAuth.jsp</result>
+			<result name="showEmpForAuth">/WEB-INF/pages/unifiledUserMng/employee/showEmpForAuth.jsp</result>
+			
+			
+			<result name="getRoleList">/WEB-INF/pages/unifiledUserMng/role/getRoleList.jsp</result>
+			<result name="addRole">/WEB-INF/pages/unifiledUserMng/role/addRole.jsp</result>
+			<result name="getResourceList">/WEB-INF/pages/unifiledUserMng/role/getResourceList.jsp</result>
+			<result name="updateRole">/WEB-INF/pages/unifiledUserMng/role/updateRole.jsp</result>
+		</action>
+	</package>
+</struts>

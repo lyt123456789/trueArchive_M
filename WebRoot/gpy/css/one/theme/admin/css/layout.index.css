@@ -1,0 +1,62 @@
+/**
+ *   页面布局样式表
+ * 详细元素非本样式表控制
+ **/
+a{color:#646464;}
+a:hover{color:#CF1B0A; text-decoration:none;}
+.warp{width:100%;}
+body{background-color:#EAEAEA;}
+
+.header{background:#1675B7 url(../images/a.i_02.gif) no-repeat right top; height:48px; border-bottom:1px solid #066293;}
+.header .logo{background:url(../images/a.i_01.gif) no-repeat 0 0; height:48px; overflow:hidden; zoom:1;}
+.header .admin2{background:url(../images/0143.gif) no-repeat 0 0;}
+.header .logo .times{color:#FFF; font-weight:normal; padding-left:400px; margin-top:25px; display:block; float:left;}
+.header .logo .user{color:#FFF; font-weight:normal; padding-right:20px; margin-top:25px; display:block; float:right; padding-left:20px; background:url(../images/ico/administrator3_16x16.gif) no-repeat center left;}
+
+.naver{background:#0C6BAB url(../images/a.i_15.gif) repeat-y center top; border-bottom:1px solid #066293; height:40px; overflow:hidden; zoom:1;}
+.naver li{float:left; display:inline; line-height:40px; color:#FFF;}
+.naver li.line{height:40px; width:2px; background:url(../images/0130.gif) no-repeat center;}
+.naver a{color:#FFF; font-weight:bold; font-size:14px;padding-left:30px; padding-right:30px;}
+.naver a:hover{color:#FFF;}
+
+.bodyer{padding-top:5px; overflow:hidden; zoom:1;}
+.main{width:100%; float:left;}
+#main{margin-left:234px;}
+.container,.side-left,.side-right{float:left;}
+.container{width:100%;}
+.container .vm{margin:0 260px 0 0;}
+.side-left{width:214px;}
+.side-right{width:240px;}
+.side-left{padding-left:10px; margin-left:-100%;}
+.side-right{margin-left:-250px;}
+
+.side-naver .title{background:url(../images/a.i_18.gif) no-repeat center bottom; height:32px; line-height:26px; border-top:1px solid #669ACC; border-left:1px solid #6699CE; border-right:1px solid #6699CE;}
+.side-naver .title b{display:block; height:26px; width:100%; cursor:pointer; background:url(../images/a.i_26.gif) no-repeat 15px 4px; text-align:center;}
+.side-naver .content{border-left:1px solid #BFBFBF; border-right:1px solid #BFBFBF; background-color:#FFF; display:none;}
+
+.col .title{background:url(../images/a.i_23.gif) repeat-x 0 0; height:34px; line-height:38px; border-top:1px solid #669ACC; border-left:1px solid #6699CE; border-right:1px solid #6699CE; overflow:hidden; zoom:1;}
+.col .title h2{background:url(../images/a.i_22.gif) no-repeat right -34px; width:110px; float:left; display:inline;}
+.col .title h2 b{display:block; background:url(../images/a.i_22.gif) no-repeat 10px 0; margin-right:5px; color:#FFFFFF;}
+.col .title h2 b span{display:block; height:34px; padding-left:45px;}
+.col .title .tools{float:right; background:url(../images/a.i_23.gif) no-repeat 0 -34px;}
+.col .content{border-left:1px solid #BFBFBF; border-right:1px solid #BFBFBF;border-bottom:1px solid #BFBFBF; background-color:#FFF;}
+
+.ico-date{background:url(../images/0134.gif) no-repeat 18px 8px;}
+.ico-note{background:url(../images/0135.gif) no-repeat 18px 9px;}
+.ico-online{background:url(../images/0136.gif) no-repeat 22px 9px;}
+.ico-book{background:url(../images/0137.gif) no-repeat 22px 12px;}
+
+.vm .col .title h2{width:150px;}
+.vm .col .content{border-width:0;}
+.admin2 .col .title h2{width:120px;}
+
+.note{margin-bottom:22px;}
+.note li{line-height:22px; border-bottom:1px solid #BFBFBF; padding-left:30px;}
+
+.pre-online{margin-bottom:26px;}
+.pre-online li{line-height:26px; border-bottom:1px solid #BFBFBF; padding-left:45px; background:url(../images/0139.gif) no-repeat 20px 2px;}
+
+.tab-bf td{border:1px solid #BFBFBF; line-height:2em; padding:0 3px;}
+.bgDF{background-color:#DFF3FE;}
+
+.footer{background:#1675B7 url(../images/a.i_33.gif) no-repeat center top; height:34px; line-height:34px; color:#D6F0FF; text-align:center; margin-top:5px;}

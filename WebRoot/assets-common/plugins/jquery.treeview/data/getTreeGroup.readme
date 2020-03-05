@@ -1,0 +1,48 @@
+name:组名
+domId:页面上的标签ID，必须唯一
+apiUrl:获取本组树json的请求地址，发起请求的时候将自动添加随机参数
+level:所有人员的集合组填0，其他都填1
+isCustomGroup:是否为自定义组，绑定在个人身上的组填true，其他固定组都是false
+searchOption:搜索功能选项设置，关闭填null
+	{
+		domId:搜索输入框input标签的ID，必须唯一
+		apiUrl:搜索请求的地址，发起请求的时候将自动添加随机参数
+	}
+-----------------------------------------------
+[
+	{
+		"name":"本部门",
+		"domId":"ownOrg",
+		"searchOption":null,
+		"apiUrl":"departmentTree_getContent.do?isowner=1",
+		"level":1,
+		"isCustomGroup":false
+	},
+	{
+		"name":"所有部门",
+		"domId":"allOrg",
+		"searchOption":{
+			"domId":"mc",
+			"apiUrl":"departmentTree_getContent.do"
+		},
+		"apiUrl":"departmentTree_getStaticJsonTree.do",
+		"level":0,
+		"isCustomGroup":false
+	},
+	{
+		"name":"常用联系人A",
+		"domId":"groupOrg1",
+		"searchOption":null,
+		"apiUrl":"assets-common/plugins/jquery.treeview/data/test3.json",
+		"level":1,
+		"isCustomGroup":true
+	},
+	{
+		"name":"常用联系人B",
+		"domId":"groupOrg2",
+		"searchOption":null,
+		"apiUrl":"assets-common/plugins/jquery.treeview/data/test4.json",
+		"level":1,
+		"isCustomGroup":true
+	}
+]

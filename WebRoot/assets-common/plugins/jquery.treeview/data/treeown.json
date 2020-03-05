@@ -1,0 +1,16 @@
+[
+ {"text":"<a  data-id='{BFA811EA-0000-0000-4553-EB6400000461}' href='javascript:;'>办公室</a>","id":"0","expanded":true,"hasChildren":true,"classes":"folder",
+"children":[
+ {"text":"<a data-id='{BFA811EA-0000-0000-455E-3C130000116B}' href='javascript:;' >章平</a>","id":"{BFA811EA-0000-0000-455E-3C130000116B}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{BFA811EA-0000-0000-4554-F5BA000004D6}' href='javascript:;' >陈昱</a>","id":"{BFA811EA-0000-0000-4554-F5BA000004D6}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{BFA811EA-0000-0000-4561-128900001569}' href='javascript:;' >杨国建</a>","id":"{BFA811EA-0000-0000-4561-128900001569}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{BFA811EA-0000-0000-4557-E67F000008EC}' href='javascript:;' >徐曙</a>","id":"{BFA811EA-0000-0000-4557-E67F000008EC}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{7F000001-FFFF-FFFF-99F6-59B300000025}' href='javascript:;' >章伯堂</a>","id":"{7F000001-FFFF-FFFF-99F6-59B300000025}","hasChildren":false,"classes":"file"}
+,
+ {"text":"<a data-id='{BFA8006A-0000-0000-031D-C03C00000003}' href='javascript:;' >杜明东</a>","id":"{BFA8006A-0000-0000-031D-C03C00000003}","hasChildren":false,"classes":"file"}
+]}
+]

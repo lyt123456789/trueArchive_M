@@ -1,0 +1,245 @@
+<html>
+    
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{align:center;border:1px #333 solid;padding:2px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:110px;}
+.infotan td select{width:120px;}
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+var zsid= document.getElementById("zsid").value;
+var zsdw = document.getElementById("zsdw").value;
+var value = zsid+"*"+ zsdw ;
+value = encodeURI(value);
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zsdw").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+var csid= document.getElementById("csid").value;
+var csdw = document.getElementById("csdw").value;
+var value = csid+"*"+ csdw ;
+value = encodeURI(value);
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("csdw").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+
+
+</script>
+<!--以上必须-->
+<style>
+.tt{
+	font-family:"方正大标宋简体";
+	font-size:22px;
+}
+.tl{
+font-family:"仿宋_GB2312";
+	text-align:center;
+	font-size:16px;
+}
+.tr{
+font-family:"仿宋_GB2312";
+	text-align:center;
+	font-size:16px;
+}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+<body>
+	<div class="warp">
+		<table class="infotan" width="819" cellspacing="0" align="center">
+			<tr>
+			    <td style="width:136px;border:0" ></td>
+			    <td style="width:136px;border:0" ></td>
+			    <td style="width:136px;border:0" ></td>
+			    <td style="width:136px;border:0" ></td>
+			    <td style="width:136px;border:0" ></td>
+                <td style="width:136px;border:0" ></td>				
+		    </tr>
+			<tr>
+				<td colspan="6" class="tt" align="center" style="height:70px; border:0px solid black;font-family:"方正大标宋简体";">
+					国投公司拟文稿单
+				</td>
+			</tr>			
+			<tr>
+				<td colspan="4" style="font-size:16px;text-align:right;border:0px;font-family:'楷体_GB2312';">日期</td>			  
+			    <td colspan="2" style="border:0px;text-align:center;font-family:'楷体_GB2312';">
+					<input style="width:270px;" type="text" id="djrq" name="djrq" zname="登记日期" value=""/>
+				</td>
+			</tr>
+            <tr>
+			    <td rowspan="2" class="tl">拟稿单位</td>
+			    <td colspan="2" class="tr" rowspan="2" style="color:black;padding-right:6px;">
+					<textarea style="width:260px;height:80px;" id="ngdw" name="ngdw" zname="拟稿单位" value=""></textarea>
+				</td>
+				<td class="tl" style="height:80px;">发文字号</td>
+			    <td colspan="2" class="tr" style="color:black;padding-right:6px;">
+					<textarea style="width:260px;height:40px;" id="fwzh" name="fwzh" zname="发文字号" value=""></textarea>
+				</td>
+			</tr>
+			<tr>
+			    <td class="tl" style="height:80px;">限办日期</td>
+			    <td colspan="2" class="tr" style="color:black;padding-right:6px;">
+					<textarea style="width:270px;height:40px;" id="xbrq" name="xbrq" zname="限办日期" value=""></textarea>
+				</td>
+			</tr>
+            <tr>
+			    <td class="tl" style="height:80px;">文件标题</td>
+			    <td colspan="5" class="tr" style="color:black;height:60px;padding-right:6px;">
+					<textarea style="height:75px;" id="wjbt" name="wjbt" zname="文件标题" value=""></textarea>
+				</td>
+			</tr>
+            <tr>
+			    <td class="tl" style="height:80px;">拟稿人</td>
+			    <td colspan="2" class="tr" style="color:black;padding-right:6px;">
+					<textarea style="width:260px;height:60px;" id="ngr" name="ngr" zname="拟稿人" value=""></textarea>
+				</td>
+				<td class="tl">部门核稿</td>
+			    <td colspan="2"></td>
+			</tr>
+			<tr>
+			    <td class="tl" style="height:160px;">办公室<br/>核稿</td>
+			    <td colspan="2"></td>
+				<td class="tl">分管领导<br/>审核</td>
+			    <td colspan="2"></td>
+			</tr>
+			<tr>
+			    <td class="tl" style="height:280px;">会签</td>
+			    <td colspan="2"></td>
+				<td class="tl">签发</td>
+			    <td colspan="2"></td>
+			</tr>
+            <tr>
+			    <td class="tl" style="height:120px;">主送单位</td>
+			    <td colspan="5" class="tr" style="color:black;padding-right:6px;">
+					<textarea style="height:110px;" id="zsdw" name="zsdw" zname="主送单位" value=""></textarea>
+				</td>
+			</tr>
+            <tr>
+			    <td class="tl" style="height:120px;">抄送单位</td>
+			    <td colspan="5" class="tr" style="color:black;padding-right:6px;">
+					<textarea style="height:110px;" id="csdw" name="csdw" zname="抄送单位" value=""></textarea>
+				</td>
+			</tr>
+            <tr>
+			    <td class="tl" style="height:120px;">备注</td>
+			    <td colspan="5"></td>
+			</tr>			
+</table>
+
+		
+		
+
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+	</div
+	><INPUT type="hidden" id="instanceId" name="instanceId" value="">
+	<INPUT type="hidden" id="formId" name="formId" value="">
+	<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">
+	<INPUT type="hidden" id="processId" name="processId" value="">
+
+
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+</html>

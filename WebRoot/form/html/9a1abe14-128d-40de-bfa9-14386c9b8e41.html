@@ -1,0 +1,326 @@
+<html>
+    
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{margin:0 auto; border-color:#FF0000;} 
+.infotan td{align="center";height:30px;font-size:18px;border:1px #333 solid;padding:5px;color:black;border-color:#FF0000;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td select{width:120px;}
+.bottominfotan td{line-height:20px;padding:3px;}
+.bottominfotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+var zsid= document.getElementById("zsid").value;
+var zsbz = document.getElementById("zsbz").value;
+var value = zsid+"*"+ zsbz ;
+value = encodeURI(value);
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zsbz").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+var csid= document.getElementById("csid").value;
+var csbz = document.getElementById("csbz").value;
+var value = csid+"*"+ csbz ;
+value = encodeURI(value);
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("csbz").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+
+
+</script>
+<!--以上必须-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+
+<body>
+	<div class="warp">
+	<table class="infotan" width="819px"  cellspacing="0"  align="center" style="border:2px ; ">
+	<caption>
+	<center style="font-size:28px;line-height:35px; text-align:center;padding-top:30px;">
+	<strong>江苏省教育国际交流服务中心办公用品领用申请单</strong>
+	<br/>
+	<br/>
+	</center>
+	</caption>
+	<tr>
+		<td colspan="5" style="border:none;">
+			<table class="infotan" style="border:none;" width="100%">
+				<tr>
+					<td width="18%" style="border:none;text-align:right;height:60px;">部门</td>
+					<td width="22%" style="border:none;">
+						<input id="bm" name="bm" style="width:80px; height:35px;" zname="部门"/></td>
+					<td width="5%" style="border:none;text-align:right;">第</td>
+					<td width="10%" style="border:none;text-align:center;">
+						<input id="hm" name="hm" style="width:20px; height:35px;" zname="号码"/></td>
+					<td width="5%" style="border:none;text-align:left;">号</td>
+					<td width="12%" style="border:none;;text-align:right;">填表日期</td>	
+					<td width="25%" style="border:none;">
+						<input id="txrq" name="txrq" style="width:100px; height:35px;" zname="填写日期"/></td>
+					<td width="1%" style="border:none;">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" valign="middle" style="font-size:18px;height:60px; border:1px solid black;color:black;">申请人</td>
+		<td align="center" colspan="3" valign="middle" style="font-size:18px;border:1px solid black;color:black;">部门部长审批</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="text-align:center;border:1px solid black;color:black;height:60px;"  valign="top">
+			<textarea id="sqr" name="sqr" style="width:90%; height:35px;" zname="申请人"></textarea>				
+		</td>
+		<td rowspan="3" colspan="3" style="text-align:left;border:1px solid black;color:black;"  valign="top">
+			<textarea id="bmbzsp" name="bmbzsp" style="width:90%; height:100px;" zname="部门部长审批"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center" valign="middle" style="font-size:18px;height:60px; border:1px solid black;color:black;">电话</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="text-align:center;border:1px solid black;color:black;height:60px;"  valign="top">
+			<textarea id="dh" name="dh" style="width:90%; height:35px;" zname="电话"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td width="10%" align="center" style="border:1px solid black;color:black;height:60px;">序号</td>
+		<td width="30%" align="center" style="border:1px solid black;color:black;">品名</td>
+		<td width="10%" align="center" style="border:1px solid black;color:black;">数量</td>
+		<td width="50%" align="center" style="border:1px solid black;color:black;">备注</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;border:1px solid black;color:black;height:60px;">1</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="pma" name="pma" style="width:90%; height:35px;" zname="品名A"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="sla" name="sla" style="width:90%; height:35px;" zname="数量A"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="bza" name="bza" style="width:90%; height:35px;" zname="备注A"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;border:1px solid black;color:black;height:60px;">2</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="pmb" name="pmb" style="width:90%; height:35px;" zname="品名B"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="slb" name="slb" style="width:90%; height:35px;" zname="数量B"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="bzb" name="bzb" style="width:90%; height:35px;" zname="备注B"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;border:1px solid black;color:black;height:60px;">3</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="pmc" name="pmc" style="width:90%; height:35px;" zname="品名C"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="slc" name="slc" style="width:90%; height:35px;" zname="数量C"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="bzc" name="bzc" style="width:90%; height:35px;" zname="备注C"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;border:1px solid black;color:black;height:60px;">4</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="pmd" name="pmd" style="width:90%; height:35px;" zname="品名D"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="sld" name="sld" style="width:90%; height:35px;" zname="数量D"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="bzd" name="bzd" style="width:90%; height:35px;" zname="备注D"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;border:1px solid black;color:black;height:60px;">5</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="pme" name="pme" style="width:90%; height:35px;" zname="品名E"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="sle" name="sle" style="width:90%; height:35px;" zname="数量E"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="bze" name="bze" style="width:90%; height:35px;" zname="备注E"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;border:1px solid black;color:black;height:60px;">6</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="pmf" name="pmf" style="width:90%; height:35px;" zname="品名F"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="slf" name="slf" style="width:90%; height:35px;" zname="数量F"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="bzf" name="bzf" style="width:90%; height:35px;" zname="备注F"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;border:1px solid black;color:black;height:60px;">7</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="pmg" name="pmg" style="width:90%; height:35px;" zname="品名G"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="slg" name="slg" style="width:90%; height:35px;" zname="数量G"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="bzg" name="bzg" style="width:90%; height:35px;" zname="备注G"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;border:1px solid black;color:black;height:60px;">8</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="pmh" name="pmh" style="width:90%; height:35px;" zname="品名H"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="slh" name="slh" style="width:90%; height:35px;" zname="数量H"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="bzh" name="bzh" style="width:90%; height:35px;" zname="备注H"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align:center;border:1px solid black;color:black;height:60px;">9</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="pmj" name="pmj" style="width:90%; height:35px;" zname="品名J"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="slj" name="slj" style="width:90%; height:35px;" zname="数量J"></textarea>				
+		</td>
+		<td style="text-align:left;border:1px solid black;color:black;">
+			<textarea id="bzj" name="bzj" style="width:90%; height:35px;" zname="备注J"></textarea>				
+		</td>
+	</tr>
+	<tr>
+		<td colspan="5" style="text-align:left;border:1px solid black;color:black;height:60px;">&nbsp;</td>
+	</tr>
+	</table>
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+	</div>
+	<INPUT type="hidden" id="instanceId" name="instanceId" value="">
+	<INPUT type="hidden" id="formId" name="formId" value="">
+	<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">
+	<INPUT type="hidden" id="processId" name="processId" value="">
+	<input type="hidden" id="keyword" name="keyword" value="空" />
+</body>
+<script src="/trueWorkFlow/bzz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/bzz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+</html>

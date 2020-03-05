@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+        	
+	<bean id="dataTempAction" class="cn.com.trueway.archives.templates.action.DataTempAction">
+		<property name="dataTempService" ref="dataTempService"></property>
+		<property name="structureService" ref="structureService"></property>
+		<property name="metaDataService" ref="metaDataService"></property>
+		<property name="businessManageService" ref="businessManageService"></property>
+	</bean>
+	<bean id="structureTempAction" class="cn.com.trueway.archives.templates.action.StructureTempAction">
+		<property name="structureService" ref="structureService"></property>
+		<property name="businessManageService" ref="businessManageService"></property>
+		<property name="dataTempService" ref="dataTempService"></property>
+		<property name="metaDataService" ref="metaDataService"></property>
+	</bean>
+	<bean id="businessManageAction" class="cn.com.trueway.archives.templates.action.BusinessManageAction">
+		<property name="businessManageService" ref="businessManageService"></property>
+	</bean>
+	<bean id="metaDataAction" class="cn.com.trueway.archives.templates.action.MetaDataAction">
+		<property name="metaDataService" ref="metaDataService"></property>
+	</bean>
+	<bean id="dataManageAction" class="cn.com.trueway.archives.templates.action.DataManageAction">
+		<property name="dataTempService" ref="dataTempService"></property>
+		<property name="structureService" ref="structureService"></property>
+		<property name="dataManageService" ref="dataManageService"></property>
+		<property name="metaDataService" ref="metaDataService"></property>
+	</bean>
+	<bean id="dataReceptionAction" class="cn.com.trueway.archives.templates.action.DataReceptionAction">
+		<property name="dataTempService" ref="dataTempService"></property>
+		<property name="structureService" ref="structureService"></property>
+		<property name="dataReceptionService" ref="dataReceptionService"></property>
+		<property name="metaDataService" ref="metaDataService"></property>
+	</bean>
+	<bean id="demosAction" class="cn.com.trueway.archives.templates.action.DemosAction">
+		
+	</bean>
+	
+</beans>

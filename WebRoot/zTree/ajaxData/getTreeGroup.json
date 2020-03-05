@@ -1,0 +1,21 @@
+[
+	{
+		"name":"本部门",
+		"domId":"ownOrg",
+		"searchOption":null,
+		"apiUrl":"tree_getFullJsonTree2.do?isowner=1",
+		"level":1,
+		"isCustomGroup":false
+	},
+	{
+		"name":"所有部门",
+		"domId":"allOrg",
+		"searchOption":{
+			"domId":"mc",
+			"apiUrl":"tree_getFullJsonTree2.do"
+		},
+		"apiUrl":"tree_getFullJsonTree2.do",
+		"level":0,
+		"isCustomGroup":false
+	}
+]

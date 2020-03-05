@@ -1,0 +1,252 @@
+<html>
+    
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{align="center";height:30px;font-size:18px;border:1px #333 solid;padding:5px;color:red;border-color:#FF0000;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+var zsid= document.getElementById("zsid").value;
+var zsdw = document.getElementById("zsdw").value;
+var value = zsid+"*"+ zsdw ;
+value = encodeURI(value);
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zsdw").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+var csid= document.getElementById("csid").value;
+var csdw = document.getElementById("csdw").value;
+var value = csid+"*"+ csdw ;
+value = encodeURI(value);
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("csdw").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+
+
+</script>
+<!--以上必须-->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+
+<body>
+	<div class="warp">
+		<table class="infotan" width=819px cellspacing="0" align="center" style="border-top:2px solid black;">
+			<caption>
+				<br/>
+				 <p style="font-size:40px;line-height:35px; color:#000; text-align:center;padding-top:30px;">
+				   <strong >
+					文件传阅、拟办单		   	</strong>
+				</p>
+				
+					<p>&nbsp;</p><p>&nbsp;</p>
+			</caption>
+			<tr>
+			<td style="border:2px solid black;border-right:none;font-size:18px;color:black;">发文单位</td>
+			<td style="border:2px solid black;border-right:none;font-size:18px;color:black;border-top:none;"><input style="width:60px;" id="fwdw" name="fwdw" zname="发文单位" value=""/></td>
+			<td style="border:2px solid black;font-size:18px;color:black;">收文号</td>
+			<td style="border:2px solid black;font-size:18px;color:black;border-top:none;"><input style="width:60px;" id="swh" name="swh" zname="收文号" value=""/></td>
+			<td style="border:2px solid black;font-size:18px;color:black;">发文号</td>
+			<td style="border:2px solid black;font-size:18px;color:black;border-top:none;"><input style="width:60px;" id="fwh" name="fwh" zname="发文号" value=""/></td>
+			<td style="border:2px solid black;font-size:18px;color:black;">份数</td>
+			<td style="border:2px solid black;font-size:18px;color:black;border-top:none;"><input style="width:60px;" id="fs" name="fs" zname="份数" value=""/></td>
+			</tr>
+			<tr>
+			<td colspan="8" style="border:2px solid black;border-bottom:none;font-size:18px;color:black;">拟办意见</td>
+			</tr>
+			<tr>
+			<td colspan="8" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input style="width:500px;" id="nbyj" name="nbyj" zname="拟办意见" value=""/></td>
+			</tr>
+			<tr>
+			<td colspan="4" style="border:2px solid black;border-bottom:none;font-size:18px;color:black;">领导审批</td>
+			<td colspan="4" style="border:2px solid black;text-align:center;line-height:9px;font-size:18px;color:black;">阅后签名</td>
+			</tr>
+			<tr>
+			<td rowspan="16" colspan="4" style="border:2px solid black;border-top:none;font-size:18px;color:black;">
+			<textarea id="ldsp" name="ldsp" zname="领导审批" style="width:100%;height:100%;" value="">
+			
+			</textarea>
+			</td>
+			</tr>
+			<tr>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qma" name="qma" zname="签名1" value=""/>
+			</td>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmb" name="qmb" zname="签名2" value=""/>
+			</td>
+			<tr>
+			<tr>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmc" name="qmc" zname="签名3" value=""/>
+			</td>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmd" name="qmd" zname="签名4" value=""/>
+			</td>
+			<tr>
+			<tr>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qme" name="qme" zname="签名5" value=""/>
+			</td>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmf" name="qmf" zname="签名6" value=""/>
+			</td>
+			<tr>
+			<tr>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmg" name="qmg" zname="签名7" value=""/>
+			</td>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmh" name="qmh" zname="签名8" value=""/>
+			</td>
+			<tr>
+				<tr>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmi" name="qmi" zname="签名9" value=""/>
+			</td>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmj" name="qmk" zname="签名10" value=""/>
+			</td>
+			<tr>
+			<tr>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmk" name="qmk" zname="签名11" value=""/>
+			</td>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qml" name="qml" zname="签名12" value=""/>
+			</td>
+			<tr>
+			<tr>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmm" name="qmm" zname="签名13" value=""/>
+			</td>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmn" name="qmn" zname="签名14" value=""/>
+			</td>
+			<tr>
+			<tr>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmo" name="qmo" zname="签名15" value=""/>
+			</td>
+			<td colspan="2" style="border:2px solid black;border-top:none;font-size:18px;color:black;"><input id="qmp" name="qmp" zname="签名16" value=""/>
+			</td>
+			<tr>
+</table>
+
+		
+		
+
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+	</div
+	><INPUT userdefine=hidden id="instanceId" name="instanceId" value="">
+	<INPUT userdefine=hidden id="formId" name="formId" value="">
+	<INPUT userdefine=hidden id="workFlowId" name="workFlowId" value="">
+	<INPUT userdefine=hidden id="processId" name="processId" value="">
+
+
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

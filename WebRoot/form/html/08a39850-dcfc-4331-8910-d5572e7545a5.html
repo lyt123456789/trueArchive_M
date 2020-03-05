@@ -1,0 +1,241 @@
+<html>
+<head>
+<title></title><style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{align:center;border:1px #333 solid;padding:3px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:80%;height:80%}
+.infotan td select{width:80px;}
+</style>	
+		
+<!--以下必须-->
+<script type="text/javascript" defer>
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+.tt{
+	font-family:"方正大标宋简体";
+	font-size:22px;
+}
+.tl{
+font-family:"仿宋_GB2312";
+	text-align:center;
+	font-size:16px;
+}
+.tr{
+font-family:"仿宋_GB2312";
+	text-align:center;
+	font-size:16px;
+}
+</style>
+</HEAD>
+<body>
+	<div class="warp">	
+	<table class="infotan" align="center">
+		<tr>
+			<td style="width:190px;height:10px;border:0" ></td>
+			<td style="width:59px;border:0"></td>
+			<td style="width:190px;border:0"></td>
+			<td style="width:190px;border:0"></td>
+			<td style="width:190px;border:0"></td>			
+		</tr>
+			<tr>
+				<td colspan="5" class="tt" align="center" style="height:70px; border:0px solid black;">
+					国投公司决策事项审批单
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="font-size:16px;text-align:right;border:0px;font-family:'楷体_GB2312';">日期</td>			  
+			    <td  colspan="1" style="border:0px;text-align:center;font-family:'楷体_GB2312';">
+					<input type="text" id="djrq" name="djrq" zname="登记日期" value=""/>
+				</td>
+			</tr>	
+					
+		<tr>
+			<td class="tl" height="60">部门/单位</td>
+			<td class="tl" colspan="2" style="padding-bottom:-12px" >
+				<textarea id="bmdw" name="bmdw" zname="部门单位"></textarea>
+			</td>
+			<td class="tl">经办人</td>
+			<td class="tl" style="padding-bottom:-12x">
+				<textarea id="sqr" name="sqr" zname="申请人" style="width:180px"></textarea>
+			</td>
+			
+		</tr>
+		<tr>
+			<td class="tl" rowspan="6" height="300">决策事项具<br/>体情况</td>			
+			<td class="tl" colspan="2" >事项名称</td>
+			<td class="tl">事项概况</td>
+			<td class="tl">备注</td>
+		</tr>
+		<tr>		
+			<td class="tl" colspan="2"  height="50" style="padding-bottom:-10px" >
+				<textarea id="sxmcOne" name="sxmcOne" zname="事项名称one"></textarea>
+			</td>
+			<td class="tl" style="padding-bottom:-10px">
+				<textarea id="sxgsOne" name="sxgsOne" zname="事项概述One"></textarea>
+			</td>
+			<td class="tl" style="padding-bottom:-10px">
+				<textarea id="bzOne" name="bzOne" zname="备注One"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" colspan="2"  height="50"  style="padding-bottom:-10px" >
+				<textarea id="sxmcTwo" name="sxmcTwo" zname="事项名称Two"></textarea>
+			</td>
+			<td class="tl"  style="padding-bottom:-10px">
+				<textarea id="sxgsTwo" name="sxgsTwo" zname="sxgsTwo"></textarea>
+			</td>
+			<td class="tl"  style="padding-bottom:5px">
+				<textarea id="bzTwo" name="bzTwo" zname="备注Two"></textarea>
+			</td>
+		</tr>
+		<tr>		
+			<td class="tl" colspan="2"  height="50" style="padding-bottom:10px">
+				<textarea id="sxmcThree" name="sxmcThree" zname="事项名称Three"></textarea>
+			</td>
+			<td class="tl" style="padding-bottom:10px">
+				<textarea id="sxgsThree" name="sxgsThree" zname="sxgsThree"></textarea>
+			</td>
+			<td class="tl" style="padding-bottom:10px">
+				<textarea id="bzThree" name="bzThree" zname="备注Three"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" colspan="2"  height="50" style="padding-bottom:10px">
+				<textarea id="sxmcFour" name="sxmcFour" zname="事项名称Four"></textarea>
+			</td>
+			<td class="tl" style="padding-bottom:10px">
+				<textarea id="sxgsFour" name="sxgsFour" zname="sxgsFour"></textarea>
+			</td>
+			<td class="tl" style="padding-bottom:10px">
+				<textarea id="bzFour" name="bzFour" zname="备注Four"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" colspan="2"  height="50">
+				<textarea id="sxmcFive" name="sxmcFive" zname="事项名称Five"></textarea>
+			</td>
+			<td class="tl">
+				<textarea id="sxgsFive" name="sxgsFive" zname="sxgsFive"></textarea>
+			</td>
+			<td class="tl">
+				<textarea id="bzFive" name="bzFive" zname="备注Five"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" height="120">部门负责人</br>意见</td>
+			<td colspan="4">
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" height="120">分管领导</br>意见</td>
+			<td colspan="4">
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" height="120">拟办意见</td>
+			<td colspan="4">
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" height="120">主要领导</br>意见</td>
+			<td colspan="4">
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" height="120">办公室意见</td>
+			<td colspan="4">
+			</td>
+		</tr>
+		<tr>
+			<td class="tl" height="120">备注</td>
+			<td class="tl" colspan="4">
+				<textarea id="bzSix" name="bzSix" zname="备注Six"></textarea>
+			</td>
+		</tr>
+		
+	</table>
+
+<div style="display:none">
+	<span id="fjshow"></span>
+	<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

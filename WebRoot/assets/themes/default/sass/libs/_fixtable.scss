@@ -1,0 +1,127 @@
+.wf-fixtable{
+	width: 100%;
+	border-collapse:collapse;
+	thead{
+		border-left: 1px solid #d0d0d0;
+		th{
+			background:#e8eff9;
+			font-size: 12px;
+			border-color:#d0d0d0; 
+			padding:8px 5px; 
+			border-style:solid; 
+			border-width:1px 1px 1px 0; 
+			vertical-align:top; 
+			white-space:nowrap; 
+			line-height:1.5; 
+			cursor:default;
+		}
+	}
+	tbody{
+		border-left: 1px solid #d0d0d0;
+		td{
+			font-size: 12px;
+			border-right:solid 1px #ededed; 
+			overflow:hidden; 
+			padding:8px 5px; 
+			border-bottom:solid 1px #ededed; 
+			vertical-align:middle; 
+			line-height:1.5;
+		}
+	}
+}
+.wf-fixtable-wrap { 
+	background:#FFF;
+	display:block; 
+	overflow:hidden; 
+	// width:100%; 
+	// border-left:1px solid #d0d0d0;
+	position:relative;
+	table { 
+		border-collapse:collapse;
+		table-layout:fixed;
+		@include table-striped;
+	}
+
+.wf-fixtable-header, 
+.wf-fixtable thead { 
+	display:block; 
+	overflow:hidden; 
+	width:auto;
+	border-left: 1px solid #d0d0d0;
+	th { 
+		background:#e8eff9;
+		font-size: 12px;
+		border-color:#d0d0d0; 
+		padding:8px 5px; 
+		border-style:solid; 
+		border-width:1px 1px 1px 0; 
+		vertical-align:top; 
+		white-space:nowrap; 
+		line-height:1.5; 
+		cursor:default;
+		&.wf-hover,
+		&.wf-actived{
+			border-color:#d0d0d0;
+		}
+	}
+}
+.wf-fixtable-col { 
+	width:100%; 
+	display:block; 
+	overflow:hidden;  
+	line-height:1.5; 
+	white-space:nowrap;
+}
+.wf-fixtable-scroller { 
+	display:block; 
+	overflow:auto; 
+	position:relative;
+}
+.wf-fixtable-tbody,
+.wf-fixtable tbody{
+	border-left: 1px solid #d0d0d0;
+	.wf-hover { 
+		border-color:#dddddd; 
+		background:#e9e9e9;
+		td{
+			background: #e9e9e9;
+		}
+	}
+	.wf-actived { 
+		border-color:#b8d0d6; 
+		td { 
+			background:#ffd!important;
+			border-bottom-style:dotted; 
+			border-bottom-width:1px;
+		}
+	}
+	td { 
+		font-size: 12px;
+		border-right:solid 1px #ededed; 
+		overflow:hidden; 
+		padding:8px 5px; 
+		border-bottom:solid 1px #ededed; 
+		vertical-align:middle; 
+		line-height:1.5;
+		div { 
+			display:block; 
+			overflow:hidden; 
+			white-space:nowrap; 
+			line-height:1.5;
+			@include text-hide;
+		}
+	}
+} 
+
+.wf-fixtable-resizeMarker,
+.wf-fixtable-resizeProxy { 
+	display:block; 
+	overflow:hidden; 
+	width:1px; 
+	position:absolute;
+	border-left: 1px solid #000;
+}
+	.left { text-align:left;}
+	.right { text-align:right;}
+	.center { text-align:center;}
+}

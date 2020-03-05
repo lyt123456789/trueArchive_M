@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* 按钮区域 */
+.imp-top{width:22px;height:22px;background:url(../images/img-top.gif) no-repeat; text-align:center; line-height:22px; position:absolute;right:0px;top:0px; display:block;color:#ffffff; font-weight:normal;cursor:pointer;}
+.inpTabLeft{background:url(../images/inpTabL.png) no-repeat left 11px;width:6px;height:53px;display:block; float:left; cursor:pointer;}
+.inpTabRight{background:url(../images/inpTab.png) no-repeat right 11px;line-height:53px;height:53px;overflow:hidden;padding-left:5px;padding-right:21px;display:block;float:left;cursor:pointer;}
+.inpTabLefto{background:url(../images/inpTabLo.png) no-repeat left 11px;width:6px;height:53px;display:block; float:left; cursor:pointer;}
+.inpTabRighto{background:url(../images/inpTabo.png) no-repeat right 11px;line-height:53px;height:53px;overflow:hiddenpadding-left:5px;;padding-right:21px;display:block;float:left;cursor:pointer;}
+.inpTabLeftoc{background:url(../images/inpTabLo.png) no-repeat left 11px;width:6px;height:53px;display:block; float:left; cursor:pointer;}
+.inpTabRightoc{background:url(../images/inpTabo.png) no-repeat right 11px;line-height:53px;height:53px;overflow:hidden;padding-left:5px;padding-right:21px;display:block;float:left;cursor:pointer;}
+
+.inpDivLeft{background:url(../images/divTabL.png) no-repeat left 12px;width:6px;height:37px;display:block; float:left; cursor:pointer;}
+.inpDivRight{background:url(../images/divTab.png) no-repeat right 12px;line-height:50px;height:37px;overflow:hidden;padding-left:15px;padding-right:31px;display:block;float:left;cursor:pointer;}
+.inpDivLefto{background:url(../images/divTabLo.png) no-repeat left 11px;width:6px;height:37px;display:block; float:left; cursor:pointer;}
+.inpDivRighto{background:url(../images/divTabo.png) no-repeat right 11px;line-height:50px;height:37px;overflow:hidden;padding-left:15px;padding-right:31px;display:block;float:left; font-weight:bold;color:#ffffff;cursor:pointer;}
+
+.divbtn{border:1px #1572F0 solid;height:23px;line-height:23px;background:url(../images/divbtn.jpg) repeat-x;color:#ffffff;padding-left:10px;padding-right:10px;cursor:pointer;}
+.tabbtn{border:1px #A6D0E7 solid;height:21px;line-height:21px;background:url(../images/tabbtn.jpg) repeat-x;color:#000000;padding-left:10px;padding-right:10px;cursor:pointer;}
+.text{border:1px #ADB2B3 solid;height:21px;line-height:21px;background:url(../images/textbg.jpg) repeat-x;color:#000000;padding-left:5px;padding-right:5px;}
+

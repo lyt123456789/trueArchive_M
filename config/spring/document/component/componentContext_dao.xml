@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="attachmentDao" class="cn.com.trueway.document.component.taglib.attachment.dao.impl.AttachmentDaoImpl" scope="prototype">
+	</bean>
+	
+	<bean id="commentDao" class="cn.com.trueway.document.component.taglib.comment.dao.impl.CommentDaoimpl" scope="prototype">
+	</bean>
+	
+	<bean id="docNumberDao" class="cn.com.trueway.document.component.taglib.docNumber.dao.impl.DocNumberDaoImpl" scope="prototype">
+	</bean>
+	<bean id="docNumberManagerDao" class="cn.com.trueway.document.component.docNumberManager.dao.impl.DocNumberManagerDaoImpl" scope="prototype">
+	</bean>
+	<bean id="strategyDao" class="cn.com.trueway.document.component.docNumberManager.dao.impl.StrategyDaoImp" scope="prototype">
+	</bean>
+</beans>

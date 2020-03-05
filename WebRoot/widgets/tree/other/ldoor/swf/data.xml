@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+	mc    : 映射flash中的对象名
+	name  : 节点名称 一般为信息栏目名称【特殊约定除外】
+	values: 节点值   一般为信息数【特殊约定除外】
+	url   : 节点跳转对象
+	target: 跳转窗口（目标）
+	子节点messages 为信息类信息
+-->
+<datalist>
+	<lists mc="box:btn_1_mc" name="信息审核" values="1" url="http://www.qq.com/" target="" />
+	<lists mc="box:btn_2_mc" name="公文审批" values="3" url="http://www.163.com/" target="" />
+	<lists mc="box:btn_3_mc" name="公文传阅" values="6" url="http://www.kaixin001.com/" target=""/>
+	<lists mc="user" name="领导信息" values="xxx" url="http://www.sina.com/" target=""/>
+	<lists mc="tv" name="视频信息" values="" url="http://www.sohu.com/" target=""/>
+	<lists mc="news" name="文稿资料" values="" url="http://www.yahoo.com/" target=""/>
+	<lists mc="books" name="今日工作安排" values="" url="http://www.taobao.com/" target="">
+		<messages url="http://www.cdc.com/">1.妙手回春:网站可用性测试及优化指南</messages>
+		<messages url="http://www.uirss.com/" />
+	</lists>
+	<lists mc="fax" name="栏目信息" values="" url="http://www.baidu.com/" target=""/>
+	<lists mc="b1" name="政务大厅" values="" url="http://www.blueidea.com/" target=""/>
+	<lists mc="b2" name="检查系统" values="" url="http://flashteam.tencent.com/" target=""/>
+	<lists mc="b3" name="公文交换" values="" url="http://cdc.tencent.com/" target=""/>
+	<lists mc="b4" name="其他业务系统一" values="" url="http://isd.tencent.com/" target=""/>
+	<lists mc="b5" name="其他业务系统二" values="" url="http://wsd.tencent.com/" target=""/>
+	<lists mc="close" name="注销" values="" url="http://ucdchina.com/" target=""/>
+	<lists mc="choose" name="切换" values="" url="http://www.chinaui.com/" target="">
+		<messages url="default">经典蓝</messages>
+		<messages url="red">缤纷色彩</messages>
+	</lists>
+</datalist>

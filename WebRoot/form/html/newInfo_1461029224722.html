@@ -1,0 +1,178 @@
+<style>body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td&#13;&#10;&#9;{&#13;&#10;&#9;margin: 0;&#13;&#10;&#9;padding: 0px;&#13;&#10;}&#13;&#10;&#13;&#10;body,button,input,select,textarea {&#13;&#10;&#9;font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,&#13;&#10;&#9;&#9;tahoma, \5b8b\4f53;&#13;&#10;}&#13;&#10;&#13;&#10;h1,h2,h3,h4,h5,h6 {&#13;&#10;&#9;font-size: 100%;&#13;&#10;}&#13;&#10;&#13;&#10;address,cite,dfn,em,var {&#13;&#10;&#9;font-style: normal;&#13;&#10;}&#13;&#10;&#13;&#10;code,kbd,pre,samp {&#13;&#10;&#9;font-family: courier new, courier, monospace;&#13;&#10;}&#13;&#10;&#13;&#10;small {&#13;&#10;&#9;font-size: 12px;&#13;&#10;}&#13;&#10;&#13;&#10;ul,ol {&#13;&#10;&#9;list-style: none;&#13;&#10;}&#13;&#10;&#13;&#10;a {&#13;&#10;&#9;text-decoration: none;&#13;&#10;}&#13;&#10;&#13;&#10;a:hover {&#13;&#10;&#9;text-decoration: none;&#13;&#10;}&#13;&#10;&#13;&#10;/* .warp{&#13;&#10;&#9;&#9;&#9;&#9;width: 1024px;&#13;&#10;&#9;&#9;&#9;&#9;max-width:1024px;&#13;&#10;&#9;&#9;&#9;&#9;height: 1448px;&#13;&#10;&#9;&#9;&#9;&#9;min-height: 1448px;&#13;&#10;&#9;&#9;&#9;&#9;overflow: hidden;&#13;&#10;&#9;}*/&#13;&#10;table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}&#13;&#10;.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} &#13;&#10;.infotan td{align="center";height:30px;font-size:18px;border:1px #333 solid;padding:5px;color:red;border-color:#FF0000;}&#13;&#10;.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}&#13;&#10;.infotan td textarea{width:100%;height:180px;}&#13;&#10;.infotan td select{width:120px;}&#13;&#10;/* .infotan .label{&#13;&#10;&#9;&#9;&#9;&#9;font-size: 18px;&#13;&#10;&#9;&#9;&#9;&#9;text-align: center;&#13;&#10;&#9;&#9;&#9;&#9;vertical-align:middle;&#13;&#10;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;&#9;&#9;td.vam{&#13;&#10;&#9;&#9;&#9;&#9;vertical-align:middle;&#13;&#10;&#9;&#9;&#9;} */</style><script defer="defer" type="text/javascript">window.onload=function(){ &#13;&#10;&#9;var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';&#13;&#10;&#9;var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';&#13;&#10;&#9;var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';&#13;&#10;&#9;var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';&#9;&#13;&#10;&#9;var instanceId = '${instanceId}';  &#13;&#10;&#9;if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制&#13;&#10;&#9;if(instanceId.length==13){registerTag();}//注册标签选中效果&#13;&#10;};&#13;&#10;function choosezs() {&#13;&#10;        &#9;var subSender = "";&#13;&#10;        &#9;var subNum = 10;&#13;&#10;        &#9;var obj ={};&#13;&#10;    &#9;&#9;obj.dep=subSender;&#13;&#10;    &#9;&#9;obj.num=subNum;&#13;&#10;var zsid= document.getElementById("zsid").value;&#13;&#10;var zsdw = document.getElementById("zsdw").value;&#13;&#10;var value = zsid+"*"+ zsdw ;&#13;&#10;value = encodeURI(value);&#13;&#10;            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";&#13;&#10;            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);&#13;&#10;            if (typeof ret !='undefined') {&#13;&#10;                  var userNames = "";&#13;&#10;                  var userIds = "";&#13;&#10;                  if(ret!=''){&#13;&#10;                         userNames  = ret.split(";")[1];&#13;&#10;                         userIds = ret.split(";")[0];&#13;&#10;                    }&#13;&#10;                document.getElementById("zsdw").value = userNames;&#13;&#10;                document.getElementById("zsid").value = userIds;&#13;&#10;            }&#13;&#10;        }&#13;&#10;&#13;&#10;       function choosecs() {&#13;&#10;    &#9;  var subSender = "";&#13;&#10;       &#9;  var subNum = 10;&#13;&#10;       &#9;  var obj ={};&#13;&#10;   &#9;  obj.dep=subSender;&#13;&#10;   &#9;  obj.num=subNum;&#13;&#10;var csid= document.getElementById("csid").value;&#13;&#10;var csdw = document.getElementById("csdw").value;&#13;&#10;var value = csid+"*"+ csdw ;&#13;&#10;value = encodeURI(value);&#13;&#10;          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";&#13;&#10;          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);&#13;&#10;          if (typeof ret !='undefined') {&#13;&#10;                 var userNames = "";&#13;&#10;                  var userIds = "";&#13;&#10;                  if(ret!=''){&#13;&#10;                         userNames  = ret.split(";")[1];&#13;&#10;                         userIds = ret.split(";")[0];&#13;&#10;                 }&#13;&#10;                document.getElementById("csdw").value = userNames;&#13;&#10;                document.getElementById("csid").value = userIds;&#13;&#10;            }&#13;&#10;        }</script>
+<table style="BORDER-TOP: red 2px solid" class="infotan" cellspacing="0" width="842" align="center" data-sort="sortDisabled">
+    <caption style="BORDER-BOTTOM-COLOR: #ff0000; BORDER-TOP-COLOR: #ff0000; BORDER-RIGHT-COLOR: #ff0000; BORDER-LEFT-COLOR: #ff0000">
+        <br/>
+        <p style="TEXT-ALIGN: center; LINE-HEIGHT: 40px; COLOR: #ff0000; FONT-SIZE: 40px; PADDING-TOP: 30px">
+            <strong>南通市农业委员会拟文稿纸 &nbsp; </strong>
+        </p>
+        <p>
+            &nbsp;
+        </p>
+        <p>
+            &nbsp;
+        </p>
+    </caption>
+    <tbody>
+        <tr class="firstRow">
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 35px; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="112" align="middle">
+                文&nbsp;&nbsp;&nbsp;&nbsp;号
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: black; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" colspan="3" align="left">
+                <span style='width:120px;display:-moz-inline-box;display:inline-block;' ></span>
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 18px; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" width="121" align="middle">
+                密级
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" width="112" align="middle">
+                
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" width="87" align="middle">
+                可否公开
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" width="112" align="middle">
+                
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 200px; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="145" align="middle">
+                签&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" colspan="3">
+                &nbsp;
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 18px; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" rowspan="6" width="112" align="middle">
+                会<span style="BACKGROUND-COLOR: #ff0000"></span>签
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" rowspan="2" colspan="3">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 150px; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="112" align="middle">
+                核稿
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" colspan="3">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 95px; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="121" align="middle">
+                <p>
+                    法规处
+                </p>
+                <p>
+                    核 稿
+                </p>
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" colspan="3" align="middle"></td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="null" rowspan="2" width="112" align="middle">
+                <p>
+                    <span style="COLOR: #ff0000"></span>&nbsp;
+                </p>
+                <p>
+                    <span style="COLOR: #ff0000"></span>&nbsp;
+                </p>
+                <p>
+                    <span style="COLOR: #ff0000">保密员核稿</span>
+                </p>
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="null" rowspan="2" colspan="2" align="middle"></td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: red; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" rowspan="3" width="145" align="middle">
+                拟稿部门
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 97px; COLOR: black; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" rowspan="3" colspan="3" align="middle"></td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="145" align="middle">
+                <span style="COLOR: #ff0000">负责人</span>
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" colspan="2" align="middle"></td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="197" align="middle">
+                <span style="COLOR: #ff0000">拟稿人</span>
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" colspan="2" align="middle"></td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 65px; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="121" align="middle">
+                标&nbsp;&nbsp;&nbsp;&nbsp;题
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 65px; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid; PADDING-TOP: 3px" valign="center" colspan="7" align="middle">
+                
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM-COLOR: #ff0000; BORDER-TOP-COLOR: #ff0000; BORDER-TOP-WIDTH: 1px; BORDER-RIGHT-COLOR: #ff0000; BORDER-LEFT-COLOR: #ff0000; BORDER-LEFT-WIDTH: 1px" valign="center" width="undefined" align="middle">
+                <span style="COLOR: #ff0000">主题词</span>
+            </td>
+            <td style="BORDER-BOTTOM-COLOR: #ff0000; BORDER-TOP-COLOR: #ff0000; BORDER-TOP-WIDTH: 1px; BORDER-RIGHT-COLOR: #ff0000; BORDER-LEFT-COLOR: #ff0000; BORDER-LEFT-WIDTH: 1px" valign="center" colspan="7" align="middle">
+                
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 400px; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="undefined" align="middle">
+                主送单位
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 400px; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" colspan="3" align="middle">
+                
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: red; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" width="undefined" align="middle">
+                抄送<br/>单位
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; TEXT-ALIGN: left; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 400px; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" colspan="3" align="middle">
+                
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="undefined" align="middle">
+                印发时间
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 60px; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" colspan="3" align="middle">
+                
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="undefined" align="middle">
+                <p>
+                    繕印
+                </p>
+                <p>
+                    份数
+                </p>
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 60px; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" colspan="3" align="middle">
+                
+            </td>
+        </tr>
+        <tr>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; HEIGHT: 60px; COLOR: red; FONT-SIZE: 18px; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" width="undefined" align="middle">
+                打印
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" width="undefined">
+                
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: red; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" width="undefined">
+                校对
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" valign="center" colspan="2" align="middle">
+                
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: red; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" width="undefined">
+                分发
+            </td>
+            <td style="BORDER-BOTTOM: #ff0000 1px solid; BORDER-LEFT: #ff0000 1px solid; COLOR: black; BORDER-TOP: #ff0000 1px solid; BORDER-RIGHT: #ff0000 1px solid" colspan="2">
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    <span id="fjshow"></span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <?xml:namespace prefix="trueway">
+        <trueway:att id="${instanceId}fj" zname="附件" deletecallback="loadCss" uploadcallback="loadCss" otherbtnsclass="icon-help" openbtnclass="icon-add" tostampable="true" tocebable="false" previewable="true" deleteable="true" uploadable="true" downloadable="true" ismain="true" showid="fjshow" docguid="${instanceId}fj" onlineeditable="true"></trueway:att>
+    </?xml:namespace>
+</p>
+<p>
+    <span style='width:120px;display:-moz-inline-box;display:inline-block;' ></span><span style='width:120px;display:-moz-inline-box;display:inline-block;' ></span><span style='width:120px;display:-moz-inline-box;display:inline-block;' ></span><span style='width:120px;display:-moz-inline-box;display:inline-block;' ></span><span style='width:120px;display:-moz-inline-box;display:inline-block;' ></span><span style='width:120px;display:-moz-inline-box;display:inline-block;' ></span><span style='width:120px;display:-moz-inline-box;display:inline-block;' ></span>
+</p><script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script><script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script><script type="text/javascript">&#13;&#10;&#9;//以下必须有&#13;&#10;&#9;function loadCss() {&#13;&#10;&#9;&#9;seajs.use('lib/form', function() {&#13;&#10;&#9;&#9;&#9;$('input[mice-btn]').cssBtn();&#13;&#10;&#9;&#9;&#9;$('input[mice-input]').cssInput();&#13;&#10;&#9;&#9;&#9;$('select[mice-select]').cssSelect();&#13;&#10;&#9;&#9;});&#13;&#10;&#9;}&#13;&#10;&#9;//以上必须有</script>

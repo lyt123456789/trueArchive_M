@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px;color:red;border-color:#FF0000;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+        <!--以下必须-->
+        <script type="text/javascript" defer="defer">
+            window.onload = function() {
+                var listValues = '<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+                var selects = '<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+                var limitValue = '<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+                var valuestr = '<%=request.getParameter("values")==null?"":request.getParameter("values")%>';
+                var instanceId = '${instanceId}';
+                if (instanceId.length != 13) tagvalues(listValues, selects, limitValue, valuestr, instanceId); //标签赋值，权限控制
+                if (instanceId.length == 13) {
+                } //注册标签选中效果
+            };
+        </script>
+        <!--以上必须-->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+<body>
+<div class="warp">
+<p style="font-size:40px;line-height:35px;text-align:center;padding-top:30px; color:#FF0000;font-weight:bold">
+启东市政府信息中心稿纸
+</p>
+<br/>
+  <table class="infotan" width="819px" cellspacing="0" align="center" style="border-top:2px solid red;"> 
+   <tbody>
+    <tr> 
+     <td width="17%" valign="middle" style="text-align:center;height:180px;border-left:none">签发</td> 
+     <td width="20%" style="border:1px red solid ;height:120px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  style="height:100px"type="text" id="qf" name="qf" zname="签发" value="" /> </td> 
+     <td width="17%" align="center" valign="middle" style="text-align:center;">会签</td> 
+    <td width="20%" style="border:1px red solid ;height:120px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="height:100px;" type="text" id="hq" name="hq" zname="会签" value="" /> </td> 
+     <td width="18%"  align="center" valign="middle" style="text-align:center;">核稿</td> 
+     <td width="21%" style="border-right:none;height:120px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input  style="height:100px" type="text" id="hg" name="hg" zname="核稿" value="" /></td> 
+    </tr> 
+    <tr> 
+	<td align="center" valign="middle" style="text-valign:center;border-left:none;border-right:none">文件标题</td>
+	<td   colspan="6"  style="height:80px;border-right:none;border-left:none">
+        <textarea id="wjbt" name="wjbt" style="width:400px; height:60px;" zname="文件标题"></textarea></td> 
+    </tr> 
+    <tr> 
+     <td align="center" valign="middle" style="text-align:center;height:180px;border-left:none">发文机关</td> 
+     <td colspan="6" style="border:1px solid red;border-right:none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	 <textarea id="fwjg" name="fwjg" style="width:500px; height:120px;" zname="发文机关"></textarea></td> 
+    </tr> 
+    <tr> 
+     <td valign="middle" style="text-align:center;height:10px;border-left:none">拟稿单位</td> 
+     <td width="20%" style="border:1px solid red;"> <input style="width:80px;" type="text" id="ngdw" name="ngdw" zname="拟稿单位" value="" /></td> 
+     <td width="10%" style="text-align:center;">拟稿人</td> 
+     <td width="10%" style="line-height:30px;padding:5px;"><input style="width:80px;" type="text" id="ngr" name="ngr" zname="拟稿人" value="" /></td> 
+     <td style="text-align:center;border-right:none">拟稿日期</td> 
+     <td colspan="3" style="border:1px solid red;border-right:none">      
+        <input id="ngrq" name="ngrq" style="width:80px; " zname="拟稿日期" type="text" /> 
+      </td> 
+    </tr> 
+   <tr> 
+     <td width="10%" valign="middle" style="text-align:center;border:1px red solid;color:red;height:100px;border-left:none">审核人</td> 
+     <td colspan="1.5" style="border:1px red solid ;"><input style="width:60px;" type="text" id="shr" name="shr" zname="审核人" value="" /> </td> 
+     <td width="15%" valign="middle" style="text-align:center;">初校</td> 
+     <td width="20%" style="line-height:30px;padding:5px;"><input style="width:80px;" type="text" id="cj" name="cj" zname="初校" value="" /></td> 
+     <td width="15%" align="center" valign="middle" style="text-align:center;">终校</td> 
+     <td width="15%" style="line-height:30px;padding:5px;border-right:none"><input style="width:80px;" type="text" id="zj" name="zj" zname="终校" value="" /></td> 
+    </tr> 
+   </tbody>
+  </table> 
+</div>
+  <input userdefine=hidden id="instanceId" name="instanceId" value="" /> 
+  <input userdefine=hidden id="formId" name="formId" value="" /> 
+  <input userdefine=hidden id="workFlowId" name="workFlowId" value="" /> 
+  <input userdefine=hidden id="processId" name="processId" value="" />  
+  <script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script> 
+  <script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script> 
+  <script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').csInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script> 
+ </body>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

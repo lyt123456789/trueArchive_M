@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="businesslist" extends="common-default">
+		<action name="business_*" class="businessAction" method="{1}">
+			<result name="sendLibrary">/WEB-INF/pages/workflow/business/sendLibrary.jsp</result>
+			<result name="receiveLibrary">/WEB-INF/pages/workflow/business/receiveLibrary.jsp</result>
+			<result name="pressList">/WEB-INF/pages/workflow/business/pressList.jsp</result>
+			<result name="getPressMsg">/WEB-INF/pages/workflow/business/getPressMsg.jsp</result>
+			<result name="pressMsgList">/WEB-INF/pages/workflow/business/pressMsgList.jsp</result>
+			<result name="statisticalList">/WEB-INF/pages/workflow/business/statisticalList.jsp</result>
+			<result name="getCyDoFileList">/WEB-INF/pages/workflow/business/getCyDoFileList.jsp</result>
+			<result name="getYyDoFileList">/WEB-INF/pages/workflow/business/getYyDoFileList.jsp</result>
+			<result name="handRoundShipList">/WEB-INF/pages/workflow/business/handRoundShipList.jsp</result>
+		</action>
+	</package>
+</struts>

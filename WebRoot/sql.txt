@@ -1,0 +1,1295 @@
+﻿-- Create table
+create table T_WF_CORE_TRUEJSON
+(
+  ID         VARCHAR2(38) not null,
+  PROCESSID  VARCHAR2(38),
+  INSTANCEID VARCHAR2(38),
+  SAVEDATE   DATE,
+  USERID     VARCHAR2(38),
+  TRUEJSON   CLOB,
+  EXCUTE     VARCHAR2(38)
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_TRUEJSON
+  is '意见json信息';
+-- Add comments to the columns 
+comment on column T_WF_CORE_TRUEJSON.ID
+  is '主键id';
+comment on column T_WF_CORE_TRUEJSON.PROCESSID
+  is '过程id';
+comment on column T_WF_CORE_TRUEJSON.INSTANCEID
+  is '实例id';
+comment on column T_WF_CORE_TRUEJSON.SAVEDATE
+  is '保存时间';
+comment on column T_WF_CORE_TRUEJSON.USERID
+  is '保存的人员';
+comment on column T_WF_CORE_TRUEJSON.TRUEJSON
+  is '保存的意见json信息';
+comment on column T_WF_CORE_TRUEJSON.EXCUTE
+  is '执行的类或者方法';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table T_WF_CORE_TRUEJSON
+  add constraint T_WF_CORE_TRUEJSON_PID primary key (ID)
+  using index 
+  tablespace COMPANYOA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+  
+  
+  
+  -- Create table
+create table T_WF_CORE_TRUEJSONLOG
+(
+  ID              VARCHAR2(38) not null,
+  PROCESSID       VARCHAR2(38),
+  INSTANCEID      VARCHAR2(38),
+  READORWRITEDATE DATE,
+  READORWRITE     VARCHAR2(2),
+  USERID          VARCHAR2(38),
+  TRUEJSON        CLOB,
+  EXCUTE          VARCHAR2(1000)
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_TRUEJSONLOG
+  is '办件处理过程的意见信息';
+-- Add comments to the columns 
+comment on column T_WF_CORE_TRUEJSONLOG.ID
+  is '主键id';
+comment on column T_WF_CORE_TRUEJSONLOG.PROCESSID
+  is '过程id';
+comment on column T_WF_CORE_TRUEJSONLOG.INSTANCEID
+  is '实例id';
+comment on column T_WF_CORE_TRUEJSONLOG.READORWRITEDATE
+  is '读或者写意见的时间';
+comment on column T_WF_CORE_TRUEJSONLOG.READORWRITE
+  is '读或者写';
+comment on column T_WF_CORE_TRUEJSONLOG.USERID
+  is '保存的人员';
+comment on column T_WF_CORE_TRUEJSONLOG.TRUEJSON
+  is '保存的意见json信息';
+comment on column T_WF_CORE_TRUEJSONLOG.EXCUTE
+  is '执行的类或者方法';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table T_WF_CORE_TRUEJSONLOG
+  add constraint T_WF_CORE_TRUEJSONLOG_PID primary key (ID)
+  using index 
+  tablespace COMPANYOA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+
+---alter table t_wf_core_item, xiep, 20161011---  
+alter table t_wf_core_item add(RELATEDITEMID varchar2(100));
+comment on column t_wf_core_item.RELATEDITEMID is '关联事项ID';
+
+   ---alter table t_wf_process, xiep, 20161011---
+alter table t_wf_process add(CONTINUEINSTANCEID varchar2(50));
+comment on column t_wf_process.CONTINUEINSTANCEID
+  is '续办的新办件ID';   
+  
+---alter table t_wf_process_temp, xiep, 20161011---
+alter table t_wf_process_temp add(CONTINUEINSTANCEID varchar2(50));
+comment on column t_wf_process_temp.CONTINUEINSTANCEID
+  is '续办的新办件ID';   
+  
+
+  
+  
+-- Add/modify columns 
+alter table WF_CHILD add isneed_f_form VARCHAR2(2);
+-- Add comments to the columns 
+comment on column WF_CHILD.isneed_f_form
+  is '是否需要合成父流程表单';  
+  
+  
+-- Create table
+create table T_PUSH
+(
+  id         VARCHAR2(200),
+  badge_wf   VARCHAR2(200),
+  badge_func VARCHAR2(200),
+  token      VARCHAR2(200),
+  login_name VARCHAR2(20),
+  user_id    VARCHAR2(60),
+  isapple    VARCHAR2(10)
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 128K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column T_PUSH.token
+  is '机器标识';
+comment on column T_PUSH.login_name
+  is '登錄名';
+comment on column T_PUSH.user_id
+  is '用户id';
+comment on column T_PUSH.isapple
+  is '手機系統標識(1:苹果系统,2:安卓系统,0:其他系统)';
+  
+  
+  
+-- Create table
+create table T_WF_CORE_PRESSMSG
+(
+  ID           VARCHAR2(38),
+  PROCESSID    VARCHAR2(38),
+  PRESSDEPID   VARCHAR2(2000),
+  PRESSDEPNAME VARCHAR2(2000),
+  PRESSCONTENT VARCHAR2(4000),
+  APPLYTIME    DATE,
+  USERID       VARCHAR2(38),
+  ISSEND       VARCHAR2(3),
+  USERNAME     VARCHAR2(4000)
+)
+tablespace WORKFLOW_KFQ
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 16
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_PRESSMSG
+  is '催办信息表';
+-- Add comments to the columns 
+comment on column T_WF_CORE_PRESSMSG.ID
+  is 'id';
+comment on column T_WF_CORE_PRESSMSG.PROCESSID
+  is '办件id';
+comment on column T_WF_CORE_PRESSMSG.PRESSDEPID
+  is '催办部门id';
+comment on column T_WF_CORE_PRESSMSG.PRESSDEPNAME
+  is '催办部门名称';
+comment on column T_WF_CORE_PRESSMSG.PRESSCONTENT
+  is '催办内容';
+comment on column T_WF_CORE_PRESSMSG.APPLYTIME
+  is '提交时间';
+comment on column T_WF_CORE_PRESSMSG.USERID
+  is '催办人id';
+comment on column T_WF_CORE_PRESSMSG.ISSEND
+  is '是否发送短信了';
+comment on column T_WF_CORE_PRESSMSG.USERNAME
+  is '催办人';
+  
+  
+  
+-- Add/modify columns 
+alter table WF_NODE add wfn_emptype VARCHAR2(10);
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_emptype
+  is '发送至人员类型';
+  
+  
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_emptype VARCHAR2(10);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_emptype
+  is '发送至人员类型';
+  
+
+-------20170112
+-- Create table
+create table T_WF_CORE_RECEIVE_PROCESS_SHIP
+(
+  ID         VARCHAR2(36) not null,
+  RECID      VARCHAR2(36),
+  INSTANCEID VARCHAR2(36),
+  PROCESSID  VARCHAR2(36),
+  XML        CLOB,
+  IDINDEX    VARCHAR2(36)
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_RECEIVE_PROCESS_SHIP
+  is '公文交换系统已收办件与过程表关联关系';
+-- Add comments to the columns 
+comment on column T_WF_CORE_RECEIVE_PROCESS_SHIP.ID
+  is '主键';
+comment on column T_WF_CORE_RECEIVE_PROCESS_SHIP.RECID
+  is '已收事项id';
+comment on column T_WF_CORE_RECEIVE_PROCESS_SHIP.INSTANCEID
+  is '过程表中的信息id';
+comment on column T_WF_CORE_RECEIVE_PROCESS_SHIP.PROCESSID
+  is 'processId';
+comment on column T_WF_CORE_RECEIVE_PROCESS_SHIP.XML
+  is 'xml';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table T_WF_CORE_RECEIVE_PROCESS_SHIP
+  add constraint T_WF_CORE_SHIP_ID primary key (ID)
+  using index 
+  tablespace WORKFLOW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 128K
+    minextents 1
+    maxextents unlimited
+  );
+
+-- Create table
+create table T_WF_CORE_RECEIVE_XML
+(
+  ID    VARCHAR2(38) not null,
+  RECID VARCHAR2(38),
+  DEPID VARCHAR2(38),
+  XML   CLOB
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 2
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_RECEIVE_XML
+  is 'xml';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table T_WF_CORE_RECEIVE_XML
+  add constraint T_WF_CORE_RECEIVE_XML_ID primary key (ID)
+  using index 
+  tablespace WORKFLOW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 128K
+    minextents 1
+    maxextents unlimited
+  );
+
+
+-- Create table
+create table OA_DOC_RECEIVE
+(
+  DOCGUID        VARCHAR2(36) not null,
+  DOCTYPE        VARCHAR2(255),
+  KEYWORD        VARCHAR2(255),
+  PRIORITY       VARCHAR2(255),
+  QUEUE_XTO      VARCHAR2(255),
+  SENDERNAME     VARCHAR2(255),
+  SUBMITTM       DATE,
+  TITLE          VARCHAR2(255),
+  WH             VARCHAR2(255),
+  YFDW           VARCHAR2(255),
+  YFRQ           VARCHAR2(255),
+  XCC            CLOB,
+  XTO            CLOB,
+  RECDATE        DATE default sysdate,
+  STATUS         VARCHAR2(2) default 0,
+  BW_TYPE        VARCHAR2(2),
+  PRINT_FLAG     VARCHAR2(2) default 0,
+  SOURCESTATUS   VARCHAR2(2),
+  WRITENAME      VARCHAR2(255),
+  WRITETIME      DATE default sysdate,
+  BWTYPE         VARCHAR2(50),
+  QSBWH          VARCHAR2(20),
+  YFFS           VARCHAR2(20),
+  CEBID          VARCHAR2(40),
+  BEIZHU         CLOB,
+  XTO_NAME       CLOB,
+  XCC_NAME       CLOB,
+  VIEWSTATUS     VARCHAR2(4000),
+  OPERATE_LOG_ID VARCHAR2(50)
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column OA_DOC_RECEIVE.STATUS
+  is '0 未处理 1正在处理 2 已办结 3 其他 4 已退文 5 已关联';
+comment on column OA_DOC_RECEIVE.BW_TYPE
+  is '0 办文 1 传阅';
+comment on column OA_DOC_RECEIVE.PRINT_FLAG
+  is '0 未打印 1 已打印';
+comment on column OA_DOC_RECEIVE.SOURCESTATUS
+  is '公文来源公文来源：空 公文交换平台 1 手动插入 2 其他 3 2011-11-12|2012-5-3从公文交换平台迁移  4外请数据';
+comment on column OA_DOC_RECEIVE.WRITENAME
+  is '手动插入时 插入人姓名';
+comment on column OA_DOC_RECEIVE.WRITETIME
+  is '手动插入时 插入人插入的时间';
+comment on column OA_DOC_RECEIVE.BWTYPE
+  is '办理类型选择,办文单的选择';
+comment on column OA_DOC_RECEIVE.QSBWH
+  is '市府办请示件文号';
+comment on column OA_DOC_RECEIVE.YFFS
+  is '印发份数';
+comment on column OA_DOC_RECEIVE.CEBID
+  is '公文盖章后的CEBID(没盖章为空)';
+comment on column OA_DOC_RECEIVE.BEIZHU
+  is '其它操作时的备注信息';
+comment on column OA_DOC_RECEIVE.VIEWSTATUS
+  is '查阅过该文的用户ID(1:当前用户已查看)';
+comment on column OA_DOC_RECEIVE.OPERATE_LOG_ID
+  is '操作日志id(用途1、区分异库同步操作或是本库操作 2、确认是否同步成功，异库回写判断)';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table OA_DOC_RECEIVE
+  add primary key (DOCGUID)
+  using index 
+  tablespace WORKFLOW
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+alter table T_COMMON_GROUP add(orderIndex number(5));
+comment on column T_COMMON_GROUP.Orderindex is '排序号';
+alter table t_common_group add(isjygroup varchar2(10));
+comment on column T_COMMON_GROUP.isjygroup is '是否机要组';
+alter table T_COMMON_GROUP_USERS add(orderIndex number(5));
+comment on column T_COMMON_GROUP_USERS.Orderindex is '排序号';
+alter table T_COMMON_GROUP_USERS add(DEPTNAME varchar2(100));
+comment on column T_COMMON_GROUP_USERS.DEPTNAME is '部门名称';
+
+-- Create table
+create table T_WF_EMP_MULTDEPT_RELATION
+(
+  ID        VARCHAR2(50) default sys_guid() not null,
+  EMPID     VARCHAR2(50),
+  DEPTID    VARCHAR2(50),
+  SORTINDEX NUMBER(8),
+  BZ        VARCHAR2(500)
+)
+tablespace workflow
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column T_WF_EMP_MULTDEPT_RELATION.ID
+  is '主键ID';
+comment on column T_WF_EMP_MULTDEPT_RELATION.EMPID
+  is '人员ID';
+comment on column T_WF_EMP_MULTDEPT_RELATION.DEPTID
+  is '兼职部门ID';
+comment on column T_WF_EMP_MULTDEPT_RELATION.SORTINDEX
+  is '人员排序';
+comment on column T_WF_EMP_MULTDEPT_RELATION.BZ
+  is '备注';
+
+----20170104jizh
+-- Add/modify columns 
+alter table T_WF_CORE_RECEIVE add toExchangePath varchar2(2000);
+-- Add comments to the columns 
+comment on column T_WF_CORE_RECEIVE.toExchangePath
+  is '公文交换合成的pdf路径';
+
+-- Add/modify columns 
+alter table T_WF_CORE_RECEIVE add EXCHANGEFLOW blob;
+-- Add comments to the columns 
+comment on column T_WF_CORE_RECEIVE.EXCHANGEFLOW
+  is '公文交换合成的pdf路径文件流';
+  
+-- Add/modify columns 
+alter table T_WF_CORE_RECEIVE add UPDATETYPE NUMBER;
+-- Add comments to the columns 
+comment on column T_WF_CORE_RECEIVE.UPDATETYPE
+  is '状态位记录1：发文接口更新；2：收文接口更新';
+
+
+
+-----20170223
+-- Add/modify columns 
+alter table WF_NODE add wfn_isEdit NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_isEdit
+  is '附件是否编辑';
+
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_isEdit NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_isEdit
+  is '附件是否编辑';
+  
+  
+  
+ 
+----20170308
+-- Add/modify columns 
+alter table WF_NODE add wfn_isEndRemind NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_isEndRemind
+  is '是否办结提醒 0:否; 1:是';
+
+  -- Add/modify columns 
+alter table WF_NODE_HISTROY add WFN_ISENDREMIND NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.WFN_ISENDREMIND
+  is '是否办结提醒 0:否; 1:是';
+   
+
+-- Create table
+create table T_WF_CORE_READEDENDPENDING
+(
+  ID         VARCHAR2(38) not null,
+  INSTANCEID VARCHAR2(38),
+  USERID     VARCHAR2(38),
+  STATUS     VARCHAR2(38)
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 832
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_READEDENDPENDING
+  is '已经阅读过的已办结办件';
+-- Create/Recreate primary, unique and foreign key constraints 
+alter table T_WF_CORE_READEDENDPENDING
+  add constraint T_WF_CORE_READEDENDPENDING_PID primary key (ID)
+  using index 
+  tablespace COMPANYOA
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 448K
+    minextents 1
+    maxextents unlimited
+  );
+
+--办件关注 关联关系表
+-- Create table
+create table T_WF_CORE_FOLLOW_SHIP
+(
+  id              VARCHAR2(36),
+  wf_instance_uid VARCHAR2(36),
+  employee_guid   VARCHAR2(38),
+  is_read 		  VARCHAR2(10)
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 72M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column T_WF_CORE_FOLLOW_SHIP.wf_instance_uid
+  is '办件实例id';
+comment on column T_WF_CORE_FOLLOW_SHIP.employee_guid
+  is '人员id';
+comment on column T_WF_CORE_FOLLOW_SHIP.is_read
+  is '是否点开（1,是;0,否）';
+  
+  
+-- Add/modify columns 
+alter table WF_NODE add wfn_isfollow NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_isfollow
+  is '是否可以关注 0:否; 1:是';
+  
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_isfollow NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_isfollow
+  is '是否可以关注 0:否; 1:是';
+  
+  
+-- Add/modify columns 
+alter table T_WF_CORE_FOLLOW_SHIP add old_instanceid VARCHAR2(36);
+-- Add comments to the columns 
+comment on column T_WF_CORE_FOLLOW_SHIP.old_instanceid
+  is '被督办办件实例id';
+  
+-- add by adolph.jiang at 0518  
+-- Add/modify columns 
+alter table WF_NODE add wfn_isreissue NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_isreissue
+  is '是否可以补发 0:否; 1:是';
+  
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_isreissue NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_isreissue
+  is '是否可以补发 0:否; 1:是';
+
+-- 
+-- Add/modify columns 
+alter table T_WF_CORE_DOFILE add urgency number;
+-- Add comments to the columns 
+comment on column T_WF_CORE_DOFILE.urgency
+  is '办件的紧急程度';
+  
+
+
+
+-- Create table
+create table T_WF_CORE_TOREC_SHIP
+(
+  ID         VARCHAR2(36),
+  RECATTID   VARCHAR2(36),
+  PDFPATH    VARCHAR2(200),
+  CREATETIME DATE,
+  RECID      VARCHAR2(36),
+  PAGECOUNT  NUMBER,
+  ISSEAL     VARCHAR2(3),
+  FILENAME   VARCHAR2(2000)
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_TOREC_SHIP
+  is '记录前置机文件的读取状态与pdfpath';
+-- Add comments to the columns 
+comment on column T_WF_CORE_TOREC_SHIP.ID
+  is '主键id';
+comment on column T_WF_CORE_TOREC_SHIP.RECATTID
+  is '前置机附件件id';
+comment on column T_WF_CORE_TOREC_SHIP.PDFPATH
+  is '附件转换的pdf路径';
+comment on column T_WF_CORE_TOREC_SHIP.CREATETIME
+  is '入库时间';
+comment on column T_WF_CORE_TOREC_SHIP.RECID
+  is '前置机办件id';
+comment on column T_WF_CORE_TOREC_SHIP.PAGECOUNT
+  is 'pdf页数';
+comment on column T_WF_CORE_TOREC_SHIP.ISSEAL
+  is '该文件是否被盖过章（1,是;0,否）';
+comment on column T_WF_CORE_TOREC_SHIP.FILENAME
+  is '附件名';
+
+-- Add/modify columns 
+alter table T_WF_CORE_DOFILE add copy_number NUMBER;
+-- Add comments to the columns 
+comment on column T_WF_CORE_DOFILE.copy_number
+  is '表单复制标识';
+
+
+-- Add/modify columns 
+alter table T_WF_CORE_TOREC_SHIP add ISZW VARCHAR2(3);
+-- Add comments to the columns 
+comment on column T_WF_CORE_TOREC_SHIP.ISZW
+  is '是否是正文0：是1：不是；';
+-- Add/modify columns 
+alter table T_WF_CORE_TOREC_SHIP add FILETIME DATE;
+-- Add comments to the columns 
+comment on column T_WF_CORE_TOREC_SHIP.FILETIME
+  is '附件时间';
+
+-- Add/modify columns 
+alter table WF_NODE add wfn_formcopy NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_formcopy
+  is '是否可以复制表单 0:否; 1:是';
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_formcopy NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_formcopy
+  is '是否可以复制表单 0:否; 1:是';
+
+----20170615
+-- Add/modify columns 
+alter table WF_NODE add WFN_SELF_LOOP NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE.WFN_SELF_LOOP
+  is '是否自循环  0：否，1：是'';';
+  
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add WFN_SELF_LOOP NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.WFN_SELF_LOOP
+  is '是否自循环  0：否，1：是'';';
+  
+-- Add/modify columns 
+alter table T_WF_CORE_RECEIVE add updatetype number;
+-- Add comments to the columns 
+comment on column T_WF_CORE_RECEIVE.updatetype
+  is '状态位记录1：发文接口更新；2：收文接口更新';
+-- Add/modify columns 
+alter table T_WF_CORE_RECEIVE add toexchangepath varchar2(1000);
+-- Add comments to the columns 
+comment on column T_WF_CORE_RECEIVE.toexchangepath
+  is '公文交换合成的pdf路径';
+	---alter table wf_node, xiep, 20170815---
+alter table wf_node add(isAttachNameAsTitle varchar2(5));
+comment on column wf_node.isAttachNameAsTitle
+  is '是否第一个附件名称作为标题';
+
+---alter table wf_node_histroy, xiep, 20170815
+ alter table WF_NODE_HISTROY add(isAttachNameAsTitle varchar2(5));
+comment on column WF_NODE_HISTROY.isAttachNameAsTitle
+  is '是否第一个附件名称作为标题';
+  
+alter table zwkj_employee add(ISLEAVE varchar2(5));
+comment on column zwkj_employee.ISLEAVE is '是否离职 0：否 1：是';
+  
+alter table zwkj_employee add(STATUS varchar2(5));
+comment on column zwkj_employee.STATUS is '状态 0：禁用 1：启用';
+  
+alter table T_WF_CORE_INNERUSER add(EMPJSONTREE clob);
+comment on column T_WF_CORE_INNERUSER.EMPJSONTREE is '人员静态树';  
+
+--20170904，xiep
+alter table oa_doc_attachments add(TMPDFPATH varchar2(2000));
+comment on column OA_DOC_ATTACHMENTS.TMPDFPATH is '脱密pdf路径';
+
+alter table ZWKJ_DEPARTMENT add(STAMPDEPTNAME varchar2(2000));
+comment on column ZWKJ_DEPARTMENT.STAMPDEPTNAME is '盖章部门名称';
+comment on column T_WF_CORE_INNERUSER.EMPJSONTREE is '人员静态树';  
+
+--add by adolph.jiang at 20170906
+-- Create table
+create table t_wf_core_handround_ship
+(
+  id         varchar2(50),
+  userid     varchar2(50),
+  instanceid varchar2(50),
+  isread     number
+)
+;
+-- Add comments to the columns 
+comment on column t_wf_core_handround_ship.isread
+  is '0:未读;1,已读';
+
+  
+-- Add/modify columns 
+alter table T_WF_CORE_HANDROUND_SHIP add readdate date;
+-- Add comments to the columns 
+comment on column T_WF_CORE_HANDROUND_SHIP.readdate
+  is '阅读时间';
+-- Add/modify columns 
+alter table T_WF_CORE_HANDROUND_SHIP add senderid VARCHAR2(50);
+alter table T_WF_CORE_HANDROUND_SHIP add sendername VARCHAR2(100);
+alter table T_WF_CORE_HANDROUND_SHIP add username VARCHAR2(100);
+-- Add comments to the columns 
+comment on column T_WF_CORE_HANDROUND_SHIP.userid
+  is '接收者id';
+comment on column T_WF_CORE_HANDROUND_SHIP.senderid
+  is '发送者id';
+comment on column T_WF_CORE_HANDROUND_SHIP.sendername
+  is '发送者姓名';
+comment on column T_WF_CORE_HANDROUND_SHIP.username
+  is '接收者姓名';
+  
+  alter table T_WF_CORE_FORM_MAP_COLUMN add(textMaxLen varchar2(300));
+  comment on column T_WF_CORE_FORM_MAP_COLUMN.textMaxLen is '文本最大长度';
+
+--add by xiep, 20170914  
+alter table T_WF_CORE_HANDROUND_SHIP add(addtime varchar2(50));
+comment on column T_WF_CORE_HANDROUND_SHIP.addtime is '传阅时间';
+  
+-- Add/modify columns 
+alter table WF_NODE add WFN_ISDOINMOBILE NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE.WFN_ISDOINMOBILE
+  is '是否可以在移动端办理 0:是; 1:否';
+  
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add WFN_ISDOINMOBILE NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.WFN_ISDOINMOBILE
+  is '是否可以在移动端办理0:是; 1:否';
+  
+  
+  -- Add/modify columns 
+alter table T_WF_CORE_RECEIVE add cbcs NUMBER(2);
+-- Add comments to the columns 
+comment on column T_WF_CORE_RECEIVE.cbcs
+  is '催办次数';
+  
+----20171021
+create or replace view wh_view as
+select t1.wjbt as bt, t1.lwwh as wh, t1.lwdw as lwdw,t1.instanceid as instanceId from T_WF_OFFICE_NJXXZXWJBWD t1;
+
+
+-- Add/modify columns 
+alter table WF_NODE add WFN_COMMENT_SORT VARCHAR2(5);
+alter table WF_NODE add WFN_CHILD_NODEIDS VARCHAR2(4000);
+-- Add comments to the columns 
+comment on column WF_NODE.WFN_COMMENT_SORT
+  is '是否意见排序   0:否; 1:是';
+comment on column WF_NODE.WFN_CHILD_NODEIDS
+  is '参与意见排序节点id';
+
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add WFN_COMMENT_SORT VARCHAR2(5);
+alter table WF_NODE_HISTROY add WFN_CHILD_NODEIDS VARCHAR2(4000);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.WFN_COMMENT_SORT
+  is '是否意见排序   0:否; 1:是';
+comment on column WF_NODE_HISTROY.WFN_CHILD_NODEIDS
+  is '参与意见排序节点id';
+
+-- Add/modify columns 
+alter table T_WF_PROCESS_TEMP add ISREPEATED number;
+-- Add comments to the columns 
+comment on column T_WF_PROCESS_TEMP.ISREPEATED
+  is '是否为重复过程';
+-- Add/modify columns 
+alter table T_WF_PROCESS add ISREPEATED number;
+-- Add comments to the columns 
+comment on column T_WF_PROCESS.ISREPEATED
+  is '是否为重复过程';
+
+-- Add/modify columns 
+alter table WF_NODE add WFN_SEND_AGAIN NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE.WFN_SEND_AGAIN
+  is '是否分批  0：否，1：是';
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add WFN_SEND_AGAIN NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.WFN_SEND_AGAIN
+  is '是否分批  0：否，1：是';
+
+-- Add/modify columns 
+alter table T_WF_CORE_FORM_MAP_COLUMN add CORRELATION VARCHAR2(500);
+-- Add comments to the columns 
+comment on column T_WF_CORE_FORM_MAP_COLUMN.CORRELATION
+  is '关联字段名称';
+
+-- Add/modify columns 
+alter table WF_NODE add WFN_SEND_BACK NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE.WFN_SEND_BACK
+  is '是否退回  0：否，1：是';
+
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add WFN_SEND_BACK NUMBER(2);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.WFN_SEND_BACK
+  is '是否退回  0：否，1：是';
+
+-- Add/modify columns 
+alter table T_WF_PROCESS add ISRETURNSTEP number;
+alter table T_WF_PROCESS add RETURNMESSAGE VARCHAR2(4000);
+-- Add comments to the columns 
+comment on column T_WF_PROCESS.ISRETURNSTEP
+  is '是否为退回步骤(1,退回;2,被退回)';
+comment on column T_WF_PROCESS.RETURNMESSAGE
+  is '退回意见';
+-- Add/modify columns 
+alter table T_WF_PROCESS_TEMP add ISRETURNSTEP NUMBER;
+alter table T_WF_PROCESS_TEMP add RETURNMESSAGE VARCHAR2(4000);
+-- Add comments to the columns 
+comment on column T_WF_PROCESS_TEMP.ISRETURNSTEP
+  is '是否为退回步骤(1,退回;2,被退回)';
+comment on column T_WF_PROCESS_TEMP.RETURNMESSAGE
+  is '退回意见';
+
+-- Add/modify columns 
+alter table T_WF_CORE_FORM add FORM_HTMLFILEFLOW blob;
+-- Add comments to the columns 
+comment on column T_WF_CORE_FORM.FORM_HTMLFILEFLOW
+  is 'html文件流';
+  
+  --xiep,20180104
+alter table wf_node add(node_allowUpload varchar2(100));
+comment on column WF_NODE.node_allowUpload is '允许上传附件';
+
+alter table wf_node_histroy add(node_allowUpload varchar2(100));
+comment on column wf_node_histroy.node_allowUpload is '允许上传附件';
+
+alter table wf_main add(WFM_DEPTID varchar2(1000));
+comment on column wf_main.WFM_DEPTID is '流程所属部门id';
+
+-- Add/modify columns 
+alter table WF_NODE add WFN_ONEKEYHANDLE NUMBER;
+-- Add comments to the columns 
+comment on column WF_NODE.WFN_ONEKEYHANDLE
+  is '是否一键办理';
+  
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add WFN_ONEKEYHANDLE NUMBER;
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.WFN_ONEKEYHANDLE
+  is '是否一键办理';
+
+-- Add/modify columns 
+alter table WF_NODE add wfn_skipuser number;
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_skipuser
+  is '是否过滤非本部门人员';
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_skipuser number;
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_skipuser
+  is '是否过滤非本部门人员';
+  
+-- Create table
+create table T_WF_CORE_AUTOFILE
+(
+  id         VARCHAR2(50),
+  instanceid VARCHAR2(50),
+  isdo       NUMBER,
+  dotime     DATE,
+  nodeid     VARCHAR2(50),
+  step_index NUMBER
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column T_WF_CORE_AUTOFILE.isdo
+  is '(0,未自动办理;1,已自动办理)';
+comment on column T_WF_CORE_AUTOFILE.dotime
+  is '自动办理的时间';
+comment on column T_WF_CORE_AUTOFILE.nodeid
+  is '需要自动办理的节点id';
+comment on column T_WF_CORE_AUTOFILE.step_index
+  is '在过程表中的步骤数';
+
+-- Add/modify columns 
+alter table WF_NODE add wfn_autosend number;
+alter table WF_NODE add wfn_autosenddays number;
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_autosend
+  is '是否自动办理';
+comment on column WF_NODE.wfn_autosenddays
+  is '多少天后自动办理';
+
+  -- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_autosend NUMBER;
+alter table WF_NODE_HISTROY add wfn_autosenddays NUMBER;
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_autosend
+  is '是否自动办理';
+comment on column WF_NODE_HISTROY.wfn_autosenddays
+  is '多少天后自动办理';
+
+-- Create table
+create table T_WF_CORE_ACCESSLOG
+(
+  id          VARCHAR2(50),
+  access_date DATE,
+  method_name VARCHAR2(100),
+  access_time VARCHAR2(100),
+  userid      VARCHAR2(50)
+)
+tablespace WORKFLOW_NJ
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the columns 
+comment on column T_WF_CORE_ACCESSLOG.access_date
+  is '访问时间';
+comment on column T_WF_CORE_ACCESSLOG.method_name
+  is '方法名称';
+comment on column T_WF_CORE_ACCESSLOG.access_time
+  is '访问时长（单位：ms）';
+comment on column T_WF_CORE_ACCESSLOG.userid
+  is '用户id';
+
+-- Add/modify columns 
+alter table T_WF_CORE_DOFILE add pdfpath VARCHAR2(50);
+alter table T_WF_CORE_DOFILE add pdfdata BLOB;
+-- Add comments to the columns 
+comment on column T_WF_CORE_DOFILE.pdfpath
+  is '办结时，生成的办件的pdf的路径';
+comment on column T_WF_CORE_DOFILE.pdfdata
+  is 'pdf文件流';
+
+-- Add/modify columns 
+alter table OA_DOC_CUTPAGES add pdfdata blob;
+-- Add comments to the columns 
+comment on column OA_DOC_CUTPAGES.pdfdata
+  is '文件流';
+
+ -- Add/modify columns 
+alter table ZWKJ_DEPARTMENT add issite number;
+-- Add comments to the columns 
+comment on column ZWKJ_DEPARTMENT.issite
+  is '是否是站点部门（0,否;1,是）';
+  
+ -- Create table
+create table T_WF_CORE_SOCKETLOG
+(
+  id         VARCHAR2(50),
+  close_time DATE,
+  instanceid VARCHAR2(50),
+  userid     VARCHAR2(50),
+  remark     VARCHAR2(2000)
+)
+tablespace WORKFLOW
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+  
+ -- Add/modify columns 
+alter table WF_NODE add wfn_showmarkbtn number;
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_showmarkbtn
+  is '是否展示痕迹按钮';
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_showmarkbtn NUMBER;
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_showmarkbtn
+  is '是否展示痕迹按钮';
+
+-- Add/modify columns 
+alter table T_WF_PROCESS add isopen number;
+-- Add comments to the columns 
+comment on column T_WF_PROCESS.isopen
+  is '待办窗口是否打开 （1，是；0，否）';
+-- Add/modify columns 
+alter table T_WF_PROCESS_TEMP add isopen number;
+-- Add comments to the columns 
+comment on column T_WF_PROCESS_TEMP.isopen
+  is '待办窗口是否打开 （1，是；0，否）';
+
+  
+-- Add/modify columns 
+alter table T_COMMON_GROUP add siteid VARCHAR2(50);
+-- Add comments to the columns 
+comment on column T_COMMON_GROUP.siteid
+  is '站点id';
+  
+
+-- Create table
+create table T_WF_CORE_AUTOSEND
+(
+  id           VARCHAR2(38),
+  processid    VARCHAR2(38),
+  create_date  DATE,
+  auto_date    DATE,
+  same_process VARCHAR2(38),
+  is_master    NUMBER(2)
+)
+tablespace WORKFLOW_NJ
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 2M
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_AUTOSEND
+  is '自动办理表';
+-- Add comments to the columns 
+comment on column T_WF_CORE_AUTOSEND.create_date
+  is '创建时间';
+comment on column T_WF_CORE_AUTOSEND.auto_date
+  is '办理截止期限';
+comment on column T_WF_CORE_AUTOSEND.is_master
+  is '主送、抄送';
+-- Create/Recreate indexes 
+create index AUTOSEND_PROCESSID on T_WF_CORE_AUTOSEND (PROCESSID)
+  tablespace WORKFLOW_NJ
+  pctfree 10
+  initrans 2
+  maxtrans 255
+  storage
+  (
+    initial 960K
+    minextents 1
+    maxextents unlimited
+  );
+-- Create table
+create table T_WF_CORE_MONITORINFO
+(
+  ID            NVARCHAR2(38),
+  TOTALMEMORY   NUMBER,
+  FREEMEMORY    NUMBER,
+  MAXMEMORY     NUMBER,
+  MEMORYRATIO   BINARY_DOUBLE,
+  CURRENTDATE   NVARCHAR2(38),
+  CURRENTTIME   NUMBER,
+  TOTALCPU      NUMBER,
+  CPURATIO      BINARY_DOUBLE,
+  CURRENTMINUTE NUMBER
+)
+tablespace WORKFLOW_NJ
+  pctfree 10
+  initrans 1
+  maxtrans 255
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_MONITORINFO
+  is '服务器监视情况';
+-- Add comments to the columns 
+comment on column T_WF_CORE_MONITORINFO.TOTALMEMORY
+  is '可使用内存';
+comment on column T_WF_CORE_MONITORINFO.FREEMEMORY
+  is '剩余内存';
+comment on column T_WF_CORE_MONITORINFO.MAXMEMORY
+  is '最大可使用内存';
+comment on column T_WF_CORE_MONITORINFO.MEMORYRATIO
+  is '内存利用率';
+comment on column T_WF_CORE_MONITORINFO.CURRENTDATE
+  is '当前日期';
+comment on column T_WF_CORE_MONITORINFO.CURRENTTIME
+  is '当前hour';
+comment on column T_WF_CORE_MONITORINFO.TOTALCPU
+  is '总的cpu';
+comment on column T_WF_CORE_MONITORINFO.CPURATIO
+  is 'cpu使用率';
+comment on column T_WF_CORE_MONITORINFO.CURRENTMINUTE
+  is '当前minute';
+
+  
+-- Add/modify columns 
+alter table WF_NODE add wfn_skipnextnodes number;
+alter table WF_NODE add wfn_laststaff VARCHAR2(1000);
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_skipnextnodes
+  is '是否过滤下一步节点';
+comment on column WF_NODE.wfn_laststaff
+  is '上一节点人员所在的用户组';
+  
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_skipnextnodes NUMBER;
+alter table WF_NODE_HISTROY add wfn_laststaff VARCHAR2(1000);
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_skipnextnodes
+  is '是否过滤下一步节点';
+comment on column WF_NODE_HISTROY.wfn_laststaff
+  is '上一节点人员所在的用户组';
+
+-- Add/modify columns 
+alter table T_WF_CORE_TRUEJSONLOG add fromexcute VARCHAR2(1000);
+
+-- Add/modify columns 
+alter table T_WF_CORE_INNERUSER add siteid varchar2(50);
+-- Add comments to the columns 
+comment on column T_WF_CORE_INNERUSER.siteid
+  is '站点id';
+  
+
+-- Add/modify columns 
+alter table WF_NODE add wfn_isautosend NUMBER;
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_isautosend
+  is '下一节点是否可以自动办理（用于控制当前节点是否能够查入自动办理表的数据），0,否;1,是';
+  
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_isautosend NUMBER;
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_isautosend
+  is '下一节点是否可以自动办理（用于控制当前节点是否能够查入自动办理表的数据），0,否;1,是';
+  
+-- Add/modify columns 
+alter table T_WF_CORE_ITEM add interface_url VARCHAR2(500);
+alter table T_WF_CORE_ITEM add outside_tabname VARCHAR2(500);
+
+-- Add/modify columns 
+alter table T_WF_CORE_ACCESSLOG add client_type VARCHAR2(10);
+-- Add comments to the columns 
+comment on column T_WF_CORE_ACCESSLOG.client_type
+  is '终端系统类型(0,android;1,iOS)';
+
+  
+-- Create table
+create table T_WF_THIRDPARTY_INTERFACE_LOG
+(
+  id            varchar2(50),
+  interface_url varchar2(500),
+  params        varchar2(500),
+  result        clob,
+  request_time  date,
+  back_time     date,
+  instanceid    varchar2(50)
+)
+tablespace WORKFLOW
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_THIRDPARTY_INTERFACE_LOG
+  is '第三方节点调用日志表';
+-- Add comments to the columns 
+comment on column T_WF_THIRDPARTY_INTERFACE_LOG.interface_url
+  is '接口地址';
+comment on column T_WF_THIRDPARTY_INTERFACE_LOG.params
+  is '接口入参';
+comment on column T_WF_THIRDPARTY_INTERFACE_LOG.result
+  is '结果';
+comment on column T_WF_THIRDPARTY_INTERFACE_LOG.request_time
+  is '请求时间';
+comment on column T_WF_THIRDPARTY_INTERFACE_LOG.back_time
+  is '回参时间';
+comment on column T_WF_THIRDPARTY_INTERFACE_LOG.instanceid
+  is '办件唯一id';
+ 
+ 
+ -- Create table
+create table T_WF_CORE_FILE_DOWNLOAD_LOG
+(
+  id            varchar2(50),
+  download_time date,
+  file_title    varchar2(500),
+  instanceid    varchar2(50),
+  employee_guid varchar2(50),
+  employee_name varchar2(50)
+)
+tablespace WORKFLOW
+  storage
+  (
+    initial 64K
+    minextents 1
+    maxextents unlimited
+  );
+-- Add comments to the table 
+comment on table T_WF_CORE_FILE_DOWNLOAD_LOG
+  is '文件下载日志表';
+-- Add comments to the columns 
+comment on column T_WF_CORE_FILE_DOWNLOAD_LOG.download_time
+  is '下载时间';
+comment on column T_WF_CORE_FILE_DOWNLOAD_LOG.file_title
+  is '文件名称';
+comment on column T_WF_CORE_FILE_DOWNLOAD_LOG.instanceid
+  is '文件实例id';
+comment on column T_WF_CORE_FILE_DOWNLOAD_LOG.employee_guid
+  is '人员id';
+comment on column T_WF_CORE_FILE_DOWNLOAD_LOG.employee_name
+  is '人员姓名';
+
+  
+-- Add/modify columns 
+alter table T_WF_THIRDPARTY_INTERFACE_LOG modify params clob;
+
+-- Add/modify columns 
+alter table T_WF_CORE_FILE_DOWNLOAD_LOG add type VARCHAR2(10);
+-- Add comments to the columns 
+comment on column T_WF_CORE_FILE_DOWNLOAD_LOG.type
+  is '日志类型（1，公文导出；2，附件下载）';
+
+  
+-- Add/modify columns 
+alter table WF_NODE add wfn_issupervision number;
+-- Add comments to the columns 
+comment on column WF_NODE.wfn_issupervision
+  is '是否为督办节点';
+-- Add/modify columns 
+alter table WF_NODE_HISTROY add wfn_issupervision number;
+-- Add comments to the columns 
+comment on column WF_NODE_HISTROY.wfn_issupervision
+  is '是否为督办节点';
+
+-- Add/modify columns 
+alter table T_WF_CORE_FORM add begin_date date;
+alter table T_WF_CORE_FORM add end_date date;
+-- Add comments to the columns 
+comment on column T_WF_CORE_FORM.begin_date
+  is '开始使用时间';
+comment on column T_WF_CORE_FORM.end_date
+  is '结束使用时间';
+
+-- Add/modify columns 
+alter table T_WF_CORE_INNERUSER add is_sort VARCHAR2(10);
+-- Add comments to the columns 
+comment on column T_WF_CORE_INNERUSER.is_sort
+  is '是否参与排序（1，是；0，否）';

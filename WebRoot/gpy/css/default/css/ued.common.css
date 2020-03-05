@@ -1,0 +1,51 @@
+@charset "utf-8";
+/* CSS Document */
+body{background-color:#F5F6F7;}
+.warp{margin:0 auto;}
+/**Header Style**/
+#header{background:url(../images/banner.jpg) repeat-x 0 0;  height:97px; overflow:hidden; position:relative;}
+#header h1{ height:108px;}
+
+#header .usermsg{background:url(../images/header-usermsg.png) no-repeat 0 0; width:187px; height:60px; overflow:hidden; position:absolute; top:1px; right:10px; z-index:3;}
+#header .usermsg .person{margin:0 10px; color:#FFF; text-shadow:1px 1px 1px #333; text-align:center;}
+#header .usermsg .sysQuickbtn{margin:0 28px; overflow:hidden; *zoom:1; position:absolute; bottom:8px;}
+#header .usermsg .sysQuickbtn .sys-index{cursor:pointer; background:url(../images/header-sysQbtn.png) no-repeat 0 0px; display:block; float:left; height:24px; width:50px;}
+#header .usermsg .sysQuickbtn .sys-out{cursor:pointer; background:url(../images/header-sysQbtn.png) no-repeat -50px 0px; display:block; float:left; height:24px; width:80px;}
+
+  #naver{background:url(../images/globalheader.png) repeat-x 0 0; overflow:hidden; *zoom:1; line-height:28px; position:absolute; bottom:7px; left:150px; width:100%;}
+#naver li{float:left; background:url(../images/tabmenu-out.gif) no-repeat right -28px; margin:0 1px;}
+#naver li a{color:#09649E; text-shadow:1px 1px 1px #FFF; font-size:14px; text-decoration:none; letter-spacing:0.2em; display:block; background:url(../images/tabmenu-out.gif) no-repeat 0 0; margin-right:7px; padding-left:10px; padding-right:2px;}
+#naver li.li1{float:left; background:url(../images/tabmenu-over.gif) no-repeat right -28px; margin:0 1px;}
+#naver li.li1 a{color:#FFF; text-shadow:1px 1px 1px #761C00; background:url(../images/tabmenu-over.gif) no-repeat 0 0;}
+#naver li.li2{float:left; background:url(../images/tabmenu-over.gif) no-repeat right -28px; margin:0 1px;}
+#naver li.li2 a{color:#FFF; text-shadow:1px 1px 1px #761C00; background:url(../images/tabmenu-over.gif) no-repeat 0 0;}
+#bodyer{overflow:hidden; *zoom:1;position:relative;}
+#bodyer .sideNaver{cursor:default; background:url(../images/back_bg.gif) repeat 0 0;cursor:pointer;}
+#bodyer .sideNaver img{background:url(../images/back_left.jpg) no-repeat center;}
+#bodyer .sideNaver-hide img{background:url(../images/back_right.jpg) no-repeat center;}
+
+#jQside{width:190px; overflow:hidden;}
+#jQsidebar{width:10px; height:auto; overflow:hidden;}
+#jQcontainer{overflow:hidden; background-color:#FFF;}
+#jQcontainertext{width:100%; padding:0; margin:0; border:0;}
+#jQsidetext{width:100%; padding:0; margin:0; border:0;}
+
+#footer{background:url(../images/footer-btnbg-out.gif) repeat-x center 0; text-shadow:1px 1px 1px #FFF; border-style:solid; border-color:#959DB4; border-width:1px 0; overflow:hidden; *zoom:1;}
+#footer li{float:left; border-right:1px solid #1F54BC; color:#0F3D61; height:22px; line-height:22px; padding:0 5px;}
+#footer li:hover{background:url(../images/footer-btnbg-over.gif) repeat-x center 0;}
+#footer li.first{border-left-width:0px; background:url(../images/system-ico/home.gif) no-repeat center; width:60px;}
+#footer li.last{float:right;}
+#footer li a{padding:0 5px 0 20px; display:block; color:#0F3D61; text-decoration:none;}
+
+.ico-book{background:url(../images/system-ico/book.gif) no-repeat center left;}
+.ico-calender{background:url(../images/system-ico/calender.gif) no-repeat center left;}
+.ico-document{background:url(../images/system-ico/document.gif) no-repeat center left;}
+.ico-folders{background:url(../images/system-ico/folders.gif) no-repeat center left;}
+.ico-mail{background:url(../images/system-ico/mail.gif) no-repeat center left;}
+.ico-new{background:url(../images/system-ico/new.gif) no-repeat center left;}
+.ico-person{background:url(../images/system-ico/person.gif) no-repeat center left;}
+
+
+.tips{background:url(../images/tips.gif) no-repeat right 10px; color:#FFF; position:absolute; top:0; left:0; z-index:99;}
+.tips span{display:block; padding-top:10px; line-height:25px; overflow:hidden; padding-left:10px;  margin-right:6px; background:url(../images/tips.gif) no-repeat 0 -24px;}
+

@@ -1,0 +1,23 @@
+[
+	{
+		"name":"流程人员",
+		"domId":"allOrg",
+		"apiUrl":"ztree_getArrData.do",
+		"isRole":"",
+		"level":0
+	},
+	{
+		"name":"常用组",
+		"domId":"groupOrg1",
+		"apiUrl":"ztree_getGroupsArrData.do",
+		"isRole":"",
+		"level":1
+	},
+	{
+		"name":"角色",
+		"domId":"roleOrg1",
+		"apiUrl":"ztree_getGroupsArrData.do",
+		"isRole":"1",
+		"level":2
+	}
+]

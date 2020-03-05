@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+        	
+	<bean id="groupAction" class="cn.com.trueway.workflow.set.action.GroupAction">
+		<property name="groupService" ref="groupService"></property>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService"></property>
+		<property name="tableInfoService" ref="tableInfoService"></property>
+		<property name="pendingService" ref="pendingService"></property>
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="ztreeService" ref="ztreeService"></property>
+	</bean>
+	<bean id="deptTreeAction" class="cn.com.trueway.workflow.set.action.DeptTreeAction">
+		<property name="departmentService" ref="departmentService"></property>
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="workflowBasicFlowService"  ref="workflowBasicFlowService"/>
+		<property name="groupService"  ref="groupService"/>
+		<property name="pendingService"  ref="pendingService"/>
+		<property name="roleManageService"  ref="roleManageService"/>
+		<property name="archiveUsingService"  ref="archiveUsingService"/>
+	</bean>
+	
+	<bean id="userGroupAction" class="cn.com.trueway.workflow.set.action.UserGroupAction">
+		<property name="groupService" ref="groupService"></property>
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="departmentService" ref="departmentService"></property>
+	</bean>
+	
+	<bean id="PeopleTreeAction" class="cn.com.trueway.workflow.set.action.PeopleTreeAction">
+	    <property name="ztreeService" ref="ztreeService"></property>
+	    <property name="departmentService" ref="departmentService"></property>
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService"></property>
+		<property name="groupService"  ref="groupService"/>
+		<property name="employeeSpellService" ref="employeeSpellService"></property>
+		<property name="employeeLeaderService" ref="employeeLeaderService"></property>
+		<property name="tableInfoService" ref="tableInfoService"></property>
+	</bean>
+	
+	<bean id="userNodesPermissionAction" class="cn.com.trueway.workflow.set.action.UserNodesPermissionAction">
+	    <property name="userNodesPermissionService" ref="userNodesPermissionService"></property>
+	</bean>
+	
+	<bean id="menuAction" class="cn.com.trueway.sys.action.MenuAction">
+		<property name="menuService" ref="menuService"></property>
+		<!-- <property name="applicationService" ref="applicationService"></property> -->
+	</bean>
+	
+	<bean id="roleAction" class="cn.com.trueway.sys.action.RoleAction">
+		<property name="roleService" ref="roleService"></property>
+	</bean>
+	
+	<bean id="organizeAction" class="cn.com.trueway.sys.action.OrganizeAction">
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="departmentService" ref="departmentService"></property>
+		<property name="employeeSpellService" ref="employeeSpellService"></property>
+	</bean>
+	
+	<bean id="menuRoleAction" class="cn.com.trueway.sys.action.MenuRoleAction">
+		<property name="menuService" ref="menuService"></property>
+		<property name="roleService" ref="roleService"></property>
+		<property name="menuRoleService" ref="menuRoleService"></property>
+	</bean>
+	
+	<bean id="roleUserAction" class="cn.com.trueway.sys.action.RoleUserAction">
+		<property name="roleUserService" ref="roleUserService"></property>
+		<property name="roleService" ref="roleService"></property>
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="departmentService" ref="departmentService"></property>
+	</bean>
+	
+	<bean id="treeAction" class="cn.com.trueway.sys.action.TreeAction">
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="departmentService" ref="departmentService"></property>
+	</bean>
+	
+	<bean id="loginAction" class="cn.com.trueway.sys.action.LoginAction">
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="departmentService" ref="departmentService"></property>
+		<property name="menuService" ref="menuService"></property>
+	</bean>
+	
+</beans>

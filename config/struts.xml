@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<!-- 加入所有的struts配置文件 -->
+	<include file="/struts/struts_common.xml"></include>
+	<include file="/struts/business.xml"></include>
+	<include file="/struts/businesslist.xml"></include>
+	<!-- 组件  -->
+	<include file="/struts/component.xml"></include>
+	<include file="/struts/database.xml"></include>
+	<include file="/struts/core.xml"></include>
+	<!-- 表单-->
+	<include file="/struts/form.xml"></include>
+	
+	<include file="/struts/group.xml"></include>
+	<include file="/struts/allow.xml"></include>
+	<include file="/struts/workflow.xml"></include>
+	<include file="/struts/extra.xml"></include>
+	<include file="/struts/meeting.xml"></include>
+	<include file="/struts/functions.xml"></include>
+	<include file="/struts/versionManager.xml"></include>
+	<include file="/struts/tools.xml"></include>
+	<include file="/struts/log.xml"></include>
+	<include file="/struts/setup.xml"></include>
+	<include file="/struts/ztree.xml"></include>
+	<include file="/struts/deptTree.xml"></include>
+	<include file="/struts/socket.xml"></include>
+	<include file="/struts/unifiledUserMng.xml"></include>
+	<include file="/struts/archive.xml"></include>
+	<!-- 档案利用系统 -->
+	<include file="/struts/archiveUsing.xml"></include>
+	<!-- 档案管理功能 -->
+	<include file="/struts/archiveManage.xml"></include>
+	<include file="/struts/archiveTemplates.xml"></include>
+	<!-- 统计管理功能 -->
+	<include file="/struts/archiveReports.xml"></include>
+</struts>
+
+ 

@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong></strong>
+
+<table width="819" class="infotan">
+  <tr>
+    <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 信息标题：</td>
+    <td height="72" colspan="3"  class="tdcol docformTableNoBD"  style="font-size:18px;" ><input type="text" id="xxbt" name="xxbt"  style="width:600" zname="信息标题"/>    </td>
+  </tr>
+  <tr>
+    <td height="72" valign="middle" style="font-size:18px;" > 信息正文：</td>
+    <td height="72" colspan="3"  class="tdcol docformTableNoBD" style="height:98px;font-size:18px;">
+    <span id="zwshow"></span>
+			<trueway:att zname="信息正文" onlineEditAble="true" id="${instanceId}zw" docguid="${instanceId}attzw" showId="zwshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+	
+	</td>
+  </tr>
+  <tr>
+    <td  height="72" valign="middle" style="font-size:18px;" > 新闻照片：</td>
+    <td height="72" colspan="3" style="font-size:18px; height:98px" >
+	 <span id="fjshow"></span>
+			<trueway:att zname="新闻照片" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+	 
+	 </td>
+  </tr>
+  <tr>
+    <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 投&nbsp;&nbsp;稿&nbsp;&nbsp;人：</td>
+    <td height="72" colspan="3"  class="tdcol docformTableNoBD" style="font-size:18px;" ><input type="text" id="ngr" name="ngr"  zname="拟稿人" value="${loginEmployee.employeeName}"/>    </td>
+  </tr>
+  
+  <tr>
+    <td height="72"   valign="middle" style="font-size:18px;" >发布名义：</td>
+    <td height="72" colspan="3" style="font-size:18px;">
+	 
+		   <input type="radio" name="yhmyfb" value="投稿人" checked="checked"/>投稿人  
+		    <input type="radio" name="yhmyfb"  value="投稿部门"/>投稿部门  
+			 <input type="radio" name="yhmyfb"  value="投稿单位"/>投稿单位    </td>
+  </tr>
+<tr>
+    	<td  valign="middle" style="font-size:18px;" > 审批意见：</td>
+        <td height="72" colspan="3" style="height:400px;font-size:18px;">
+        	
+		</td>
+    </tr>
+  
+</table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

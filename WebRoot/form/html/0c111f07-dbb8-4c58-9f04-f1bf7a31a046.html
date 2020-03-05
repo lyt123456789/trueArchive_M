@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>市国土资源局"12345"群众诉求办理反馈单</strong>
+</p>
+<p style="font-size:18px;padding-top:5px;padding-bottom:5px;text-align:left;">
+交办单编号<input style="border:0px;border-bottom:1px #cccccc dotted;line-height:22px;" type="text" id="jbdbh" name="jbdbh" zname="交办单编号" value=""/>
+</p>
+<table width="819" class="infotan">
+<tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="15%;"> 诉求人</td>
+	<td  class="tdcol docformTableNoBD" width="15%;" style="font-size:18px;" ><input type="text" id="sqr" name="sqr" style="width:150px" zname="诉求人" value=""/>
+	</td>
+	<td  height="72" valign="middle" width="15%;" style="font-size:18px;" > 联系电话</td>
+	<td   class="tdcol docformTableNoBD" width="15%;" style="font-size:18px;" ><input type="text" id="lxdh" name="lxdh" style="width:150px" zname="联系电话" value="" /></td>
+	<td  height="72" valign="middle" width="15%;" style="font-size:18px;" > 诉求分类</td>
+	<td   class="tdcol docformTableNoBD" width="25%;" style="font-size:18px;" ><input type="text" id="sqfl" name="sqfl" style="width:150px" zname="诉求分类" value="" /></td>
+ 
+  </tr>
+   <tr>
+    	<td  valign="middle" style="font-size:18px;" rowspan="2">承办处室<br>(单位)<br>答复意见</td>
+        <td colspan="5" style="height:200px;font-size:18px;">
+	    <textarea style="width: 600px; height: 185px;" id="dfyj" name="dfyj" zname="承办处室(单位)答复意见"></textarea>
+	</td>
+    </tr>
+    <tr>
+	<td style="height:100px;font-size:18px;" colspan="5">
+	    经办人：<input type="text" id="jbr" name="jbr" style="width:150px" zname="经办人" value=""/>
+	    审核人：<input type="text" id="shr" name="shr" style="width:150px" zname="审核人" value=""/>
+	    承办单位：<input type="text" id="sbdw" name="sbdw" style="width:150px" zname="承办单位" value=""/>
+	</td>
+    </tr>
+
+    <tr>
+    	<td  height="72" valign="middle" style="font-size:18px;" > 诉求人回<br>访满意度</td>
+        <td style="font-size:18px;" colspan="5">
+	   <input zname="诉求人回访满意度" type="checkbox" name="myd" value="1"/>满意&nbsp;&nbsp;
+	   <input zname="诉求人回访满意度" type="checkbox" name="myd" value="2"/>基本满意&nbsp;&nbsp;
+	   <input zname="诉求人回访满意度" type="checkbox" name="myd" value="3"/>不满意&nbsp;&nbsp;
+	</td>
+		
+    </tr>
+    <tr>
+    	<td  valign="middle" style="font-size:18px;" > 所涉业务<br>分管领导<br>审批意见</td>
+        <td colspan="5" style="height:200px;font-size:18px;">
+        	<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}spyj" instanceId="${instanceId}spyj" currentStepId="${processId}" isSatisfied="false" zname="审批意见"/>
+		</td>
+    </tr>
+    <tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="15%;"> 反馈时间</td>
+	<td  colspan="2" class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" ><input type="text" id="fksj" name="fksj" style="width:200px" zname="反馈时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/></select>
+	</td>
+	<td  height="72" valign="middle" width="15%;" style="font-size:18px;" > 网上答复时间</td>
+	<td  colspan="2" class="tdcol docformTableNoBD" width="40%;" style="font-size:18px;" ><input type="text" id="dfsj" name="dfsj" style="width:200px" zname="网上答复时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/></td>
+  </tr>
+
+     </table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

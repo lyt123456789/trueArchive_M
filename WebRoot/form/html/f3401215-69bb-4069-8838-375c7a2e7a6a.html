@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>表单元素说明</title>
+<link type="text/css" rel="stylesheet"  href="${ctx}/dwz/style/css/ued.base.css"  />
+<link type="text/css" rel="stylesheet" href="${ctx}/dwz/style/css/ued.demo.css"  />
+<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/base/jquery.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/sea.js"></script>  
+<script type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>  
+			
+<!--以下必须-->
+<script type="text/javascript" src="src/mapSelected.js" ></script>
+<script type="text/javascript" src="${ctx}/form/jsp/widgets/common/js/doublelist.js" ></script>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 5px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+legend {
+	color: #000;
+}
+legend{float:left;margin-bottom:5px;margin-top:5px;background:#F1F5F6;height:25px; line-height:25px; text-align: center; padding-left:10px; padding-right:10px; border:#B8D0D6 1px solid;}
+fieldset,img {
+	border: 0;
+}
+
+img {
+	vertical-align: middle;
+}
+
+button,input,select,textarea {
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+section,article,aside,header,footer,nav,dialog,figure {
+	display: block;
+}
+
+.pagescon {
+	padding: 5px;
+	background: #EBF6FC;
+	overflow: hidden;
+	border: 1px #B8B8B8 solid;
+}
+
+.infotan td {
+	border: 1px solid #CCCCCC;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 1em;
+}
+
+.mt5 {
+	margin-top: 5px;
+}
+
+.texts {
+	height: 28px;
+	line-height: 28px;
+	border: 1px #999999 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.bgs {
+	background: #F1F5F6;
+	font-weight: bold;
+}
+
+.ls {
+	text-align: right;
+}
+.docformTableNoBD td{
+	border:0 none;
+}
+.txt_shuru{width:200px;height:28px;}
+
+.ty_ul{ border-bottom:1px solid #CCC; overflow:hidden;*zoom:1; padding:0px; margin-top:10px; margin-bottom:10px; }
+.ty_ul li{ border-bottom:1px solid #F00; float:left; padding:0px; padding-bottom:5px; padding-left:5px; } 
+
+.btn_an{ border:1px solid #ccc; padding:5px 15px; background:#F1F5F6; cursor:pointer}
+</style>
+</head>
+
+<body>
+<center style="font-size:30px;">南通市通州区城管局阅办单</center>
+<span style="font-size:18px;">序号:</span> 
+<input type="text" class="txt_shuru" id="xuhao" name="xuhao" />
+<table class="infotan mt5" width="100%">
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">来信者姓名</td>
+		<td width="30%"><input type="text"  class="txt_shuru" name="lxzxm" id="lxzxm"/></td>
+		<td width="20%" class="bgs ls" valign="top" >渠道</td>
+		<td width="30%">
+		    <select style="width:220px;height:28px" id="qd" name="qd">
+               <option value ="1">12345市民服务热线</option>
+                <option value ="2">公众监督</option>
+               <option value="3">通州论坛</option>
+               <option value="4">领导交办</option>
+			    <option value="5">区长信箱</option>
+				 <option value="6">信访信息系统交办</option>
+            </select>		</td>
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">主要内容</td>
+		<td colspan="3" class="tdcol">
+		<input type="text"  id="zynr" name="zynr" width="500px"/></td>
+	</tr>
+	<tr>
+		<td width="20%" height="300%" align="right" valign="top" class="bgs ls">
+		<p>&nbsp;</p>
+		<p>拟办意见</p>
+		<p>&nbsp;</p>	  </td>
+		<td colspan="3" class="tdcol" height="300%">
+		<textarea rows="7" cols="80" id="nbyj" name="nbyj"></textarea>
+		</td>
+	</tr>
+	<tr >
+		<td  width="20%" height="66" valign="top" class="bgs ls">
+			<p>&nbsp;</p>
+		<p>局领导批示</p>
+			<p>&nbsp;</p>	  </td>
+		<td height="200"  colspan="3" class="tdcol">
+		<textarea rows="7" cols="80" id="jldps" name="jldps"></textarea></td>
+	</tr>
+	
+	<tr>
+		<td width="20%" valign="top" class="bgs ls">
+		<p>&nbsp;</p>
+		<p>分管领导批示</p>
+		<p>&nbsp;</p>	  </td>
+		<td colspan="3" class="tdcol">
+		<textarea rows="7" cols="80" id="fgldps" name="fgldps"></textarea></td>
+	</tr>
+	<tr>
+		
+		<td colspan="4" class="tdcol docformTableNoBD">
+			<span style="font-size:20px;">注：凡交办信件，请各承办科室（单位）在
+			<input type="text" onclick="WdatePicker({dateFmt:'yyyy:MM:dd})" />
+			日前书面报告处理结果</span>		</td>
+	</tr>
+</table>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

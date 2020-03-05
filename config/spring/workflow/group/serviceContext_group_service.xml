@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	 
+	<bean id="groupService" class="cn.com.trueway.workflow.set.service.impl.GroupServiceImpl">
+		<property name="groupDao" ref="groupDao"></property>
+	</bean> 
+	<bean id="departmentService" class="cn.com.trueway.workflow.set.service.impl.DepartmentServiceImpl">
+		<property name="departmentDAO" ref="departmentDao"></property>
+	</bean>
+	<bean id="employeeService" class="cn.com.trueway.workflow.set.service.impl.EmployeeServiceImpl">
+		<property name="employeeDao" ref="employeeDao"></property>
+	</bean>
+	<bean id="ztreeService" class="cn.com.trueway.workflow.set.service.impl.ZtreeServiceImpl">
+		<property name="ztreeDao" ref="ztreeDao"></property>
+	</bean>
+	<bean id="employeeSpellService" class="cn.com.trueway.workflow.set.service.impl.EmployeeSpellServiceImpl">
+		<property name="employeeSpellDao" ref="employeeSpellDao"></property>
+	</bean>
+	<bean id="userNodesPermissionService" class="cn.com.trueway.workflow.set.service.impl.UserNodesPermissionServiceImpl">
+		<property name="userNodesPermissionDao" ref="userNodesPermissionDao"></property>
+	</bean>
+	<bean id="menuService" class="cn.com.trueway.sys.service.impl.MenuServiceImpl">
+		<property name="menuDao" ref="menuDao"></property>
+	</bean>
+		
+	<bean id="roleService" class="cn.com.trueway.sys.service.impl.RoleServiceImpl">
+		<property name="roleDao" ref="roleDao"></property>
+	</bean>
+	
+	<bean id="menuRoleService" class="cn.com.trueway.sys.service.impl.MenuRoleServiceImpl">
+		<property name="menuRoleDao" ref="menuRoleDao"></property>
+		<property name="menuDao" ref="menuDao"></property>
+		<property name="roleDao" ref="roleDao"></property>
+	</bean>
+	
+	<bean id="roleUserService" class="cn.com.trueway.sys.service.impl.RoleUserServiceImpl">
+		<property name="roleUserDao" ref="roleUserDao"></property>
+	</bean>
+</beans>

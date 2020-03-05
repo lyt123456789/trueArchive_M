@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 配置setupAction的Bean-->
+	<bean id="roleManageAction" class="cn.com.trueway.archives.manage.action.RoleManageAction" singleton="false" autowire="byName">
+		<property name="roleService" ref="roleService"></property>
+		<property name="dataTempService" ref="dataTempService"/>
+		<property name="essModelService" ref="essModelService"></property>
+	</bean>
+	<bean id="fullTextManageAction" class="cn.com.trueway.archives.manage.action.FullTextManageAction" singleton="false" autowire="byName">
+		<property name="roleManageServiceImpl" ref="roleManageServiceImpl"/>
+		<property name="fullTextManageService" ref="fullTextManageService"/>
+		<property name="essModelService" ref="essModelService"></property>
+		<property name="archiveUsingService" ref="archiveUsingService"></property>
+	</bean>
+	<bean id="btnManageAction" class="cn.com.trueway.archives.manage.action.BtnManageAction" singleton="false" autowire="byName">
+		<property name="btnManageService" ref="btnManageService"></property>
+		<property name="dataTempService" ref="dataTempService"/>
+		<property name="essModelService" ref="essModelService"></property>
+	</bean>
+</beans>
+	

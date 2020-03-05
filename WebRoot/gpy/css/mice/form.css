@@ -1,0 +1,211 @@
+/** button **/
+.mice-btn input,.mice-btn input{width:auto;text-align:left;*padding-top:3px;padding-left:20px;height:30px;overflow:hidden;border-width:0px;
+		background-color:transparent;outline:none;background-position:center left;background-repeat:no-repeat;overflow:visible;cursor:pointer;}
+.mice-btn{*zoom:1;padding-left:5px;background:transparent url(images/form/btnout_bg_left.gif) no-repeat 0 0;display:inline-table; vertical-align:middle;}
+.mice-btn span{*zoom:1;padding-right:5px;background:transparent url(images/form/btnout_bg_right.gif) no-repeat right 0;display:inline-table;}
+.mice-btn:hover{background-image:url(images/form/btnover_bg_left.gif);}
+.mice-btn:hover span{background-image:url(images/form/btnover_bg_right.gif);}
+.mice-btn-hover{background-image:url(images/form/btnover_bg_left.gif);}
+.mice-btn-hover span{background-image:url(images/form/btnover_bg_right.gif);}
+.mice-btn span span{ background-position:center left;margin:0 3px 0 5px;*zoom:1;display:inline-table;height:31px;}
+/** input **/
+.mice-input{*zoom:1;height:18px;display:inline-table; overflow:hidden; background:url(images/form/input-left.png) no-repeat 0 0; vertical-align:middle;}
+.mice-input span{*zoom:1;display:inline-table;background:transparent url(images/form/input-right.png) no-repeat right 0;margin-left:7px;}
+.mice-input span span{background-color:transparent; height:18px; overflow:hidden; background:url(images/form/input.png) repeat-x 0 0;margin-left:0;margin-right:5px;}
+.mice-input-hover{background:url(images/form/input-left.png) no-repeat 0 -28px;}
+.mice-input-hover span{background:transparent url(images/form/input-right.png) no-repeat right -28px;}
+.mice-input-hover span span{background:url(images/form/input.png) repeat-x 0 -28px;}
+.mice-input input{border:0 none; height:17px; background-color:transparent;}
+/** select **/
+.mice-select{background:url(images/form/select-bg.jpg) repeat-x 0 0;*zoom:1;display:inline-table; vertical-align:middle;}
+.mice-select ul{background-color:#6E6F72; top:24px; left:2px; padding:1px;}
+.mice-select ul li{line-height:24px;padding:0 5px; cursor:pointer;color:#FFF;}
+.mice-select ul li:hover{ background-color:#000;}
+.mice-select .writeplane{*zoom:1; padding-left:4px;display:inline-table;height:24px;border-right:1px solid #CACACA;background:url(images/form/select-left.jpg) no-repeat 0 0;}
+.mice-select .writeplane input{background-color:transparent; border:2px solid transparent;border:none; color:#333;}
+.mice-select .button{display:inline-table;*zoom:1;height:24px;background:url(images/form/select-btn.jpg) no-repeat center right; cursor:pointer;padding-right:18px;margin-right:1px;}
+.mice-select .button-hover{background:url(images/form/select-btn-hover.jpg) no-repeat center right;}
+/** radio **/
+.mice-radio{width:14px; height:14px;*zoom:1;display:inline-table; background:url(images/form/radio.png) no-repeat 0 0; cursor:pointer; vertical-align:middle;}
+.mice-radio-hover{background-position:right 0;}
+.mice-radio-selected{background-position:left bottom;}
+.mice-radio-selected-hover{background-position:right bottom;}
+/** checkbox **/
+.mice-checkbox{width:14px; height:14px;*zoom:1;display:inline-table; background:url(images/form/checkbox.png) no-repeat 0 0; cursor:pointer; vertical-align:middle;}
+.mice-checkbox-hover{background-position:right 0;}
+.mice-checkbox-selected{background-position:left bottom;}
+.mice-checkbox-selected-hover{background-position:right bottom;}
+/** textarea **/
+.mice-textarea{overflow:hidden;display:inline-table;}
+.mice-textarea .t{overflow:hidden;width:100%;display:block; background:url(images/form/textarea-tr.png) no-repeat right 0;}
+.mice-textarea .t span{height:5px;overflow:hidden;width:5px;display:block; background:#FFF url(images/form/textarea-tl.png) no-repeat 0 0;}
+.mice-textarea .b{overflow:hidden;width:100%;display:block;background:url(images/form/textarea-br.png) no-repeat right 0;}
+.mice-textarea .b span{height:5px; width:5px;overflow:hidden;display:block; background:#FFF url(images/form/textarea-bl.png) no-repeat 0 0;}
+.mice-textarea .c{width:100%;display:block;background:url(images/form/textarea-r-off.png) repeat-y right 0;}
+.mice-textarea .c span{display:block;padding-left:5px;background:url(images/form/textarea-l-off.png) repeat-y 0 0;}
+.mice-textarea-hover .t{ background-position:right bottom;}
+.mice-textarea-hover .t span{ background-position:0 -5px;}
+.mice-textarea-hover .b{ background-position:right bottom;}
+.mice-textarea-hover .b span{ background-position:0 -5px;}
+.mice-textarea-hover .c{background:url(images/form/textarea-r-off-hover.png) repeat-y right 0;}
+.mice-textarea-hover .c span{background:url(images/form/textarea-l-off-hover.png) repeat-y 0 0;}
+.mice-textarea textarea{border:0 none; background-color:transparent;}
+/****/
+.mice-regtips{z-index:999;}
+.mice-regtips .panel{border:1px solid #FCB954; background-color:#FFEDCE; color:#361F00; line-height:20px; padding-right:5px; padding-left:20px;background-image:url(images/tips/alertpanel_icon.png); background-repeat:no-repeat; background-position:0 2px;}
+.mice-regtips .error{border:1px solid #DF080C; background-color:#FFEADE; color:#430500; line-height:20px; padding-right:5px; padding-left:20px;background-image:url(images/tips/alertpanel_icon.png); background-repeat:no-repeat; background-position:0 -48px;}
+.mice-regtips .right{border:1px solid #1E9C08; background-color:#E5FFD8; color:#0A3600; line-height:20px; padding-right:5px;padding-left:20px;background-image:url(images/tips/alertpanel_icon.png); background-repeat:no-repeat; background-position:0 -98px;}
+.mice-regtips-bg{background-color:#6F836A; opacity: .6; filter: alpha(opacity=60); position:absolute; z-index:998;}
+/** button icon **/
+.icon-cls {
+    background-image: url(images/form/icons/class.gif) !important;
+}
+.icon-event {
+    background-image: url(images/form/icons/event.gif) !important;
+}
+.icon-config {
+    background-image: url(images/form/icons/config.gif) !important;
+}
+.icon-prop {
+    background-image: url(images/form/icons/prop.gif) !important;
+}
+.icon-method {
+    background-image: url(images/form/icons/method.gif) !important;
+}
+.icon-cmp {
+    background-image: url(images/form/icons/cmp.gif) !important;
+}
+.icon-pkg {
+    background-image: url(images/form/icons/pkg.gif) !important;
+}
+.icon-fav {
+    background-image: url(images/form/icons/fav.gif) !important;
+}
+.icon-static {
+    background-image: url(images/form/icons/static.gif) !important;
+}
+.icon-docs {
+    background-image: url(images/form/icons/docs.gif) !important;
+}
+.icon-expand-all {
+    background-image: url(images/form/icons/expand-all.gif) !important;
+}
+.icon-collapse-all {
+    background-image: url(images/form/icons/collapse-all.gif) !important;
+}
+.icon-expand-members {
+    background-image: url(images/form/icons/expand-members.gif) !important;
+}
+.icon-hide-inherited {
+    background-image: url(images/form/icons/hide-inherited.gif) !important;
+}
+.icon-org {
+    background-image: url(images/form/icons/org.gif) !important;
+}
+.icon-save {
+    background-image: url(images/form/icons/save.gif) !important;
+}
+.icon-save-back {
+    background-image: url(images/form/icons/save-back.png) !important;
+}
+.icon-add {
+    background-image: url(images/form/icons/add.gif) !important;
+}
+.icon-delete {
+    background-image: url(images/form/icons/delete.gif) !important;
+}
+.icon-add-row {
+    background-image: url(images/form/icons/add-row.gif) !important;
+}
+.icon-delete-row {
+    background-image: url(images/form/icons/delete-row.gif) !important;
+}
+.icon-back {
+    background-image: url(images/form/icons/back.png) !important;
+}
+.icon-search {
+    background-image: url(images/form/icons/search.png) !important;
+}
+.icon-search-row {
+    background-image: url(images/form/icons/search-row.png) !important;
+}
+.icon-reload {
+    background-image: url(images/form/icons/reload.png) !important;
+}
+.icon-reset {
+    background-image: url(images/form/icons/reload.png) !important;
+}
+.icon-print {
+    background-image: url(images/form/icons/print.gif) !important;
+}
+.icon-export {
+    background-image: url(images/form/icons/print.gif) !important;
+}
+.icon-help {
+    background-image: url(images/form/icons/help.png) !important;
+}
+.icon-check {
+    background-image: url(images/form/icons/check.png) !important;
+}
+.icon-copy {
+    background-image: url(images/form/icons/copy.png) !important;
+}
+.icon-example {
+    background-image: url(images/form/icons/example.gif) !important;
+}
+.icon-retry {
+    background-image: url(images/form/icons/retry.png) !important;
+}
+.icon-send-now {
+    background-image: url(images/form/icons/send-now.gif) !important;
+}
+.icon-receive-now {
+    background-image: url(images/form/icons/send-receive.gif) !important;
+}
+.icon-edit {
+    background-image: url(images/form/icons/edit.png) !important;
+}
+.icon-checked {
+    background-image: url(images/form/icons/checked.gif) !important;
+}
+.icon-unchecked {
+    background-image: url(images/form/icons/unchecked.gif) !important;
+}
+.icon-pick-button {
+    background-image: url(images/form/icons/pick-button.gif) !important;
+}
+.icon-cancel {
+    background-image: url(images/form/icons/cancel.png) !important;
+}
+.icon-apply {
+    background-image: url(images/form/icons/apply.png) !important;
+}
+.icon-offset {
+    background-image: url(images/form/icons/offset.png) !important;
+}
+.icon-success {
+    background-image: url(images/form/icons/success.gif) !important;
+}
+.icon-forum {
+    background-image: url(images/form/icons/forum.gif) !important;
+}
+.icon-pdf {
+    background-image: url(images/form/icons/pdf.gif) !important;
+}
+.icon-excel {
+    background-image: url(images/form/icons/excel.gif) !important;
+}
+.icon-word {
+    background-image: url(images/form/icons/word.gif) !important;
+}
+.icon-preprint {
+    background-image: url(images/form/icons/pre_print.gif) !important;
+}
+.icon-btncom {
+	 background-image: url(images/form/icons/prop.gif) !important;
+	}
+.icon-next {
+	 background-image: url(images/form/icons/next.png) !important;
+	}
+
+.colorpicker-ico{background:url(images/colorpicker/colorpick.png) no-repeat center right;}

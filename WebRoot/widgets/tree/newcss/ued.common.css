@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+html, body
+{
+height: 100%;
+background-repeat: repeat-y;
+background-position: right top;
+scrollbar-base-color: #ffffff;
+scrollbar-track-color: #ffffff;
+scrollbar-face-color: #DEDEDE;
+scrollbar-highlight-color: #E5E5E5;
+scrollbar-3dlight-color: #ffffff;
+scrollbar-darkshadow-color: #E5E5E5;
+scrollbar-shadow-color: #9CAFC4;
+scrollbar-arrow-color: #ffffff;
+} 
+body{background-color:#F5F6F7;}
+.warp{margin:0 auto; width:1002px;}
+#header{background:#025EE7 url(../images/logobg.gif) no-repeat right top; height:48px; overflow:hidden;}
+#header .logo{background:url(../images/logo.gif) no-repeat 0 0; height:48px; overflow:hidden; zoom:1;}
+#header .logo .times{color:#FFF; font-weight:normal; margin-left:750px; padding-left:24px; margin-top:25px; display:none; float:left; background:url(../images/0134.gif) no-repeat center left;}
+#header .logo .user{color:#3157BD; font-weight:normal; width:275px; height:34px; line-height:34px; display:block; float:right; text-indent:45px; margin-top:10px; margin-right:35px; background:url(../images/oa_index_03.gif) no-repeat;}
+
+#naver{background:url(../images/globalheader.gif) repeat-x 0 0; overflow:hidden; zoom:1; margin-top:2px; margin-bottom:2px;}
+#naver li{float:left; height:36px; line-height:36px;}
+#naver li a{color:#FFF; text-shadow:1px 1px 1px #333; padding:0 20px; text-align:center; display:block; text-decoration:none;background-image:url(../images/globalnav.gif); background-repeat: no-repeat; background-position: -102px 0;cursor:pointer;}
+#naver li a:hover{background-position: 100% -72px;}
+#naver li.first a{background-position: 0 0;}
+#naver li.first a:hover{background-position: 0 -72px;}
+#naver li.first a span{background:url(../images/globalnav_text.png) no-repeat 50% -30px;display:block; height:36px; width:60px;}
+
+#naver li.last{background:url(../images/globalsearch_bg.gif) no-repeat 100% 0; float:right; width:120px; cursor:pointer;}
+#naver li.last span{display:block; height:36px; width:100%;background-image:url(../images/globalnav_text.png); background-repeat:no-repeat; background-position: 40% -106px;}
+#naver li.last span.work{display:block; height:36px; width:100%;background-position:40% -70px;}
+
+#naver li.fr{float:right;}
+
+#bodyer{overflow:hidden; *zoom:1;}
+#bodyer .sideNaver{cursor:default; background:#DEDEDE url(../images/sidelock-close.gif) no-repeat center right; }
+#bodyer .sideNaver-hide{background:#DEDEDE url(../images/sidelock-open.gif) no-repeat center right;}
+#bodyer .sideNaverHover{background-color:#1C94C4; cursor:pointer;}
+
+#bodyer .oa_index_side{background:#9FBDEB url(../images/oa_index_07.gif) no-repeat center top; width:203px;}
+#bodyer .oa_index_side #jQsidetext li.menu{margin:2px auto; _margin:1px auto; width:191px; height:45px; overflow:hidden;
+background:url(../images/oa_index_10.gif) no-repeat center 0;}
+#bodyer .oa_index_side #jQsidetext li.hover{background:url(../images/oa_index_10.gif) no-repeat center -46px;}
+#bodyer .oa_index_side #jQsidetext li.first{height:120px;}
+#bodyer .oa_index_side #jQsidetext li a{text-decoration:none; color:#000000; display:block; line-height:45px; text-align:center;}
+#bodyer .oa_index_side #jQsidetext li.hover a{color:#FFF;}
+
+#jQside{width:180px; overflow:hidden; float:left;}
+#jQsidebar{width:10px; height:auto; overflow:hidden; float:left;}
+#jQcontainer{overflow:hidden; float:left; background-color:#FFF; display:block;}
+#jQcontainertext{width:100%; overflow:hidden;}
+#jQsidetext{width:100%;}
+
+#footer{border-color:#D8D8D8; border-style:solid; border-width:1px 0 0; background:url(../images/headerbg.gif) repeat 0 0; line-height:240%; text-align:center; color:#666; text-shadow:1px 1px 1px #FFF; overflow:hidden;}
+
+.tips{background:url(../images/tips.gif) no-repeat right 10px; color:#FFF; position:absolute; top:0; left:0; z-index:99;}
+.tips span{display:block; padding-top:10px; line-height:25px; overflow:hidden; padding-left:10px;  margin-right:6px; background:url(../images/tips.gif) no-repeat 0 -24px;}
+

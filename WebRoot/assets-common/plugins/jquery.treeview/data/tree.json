@@ -1,0 +1,926 @@
+[
+    {
+        "text": "政府部门",
+        "id": "0",
+        "expanded": true,
+        "classes": "folder",
+        "children": [
+            {
+                "text": "县、市、区规划局",
+                "id": "{BFA8006A-0000-0000-1AC4-235800000015}",
+                "hasChildren": true,
+                "classes": "folder",
+                "children": [
+                    {
+                        "text": "海安县建设局（规划局）",
+                        "id": "{BFA8006A-0000-0000-1ACF-E1CC0000001D}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "海安县建设局（规划局）收文员",
+                                "id": "{BFA8006A-0000-0000-47C6-9BA700000020}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "如皋市规划局",
+                        "id": "{BFA8006A-0000-0000-1ACC-87750000001A}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "如皋市规划局收文员",
+                                "id": "{BFA8006A-0000-0000-47C7-845200000021}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "如东县建设局（规划局）",
+                        "id": "{BFA8006A-0000-0000-1ACC-45BE00000019}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "如东县建设局（规划局）收文员",
+                                "id": "{BFA8006A-0000-0000-47C9-D67F00000022}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "海门市建设局（规划局）",
+                        "id": "{BFA8006A-0000-0000-1AC4-AB1B00000016}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "海门市建设局（规划局）收文员",
+                                "id": "{BFA8006A-0000-0000-47CB-523100000023}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "启东市建设局（规划局）",
+                        "id": "{BFA8006A-0000-0000-1AC9-75EE00000017}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "启东市建设局（规划局）",
+                                "id": "{BFA8006A-0000-0000-47CC-48BC00000024}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "通州区建设局（规划局）",
+                        "id": "{BFA8006A-0000-0000-1ACE-ADB10000001C}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "通州区建设局（规划局）收文员",
+                                "id": "{BFA8006A-0000-0000-47CB-DCF700000025}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "南通市经济技术开发区规划房产局",
+                        "id": "{BFA8006A-0000-0000-1AD2-D78C0000001E}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "南通市经济技术开发区规划房产局收文员",
+                                "id": "{BFA8006A-0000-0000-47CC-C97100000026}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "南通滨海园区规划建设环保局",
+                        "id": "{BFA8006A-0000-0000-1ACA-55B600000018}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "南通滨海园区规划建设环保局收文员",
+                                "id": "{BFA8006A-0000-0000-47CD-A19100000028}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "苏通科技园规划建设环保局",
+                        "id": "{BFA8006A-0000-0000-1ACD-AC190000001B}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "苏通科技园规划建设环保局收文员",
+                                "id": "{BFA8006A-0000-0000-47CF-256700000029}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "县、市、区管理员",
+                        "id": "{BFA8006A-0000-0000-1C45-291B00000023}",
+                        "hasChildren": false,
+                        "classes": "file"
+                    }
+                ]
+            },
+            {
+                "text": "市规划局直属单位",
+                "id": "{BFA7FFCB-0000-0000-3BAF-1ACF00000007}",
+                "hasChildren": true,
+                "classes": "folder",
+                "children": [
+                    {
+                        "text": "博物馆",
+                        "id": "{BFA7FFCB-0000-0000-3BB1-605C0000000E}",
+                        "hasChildren": false,
+                        "classes": "folder",
+                        "children": []
+                    },
+                    {
+                        "text": "崇川分局",
+                        "id": "{BFA7FFCB-0000-0000-3BAF-96F800000009}",
+                        "hasChildren": false,
+                        "classes": "folder",
+                        "children": []
+                    },
+                    {
+                        "text": "会计服务中心",
+                        "id": "{BFA7FFCB-0000-0000-3BB1-3C930000000D}",
+                        "hasChildren": false,
+                        "classes": "folder",
+                        "children": []
+                    },
+                    {
+                        "text": "监察支队",
+                        "id": "{BFA7FFCB-0000-0000-3BAF-E9300000000B}",
+                        "hasChildren": false,
+                        "classes": "folder",
+                        "children": []
+                    },
+                    {
+                        "text": "编制研究中心",
+                        "id": "{BFA7FFCB-0000-0000-3BB1-15700000000C}",
+                        "hasChildren": false,
+                        "classes": "folder",
+                        "children": []
+                    },
+                    {
+                        "text": "港闸分局",
+                        "id": "{BFA7FFCB-0000-0000-3BAF-C09E0000000A}",
+                        "hasChildren": false,
+                        "classes": "folder",
+                        "children": []
+                    },
+                    {
+                        "text": "市规划局直属单位管理员",
+                        "id": "{BFA7FFCB-0000-0000-3BB0-32B200000008}",
+                        "hasChildren": false,
+                        "classes": "file"
+                    }
+                ]
+            },
+            {
+                "text": "西城区卫计委",
+                "id": "{BFA811EA-0000-0000-455D-F6B80000126E}",
+                "hasChildren": true,
+                "classes": "folder",
+                "children": [
+                    {
+                        "text": "局领导",
+                        "id": "{7F000001-FFFF-FFFF-99EE-7FEE00000022}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "安学军",
+                                "id": "{BFA811EA-0000-0000-4560-F0CE000015A7}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "李跃梅",
+                                "id": "{BFA811EA-0000-0000-455C-8B5700001072}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "徐建明",
+                                "id": "{BFA8006A-0000-0000-030F-362500000001}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "安梅",
+                                "id": "{BFA811EA-0000-0000-455B-62A400000D63}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "宋青",
+                                "id": "{BFA811EA-0000-0000-455B-E87000000E89}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "刘英泽",
+                                "id": "{BFA811EA-0000-0000-455B-96CF00000F18}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "闫志纯",
+                                "id": "{7F000001-FFFF-FFFF-99F2-10CB00000023}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "韩宏",
+                                "id": "{BFA811EA-0000-0000-4553-A5AB000002FF}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "王景江",
+                                "id": "{BFA811EA-0000-0000-455E-C89500001298}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "郭燕葵",
+                                "id": "{BFA811EA-0000-0000-455E-EA46000012C6}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "王爱莲",
+                                "id": "{BFA811EA-0000-0000-4551-D2B00000017B}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "魏燕京",
+                                "id": "{7F000001-FFFF-FFFF-99F4-57BB00000024}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "赵刚",
+                                "id": "{BFA8006A-0000-0000-0314-5F2100000002}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "办公室",
+                        "id": "{BFA811EA-0000-0000-4553-EB6400000461}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "章平",
+                                "id": "{BFA811EA-0000-0000-455E-3C130000116B}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "陈昱",
+                                "id": "{BFA811EA-0000-0000-4554-F5BA000004D6}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "杨国建",
+                                "id": "{BFA811EA-0000-0000-4561-128900001569}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "徐曙",
+                                "id": "{BFA811EA-0000-0000-4557-E67F000008EC}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "章伯堂",
+                                "id": "{7F000001-FFFF-FFFF-99F6-59B300000025}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "杜明东",
+                                "id": "{BFA8006A-0000-0000-031D-C03C00000003}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "工委办",
+                        "id": "{BFA811EA-0000-0000-454B-6BF9000000FE}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "缪奇飞",
+                                "id": "{BFA8006A-0000-0000-02CA-8A6400000004}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "顾玉香",
+                                "id": "{BFA811EA-0000-0000-4555-FBDF00000741}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "周燕",
+                                "id": "{BFA811EA-0000-0000-4555-B418000005DE}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "吴亚琴",
+                                "id": "{BFA7FFCB-FFFF-FFFF-7F89-CAE200000001}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "宣传部",
+                        "id": "{7F000001-FFFF-FFFF-99F7-F42800000028}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "钟莹莹",
+                                "id": "{BFA8006A-0000-0000-02CD-99B700000005}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "聂佳佳",
+                                "id": "{BFA8006A-0000-0000-02CF-930000000006}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "吴骏莲",
+                                "id": "{BFA811EA-0000-0000-4562-0229000015BF}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "胡晓添",
+                                "id": "{7F000001-FFFF-FFFF-99F8-C82300000029}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "陈思",
+                                "id": "{7F000001-FFFF-FFFF-99FA-2EEC0000002A}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "王建国",
+                                "id": "{7F000001-FFFF-FFFF-99F9-A6CA0000002B}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "团委",
+                        "id": "{BFA811EA-0000-0000-4552-351EFFFFFFA2}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "奚军",
+                                "id": "{BFA811EA-0000-0000-454B-1E5C0000016B}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "高媛",
+                                "id": "{BFA811EA-0000-0000-4556-637E00000671}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "袁轶",
+                                "id": "{BFA8006A-0000-0000-02D1-3A8100000007}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "岳锁荣",
+                                "id": "{BFA811EA-0000-0000-455F-626800001305}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "老干部科",
+                        "id": "{7F000001-FFFF-FFFF-99FC-30E20000002C}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "钱圣豹",
+                                "id": "{BFA811EA-0000-0000-455F-0F380000118E}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "组织部",
+                        "id": "{BFA811EA-0000-0000-455B-A22000000F27}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "钱莎莎",
+                                "id": "{BFA8006A-0000-0000-02D3-245000000008}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "丁国军",
+                                "id": "{BFA811EA-0000-0000-4552-F89800000312}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "医政科",
+                        "id": "{BFA8006A-0000-0000-02D7-80D90000000A}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "卑力平",
+                                "id": "{BFA811EA-0000-0000-455E-142E00001131}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "李霄霞",
+                                "id": "{7F000001-FFFF-FFFF-99FF-380C0000002F}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "许菊",
+                                "id": "{7F000001-FFFF-FFFF-D770-254400000024}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "洪尚嫄",
+                                "id": "{BFA8006A-0000-0000-02E5-2D800000000E}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "卞三强",
+                                "id": "{BFA811EA-0000-0000-4559-B48800000C69}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "人事科",
+                        "id": "{7F000001-FFFF-FFFF-99FD-56700000002D}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "章璟",
+                                "id": "{BFA8006A-0000-0000-02E1-AFD70000000B}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "王海燕",
+                                "id": "{7F000001-FFFF-FFFF-CF9D-F67E00007446}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "李婷",
+                                "id": "{BFA8006A-0000-0000-02E3-0E140000000C}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "唐晓光",
+                                "id": "{BFA811EA-0000-0000-455C-C4C000000FC2}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "严陆军",
+                                "id": "{7F000001-FFFF-FFFF-CF9C-233700007440}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "周光正",
+                                "id": "{7F000001-FFFF-FFFF-D76F-A9A400000026}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "葛伯平",
+                                "id": "{BFA811EA-0000-0000-455A-82BF00000C90}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "王健",
+                                "id": "{7F000001-FFFF-FFFF-99FD-B9FC0000002E}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "审计科",
+                        "id": "{BFA811EA-0000-0000-454A-6A4E0000001F}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "梁龙飞",
+                                "id": "{BFA8006A-0000-0000-02E2-E51B0000000D}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "袁媛",
+                                "id": "{BFA7FFCB-FFFF-FFFF-EBDF-688300000001}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "杜煊",
+                                "id": "{BFA811EA-0000-0000-455E-4C5500001080}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "顾勇国",
+                                "id": "{BFA811EA-0000-0000-4560-15F300001404}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "陈晓艳",
+                                "id": "{BFA811EA-0000-0000-4559-D1FD00000B94}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "曹晔",
+                                "id": "{7F000001-FFFF-FFFF-9B01-501900000030}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "监察科",
+                        "id": "{BFA811EA-0000-0000-455B-F44700000E99}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "陈江烽",
+                                "id": "{BFA7FFCB-0000-0000-46E9-59D900000018}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "张莹莹",
+                                "id": "{BFA7FFCB-0000-0000-46E4-F48E00000017}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "华智",
+                                "id": "{BFA8006A-0000-0000-02D5-2A1C00000009}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "陈岗",
+                                "id": "{BFA811EA-0000-0000-4556-3DEE0000063C}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "钱毅",
+                                "id": "{BFA811EA-0000-0000-4549-846E0000004F}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "胡国军",
+                                "id": "{BFA811EA-0000-0000-4552-EF3200000305}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "章瑾",
+                                "id": "{7F000001-FFFF-FFFF-9B01-DC9500000031}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "汤杨扬",
+                                "id": "{BFA7FFCB-0000-0000-46A7-D7E100000015}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "机关党委",
+                        "id": "{7F000001-FFFF-FFFF-9B03-39A100000032}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "詹思慧",
+                                "id": "{BFA811EA-0000-0000-4553-C49300000429}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "工会",
+                        "id": "{BFA7FFCB-0000-0000-555F-695F00000008}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "章平",
+                                "id": "{BFA7FFCB-0000-0000-555D-B6E200000006}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "纪检监察室",
+                        "id": "{BFA811EA-0000-0000-4554-EB0B000004C7}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "顾玉香",
+                                "id": "{BFA7FFCB-0000-0000-555A-E5A000000003}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "档案室",
+                        "id": "{7F000001-FFFF-FFFF-9B06-7CEC00000033}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "黄桂军",
+                                "id": "{7F000001-FFFF-FFFF-9B06-91E000000035}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "陶帅",
+                                "id": "{BFA7FFCB-0000-0000-46DB-A6BF00000016}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "团委",
+                        "id": "{BFA7FFCB-0000-0000-555F-389100000007}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "周燕",
+                                "id": "{BFA7FFCB-0000-0000-555B-CAAC00000004}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "华智",
+                                "id": "{BFA7FFCB-0000-0000-555C-BCE800000005}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "文印室",
+                        "id": "{BFA7FFCB-0000-0000-659E-970300000020}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "韩佳慧",
+                                "id": "{7F000001-FFFF-FFFF-9B05-EA7500000034}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "会计服务中心",
+                        "id": "{BFA8006A-0000-0000-0764-08D700000005}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "冯文华",
+                                "id": "{BFA7FFCB-0000-0000-1758-54F800000002}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "陆叶珺",
+                                "id": "{BFA7FFCB-0000-0000-3BB6-48F800000012}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "刘桥医院",
+                        "id": "{BFA8006A-0000-0000-0762-9BE500000003}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "刘桥医院_收文员",
+                                "id": "{BFA8006A-FFFF-FFFF-F800-237D00000009}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "刘桥医院_分管领导",
+                                "id": "{BFA8006A-FFFF-FFFF-F6FE-BC7600000007}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "刘桥医院_主要领导",
+                                "id": "{BFA8006A-FFFF-FFFF-F6FF-411600000005}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "城市博物馆",
+                        "id": "{BFA8006A-0000-0000-0764-342D00000006}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "连颖",
+                                "id": "{BFA7FFCB-0000-0000-6623-91710000001C}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "博物馆_收文员",
+                                "id": "{BFA7FFCB-0000-0000-3BB4-FB0A00000011}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "南通市规划编制研究中心",
+                        "id": "{BFA8006A-0000-0000-0762-D49E00000004}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "王海波",
+                                "id": "{BFA7FFCB-0000-0000-3BB4-B40600000010}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "庄晓捷",
+                                "id": "{BFA7FFCB-0000-0000-6623-489B0000001B}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "崇川分局",
+                        "id": "{BFA8006A-0000-0000-0761-954200000001}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "刘敏",
+                                "id": "{BFA7FFCB-0000-0000-6626-EA060000001E}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "崇川分局_收文员",
+                                "id": "{BFA7FFCB-0000-0000-3BB7-05BF00000014}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "港闸分局",
+                        "id": "{BFA8006A-0000-0000-0763-4BF000000002}",
+                        "hasChildren": true,
+                        "classes": "folder",
+                        "children": [
+                            {
+                                "text": "港闸分局_收文员",
+                                "id": "{BFA7FFCB-0000-0000-3BB5-9AAC00000013}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            },
+                            {
+                                "text": "陈岗",
+                                "id": "{BFA7FFCB-0000-0000-6627-C7A70000001F}",
+                                "hasChildren": false,
+                                "classes": "file"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "公章管理员(市规划局)",
+                        "id": "{BFA811EA-0000-0000-4555-3A5F000003CE}",
+                        "hasChildren": false,
+                        "classes": "file"
+                    },
+                    {
+                        "text": "管理员",
+                        "id": "{BFA811EA-0000-0000-4556-2BED00000623}",
+                        "hasChildren": false,
+                        "classes": "file"
+                    },
+                    {
+                        "text": "规划局公共信用管理员",
+                        "id": "{7F000001-0000-0000-0DE4-4D6600000132}",
+                        "hasChildren": false,
+                        "classes": "file"
+                    },
+                    {
+                        "text": "网络发言人(市规划局)",
+                        "id": "{7F000001-0000-0000-7364-8730FFFFFFAF}",
+                        "hasChildren": false,
+                        "classes": "file"
+                    }
+                ]
+            }
+        ]
+    }
+]

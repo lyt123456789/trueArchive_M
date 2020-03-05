@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">	
+	
+	<bean id="meetingphoservice" class="cn.com.trueway.extra.meeting.service.impl.MeetingPhoServiceImpl">
+		<property name="meetingphodao"  ref="meetingphodao"/>
+	</bean> 
+	
+	<bean id="meetingInfoService" class="cn.com.trueway.extra.meeting.service.impl.MeetingInfoServiceImpl">
+		<property name="meetingInfoDao"  ref="meetingInfoDao"/>
+		<property name="tableInfoDao"  ref="tableInfoDao"/>
+	</bean> 
+</beans>

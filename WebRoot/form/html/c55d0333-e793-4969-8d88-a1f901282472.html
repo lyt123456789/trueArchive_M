@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+.infotan td {
+	line-height: 35px;
+	text-align:center;
+}
+</style>
+</head>
+
+<body>
+<div class="warp">
+<br />
+<p style="width:819px;text-align:center;">
+<table>
+	<tr>
+		<td style="width:400px;text-align:center;"><strong style="font-size:28px;font-family:华文中宋;color:red;margin-right:5px;">中共南通滨海园区工作委员会</strong><td>
+		<td style="width:130px;text-align:center;" rowspan="2"><strong style="font-size:28px;font-family:华文中宋;color:red;margin-right:5px;">发文稿纸</strong><td>
+	</tr>
+	<tr>
+		<td style="width:400px;text-align:center;"><strong style="font-size:28px;font-family:华文中宋;color:red;margin-right:5px;">南通滨海园区管理委员会</strong><td>
+	</tr>
+<table>&nbsp;&nbsp;</p>
+<br />
+<table class="infotan" width=819px cellspacing="0">
+<tr>
+      <td  align="center" valign="middle" style="font-size:18px;width:125px;"> 文&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</td>
+	  <td>
+			<input style="border:0px;border-bottom:1px #cccccc dotted;line-height:17px;" type="text" id="wh" name="wh" zname="文号" value=""/>
+			<trueway:dn value="wh" showId="wh" name="wh" defineId="${workFlowId}" tagId="dn_tagid_zhu" webId="${webId}" displayVlaue="生成"/>
+		</td>
+
+         <td align="center"  valign="middle" style="font-size:18px;width:106px;"> 密级</td>
+	  <td class="tdcol docformTableNoBD" style="font-size:18px;width:112px;">
+	 <select  id="mj" name="mj"  style="width:80px;" zname="密级"></select>
+	  </td>
+	   <td align="center" valign="middle" style="font-size:18px;width:100px;" >紧急程度</td>
+	  <td class="tdcol docformTableNoBD" style="font-size:18px;width:90px;">
+	   <select  id="jjcd" name="jjcd"  style="width:70px;" zname="紧急程度"></select>
+	  </td>
+	   <td align="center"  valign="middle" style="font-size:18px;width:100px;">可否公开</td>
+	  <td  class="tdcol docformTableNoBD" style="font-size:18px;width:90px;">
+	  <select  id="kfgk" name="kfgk"  style="width:70px;" zname="可否公开"></select>
+	  </td>
+  </tr>
+<tr>
+	  <td  align="center" valign="middle" style="font-size:18px;line-height: 150px;" > 签&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发</td>
+	  <td  colspan="2"  class="tdcol docformTableNoBD" style="font-size:18px;" >
+<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}qf" instanceId="${instanceId}qf" currentStepId="${instanceId}qf" isSatisfied="false" zname="签发"/>
+
+       </td>
+	  <td  rowspan="2"  align="center" valign="middle" style="font-size:18px;line-height: 150px;" > 会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签</td>
+	  <td  colspan="4" rowspan="2"  class="tdcol docformTableNoBD" style="font-size:18px;" >
+<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}hq" instanceId="${instanceId}hq" currentStepId="${instanceId}hq" isSatisfied="false" zname="会签"/>
+	  </td>
+	 
+  </tr>
+  <tr>
+	  <td   align="center" valign="middle" style="font-size:18px;line-height: 75px;" >  <p>有关领导</p><p>审&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;核</p></td>
+	  <td  colspan="2" class="tdcol docformTableNoBD" style="font-size:18px;" >
+<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}ygldsh" instanceId="${instanceId}ygldsh" currentStepId="${instanceId}ygldsh" isSatisfied="false" zname="有关领导审核"/>
+
+	  </td>
+	 
+  </tr>
+  <tr>
+	  <td  align="center" valign="middle" style="font-size:18px;" > <p>拟稿部门</p><p>及拟稿人</p></td>
+	  <td   class="tdcol docformTableNoBD" style="font-size:18px;" >
+	  <textarea id="ngbmjngr" name="ngbmjngr"  style=" width: 110px;height:50px;" zname="拟稿部门及拟稿人"/></textarea>
+	  </td>
+	  <td   align="center" valign="middle" style="font-size:18px;"><p>拟稿部门</p><p>负&nbsp;责&nbsp;人</p></td>
+	  <td   class="tdcol docformTableNoBD" style="font-size:18px;" >
+	  <textarea id="ngbmfzr" name="ngbmfzr"  style=" width: 80px;height:50px;" zname="拟稿部门负责人"/></textarea>
+	  </td>
+	  <td  colspan="2" align="center" valign="middle" style="font-size:18px;" ><p>核稿部门</p><p>及核稿人</p></td>
+	  <td colspan="2" class="tdcol docformTableNoBD" style="font-size:18px;" >
+	  <textarea id="hgbmjhgr" name="hgbmjhgr"   style="width: 150px;height:50px;" zname="核稿部门及核稿人"/></textarea>
+	  </td>
+  </tr>
+  <tr>
+  	<td  align="center" valign="middle" style="font-size:18px;line-height: 70px;" > 标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题</td>
+	 <td  colspan="7"  class="tdcol docformTableNoBD" style="font-size:18px;" >
+	  <textarea id="bt" name="bt" style="width: 670px;height:55px;" zname="标题" ></textarea>
+	  </td>
+  </tr>
+  <tr> 
+  	<td  align="center" valign="middle" style="font-size:18px;" > 附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件</td>
+	 <td  colspan="7"  class="tdcol docformTableNoBD" style="font-size:18px;" >
+	 	<span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+	  </td>
+  </tr>
+ 
+  <tr>
+  	<td  align="center" valign="middle" style="font-size:18px;line-height: 70px;" > 主送单位</td>
+	 <td  colspan="2"  class="tdcol docformTableNoBD" style="font-size:18px;" >
+	  <textarea  id="zsdw" name="zsdw" zname="主送单位" style="width:200px;height:55px"></textarea>
+	  </td>
+	  <td align="center" valign="middle" style="font-size:18px;line-height: 70px;" > 抄送单位</td>
+	 <td  colspan="4"  class="tdcol docformTableNoBD" style="font-size:18px;" >
+	  <textarea  id="csdw" name="csdw" zname="抄送单位" style="width:330px;height:55px"></textarea>
+	  </td>
+  </tr>
+  <tr>
+  	<td   align="center" valign="middle" style="font-size:18px;" > 印发时间</td>
+	 <td  colspan="2"  class="tdcol docformTableNoBD" style="font-size:18px;" >
+	  <input type="text" id="yfsj" name="yfsj"  zname="印发时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" style="border: 1px #cccccc dotted; width:200px;" />
+	  </td>
+	  <td align="center" valign="middle" style="font-size:18px;" > 缮印份数</td>
+	 <td  colspan="4"  class="tdcol docformTableNoBD" style="font-size:18px;" >
+	 	 <input type="text" id="syfs" name="syfs"   zname=" 缮印份数" style="border: 1px #cccccc dotted; width:330px;" />
+	  </td>
+  </tr>
+  <tr>
+  	<td  colspan="2" style="font-size:18px;" > 打印:
+		<input type="text" id="dy" name="dy" style="width:160px;border: 0px;"  zname=" 打印"/>
+	</td>
+	<td colspan="3" valign="middle" style="font-size:18px;" > 校对:
+		<input type="text" id="jd" name="jd" style="width:210px;border: 0px;" zname=" 校对"/>
+	</td>
+	<td  colspan="3" valign="middle" style="font-size:18px;" > 分发:
+		<input type="text" id="ff" name="ff" style="width:185px;border: 0px;"  zname=" 分发"/>
+	</td>
+  </tr>
+
+   </table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+<input type="hidden" id="keyword" name="keyword" value="空" />
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

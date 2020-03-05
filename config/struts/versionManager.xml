@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="versionManager" extends="common-default">
+		
+		<action name="vm_*" class="VersionManagerAction" method="{1}">
+			<result name="toAddVm">/WEB-INF/pages/workflow/versionManager/addVm.jsp</result>
+			<result name="toEditVm">/WEB-INF/pages/workflow/versionManager/editVm.jsp</result>
+			<result name="allVmOfList">/WEB-INF/pages/workflow/versionManager/allVmOfList.jsp</result>	
+		</action>
+	</package>
+</struts>

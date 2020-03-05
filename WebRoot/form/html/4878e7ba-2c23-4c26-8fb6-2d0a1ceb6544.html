@@ -1,0 +1,278 @@
+<head>
+<title>港闸区便民服务热线表单模板</title>
+<link type="text/css" rel="stylesheet"  href="${ctx}/dwz/style/css/ued.base.css"  />
+<link type="text/css" rel="stylesheet" href="${ctx}/dwz/style/css/ued.demo.css"  />
+<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/base/jquery.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/sea.js"></script>  
+<script type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>  
+			
+<!--以下必须-->
+    <script type="text/javascript" src="src/mapSelected.js" ></script>
+	<script type="text/javascript" src="${ctx}/form/jsp/widgets/common/js/doublelist.js" ></script>
+	<script type="text/javascript" defer="defer">
+		window.onload=function(){ 
+			var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+			var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+			var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+			var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+			var instanceId = '${instanceId}';  
+			if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+			if(instanceId.length==13){registerTag();}//注册标签选中效果
+		};
+	</script>
+<!--以上必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 5px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+legend {
+	color: #000;
+}
+legend{float:left;margin-bottom:5px;margin-top:5px;background:#F1F5F6;height:25px; line-height:25px; text-align: center; padding-left:10px; padding-right:10px; border:#B8D0D6 1px solid;}
+fieldset,img {
+	border: 0;
+}
+
+img {
+	vertical-align: middle;
+}
+
+button,input,select,textarea {
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+section,article,aside,header,footer,nav,dialog,figure {
+	display: block;
+}
+
+.pagescon {
+	padding: 5px;
+	background: #EBF6FC;
+	overflow: hidden;
+	border: 1px #B8B8B8 solid;
+}
+
+.infotan td {
+	border: 1px solid #CCCCCC;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 1em;
+}
+
+.mt5 {
+	margin-top: 5px;
+}
+
+.texts {
+	height: 28px;
+	line-height: 28px;
+	border: 1px #999999 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.bgs {
+	background: #F1F5F6;
+	font-weight: bold;
+}
+
+.ls {
+	text-align: right;
+}
+.docformTableNoBD td{
+	border:0 none;
+}
+</style>
+</head>
+
+<body>
+<fieldset>
+<legend>一、工单登记</legend>
+<table class="infotan mt5" width="100%">
+	<tr>
+		<td width="15%" valign="top" class="bgs ls">工单号：</td>
+		<td colspan="3"><input zname="工单号" type="text" name="caseid" id="caseid" style="width:200px;height:28px"  /></td>
+	</tr>
+	<tr>
+		<td width="15%" valign="top" class="bgs ls">当事人姓名：</td>
+		<td width="35%""><input zname="当事人姓名" type="text" name="personname" id="personname" style="width:200px;height:28px"  /></td>
+	
+		<td width="15%" class="bgs ls">当事人电话：</td>
+		<td width="35%""><input zname="当事人电话" type="text" name="personphone" id="personphone" style="width:200px;height:28px" /></td>
+	</tr>
+	<tr>
+		<td width="15%" valign="top" class="bgs ls">问题内容：</td>
+		<td colspan="3" class="tdcol">
+			<textarea zname="问题内容" rows="7" cols="80" id="content" name="content"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td width="15%"  valign="top" class="bgs ls">问题类型：</td>
+		<td width="35%"  class="tdcol">
+			<select zname="问题类型" id="type" name="type"  style="width:100px;height:28px">
+				<option value="1">咨询</option>
+				<option value="2">求助</option>
+				<option value="3">建议</option>
+				<option value="4">投诉</option>
+				<option value="5">举报</option>
+			</select>
+		</td>
+	
+		<td width="15%"  valign="top" class="bgs ls">问题来源：</td>
+		<td width="35%"  class="tdcol">
+			<select zname="问题来源" id="vc_resource" name="vc_resource" style="width:100px;height:28px">
+				<option value="1">12345</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top" class="bgs ls">工单创建时间：</td>
+		<td class="tdcol">
+			<input zname="工单创建时间" type="text" name="createdate" id="createdate" style="width:150px;height:28px" value="" class="Wdate"  onclick="WdatePicker({minDate:'#F{$dp.$D(\'createdate\')}'})" class="wdate" onkeydown="return false;" />
+		</td>
+		<td valign="top" class="bgs ls">限期办结时间：</td>
+		<td class="tdcol">
+			<input zname="限期办结时间" type="text" name="finishdate" id="finishdate" style="width:150px;height:28px" value="" class="Wdate"  onclick="WdatePicker({minDate:'#F{$dp.$D(\'createdate\')}'})" class="wdate" onkeydown="return false;"/>
+		</td>
+	</tr>
+</table>
+</fieldset>
+<fieldset>
+<legend>二、分派工单</legend>
+<table class="infotan mt5" width="100%">
+	<tr>
+		<td width="15%" valign="top" class="bgs ls">交办意见：</td>
+		<td colspan="3" class="tdcol docformTableNoBD">
+		<div>
+			<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}jbyj" instanceId="${instanceId}" currentStepId="${processId}" isSatisfied="true" />
+			</div>
+		</td>
+	</tr>
+</table>
+</fieldset>
+<fieldset>
+<legend>三、部门处理</legend>
+<table class="infotan mt5" width="100%">
+	<tr>
+		<td width="15%" valign="top" class="bgs ls">办理意见：</td>
+		<td colspan="3" class="tdcol docformTableNoBD">
+		<div>
+			<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}blyj" instanceId="${instanceId}" currentStepId="${processId}" isSatisfied="true"/>
+			<span id="attblyjshow"></span>
+			<trueway:att onlineEditAble="true" id="${instanceId}attblyj" docguid="${instanceId}attblyj" showId="attblyjshow" ismain="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+			</div>
+		</td>
+	</tr>
+</table>
+</fieldset>
+<fieldset>
+<legend>四、办结待回访</legend>
+<table class="infotan mt5" width="100%">
+	<tr>
+		<td width="15%" valign="top" class="bgs ls">回访意见：</td>
+		<td colspan="3" class="tdcol docformTableNoBD">
+		<div>
+			<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}hfyj" instanceId="${instanceId}" currentStepId="${processId}" isSatisfied="true"/>
+			</div>
+		</td>
+	</tr>
+</table>
+<legend>五、办件审结</legend>
+<table class="infotan mt5" width="100%">
+	<tr>
+		<td width="15%" valign="top" class="bgs ls">审结意见：</td>
+		<td colspan="3" class="tdcol docformTableNoBD">
+		<div>
+			<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}fkyj" instanceId="${instanceId}" currentStepId="${processId}" isSatisfied="true"/>
+			</div>
+		</td>
+	</tr>
+</table>
+</fieldset>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+	document.onkeydown = function(){　　　　
+		if(event.keyCode==116) {　　　　　　
+			event.keyCode=0;　　　　　　
+			event.returnValue = false;　　　　
+		}
+	}　　
+	document.oncontextmenu = function() {
+			event.returnValue = false;
+	}
+</script>
+</html>

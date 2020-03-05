@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: "Microsoft YaHei";
+    color: #343434;
+}
+
+a {
+    text-decoration: none;
+}
+
+.undis {
+    display: none;
+}
+
+.btn_qx {
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    background: #b1bac2;
+    border-radius: 5px;
+    margin-top: 20px;
+
+}
+
+.btn_ok {
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    margin-left: 25px;
+    background: #1c9dd4;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    height: 500px;
+    overflow: auto;
+    min-width: 1000px;
+    margin: 0 auto;
+}
+
+.table table {
+
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+}
+
+.table table tr td {
+    height: 44px;
+    vertical-align: top;
+    font-size: 15px;
+    line-height: 30px;
+    text-indent: 10px;
+}
+.table table tr td.name{
+    text-align: right;
+    vertical-align: top;
+}
+.table input, .table select {
+    width: 85%;
+    height: 28px;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    text-indent: 10px;
+}
+.table textarea{
+    width: 85%;
+    height: 70px;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    text-indent: 10px;
+    resize: none;
+    color: #343434;
+    font-size: 15px;
+    line-height: 24px;
+    font-family: "Microsoft YaHei";
+}
+.green{
+    color: #3dc45d;
+}
+.red{
+    color: #ed3e3e;
+}
+
+
+/*form2*/
+.table2 {
+    width: 100%;
+    height: 385px;
+    overflow: auto;
+    min-width: 1000px;
+    margin: 0 auto;
+}
+
+.table2 table {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10px;
+    border-collapse:collapse;
+}
+
+.table2 table tr td {
+    height: 40px;
+    vertical-align: top;
+    font-size: 15px;
+    line-height: 30px;
+    text-indent: 10px;
+    border: 1px solid #e6e6e6;
+}
+.table2 table tr td.name{
+    text-align: right;
+    vertical-align: top;
+    padding-right: 15px;
+    background: #e6f5ff;
+}
+.dz{
+    background: #008cee;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    color: #fff;
+    text-indent: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    /* margin-top: 25px; */
+}
+.dz a{
+    float: right;
+    margin-right: 18px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+}
+.dz a img{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
+.list_table{
+    height: 180px;
+    overflow: auto;
+}
+.list_table table{
+    min-width: 96%;
+    margin: 10px auto;
+    table-layout: fixed;
+}
+.list_table table tr td{
+    text-align: center;
+    height: 40px;
+    border-bottom: 1px solid #ecf3f9;
+    color: #323232;
+    font-size: 14px;
+        white-space: nowrap;
+
+}
+.list_table table tr:hover td{
+    background: #f6f9fe;
+}
+.list_table table tr.fr_tr td{
+    background-color: #e6f5ff;
+    border-bottom: 0;
+    color: #323232;
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.btn_write{
+    background: url("../img/write.png") no-repeat;
+    width: 13px;
+    height: 16px;
+    border: 0;
+    vertical-align: middle;
+}
+.btn_down{
+    background: url("../img/down.png") no-repeat;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    vertical-align: middle;
+}
+
+
+.checkbox input[type=checkbox],
+.radiobox input[type=radio] {
+    -webkit-appearance: none;
+    background-color: transparent;
+    outline: 0 !important;
+    border: 0;
+    font-size: 1em !important;
+    margin-top: 2px;
+}
+.checkbox input[type=checkbox]:before,
+.radiobox input[type=radio]:before {
+    display: inline-block;
+    text-align: center;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    font-weight: thin;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: rgb(212, 212, 212);
+}
+.checkbox input[type=checkbox]:checked:before,
+.radiobox input[type=radio]:checked:before {
+    color: rgb(76, 184, 184);
+}
+.checkbox input[type=checkbox]:before {
+    content: "\f096";
+}
+.checkbox input[type=checkbox]:checked:before {
+    content: "\f14a";
+}
+.radiobox input[type=radio]:before {
+    content: "\f1db";
+}
+.radiobox input[type=radio]:checked:before {
+    content: "\f192";
+}
+
+
+/*form3*/
+.do{
+    background: #e6ebee;
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+}
+.btn_save{
+    background: url("../img/btn_save.png") no-repeat;
+    width: 74px;
+    height: 32px;
+    border: 0;
+    vertical-align: top;
+    margin-top: 9px;
+    margin-left: 16px;
+}
+.btn_del{
+    background: url("../img/btn_del.png") no-repeat;
+    width: 75px;
+    height: 32px;
+    border: 0;
+    vertical-align: top;
+    margin-top: 9px;
+    margin-left: 6px;
+}
+.btn_print{
+    background: url("../img/btn_print.png") no-repeat;
+    width: 75px;
+    height: 32px;
+    border: 0;
+    vertical-align: top;
+    margin-top: 9px;
+    margin-left: 6px;
+}
+.list_table2 table tr.fr_tr td{
+    background-color: #008cee;
+    border-bottom: 0;
+    color: #fff;
+}
+
+.btn_word{
+    background: url("../img/word.png") no-repeat;
+    width: 18px;
+    height: 16px;
+    border: 0;
+    vertical-align: middle;
+}

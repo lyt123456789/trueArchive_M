@@ -1,0 +1,222 @@
+<head>
+<title>琛ㄥ崟鍏冪礌璇存槑</title>
+<link type="text/css" rel="stylesheet"  href="${ctx}/dwz/style/css/ued.base.css"  />
+<link type="text/css" rel="stylesheet" href="${ctx}/dwz/style/css/ued.demo.css"  />
+<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/base/jquery.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/sea.js"></script>  
+<script type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>  
+			
+<!--浠ヤ笅蹇呴』-->
+<script type="text/javascript" src="src/mapSelected.js" ></script>
+<script type="text/javascript" src="${ctx}/form/jsp/widgets/common/js/doublelist.js" ></script>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//鏍囩璧嬪�锛屾潈闄愭帶鍒�
+	if(instanceId.length==13){registerTag();}//娉ㄥ唽鏍囩閫変腑鏁堟灉
+};
+function trim(str){
+		return str.replace(/^\s*/,'').replace(/\s*$/,'');
+	}
+	//Ie鐢熸垚鏃堕棿
+	 function newDate(str){
+     		str = str.split("-");
+     		var date = new Date();
+     		date.setUTCFullYear(str[0],str[1]-1,str[2]);
+     		date.setUTCHours(0,0,0,0);
+     		return date;
+     	}
+     	
+		//鑾峰彇鐢宠鏃堕棿鍐呯殑鍙敤杞﹁締
+     	function getCanUseCar(){
+     		if(document.getElementById("applystartdate").value!="" && document.getElementById("applyenddate").value!=""){
+     			var  startDate =document.getElementById("applystartdate").value;
+    			var  backDate =document.getElementById("applyenddate").value;
+    			var  userid =document.getElementById("userId").value;
+    			var  dateStart = new Date(startDate);
+    			var  dateBack = new Date(backDate);
+				//Ie鏃堕棿鍗曠嫭鐢熸垚
+    			if(!-[1,]){
+    				dateStart = newDate(startDate);
+    				dateBack = newDate(backDate);
+    			}
+    			if(dateStart<=dateBack){
+		     		$.ajax({                    
+						type: "POST",                    
+						contentType: "application/json",               
+						url: "http://61.155.85.78:9488/functions/carmanage_getCanUseCar.do?startDate="+startDate+"&backDate="+backDate+"&userid="+userid+"&callback=?",  
+						dataType: 'json',          
+						success: function(result) { 
+							if(result!=''){
+								var carNumber = $("#carnumber");
+	                            //娓呯┖鍘熷厛涓嬫媺妗�
+		                        RemoveOption();
+	
+		                        carNumber.append("<option value=''>--璇烽�鎷╃敵璇疯溅杈�-</option>");
+		                        //瑙ｆ瀽鑾峰緱鐨勮溅杈嗗垪琛�
+		                        var data = eval(result);
+	
+		                        if(data.length<=0){
+		                        	alert("鎵��鏃堕棿娈靛唴娌℃湁鍙敵璇风殑杞﹁締");
+		                        }else{
+			                        $(data).each(function (key) {
+		
+			                            var carno = data[key].carno;
+			                            
+			                            AppendOption(carno, carno);
+			                         });
+		                        }
+				   				return false;
+							}else{
+				   				return false;
+							}
+						},
+						error:function(result){
+							alert("绯荤粺閿欒璇烽噸璇�");
+						}
+	                
+					});
+    			}else{
+    				alert("鐢宠寮�鏃堕棿蹇呴』灏忎簬鐢宠缁撴潫鏃堕棿");
+    			}
+     		}
+     	}
+
+     	 function RemoveOption() {
+             $("#carnumber option").remove();
+         }
+ 
+         function AppendOption(value, text) {
+            $("#carnumber").append("<option value='" + value + "'>"+ text + "</option>");
+        }
+</script>
+<!--浠ヤ笂蹇呴』-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.warp{width:595px;overflow:hidden;*zoom:1;}
+.infotan td{height:25px;line-height:25px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+table{border-collapse:collapse;border-spacing:0;}
+.infotan td textarea{width:430px;height:100px;}
+.infotan td select{width:120px;}
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>鍑鸿溅鐢宠瀹℃壒鍗�/strong>
+</p>
+<table width="100%" class="infotan mt5">
+<tr>
+<input name="userId"  id="userId" value="${userId}"/>
+		<td width="20%" valign="top" class="bgs ls"><div align="center">鐢宠寮�鏃堕棿锛�/div></td>
+		<td  class="tdcol">
+ 		<input name="applystartdate" type="text" id="applystartdate"  style="width:35%"     onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly zname="鐢宠寮�鏃ユ湡" onchange="getCanUseCar();" />
+		</td>
+</tr>
+<tr>
+		<td width="20%" valign="top" class="bgs ls"><div align="center">鐢宠缁撴潫鏃堕棿锛�/div></td>
+		<td  class="tdcol">
+ 		<input name="applyenddate" type="text" id="applyenddate"   style="width:35%"    onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly zname="鐢宠缁撴潫鏃ユ湡" onchange="getCanUseCar();"/>
+		</td>
+</tr>
+  <tr>
+		<td width="20%" valign="top" class="bgs ls" ><div align="center">鐢宠杞︾墝鍙凤細</div></td>
+		<td class="tdcol">
+		<select id="carnumber" name="carnumber"  style="width:150px;height:30px" zname="鐢宠杞︾墝鍙�><option value="">--璇烽�鎷╃敵璇疯溅杈�-</option>
+  	      </select></td>
+
+  </tr>
+
+	<tr>
+		<td width="20%" valign="top" class="bgs ls"><div align="center">鐢宠鍘熷洜锛�/div></td>
+		<td  class="tdcol" >
+		 <textarea name="applyreason" id="applyreason" style="width:96% ; height:100px" zname="鐢宠鍘熷洜" ></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls" >  <div align="center">澶囨敞锛�/div></td>
+		<td  class="tdcol" >
+		<textarea name="applycomment" id="applycomment" style="width:96% ; height:100px" zname="澶囨敞" ></textarea>
+		</td>
+	</tr>
+        <tr>
+		<td width="20%" valign="top" class="bgs ls" ><div align="center">瀹夋帓杞﹁締锛�/div></td>
+		<td class="tdcol">
+		</td>
+
+        </tr>
+
+
+	
+</table>
+</div>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">
+<INPUT  id="plancarnumber" name="plancarnumber" value="">  
+</body>
+<script src="/trueWorkFlowV2.1_GT/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlowV2.1_GT/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//浠ヤ笅蹇呴』鏈�
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//浠ヤ笂蹇呴』鏈�
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

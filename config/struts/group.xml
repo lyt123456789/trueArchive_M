@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="group" extends="common-default">
+		<action name="group_*" class="groupAction" method="{1}">
+			<result name="getInnerUserList">/WEB-INF/pages/workflow/innerUser/list.jsp</result>
+			<result name="toAddInnerUserJsp">/WEB-INF/pages/workflow/innerUser/add.jsp</result>
+			<result name="toUpdateInnerUserJsp">/WEB-INF/pages/workflow/innerUser/update.jsp</result>
+			<result name="viewInnerUser">/WEB-INF/pages/workflow/innerUser/view.jsp</result>
+			<result name="toMapEmployeeJsp">/WEB-INF/pages/Department/showDepartmentTree.jsp</result>
+			<result name="getListForNode">/WEB-INF/pages/workflow/innerUser/nodeList.jsp</result>
+			<result name="getListForNode1">/WEB-INF/pages/workflow/innerUser/nodeList1.jsp</result>
+			<result name="getListForNode2">/WEB-INF/pages/workflow/innerUser/nodeList2.jsp</result>
+			<result name="getInnerOtherUsers">/WEB-INF/pages/workflow/innerUser/getInnerOtherUsers.jsp</result>
+			<result name="toUserDepartmentJsp">/WEB-INF/pages/workflow/innerUser/userDepartmentJsp.jsp</result>
+			<result name="getInnerUserListForNode">/WEB-INF/pages/workflow/innerUser/getInnerUserListForNode.jsp</result>
+		</action>
+		
+		<action name="userGroup_*" class="userGroupAction" method="{1}">
+			<result name="getUserGroupList">/WEB-INF/pages/workflow/usergroup/list.jsp</result>
+			<result name="toAddUserGroupJsp">/WEB-INF/pages/workflow/usergroup/add.jsp</result>
+			<result name="toUpdateUserGroupJsp">/WEB-INF/pages/workflow/usergroup/update.jsp</result>
+			<result name="viewUserGroup">/WEB-INF/pages/workflow/usergroup/view.jsp</result>
+			<result name="toMapEmployeeJsp">/WEB-INF/pages/Department/showDepartmentTree.jsp</result>
+			<result name="toUserGroupJsp">/WEB-INF/pages/workflow/usergroup/userGroup.jsp</result>
+		</action>
+		<action name="uNodePermission_*" class="userNodesPermissionAction" method="{1}">
+		    <result name="showPermissionToEverBody">/WEB-INF/pages/workflow/todo/showPermissionToEverBody.jsp</result>
+		    
+		</action>
+		
+		
+		<action name="menu_*" class="menuAction" method="{1}">
+			<result name="menuList">/WEB-INF/pages/sys/menu/menuList.jsp</result>
+			<result name="toAdd">/WEB-INF/pages/sys/menu/addMenu.jsp</result>
+			<result name="toUpdate">/WEB-INF/pages/sys/menu/updateMenu.jsp</result>
+			<result name="toManageforeignAddress">/WEB-INF/pages/sys/menu/foreignAddressManager.jsp</result>
+			<result name="getMenu4EverSite">/WEB-INF/pages/sys/menu/menu4EverSite.jsp</result>
+		</action>
+		
+		<action name="role_*" class="roleAction" method="{1}">
+			<result name="rolelist">/WEB-INF/pages/sys/role/roleList.jsp</result>
+			<result name="roleList4Select">/WEB-INF/pages/sys/role/roleList4Select.jsp</result>
+			<result name="addrole">/WEB-INF/pages/sys/role/addRole.jsp</result>
+			<result name="updaterole">/WEB-INF/pages/sys/role/updateRole.jsp</result>
+			<result name="toAddUser">/WEB-INF/pages/sys/role/addUser.jsp</result>
+			<result name="getRole4EverSite">/WEB-INF/pages/sys/role/role4EverSite.jsp</result>
+			<!--2017-09-27,超管账户角色管理页面  -->
+			<result name="rolelist4Super">/WEB-INF/pages/sys/role/roleList4Super.jsp</result>
+			<!-- 用户修改密码页面 -->
+			<result name="toEditPassWord">/WEB-INF/pages/sys/role/roleEditPassword.jsp</result>
+		</action>
+		
+		<action name="roleUser_*" class="roleUserAction" method="{1}">
+			<result name="userList">/WEB-INF/pages/sys/role/userList.jsp</result>
+			<result name="userList4Super">/WEB-INF/pages/sys/role/userList4Super.jsp</result>
+			<result name="addUserToRole">/WEB-INF/pages/sys/role/addUserToRole.jsp</result>
+		</action>
+		
+		<action name="organize_*" class="organizeAction" method="{1}">
+			<result name="organizeList">/WEB-INF/pages/sys/organize/organizeList.jsp</result>
+			<result name="empList">/WEB-INF/pages/sys/organize/empList.jsp</result>
+			<result name="selectDY">/WEB-INF/pages/sys/organize/selectDY.jsp</result>
+			<result name="selectDY1">/WEB-INF/pages/sys/organize/selectDY1.jsp</result>
+		</action>
+		
+		
+		<action name="menurole_*" class="menuRoleAction" method="{1}">
+			<result name="roleList">/WEB-INF/pages/sys/menurole/roleList.jsp</result>
+			<result name="rolelist4Super">/WEB-INF/pages/sys/menurole/roleList4Super.jsp</result>
+			<result name="menuList">/WEB-INF/pages/sys/menurole/menuList.jsp</result>
+		</action>
+		
+		<action name="tree_*" class="treeAction" method="{1}">
+			<result name="departmentTree">/WEB-INF/pages/sys/tree/usergroup/departmentTree.jsp</result>
+			<result name="departmentTree4Super">/WEB-INF/pages/sys/tree/usergroup/departmentTree.jsp</result>
+			<result name="setUserGroup">/WEB-INF/pages/sys/tree/usergroup/setUserGroup.jsp</result>
+			<!-- <result name="getAllDepAndUser">/WEB-INF/pages/workDiary/accredit/allUnitList.jsp</result> -->
+			<result name="departmentTreeForBb">/WEB-INF/pages/sys/tree/usergroup/departmentTreeForBb.jsp</result>
+ 			<result name="departmentTreeForFgw">/WEB-INF/pages/sys/tree/usergroup/departmentTree.jsp</result>
+		</action>
+		
+		<action name="login_*" class="loginAction" method="{1}">
+			<result name="login">/WEB-INF/pages/index.jsp</result>
+			<result name="fail">/WEB-INF/pages/login.jsp</result>
+			<result name="error">/error.html</result>
+			<result name="fail2">/fail.html</result>
+			<result name="login4DA">/WEB-INF/pages/model/index.jsp</result>
+			<result name="welcome">/WEB-INF/pages/welcome.jsp</result>
+		</action>
+	</package>
+</struts>

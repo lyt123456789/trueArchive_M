@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="manage" extends="common-default">
+		<action name="rolemanage_*" class="cn.com.trueway.archives.manage.action.RoleManageAction" method="{1}">
+		 	<result name="roleDataAuthorizeJsp">/WEB-INF/pages/archives/manage/roleManage/roleDataAuthorizeJsp.jsp</result>
+			<result name="roleDataJsp">/WEB-INF/pages/archives/manage/roleManage/roleData.jsp</result>
+			<result name="roleDataTabJsp">/WEB-INF/pages/archives/manage/roleManage/roleDataTab.jsp</result>
+			<result name="setRoleDataRangeJsp">/WEB-INF/pages/archives/manage/roleManage/setRoleDataRange.jsp</result>
+			
+		
+		    <result name="toDataAuthorizeJsp">/WEB-INF/pages/archives/manage/roleManage/dataAuthorizeJsp.jsp</result>
+		    <result name="showDirectoriesJsp">/WEB-INF/pages/archives/manage/roleManage/showDirectoriesJsp.jsp</result>
+		    <result name="showDtreeJsp">/WEB-INF/pages/archives/manage/roleManage/showDtreeJsp.jsp</result>  
+			<result name="roleManageJsp">/WEB-INF/pages/archives/manage/roleManage/roleManage.jsp</result>
+			<result name="roleManageAddJsp">/WEB-INF/pages/archives/manage/roleManage/roleManageAdd.jsp</result>
+			<result name="roleManageUpdateJsp">/WEB-INF/pages/archives/manage/roleManage/roleManageUpdate.jsp</result>
+			<result name="casualUserManageJsp">/WEB-INF/pages/archives/manage/casualUser/casualUser.jsp</result>
+			<result name="casualUserManageAddJsp">/WEB-INF/pages/archives/manage/casualUser/casualUserAdd.jsp</result>
+			<result name="casualUserManageUpdateJsp">/WEB-INF/pages/archives/manage/casualUser/casualUserUpdate.jsp</result>
+			<result name="setRoleMenuJsp">/WEB-INF/pages/archives/manage/roleManage/roleMenu.jsp</result>
+			<result name="setRoleEmployeeJsp">/WEB-INF/pages/archives/manage/roleManage/roleEmployee.jsp</result>
+			<result name="casualUserDataJsp">/WEB-INF/pages/archives/manage/casualUser/casualUserData.jsp</result>
+			<result name="casualUserDataTabJsp">/WEB-INF/pages/archives/manage/casualUser/casualUserDataTab.jsp</result>
+			<result name="setCUserDataRangeJsp">/WEB-INF/pages/archives/manage/casualUser/setCUserDataRange.jsp</result>
+		</action>
+		<action name="ftm_*" class="cn.com.trueway.archives.manage.action.FullTextManageAction" method="{1}">
+		    <result name="toFullTextManageJsp">/WEB-INF/pages/archives/manage/fullTextManage/fullTextManageJsp.jsp</result>
+		    <result name="toFUllTextIndexMainJsp">/WEB-INF/pages/archives/manage/fullTextManage/fullTextIndexMain.jsp</result>
+		    <result name="toFUllTextIndexYesList">/WEB-INF/pages/archives/manage/fullTextManage/fullTextIndexYesList.jsp</result>
+		    <result name="toFUllTextIndexNoList">/WEB-INF/pages/archives/manage/fullTextManage/fullTextIndexNoList.jsp</result>
+		</action>
+		<action name="btnmanage_*" class="cn.com.trueway.archives.manage.action.BtnManageAction" method="{1}">
+			<result name="toBtnManageJsp">/WEB-INF/pages/archives/manage/btnManage/btnManageJsp.jsp</result>
+			<result name="btnManageAddJsp">/WEB-INF/pages/archives/manage/btnManage/btnManageAdd.jsp</result>
+			<result name="btnManageEditJsp">/WEB-INF/pages/archives/manage/btnManage/btnManageEdit.jsp</result>
+		
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,232 @@
+<head>
+<title>表单元素说明</title>
+<link type="text/css" rel="stylesheet"  href="${ctx}/dwz/style/css/ued.base.css"  />
+<link type="text/css" rel="stylesheet" href="${ctx}/dwz/style/css/ued.demo.css"  />
+<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/base/jquery.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/sea.js"></script>  
+<script type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>  
+			
+<!--以下必须-->
+<script type="text/javascript" src="src/mapSelected.js" ></script>
+<script type="text/javascript" src="${ctx}/form/jsp/widgets/common/js/doublelist.js" ></script>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 5px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+legend {
+	color: #000;
+}
+legend{float:left;margin-bottom:5px;margin-top:5px;background:#F1F5F6;height:25px; line-height:25px; text-align: center; padding-left:10px; padding-right:10px; border:#B8D0D6 1px solid;}
+fieldset,img {
+	border: 0;
+}
+
+img {
+	vertical-align: middle;
+}
+
+button,input,select,textarea {
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+section,article,aside,header,footer,nav,dialog,figure {
+	display: block;
+}
+
+.pagescon {
+	padding: 5px;
+	background: #EBF6FC;
+	overflow: hidden;
+	border: 1px #B8B8B8 solid;
+}
+
+.infotan td {
+	border: 1px solid #CCCCCC;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 1em;
+}
+
+.mt5 {
+	margin-top: 5px;
+}
+
+.texts {
+	height: 28px;
+	line-height: 28px;
+	border: 1px #999999 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.bgs {
+	background: #F1F5F6;
+	font-weight: bold;
+}
+
+.ls {
+	text-align: right;
+}
+.docformTableNoBD td{
+	border:0 none;
+}
+.txt_shuru{width:200px;height:28px;}
+
+.ty_ul{ border-bottom:1px solid #CCC; overflow:hidden;*zoom:1; padding:0px; margin-top:10px; margin-bottom:10px; }
+.ty_ul li{ border-bottom:1px solid #F00; float:left; padding:0px; padding-bottom:5px; padding-left:5px; } 
+
+.btn_an{ border:1px solid #ccc; padding:5px 15px; background:#F1F5F6; cursor:pointer}
+</style>
+</head>
+
+<body>
+<center style="font-size:30px;"><strong>城市管理局文件阅办单  </strong>
+</center>
+
+<table width="100%" class="infotan mt5">
+	
+    <tr>
+	  <td width="16%" valign="top" class="bgs ls">来文单位： </td>
+	  <td width="18%" class="tdcol docformTableNoBD"><input type="text"  name="lwdw"  id="lwdw"   /></td>
+      <td width="16%"  valign="top" class="bgs ls">文号：</td>
+      <td width="20%" class="tdcol docformTableNoBD"><input type="text"  name="wh"  id="wh"   /></td>
+      <td width="16%"  valign="top" class="bgs ls">收文号：</td>
+      <td class="tdcol docformTableNoBD"><input type="text"  name="swh"  id="swh"   /></td>
+    </tr>
+ <tr>
+      <td valign="top" height="78" class="bgs ls">来文标题：</td>
+      <td colspan="5" class="tdcol docformTableNoBD">
+
+<input type="text" id="lwbt" name="lwbt" style="width:95%"/>
+</td>
+    </tr>
+
+    <tr>
+      <td valign="top" height="78" class="bgs ls">拟办意见：</td>
+      <td colspan="5" class="tdcol docformTableNoBD"><div>
+<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}nbyj" instanceId="${instanceId}" currentStepId="${processId}" isSatisfied="false"/>
+
+</div></td>
+    </tr>
+
+       <tr style="display:none;" id="cy">
+<td valign="top"  class="bgs ls">传阅签名：</td>
+
+		<td  colspan="5"  width="100%">
+			<table border="0" width="100%"  class="infotan mt5" id="cytable">
+				<tr>
+					<td  class="bgs ls" style="text-align:center">传阅人员</td>
+					<td  class="bgs ls" style="text-align:center">传阅日期</td>
+					<td  class="bgs ls" style="text-align:center">传阅处室</td>
+					<td  class="bgs ls" style="text-align:center">传阅日期</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+     <tr>
+      <td valign="top" height="78" class="bgs ls">阅签意见：</td>
+      <td colspan="5" class="tdcol docformTableNoBD"><div>
+<trueway:comment typeinAble="true" deleteAbled="true" recordTimeAble="true" id="${instanceId}yqyj" instanceId="${instanceId}" currentStepId="${processId}" isSatisfied="false"/>
+
+</div></td>
+    </tr>
+  <tr>
+      <td valign="top" height="78" class="bgs ls">办理结果：</td>
+      <td colspan="5" class="tdcol docformTableNoBD"><div>
+<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}bljg" instanceId="${instanceId}" currentStepId="${processId}" isSatisfied="false"/>
+
+</div></td>
+    </tr>
+
+</table>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+<input type="hidden" id="keyword" name="keyword" value="空" />
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

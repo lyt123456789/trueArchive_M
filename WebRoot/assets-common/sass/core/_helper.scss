@@ -1,0 +1,47 @@
+
+.text-hide {
+    @include text-hide;
+}
+
+
+// 浮动及闭合浮动
+.pull-left,.fl{
+  @include  float;
+}
+.pull-right,.fr{
+  @include float(right);
+}
+.clearfix,.cf{
+  @include clearfix;
+}
+
+// text-align
+.tal {
+    text-align: left!important;
+}
+.tar {
+    text-align: right!important;
+}
+.tac {
+    text-align: center!important;
+}
+
+.taj {
+    text-align: justify
+}
+
+.text-nowrap {
+    white-space: nowrap
+}
+
+.text-lowercase {
+    text-transform: lowercase
+}
+
+.text-uppercase {
+    text-transform: uppercase
+}
+
+.text-capitalize {
+    text-transform: capitalize
+}

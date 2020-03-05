@@ -1,0 +1,89 @@
+.tw-usertree-choice .tw-usertree-search {
+	padding: 10px;
+	margin: 0;
+}
+.tw-usertree-tabs .tw-tab-panel {
+	padding: 0;
+}
+.no-childs > ul > li {
+	display: inline-block;
+	float: left;
+	width: 25%;
+	min-width: 140px;
+}
+.no-childs > ul:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.ztree li a,
+.ztree li a.curSelectedNode {
+	padding-top: 0;
+}
+.ztree li ul {
+	padding: 10px 0 10px 18px;
+}
+
+.ztree li .button.switch.noline_close {
+	width: 12px;
+	height: 12px;
+	margin-left: 10px;
+	margin-right: 5px;
+	background: url(../img/rarr.png) no-repeat center center;
+}
+.ztree li .button.switch.noline_open {
+	width: 12px;
+	height: 12px;
+	margin-left: 10px;
+	margin-right: 5px;
+	background: url(../img/barr.png) no-repeat center center;
+}
+.ztree {
+	padding: 0;
+}
+.ztree > li {
+	background: #f1f1f1;
+}
+.ztree > li > a,
+.ztree > li > a.curSelectedNode{
+	color: #248be8;
+}
+.ztree > li > ul {
+	background: #fff;
+}
+.no-childs.two-childs {
+	width: 100%;
+}
+.tw-usertree-choice .tw-usertree-search .tw-form-text {
+	width: 70%;
+}
+.tw-usertree-search {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.ztree li span.node_name {
+	min-width: 32px;
+	overflow: hidden;
+}
+.tw-usertree-list li span {
+	width: 80px;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tw-panel-cnt,
+.JS_wrap {
+	min-height:400px;
+}
+.JS_scrollt {
+	min-height:357px;
+}
+.tw-usertree-choice .tw-usertree-select .tw-mod {
+	padding: 0;
+}
+.tw-usertree-choice .tw-usertree-select .tw-mod .tw-bd {
+	padding: 14px 15px 15px;
+}

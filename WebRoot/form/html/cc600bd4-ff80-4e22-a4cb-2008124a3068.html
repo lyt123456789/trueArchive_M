@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;"><strong>支&nbsp;&nbsp;出&nbsp;&nbsp;批&nbsp;&nbsp;办&nbsp;&nbsp;单</strong></p>
+<table width="819" class="infotan">
+<tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 编&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号：</td>
+	  	<td   width="30%;" style="font-size:18px;" >
+		<input type="text" id="bianhao" name="bianhao" style="width:200px" zname="编号" value=""/>	  </td>
+	  <td  height="72" valign="middle" width="20%;" style="font-size:18px;" >使用部门：</td>
+	  <td   width="30%;" style="font-size:18px;height:72;"  >
+	  <input type="text" id="sybm" name="sybm" style="width:200px" zname="使用部门" value="${deparmentName}" />	  </td>
+</tr>
+  <tr>
+      <td  height="72" valign="middle" style="font-size:18px;height:72;"  > 名&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</td>
+	  <td   style="font-size:18px;height:72;"  >
+          <input type="text" id="mc" name="mc" style="width:200px" zname="名称"/>	  </td>
+	  <td  height="72" valign="middle" style="font-size:18px;" >采购时间：</td>
+	  <td    style="font-size:18px;">
+             <input type="text" id="cgsj" name="cgsj" zname="采购时间" value="" style="width:200px" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/></td>
+  </tr>
+    <tr>
+    	<td  height="72" valign="middle" style="font-size:18px;" >获得方式：</td>
+        <td style="font-size:18px;height:72;" >
+		 <select  id="hdfs" name="hdfs"  style="width:200px" zname="获得方式">
+		  </select>		</td>
+		<td  height="72" valign="middle" style="font-size:18px;" > 数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量：</td>
+        <td width="40%;" style="font-size:18px;" >
+				 <input type="text" id="sl" name="sl" style="width:200px" zname="数量"/>		</td>
+    </tr>
+    <tr>
+      <td  height="72" valign="middle" style="font-size:18px;width:600px;"  >来源单位：</td>
+      <td  colspan="3"   style="font-size:18px;width:600px;" >
+        	  <input type="text" id="lydw" name="lydw"  style="width:600px" zname="来源单位"/>		</td>
+    </tr>
+    
+    <tr>
+    	<td  valign="middle" style="height:200px;font-size:18px;width:200px;"  >备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</td>
+        <td colspan="3" style="height:200px;font-size:18px;">
+        		<textarea style="width: 600px; height: 185px;" id="bz" name="bz"></textarea>		</td>
+    </tr>
+    <tr>
+    	<td  height="72" valign="middle" width="15%;" style="font-size:18px;" >审核意见：</td>
+        <td colspan="3"  style="height:200px;font-size:18px;">
+               <textarea style="width: 600px; height: 185px;"></textarea>
+		</td>    
+  </tr>
+
+
+       </table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

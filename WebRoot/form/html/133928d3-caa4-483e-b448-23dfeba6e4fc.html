@@ -1,0 +1,204 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:17px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+
+</style>		
+<!--以下必须-->
+<script type="text/javascript" defer>
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+</style>
+<script type="text/javascript">
+function chooseroom(){
+	if(document.getElementById("meeting_Begin_Time").value.replace(/(^\s*)|(\s*$)/g, "")==""){ 
+		alert("请先选择会议开始时间！");
+		document.getElementById("meeting_Begin_Time").focus();
+		return;
+	}else if(document.getElementById("meeting_End_Time").value.replace(/(^\s*)|(\s*$)/g, "")==""){
+		alert("请先选择会议结束时间！");
+		document.getElementById("meeting_End_Time").focus();
+		return;
+	}else if(document.getElementById("meeting_Begin_Time").value.replace(/(^\s*)|(\s*$)/g, "")>
+		document.getElementById("meeting_End_Time").value.replace(/(^\s*)|(\s*$)/g, "")){
+		alert("会议结束时间应大于会议开始时间！");
+		return;
+	}
+	var beginTime = document.getElementById("meeting_Begin_Time").value.replace(/(^\s*)|(\s*$)/g, "");
+	var winoption ="dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+	var ret = window.showModalDialog('http://61.155.85.78:9493/functions/meeting_selroom.do?beginTime='+beginTime, null, winoption);
+  
+	if(ret != null){
+		document.getElementById("roomName").value = ret.split("@#@")[1];
+		document.getElementById("roomId").value = ret.split("@#@")[0];
+	}
+}	
+</script>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;"><strong>请假申请审批</strong></p>
+<table width="819px;" class="infotan" align="center">
+<tr>
+<td width="165" valign="middle"><div align="center">请假人：<font color="#FF0000">*</font></div></td>
+<td width="245"><input id="userName" name="userName" zname="请假人" type="text" style="width:200px;height:23px;" /></td>
+<td width="165" valign="middle" ><div align="center">填表时间：<font color="#FF0000">*</font></div></td>
+<td width="245"><input id="write_table_Time" name="write_table_Time" zname="填表时间" type="text"  style="height:23px;width:200px;"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/></td>
+</tr>
+<tr>
+<td valign="middle" ><div align="center">开始时间：<font color="#FF0000">*</font></div></td>
+<td><input id="Begin_Time" name="Begin_Time" zname="开始时间" type="text"  style="height:23px;width:200px;"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/></td>
+<td valign="middle" ><div align="center">结束时间：<font color="#FF0000">*</font></div></td>
+<td><input id="End_Time" name="End_Time" zname="结束时间" type="text"  style="height:23px;width:200px;"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})"/></td>
+</tr>
+<tr>
+  <td valign="middle" ><div align="center">请假天数：
+  </div>    <div align="center"></div></td>
+  <td colspan="3" ><input id="day_number" name="day_number" zname="请假天数" type="text" style="width:670px;height:23px;" /></td>
+</tr>
+<tr>
+<td valign="middle" ><div align="center">事由</div></td>
+<td ><input id="reason" name="reason" zname="事由" type="text"  style="height:23px;width:200px;" /></td>
+<td >顶岗人员</td>
+<td ><input id="person" name="person" zname="顶岗人员" type="text"  style="height:23px;width:200px;" /></td>
+</tr>
+<tr height="200px">
+<td height="194" valign="middle"  style="height:165px"><div align="center">请假说明</div></td>
+<td style="height:165px;padding:5px" colspan="3" valign="center" ><textarea id="qj_discriber" name="qj_discriber" zname="请假说明" style="width:600px;"></textarea></td>
+
+</tr>
+<tr height="160px">
+<td height="160"  valign="middle" style=""><div align="center">正文</div></td>
+<td colspan="3" style="height:160px;padding:5px" ><input type="button" id="fujian" name="fujian" zname="附件"/></td>
+</tr>
+<tr>
+<tr height="160px">
+<td height="160" valign="middle" ><div align="center">附件</div></td>
+<td colspan="3" style="height:160px;padding:5px" ><input type="button" id="fujian2" name="fujian2" zname="附件"/></td>
+</tr>
+<tr>
+<td valign="middle" ><div align="center">审核人</div></td>
+<td style="" ><input id="meeting_Rscount" name="meeting_Rscount" zname="会议人数" type="text"  style="height:23px;width:200px;"  onkeyup="this.value=this.value.replace(/\D/g,'')" onBlur="this.value=this.value.replace(/\D/g,'')"/></td>
+<td valign="middle" ><div align="center">审核状态</div></td>
+<td><input id="meeting_Rscount" name="meeting_Rscount" zname="会议人数" type="text"  style="height:23px;width:200px;"  onkeyup="this.value=this.value.replace(/\D/g,'')" onBlur="this.value=this.value.replace(/\D/g,'')"/></td>
+</tr>
+<tr>
+<td height="200" valign="middle" style="width:20%"><div align="center">审核意见<font color="#FF0000"></font></div></td>
+<td colspan="3" style="height:200px;font-size:18px;" ><textarea id="meeting_Subject" name="meeting_Subject" zname="会议主题" style="width:600px;"></textarea></td>
+</tr>
+</table>
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+</div>
+
+<INPUT type="hidden" id="departmentId" name="departmentId" zname="申请部门ID" value="${loginEmployee.departmentGuid}"> 
+<INPUT type="hidden" id="state" name="state" zname="审核状态" value="">  
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+function choosezcr(){
+	var winoption ="dialogHeight:800px;dialogWidth:700px;status:no;scroll:no;resizable:no;center:yes";
+	var ret=window.showModalDialog("http://61.155.85.78:9493/functions/meeting_getSettingTree.do?isSingle=1&t="+new Date().getTime(),null,winoption);	
+	if(ret){
+		var userNames = '';
+		$.each(ret.data,function(k,v){
+		        userNames += v.name+",";
+		});
+		userNames=userNames.substring(0,userNames.length-1);
+                document.getElementById("meeting_Zcr").value = userNames;
+	}
+}
+function choosebcyry(){
+	var winoption ="dialogHeight:800px;dialogWidth:700px;status:no;scroll:no;resizable:no;center:yes";
+	var ret=window.showModalDialog("http://61.155.85.78:9493/functions/meeting_getSettingTree.do?t="+new Date().getTime(),null,winoption);	
+	if(ret){
+		var userNames = '';
+		var userIds = '';
+		$.each(ret.data,function(k,v){
+		        userNames += v.name+",";
+		        userIds += v.value+",";
+		});
+		userNames=userNames.substring(0,userNames.length-1);
+		userIds=userIds.substring(0,userIds.length-1);
+                document.getElementById("meeting_Bcyry").value = userNames;
+                document.getElementById("meeting_BcyryId").value = userIds;
+	}
+}
+</script>
+</html>

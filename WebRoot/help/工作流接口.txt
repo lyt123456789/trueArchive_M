@@ -1,0 +1,52 @@
+---->.获取当前人待办有几种类型
+		 table_getTypeOfToDoList.do：(post)
+		    ------入参：userId
+
+---->.获取待办的接口：
+		  table_getTodoListOfMobile.do：(post)
+			------入参：userId、column(页数)、pagesize（每页显示的条数）PS:type--0：发文  1：办文  2：阅文  ----一般在列表上写死
+			
+		  table_getTodoListOfWeb.do(web端的接口)：(get)
+		  	------获取session的人员信息、column(页数)、pagesize（每页显示的条数）
+  
+---->.点击待办标题，获取pdf的接口：(get)
+		  table_getPdfForMobile.do
+			------入参：pdfName
+
+  ==============================================================================
+||---->.点击待办标题，获取表单的元素，及意见的json：(post)										||
+||		  table_getFormValueOfMobile.do											||
+||			------入参：userId、workflowId、nodeId、processId、instanceId、formId		||
+||																				||
+||---->.获取人员数据：(post)															||
+||		  table_getEmployeeData.do												||
+||  			------入参：userId													||
+||   																			||
+||---->.获取已经存在的json：(post)														||
+||		  table_getExistJson.do													||
+||   			------入参：processId												||
+||   																			||
+||---->.获取节点列表的json：(post)														||
+||   		   table_getNodeList.do												||
+||   			------入参： workFlowId,nodeId										||
+  ==============================================================================
+									||
+									||合并成
+									||
+									\/
+											
+---->.获取点开待办的所有数据：(post)
+	      table_getAllDetailJson.do
+	      	------入参：userId、workflowId、nodeId、processId、instanceId、formId
+===================================================================================
+
+
+---->.移动端手写后传入web端的json保存并发送下一步的接口：(post)
+		  table_saveElementAndSendNextForMobile.do
+			------入参：formJson、userId、processId、instanceId、formId、nextNodeId、c_userIds（抄送人,用","隔开）、m_userIds（主送人,用","隔开）
+
+---->.只保存手写json：(post)
+		  table_saveComment.do
+			------入参：formJson、processId
+
+   			

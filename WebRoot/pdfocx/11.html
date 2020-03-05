@@ -1,0 +1,35 @@
+<HTML>
+	<head>
+        <meta charset="UTF-8"/>
+        <script src="http://192.168.5.20:8080/trueWorkFlowV2.1_GT/dwz/style/js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="http://192.168.5.20:8080/trueWorkFlowV2.1_YJ/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script> 
+    </head>
+<body >
+<h1>test</h1>
+  <input type="button" value="测试" onclick="test()"/>
+   <input type="text" id="date" name="date" style="width:200px" zname="成文时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/>
+<script language="javascript">
+function test(){
+		$.ajax({
+		    url: 'http://192.168.5.20:8080/trueWorkFlowV2.1_GT/table_getFirstOfMoblie.do',
+		    type: 'POST',
+		    data:{
+		    	'userId':'{BFA8003B-0000-0000-2CBF-AE8B0000003B}',
+		    	'itemId':'AE94B59E-12CA-493A-8EE0-935676DB3078',
+		    	'needFj':'1'
+		    },
+		    timeout: 30000,
+		    error: function(o,e){
+		        alert('加载form元素错误, error:'+e+'。');
+		    },
+		    success: function(data){
+		    	alert(data);
+		    }
+		});
+	}
+</script>
+</body>
+</HTML>
+
+
+

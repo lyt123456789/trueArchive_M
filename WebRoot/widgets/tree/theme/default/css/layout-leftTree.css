@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+*{padding:0; margin:0;}
+body,td,th {
+	font-size: 12px;
+}
+body {
+	margin-left: 8px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background:#FFF url(../images/leftTree/redltree_06.gif) repeat-y;
+}
+h3{font-size:14px;}
+h3,ul,ol,dl,p{padding:0; margin:0;}
+.max_w{width:1002px; margin:0 auto;}
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+.clear-both{clear:both; height:0px; overflow:hidden;}
+.clear-left{clear:left; height:0px; overflow:hidden;}
+ul,li{list-style:none;}
+
+#treeHead{width:150px; display:none;}
+#treeName{width:150px; height:46px; text-align:center; background:url(../images/leftTree/redltree_03.gif) top no-repeat;}
+#tree{width:150px; font-size:12px;}
+#tree ul{padding:0; margin:0;}
+#tree ul li{height:38px; line-height:38px; overflow:hidden; background:url(../images/leftTree/redltree_09.gif) top no-repeat; cursor:pointer;}
+#tree ul li.hover a{color:#900;}
+#tree ul li.hover{height:38px; line-height:38px; overflow:hidden; background:url(../images/leftTree/redltree_09-over.gif) top no-repeat;}
+#tree ul li a{color:#333; height:38px; line-height:38px; display:block; text-align:center;}
+#tree ul li ul{padding:5px 0;}
+#tree ul li ul li{background:none; height:25px;}
+#tree ul li ul li a{color:#333; height:24px; display:block; line-height:25px; width:130px; margin:0 5px; margin:0 auto; text-align:center; background:#F1F1F1 url(../images/leftTree/redltree_12.gif) center left no-repeat;}
+#tree ul li ul li a:hover{color:#060; background-color:#CCC;}
+#treeFoot{background:url(../images/leftTree/leftTree-red_15.gif) no-repeat; height:10px; width:150px; overflow:hidden; display:none;}

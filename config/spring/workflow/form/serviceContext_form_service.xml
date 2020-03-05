@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	 
+	<bean id="zwkjFormService" class="cn.com.trueway.workflow.set.service.impl.ZwkjFormServiceImpl">
+		<property name="zwkjFormDao" ref="zwkjFormDao"></property>
+		<property name="tableInfoDao"  ref="tableInfoDao"></property>
+	</bean> 
+	<bean id="workdayService" class="cn.com.trueway.workClander.service.impl.WorkdayServiceImpl">
+		<property name="workdayDao" ref="workdayDao"></property>
+	</bean> 
+	<bean id="flowService" class="cn.com.trueway.workflow.core.service.impl.FlowServiceImpl">
+		<property name="flowDao" ref="flowDao"></property>
+		<property name="jdbcBase"  ref="jdbcBase"/>
+	</bean>
+</beans>

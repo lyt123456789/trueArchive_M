@@ -1,0 +1,312 @@
+<html>
+    
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{height:30px;font-size:20px;border:1px #333 solid;padding:5px;font-family:"仿宋";}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;}
+.infotan td select{width:120px;}
+
+
+
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+var zsid= document.getElementById("zsid").value;
+var zsdw = document.getElementById("zsdw").value;
+var value = zsid+"*"+ zsdw ;
+value = encodeURI(value);
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zsdw").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+var csid= document.getElementById("csid").value;
+var csdw = document.getElementById("csdw").value;
+var value = csid+"*"+ csdw ;
+value = encodeURI(value);
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("csdw").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+
+
+</script>
+<!--以上必须-->
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312"></head>
+<body>
+	<div class="warp">
+		<table class="infotan" width=816px cellspacing="0" align="center" >
+			<caption>
+				<br/>
+				 <p style="font-size:40px;line-height:35px; color:#000;font-family:方正小标宋_GBK;  text-align:center;padding-top:30px;">
+				   国投公司固定资产领用申请单
+				</p>
+			</caption>
+			<tr>
+			    <td style="width:87px;border:0"></td>
+			    <td style="width:147px;border:0"></td>
+			    <td style="width:117px;border:0"></td>
+			    <td style="width:87px;border:0"></td>
+			    <td style="width:147px;border:0"></td>
+                <td style="width:117px;border:0"></td>
+                <td style="width:117px;border:0"></td>	
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;border:none;">部门</td>
+			    <td colspan="2" style="height:80px;border:none;">
+					<input width="255px;" type="text" id="bm" name="bm" zname="部门" value=""/>
+				</td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;border:none">填表日期</td>
+			    <td colspan="3" style="height:80px;border:none;">
+					<input width="370px;" type="text" id="tbrq" name="tbrq" zname="填表日期" value=""/>
+				</td>
+			</tr>
+			<tr>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">申请人</td>
+			    <td colspan="4" style="height:80px;text-align: center;vertical-align: middle;">审批意见</td>
+			</tr>
+			<tr>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:300px;" type="text" id="sqr" name="sqr" zname="申请人" value=""/>
+				</td>
+			    <td colspan="4" rowspan="3" style="height:230px;"></td>
+			</tr>
+			<tr>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">电话</td>
+			</tr>
+			<tr>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:300px;" type="text" id="dh" name="dh" zname="电话" value=""/>
+				</td>
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">序号</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">品名</td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">数量</td>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">备注</td>
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">1</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="pma" name="pma" zname="品名1" value=""/>
+				</td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:85px;" type="text" id="sla" name="sla" zname="数量1" value=""/>
+				</td>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="bza" name="bza" zname="备注1" value=""/>
+				</td>
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">2</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="pmb" name="pmb" zname="品名2" value=""/>
+				</td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:85px;" type="text" id="slb" name="slb" zname="数量2" value=""/>
+				</td>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="bzb" name="bzb" zname="备注2" value=""/>
+				</td>
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">3</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="pmc" name="pmc" zname="品名3" value=""/></td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:85px;" type="text" id="slc" name="slc" zname="数量3" value=""/></td>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="bzc" name="bzc" zname="备注3" value=""/></td>
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">4</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="pmd" name="pmd" zname="品名4" value=""/>
+				</td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:85px;" type="text" id="sld" name="sld" zname="数量4" value=""/>
+				</td>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="bzd" name="bzd" zname="备注4" value=""/>
+				</td>
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">5</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="pme" name="pme" zname="品名5" value=""/>
+				</td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:85px;" type="text" id="sle" name="sle" zname="数量5" value=""/>
+				</td>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="bze" name="bze" zname="备注5" value=""/>
+				</td>
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">6</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="pmf" name="pmf" zname="品名6" value=""/>
+				</td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:85px;" type="text" id="slf" name="slf" zname="数量6" value=""/>
+				</td>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="bzf" name="bzf" zname="备注6" value=""/>
+				</td>
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">7</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="pmg" name="pmg" zname="品名7" value=""/>
+				</td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:85px;" type="text" id="slg" name="slg" zname="数量7" value=""/>
+				</td>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="bzg" name="bzg" zname="备注7" value=""/>
+				</td>
+			</tr>
+			<tr>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">8</td>
+			    <td colspan="2" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="pmh" name="pmh" zname="品名8" value=""/>
+				</td>
+			    <td style="height:80px;text-align: center;vertical-align: middle;">
+					<input style="width:85px;" type="text" id="slh" name="slh" zname="数量8" value=""/>
+				</td>
+			    <td colspan="3" style="height:80px;text-align: center;vertical-align: middle;">
+					<input type="text" id="bzh" name="bzh" zname="备注8" value=""/>
+				</td>
+			</tr>
+</table>
+
+		
+		
+
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+	</div
+	><INPUT type="hidden" id="instanceId" name="instanceId" value="">
+	<INPUT type="hidden" id="formId" name="formId" value="">
+	<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">
+	<INPUT type="hidden" id="processId" name="processId" value="">
+
+
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+</html>

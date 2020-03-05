@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="allow" extends="common-default">
+		<action name="allow_*" class="allowAction" method="{1}">
+			<result name="getAllowTypeList_0">/WEB-INF/pages/allow/allowTypeList_0.jsp</result>
+			<result name="getAllowTypeList_1">/WEB-INF/pages/allow/allowTypeList_1.jsp</result>
+			<result name="getAllowTypeList_2">/WEB-INF/pages/allow/allowTypeList_2.jsp</result>
+			<result name="toAddAllowJsp">/WEB-INF/pages/allow/allowAdd_0.jsp</result>
+			
+			<result name="getAllowList_0">/WEB-INF/pages/allow/allowList_0.jsp</result>
+			<result name="getAllowList_1">/WEB-INF/pages/allow/allowList_1.jsp</result>
+			<result name="getAllowList_2">/WEB-INF/pages/allow/allowList_2.jsp</result>
+		</action>
+		
+		<action name="serverPlugin_*" class="serverPluginAction" method="{1}">
+			<result name="getList">/WEB-INF/pages/workflow/serverplugin/list.jsp</result>
+			<result name="toAdd">/WEB-INF/pages/workflow/serverplugin/add.jsp</result>
+			<result name="toUpdate">/WEB-INF/pages/workflow/serverplugin/update.jsp</result>
+			<result name="view">/WEB-INF/pages/workflow/serverplugin/view.jsp</result>
+		</action>
+	</package>
+</struts>
+

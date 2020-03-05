@@ -1,0 +1,313 @@
+<html>
+    
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{align:center;border:1px #333 solid;padding:1px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:90%;}
+.infotan td select{width:80px;}
+
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function choosezs() {
+        	var subSender = "";
+        	var subNum = 10;
+        	var obj ={};
+    		obj.dep=subSender;
+    		obj.num=subNum;
+var zsid= document.getElementById("zsid").value;
+var zsdw = document.getElementById("zsdw").value;
+var value = zsid+"*"+ zsdw ;
+value = encodeURI(value);
+            var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+            var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+            if (typeof ret !='undefined') {
+                  var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                    }
+                document.getElementById("zsdw").value = userNames;
+                document.getElementById("zsid").value = userIds;
+            }
+        }
+
+       function choosecs() {
+    	  var subSender = "";
+       	  var subNum = 10;
+       	  var obj ={};
+   	  obj.dep=subSender;
+   	  obj.num=subNum;
+var csid= document.getElementById("csid").value;
+var csdw = document.getElementById("csdw").value;
+var value = csid+"*"+ csdw ;
+value = encodeURI(value);
+          var winoption = "dialogHeight:500px;dialogWidth:1200px;status:no;scroll:no;resizable:no;center:yes";
+          var ret = window.showModalDialog("${ctx}/selectTree_showDepartment.do?value="+value+"&t=" + new Date().getTime(), obj, winoption);
+          if (typeof ret !='undefined') {
+                 var userNames = "";
+                  var userIds = "";
+                  if(ret!=''){
+                         userNames  = ret.split(";")[1];
+                         userIds = ret.split(";")[0];
+                 }
+                document.getElementById("csdw").value = userNames;
+                document.getElementById("csid").value = userIds;
+            }
+        }
+
+
+</script>
+<!--以上必须-->
+<style>
+.tt{
+	font-family:"方正大标宋简体";
+	font-size:22px;
+}
+.tl{
+font-family:"仿宋_GB2312";
+	text-align:center;
+	font-size:16px;
+}
+.tr{
+font-family:"仿宋_GB2312";
+	text-align:center;
+	font-size:16px;
+}
+</style>
+</head>
+
+<body>
+	<div class="warp">
+		<table class="infotan" width="819px" cellspacing="0" align="center">
+			<tr>
+			    <td style="width:117px;border:0"></td>
+			    <td style="width:122px;border:0"></td>
+			    <td style="width:82px;border:0"></td>
+			    <td style="width:60px;border:0"></td>
+			    <td style="width:112px;border:0"></td>
+                <td style="width:102px;border:0"></td>
+                <td style="width:224px;border:0"></td>		
+		    </tr>
+			<tr>
+				<td colspan="7" class="tt" align="center" style="height:70px; border:0px solid black;">
+					国投公司固定资产采购审批单
+				</td>
+			</tr>
+			<tr>
+				<td colspan="5" style="font-size:16px;text-align:right;border:0px;font-family:'楷体_GB2312';">日期</td>			  
+			    <td  colspan="2" style="border:0px;text-align:center;font-family:'楷体_GB2312';">
+					<input style="width:270px;" type="text" id="djrq" name="djrq" zname="登记日期" value=""/>
+				</td>
+			</tr>	
+			
+            <tr>
+				<td class="tl">
+					部门
+				</td>
+			    <td colspan="3" class="tr">
+					<textarea id="bmdw" name="bmdw" zname="部门/单位" value=""></textarea>
+				</td>
+			    <td class="tl" height="80">经办人</td>
+			    <td colspan="2" class="tr">
+					<textarea id="sqr" name="sqr" zname="申请人" value=""></textarea>
+				</td>
+				
+			</tr>
+			<tr>
+			    <td class="tl" rowspan="4">拟采购资<br/>产详情</td>
+			    <td class="tl" style="height:60px;">名称</td>
+				<td class="tl">规格</td>
+			    <td class="tl">数量</td>
+				<td class="tl">估计金额</td>
+				<td class="tl">使用人</td>
+				<td class="tl">购置理由及<br/>特别要求</td>
+			</tr>
+			<tr>
+				<td class="tr" style="height:80px;">
+					<textarea id="mca" name="mca" zname="名称1" value="" style="width:92px"></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="gga" name="gga" zname="规格1" value="" style="width:82px"></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="sla" name="sla" zname="数量1" value="" style="width:60px"></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="gjjea" name="gjjea" zname="估计金额1" value="" style="width:112px"></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="syra" name="syra" zname="使用人1" value="" style="width:102px"></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="gzlyjtbyqa" name="gzlyjtbyqa" zname="购置理由及特别要求1" value="" style="width:224px"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td class="tr" style="height:80px;">
+					<textarea id="mcb" name="mcb" zname="名称2" value=""></textarea>
+				</td>                                                     
+				<td class="tr">                                           
+					<textarea id="ggb" name="ggb" zname="规格2" value=""></textarea>
+				</td>                                                     
+				<td class="tr">                                           
+					<textarea id="slb" name="slb" zname="数量2" value=""></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="gjjeb" name="gjjeb" zname="估计金额2" value=""></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="syrb" name="syrb" zname="使用人2" value=""></textarea>
+				</td>
+				<td class="tr" style="padding-right:8px;">
+					<textarea id="gzlyjtbyqb" name="gzlyjtbyqb" zname="购置理由及特别要求2" value=""></textarea>
+				</td>
+			</tr>     
+			<tr>           
+				<td class="tr" style="height:80px;">
+					<textarea id="mcc" name="mcc" zname="名称3" value="" ></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="ggc" name="ggc" zname="规格3" value=""></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="slc" name="slc" zname="数量3" value=""></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="gjjec" name="gjjec" zname="估计金额3" value=""></textarea>
+				</td>
+				<td class="tr">
+					<textarea id="syrc" name="syrc" zname="使用人3" value=""></textarea>
+				</td>
+				<td class="tr" style="padding-right:8px;">
+					<textarea id="gzlyjtbyqc" name="gzlyjtbyqc" zname="购置理由及特别要求3" value=""></textarea>
+				</td>
+			</tr>
+            <tr>
+			    <td colspan="1" class="tl" style="height:150px;">部门负责</br>人意见</td>
+			    <td colspan="6" class="tl"></td>
+			</tr>
+            <tr>
+			    <td colspan="1" class="tl" style="height:150px;">分管领导<br/>审批意见</td>
+			    <td colspan="6" class="tl"></td>
+			</tr>
+            <tr>
+			    <td colspan="1" class="tl" style="height:150px;">办公室采<br/>购意见</td>
+			    <td colspan="6" class="tl"></td>
+			</tr>
+			<tr>
+			    <td colspan="1" class="tl" style="height:150px;">采购办结<br/>情况</td>
+			    <td colspan="6" class="tl"></td>
+			</tr>
+            <tr>
+			    <td colspan="1" class="tl" style="height:120px;">备注</td>
+			    <td colspan="6" class="tl" style="padding-left:5px;">
+					<textarea id="bz" name="bz" zname="备注" value=""></textarea>
+				</td>
+			</tr>
+			
+            
+</table>
+
+		
+		
+
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+	</div
+	><INPUT type="hidden" id="instanceId" name="instanceId" value="">
+	<INPUT type="hidden" id="formId" name="formId" value="">
+	<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">
+	<INPUT type="hidden" id="processId" name="processId" value="">
+
+
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="meetingPhoAction" class="cn.com.trueway.extra.meeting.action.MeetingPhoAction" singleton="false" autowire="byName">
+		<property name="meetingphoservice" ref="meetingphoservice" ></property>
+	</bean>
+	
+	<bean id="meetingsAction" class="cn.com.trueway.extra.meeting.action.MeetingInfoAction" singleton="false" autowire="byName">
+		<property name="tableInfoService" ref="tableInfoService" ></property>
+		<property name="departmentService" ref="departmentService" ></property>
+		<property name="meetingInfoService" ref="meetingInfoService" ></property>
+	</bean>
+	
+</beans>
+	

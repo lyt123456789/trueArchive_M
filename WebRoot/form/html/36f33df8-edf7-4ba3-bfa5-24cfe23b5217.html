@@ -1,0 +1,221 @@
+<html>
+<head>
+<title>表单元素说明</title>	
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:17px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>	
+	
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+
+function checkTime(type) {
+    var beginTime = document.getElementById('kssj').value;
+    var endTime = document.getElementById('jssj').value;
+	if(kssj!='' && jssj!=''){
+    var beginTimeY = beginTime.substring(0, 4);
+    var endTimeY = endTime.substring(0, 4);
+	
+	 var beginTimeM = beginTime.substring(5, 7);
+    var endTimeM = endTime.substring(5, 7);
+	
+	 var beginTimeD = beginTime.substring(8, 10);
+    var endTimeD = endTime.substring(8, 10);
+	
+	var beginTimeH = beginTime.substring(11, 14);
+    var endTimeH = endTime.substring(11, 14);
+	
+	var beginTimeMin = beginTime.substring(15, 17);
+    var endTimeMin = endTime.substring(15, 17);
+	
+	
+	
+
+    beginTime = beginTimeM + '-' + beginTimeD + '-' + beginTimeY + ' ' + beginTimeH+':'+beginTimeMin+':00';
+    endTime = endTimeM + '-' + endTimeD + '-' + endTimeY + ' ' + endTimeH+':'+endTimeMin+':00';
+
+   
+    var a = (Date.parse(endTime) - Date.parse(beginTime)) / 3600 / 1000;
+    if (a < 0) {
+        alert("任务开始时间应在结束时间之前");
+    } 
+	
+	}
+};
+
+</script>
+
+<!--以上必须-->
+<style>
+.infotan td {
+	text-align:center;
+}
+</style>
+
+<!--<% 
+java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm"); 
+
+java.util.Date currentTime = new java.util.Date();//得到当前系统时间 
+
+String str_date1 = formatter.format(currentTime); //将日期时间格式化 
+request.setAttribute("str_date1",str_date1);
+%> -->
+</head>
+
+<body>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div class="warp">
+<center style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>如皋工业园区工作任务推进清单</strong></center>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<table width="819" class="infotan" align="center" >
+<tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 任务名称：</td>
+	  	<td  class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" colspan="3" >
+		  <input type="text" id="rwmc"  name="rwmc" zname="任务名称" style="width:600px;height:23px;"/>	  </td>
+	 
+  </tr>
+  <tr>
+      <td  height="72" valign="middle" style="font-size:18px;" width="15%;" > 开始时间：</td>
+	  <td  class="tdcol docformTableNoBD" style="font-size:18px;"  width="32%;">
+	  <input  type="text"  zname="开始时间" id="kssj" name="kssj" style="width:200px;height:23px" onChange="checkTime('1')" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" />  </td>
+	  <td  height="72" valign="middle" style="font-size:18px;" width="21%;" > 完成时间：</td>
+	  <td   class="tdcol docformTableNoBD" style="font-size:18px;" width="32%;">
+	  <input  type="text" zname="完成时间" id="wcsj"  name="wcsj" style="width:200px;height:23px" onChange="checkTime('2')" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})" />	  </td>
+  </tr>
+   <tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 责任部门：</td>
+	  	<td  class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" colspan="3" >
+		  <input type="text" id="zrbm"  name="zrbm" zname="责任部门" style="width:600px;height:23px"/>	  </td>
+	 
+  </tr>
+	<tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 主管领导：</td>
+	  	<td  class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" colspan="3" >
+		  <input type="text" id="zgld"  name="zgld" zname="主管领导" style="width:600px;height:23px"/>	  </td>
+	 
+  </tr>
+	<tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 分管领导：</td>
+	  	<td  class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" colspan="3" >
+		  <input type="text" id="fgld"  name="fgld" zname="分管领导" style="width:600px;height:23px"/>	  </td>
+	 
+  </tr>
+	<tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 直接负责人：</td>
+	  	<td  class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" colspan="3" >
+		  <input type="text" id="zjfzr"  name="zjfzr" zname="直接负责人" style="width:600px;height:23px"/>	  </td>
+	 
+  </tr>
+   
+    <tr>
+    	<td   valign="middle" style="font-size:18px;" >任务内容：</td>
+        <td colspan="3" style="height:200px;font-size:18px;">
+		  <textarea zname="任务内容" id="rwnr" name="rwnr" style="width:600px; height:185px"></textarea>        </td>
+    </tr>
+    <tr>
+    	<td   valign="middle" style="font-size:18px;" >任务完成情况：</td>
+        <td colspan="3" style="height:200px;font-size:18px;">	   	</td>
+    </tr>
+	 <tr>
+    	<td  valign="middle" height="72" style="font-size:18px;" > 任务附件：</td>
+        <td colspan="3" style="font-size:18px;">
+        <span id="fjshow"></span>
+			<trueway:att zname="任务附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+	
+		
+		</td>
+    </tr>
+     </table>
+</div>
+<INPUT userdefine=hidden id="instanceId" name="instanceId" value=""> 
+<INPUT userdefine=hidden id="formId" name="formId" value=""> 
+<INPUT userdefine=hidden id="workFlowId" name="workFlowId" value="">   
+<INPUT userdefine=hidden id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

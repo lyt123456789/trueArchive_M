@@ -1,0 +1,201 @@
+<html>
+<head>
+<title>发文单</title>
+<link href="${ctx}/dwz/style/css/ued.base.css" rel="stylesheet" type="text/css" />
+	<link href="${ctx}/dwz/style/css/ued.demo.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+    <link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+	<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+    <script src="${ctx}/widgets/plugin/js/base/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+	<script src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" type="text/javascript"></script>
+	<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+	<script src="${ctx}/widgets/plugin/js/sea.js"></script>  
+	<script language="javascript" type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>
+	<script type="text/javascript">
+	      //获得信息
+	    	//demo _getValue(obj,['id','name','parentid'],'|')
+	    	function _getValue(obj,fields,splitstr){
+	    		var result=[],str='';
+	    		for(n in obj){
+	    			var o=obj[n];
+	    			var children=o.children;
+	    			if(children==null){
+	    				str="";
+	    				var i=0,l=fields.length;
+	    				for(i;i<l;i++){
+	    					if(str!=''&&l>1){
+	    						str+=splitstr;
+	    					}
+	    					str+=o[fields[i]];
+	    				}
+	    				result.push(str);
+	    			}
+	    		}
+	    		return result; //Array
+	    	}
+	       	var mainSender={},subSender={};
+	       	var mainNum=5,subNum=5;
+	       	//主送选择	
+	    	function selectSupman(fWidth, fHeight){
+	    		var obj ={};
+	    		obj.dep=mainSender;
+	    		obj.num=mainNum; 
+	    		var retVal = window.showModalDialog('${ctx}/selectTree_showDepartment.do?t='+new Date().getTime(), obj, 
+	    			'dialogWidth: '+fWidth+'px;dialogHeight: '+fHeight+'px; status: no; scrollbars: no; Resizable: no; help: no;');
+				if (retVal == null)
+	    				return;
+	    			mainSender=retVal.src; //Object
+	    			mainNum=retVal.num; //String
+	    			$("#xto").val(_getValue(retVal.src,['name','id','nums','gzname'],'|').join(';'));
+	    			$("#xtoname").val(_getValue(retVal.src,['name'],'|').join(';'));
+	    			//alert( document.getElementById("xto").value);
+	    	}
+
+	    	//抄送选择
+	    	function selectSubman(fWidth, fHeight){
+	    		var obj ={};
+	    		obj.dep=subSender;
+	    		obj.num=subNum;
+	    		var retVal = window.showModalDialog('${ctx}/selectTree_showDepartment.do?t='+new Date().getTime(), obj, 
+	    			'dialogWidth: '+fWidth+'px;dialogHeight: '+fHeight+'px; status: no; scrollbars: no; Resizable: no; help: no;');
+	    			if (retVal == null)
+	    				return;
+	    			subSender=retVal.src; //Object
+	    			subNum=retVal.num; //String
+	    			$("#xcc").val(_getValue(retVal.src,['name','id','nums','gzname'],'|').join(';'));
+	    			$("#xccname").val(_getValue(retVal.src,['name'],'|').join(';'));
+	    	}
+        </script>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+</style>
+</head>
+
+<body>
+<center style="font-size:25px;">
+    <p style="text-align:center;"><strong>药监信息公开保密审查</strong></p>
+</center>
+
+<table width="819" class="topinfotan" cellspacing="0" border="0">
+		<tr>
+                    <td  align="right">
+			<input type="text"  style="width:65px;height:23px;" id="tn" name="tn"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年<input type="text"  style="width:65px;height:23px;" id="ty" name="ty"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月<input type="text"  style="width:65px;height:23px;" id="tr" name="tr"/>&nbsp;&nbsp;&nbsp;&nbsp;日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    </td>
+                   </tr>
+</table>
+<table width="819" class="infotan">
+<tr>
+  <td height="72" valign="middle" style="font-size:18px;" width="20%">信息标题：</td>
+  <td  width="80%" colspan="3" style="font-size:18px;">
+  <input type="text"  style="width:500px;height:23px;" id="xxbt"  name="xxbt"/></td>
+</tr>
+<tr>
+<td height="72" valign="middle" style="font-size:18px;" width="20%">拟稿部门：</td>
+<td class="tdcol docformTableNoBD" style="font-size:18px;"  width="30%">
+  <input type="text" name="ngbm" id="ngbm" style="width:200px;height:23px;"/>
+</td>
+<td height="72" valign="middle" style="font-size:18px;" width="20%">承办人：</td>
+<td width="30%" style="font-size:18px;"><input type="text" name="cbr" id='cbr' style="width:200px;height:23px;"/></td>
+</tr>
+  <tr>
+  <td width="20%" style="font-size:18px;" >附件：</td>
+  <td colspan="3" style="font-size:18px; height:120px;"><br/>
+   <span id="attzwshow"></span>
+   <trueway:att onlineEditAble="true" id="${instanceId}attzw" docguid="${instanceId}attzw" showId="attzwshow" ismain="true" uploadAble="true" deleteAble="true" downloadAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>	 </td>
+ </tr>
+    <tr>
+        <td valign="middle" style="font-size:18px;height:200px;" width="20%;">承办人意见：</td>
+        <td style="font-size:18px;" >
+         信息公开（选择公开形式）：<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="gongkai" id="gongkai" value="主动公开">主动公开。</input><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="gongkai" id="gongkai" value="依申请公开">依申请公开。</input>
+        </td>
+       <td height="72" valign="middle" style="font-size:18px;" width="50%;" colspan="2">
+       信息不公开（说明理由）：<br>
+       <br>
+        <input type="text" name="xxbugksmly" id="xxbugksmly"/></td>
+  </tr>
+    <tr>
+  <td valign="middle" style="font-size:18px;">初步审查：</td>
+  <td colspan="3" style="height:200px;font-size:18px;">处（室）负责人意见：<br><br>
+       &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="gongkais" id="gongkais" value="同意主动公开">同意主动公开。</input>
+       <input type="radio"  name="gongkais" id="gongkais" value="同意依申请公开">同意依申请公开。</input>
+       <input type="radio"  name="gongkais" id="gongkais" value="同意不公开">同意不公开。</input>
+        <br>  
+<div align="right">签名：<input type="text"  style="width:100px;height:23px;" id="csqm" name="csqm"/>  <input type="text"  style="width:65px;height:23px;" id="csn" name="csn"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年<input type="text"  style="width:65px;height:23px;" id="csy" name="csy"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月<input type="text"  style="width:65px;height:23px;" id="csr" name="csr"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div>
+         <trueway:comment zname="处室负责人意见" typeinAble="true" deleteAbled="true" id="${instanceId}csyj" instanceId="${instanceId}" currentStepId="${processId}" />
+        </div></td>
+       </tr>
+  <tr>
+    <td valign="middle" style="font-size:18px;">专业审查：</td>
+    <td colspan="3" style="height:200px;font-size:18px;">属主动公开的信息需要进行保密审查，其他信息直接送文印室留存:
+     <br>保密审查意见<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gongkaiss" id="gongkaiss" value="通过保密审查，请领导复核">通过保密审查，请领导复核。</input>
+        <input type="radio" name="gongkaiss" id="gongkaiss" value="不符合保密规定，不予以公开">不符合保密规定，不予以公开。</input> 
+<br><br>
+      <div align="right">签名：<input type="text"  style="width:100px;height:23px;" id="zyqm" name="zyqm"/>  <input type="text"  style="width:65px;height:23px;" id="zyn" name="zyn"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年<input type="text"  style="width:65px;height:23px;" id="zyy" name="zyy"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月<input type="text"  style="width:65px;height:23px;" id="zyr" name="zyr"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+       <div>
+         <trueway:comment zname="专业审查意见" typeinAble="true" deleteAbled="true" id="${instanceId}zyyj" instanceId="${instanceId}" currentStepId="${processId}" />
+        </div></td>
+ </tr>
+  <tr>
+    <td valign="middle" style="font-size:18px;"> 复核审查：</td>
+    <td colspan="3" style="height:200px;font-size:18px;">领导审查意见：<br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio"  name="gongkaisssss" id="gongkaisssss" value="符合有关规定，同意公开">符合有关规定，同意公开。</input> 
+         <input type="radio"  name="gongkaisssss" id="gongkaisssss" value=" 不符合规定，不予以公开">不符合规定，不予以公开。</input> 
+<br><br>
+<div align="right">签名：<input type="text"  style="width:100px;height:23px;" id="fcqm" name="fcqm"/>   <input type="text"  style="width:65px;height:23px;" id="fcn" name="fcn"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年<input type="text"  style="width:65px;height:23px;" id="fcy" name="fcy"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月<input type="text"  style="width:65px;height:23px;" id="fcr" name="fcr"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<div>
+         <trueway:comment zname="复核审查意见" typeinAble="true" deleteAbled="true" id="${instanceId}fhyj" instanceId="${instanceId}" currentStepId="${processId}" />
+        </div>
+</td>
+  </tr>
+  <tr>
+    <td  style="font-size:18px;"> 信息发布：</td>
+    <td colspan="2" style="height:200px;font-size:18px;">文印室（签名）：<input type="text"  style="width:100px;height:23px;" id="wyqm" name="wyqm"/>   
+<br>
+<br>
+<div align="right"><input type="text"  style="width:55px;height:23px;" id="wyn" name="wyn"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年<input type="text"  style="width:55px;height:23px;" id="wyy" name="wyy"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月<input type="text"  style="width:55px;height:23px;" id="wyr" name="wyr"/>日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+    <td style="font-size:18px;" >网站发布（签名）：<br><input type="text"  style="width:100px;height:23px;" id="wzqm" name="wzqm"/>   
+ <br><br>
+<div align="left"> <input type="text"  style="width:55px;height:23px;" id="wzn" name="wzn"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年<input type="text"  style="width:40px;height:23px;" id="wzy" name="wzy"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月<input type="text"  style="width:40px;height:23px;" id="wzr" name="wzr"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+ </tr></td>
+</table>
+（注：发文需要凭本审查单领取文号，文印室凭本审查单印制公文）
+<INPUT type="hidden" id="instanceId" name="instanceId" value="">
+<INPUT type="hidden" id="formId" name="formId" value="">
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">
+<INPUT type="hidden" id="processId" name="processId" value="">
+<input type="hidden" id="keyword" name="keyword" value="空" />
+
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+ //以下必须有
+ function loadCss(){
+     seajs.use('lib/form',function(){
+   $('input[mice-btn]').cssBtn();
+   $('input[mice-input]').cssInput();
+   $('select[mice-select]').cssSelect();
+     });
+ }
+ //以上必须有
+</script>
+</html>

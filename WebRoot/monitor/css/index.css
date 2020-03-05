@@ -1,0 +1,169 @@
+.index-cont{
+	background: #f6faff;
+	overflow: hidden;
+	width: 1170px;
+	padding: 15px;
+	margin: 0 auto;
+}
+.banjian-list{
+	overflow: hidden;
+	width: 574px;
+	height: 305px;
+}
+.banjian-list li{
+	float: left;
+	background: #fff;
+	width: 180px;
+	height: 305px;
+	text-align: center;
+	margin-right: 17px;
+}
+.banjian-list li:last-child{
+	margin-right: 0;
+}
+.banjian-list .bj-img{
+	padding: 30px 0;
+}
+.banjian-list .bj-tit{
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+.banjian-list .bj-num{
+	font-size: 14px;
+}
+.banjian-list .bj-dw{
+	font-size: 46px;
+	color: #f04646;
+}
+.banjian-list li:first-child .bj-dw{
+	color: #f38484;
+}
+.interface-box{
+	width: 574px;
+	height: 305px;
+	background: #fff;
+	margin-top: 17px;
+}
+.interface-cf{
+	padding: 15px;
+}
+.cf-tit{
+	font-size: 20px;
+}
+.interface-ul{
+	overflow: hidden;
+	margin-top: 20px;
+}
+.interface-ul li{
+	float: left;
+	border: 1px solid #f0f0f0;
+	border-radius: 3px;
+	text-align: center;
+	padding: 15px 20px;
+	margin-right: 15px;
+}
+.interface-ul li .ul-tit{
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+.interface-ul li .ul-btn{
+	width: 100px;
+	height: 26px;
+	line-height: 26px;
+	border-radius: 10px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	background: #dc2323;
+	border: none;
+}
+.index-right{
+	width: 576px;
+}
+.chart-box{
+	width: 576px;
+	height: 305px;
+	background: #fff;
+}
+
+
+.check-box{
+	background: #f6faff;
+}
+.box-info{
+	width: 1000px;
+	margin: 0 auto;
+	padding: 15px 0;
+	overflow: hidden;
+}
+.check-text{
+	margin-left: 30px;
+	font-size: 32px;
+	margin-top: 25px;
+}
+.gray-text{
+	font-size: 16px;
+	color: #999;
+}
+.check-btn{
+	background: #fda22f;
+	width: 190px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #fff;
+	font-size: 26px;
+	border: none;
+	border-radius: 30px;
+	margin-top: 30px;
+}
+.check-list{
+	padding: 35px 20px;
+}
+.check-list ul{
+	overflow: hidden;
+}
+.check-list ul li{
+	float: left;
+	text-align: center;
+	margin-right: 15px;
+	margin-bottom: 50px;
+	width: 152px;
+}
+.check-list ul li:nth-child(7n){
+	margin-right: 0;
+}
+.interface-btn{
+	width: 100px;
+	height: 26px;
+	line-height: 26px;
+	border-radius: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	background: #25cb6c;
+	border: none;
+}
+.error-btn{
+	background: #dc2323;
+}
+.wait-btn{
+	background: #c7c7c7;
+}
+.list-text{
+	margin: 5px 0 8px;
+    font-size: 16px;
+}
+.rel-img{
+	width: 73px;
+	height: 73px;
+	margin: 0 auto;
+}
+.abs-img{
+	bottom: -4px;
+    right: -12px;
+}
+.chart-list{
+	overflow: hidden;
+	margin-bottom: 17px;
+}

@@ -1,0 +1,94 @@
+
+.wf-list-top{
+
+}
+
+.wf-tool-bar{
+
+}
+
+.wf-search-bar{
+
+}
+
+.wf-list-wrap{
+
+}
+
+.wf-crumb{
+	padding:10px;
+	font-size:12px;
+}
+
+// 工作流列表页头部
+.wf-list-top{
+	font-size: 12px;
+	background: #f8f8f8;
+	border-bottom: 1px solid #eee;
+
+}
+
+
+.wf-tool-bar{
+	// padding: 10px;
+	// background: #f8f8f8;
+	// border-bottom: 1px solid #eee;
+	.wf-form-item{
+		display: inline-block;
+	}
+	a{
+		text-decoration: none;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}
+
+.wf-search-bar{
+	font-size: 12px;
+	padding: 10px 10px 10px 5px;
+	text-align: left;
+	.wf-top-tool{
+		display: inline-block;
+		border-right: 1px solid #eee;
+		padding-right: 10px;
+	}
+
+	.wf-form-label{
+		font-size: 12px;
+		line-height: 24px;
+		margin-left: 5px;
+	}
+	.wf-search-super{
+		float:right;
+	}
+	.wf-form-text{
+		width: 150px;
+		padding: 2px 4px;
+		margin-right: 0;
+	}
+	.wf-form-date{
+		width: 120px;
+	}
+	.wf-form-gap{
+		margin: 0 5px 0 -5px;
+	}
+	select{
+		max-width: 200px;
+	}
+	input,select{
+		vertical-align: middle;
+	}
+	
+}
+
+.wf-list-wrap{
+	padding: 10px 0px 0 10px;
+	overflow-y: auto;
+}
+
+
+.wf-super-search{
+	padding: 10px 0 0 0;
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<title></title>
+	<link rel="stylesheet" href="screen.css" />
+	<link rel="stylesheet" href="usertree.css" />
+	<link rel="stylesheet" href="/Trueway-OA/assets-common/css/common.css" />
+	<script src="../jquery.min.js"></script>
+	</head>
+	<body>
+	<div id="main">   
+        <ul>
+		    <li><a href="#">所有部门</a><i class="tw-gear"></i></li>
+		</ul>
+	</div>
+    <div class="tw-usertree-wrap clearfix">
+	    <div class="tw-usertree-left">
+		    <div class="tw-usertree-group">
+			    <div class="tw-hd">
+				    <div class="tw-title">联系组</div>
+					<div class="tw-more">
+					    <i class="tw-icon-pencil"></i>
+					    <i class="tw-icon-plus-circle"></i>
+					</div>
+				</div>
+				<div class="tw-bd">
+				    <ul>
+					    <li><i class="tw-treeview"></i><a href="#">周报组</a><i class="tw-usertree-del tw-icon-trash"></i></li>
+					    <li><i class="tw-treeview"></i><a href="#">上海市委项目组</a><i class="tw-usertree-del tw-icon-trash"></i></li>
+					    <li><i class="tw-treeview"></i><a href="#">江苏省环保厅组</a><i class="tw-usertree-del tw-icon-trash"></i></li>
+					    <li><i class="tw-treeview"></i><a href="#">南通大学项目组</a><i class="tw-usertree-del tw-icon-trash"></i></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	    <div class="tw-usertree-right">
+		    <div class="tw-usertree-topbar">
+			    <b>分组名称：</b><input type="text" class="tw-form-text">    
+			</div>		
+		    <div class="tw-usertree-box">
+				<div class="tw-usertree-list">
+				    <div class="hd">选择联系人</div>
+                    <div class="bd">
+					    <div class="tw-usertree-search">
+						    <input type="text" class="tw-form-text">
+							<button type="button" id="searchButton" class="tw-btn-primary"><i class="tw-icon-search"></i>搜索</button>
+						</div>
+					</div>					
+				</div>
+				<div class="tw-usertree-select">
+				    <div class="tw-mod">
+					    <div class="tw-hd">已经添加到改组的联系人<span>(14人)</span><span class="fr">全部移除</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tw-search-bar tar">
+	    <div class="tw-top-tool">
+		    <div class="tw-btn-primary" style="cursor:pointer;">保存</div>
+		    <div class="tw-btn" style="cursor:pointer;">取消</div>
+		</div>
+	</div>
+<script type="text/javascript"> 
+  $(document).ready(function() { 
+    $(".tw-usertree-group .tw-bd ul li").hover(function() { 
+      $(this).addClass("gray");
+      $(this).find(".tw-usertree-del").show();	  
+    }, function() { 
+      $(this).removeClass("gray"); 
+	  $(".tw-usertree-group .tw-usertree-del").hide();
+    }); 
+  }); 
+</script>	
+    </body>
+</html>

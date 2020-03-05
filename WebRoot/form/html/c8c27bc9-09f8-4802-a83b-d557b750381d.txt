@@ -1,0 +1,1 @@
+[{"basicOS":"pc","company":"trueway","height":1448,"isShow":1,"page":0,"version":"","width":1024}]

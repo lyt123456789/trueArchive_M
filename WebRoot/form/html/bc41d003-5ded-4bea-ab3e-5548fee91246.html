@@ -1,0 +1,96 @@
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong> 任务流程</strong></p>
+<table width="819" class="infotan">
+<tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 任务名称：</td>
+	  	<td  class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" >
+		  <input type="text"  name="rwmc" zname="任务名称" style="width:200px"/>	  </td>
+	  <td  height="72" valign="middle" width="20%;" style="font-size:18px;" > 任务类型：</td>
+	  <td   class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" >  
+	  <select  name="rwlx" zname="任务类型" style="width:200px"/>	  </td>
+  </tr>
+  <tr>
+      <td  height="72" valign="middle" style="font-size:18px;" > 开始时间：</td>
+	  <td  class="tdcol docformTableNoBD" style="font-size:18px;" >
+	  <input  type="text"  zname="开始时间" name="kssj" style="width:200px" onclick="WdatePicker({dateFmt:'yyyy年MM月dd日'})" />  </td>
+	  <td  height="72" valign="middle" style="font-size:18px;" > 完成时间：</td>
+	  <td   class="tdcol docformTableNoBD" style="font-size:18px;">
+	  <input  type="text" zname="完成时间"  name="jssj" style="width:200px" onclick="WdatePicker({dateFmt:'yyyy年MM月dd日'})" />	  </td>
+  </tr>
+    <tr>
+    	<td  height="72" valign="middle" style="font-size:18px;" > 提醒类型：</td>
+        <td style="font-size:18px;" >
+		  <input    type="checkbox"  name="txlx"  zname="提醒类型"  value="在线消息"/>在线消息   
+	    <input    type="checkbox"  name="txlx"  zname="提醒类型" value="手机短信" />手机短信	</td>
+		<td  height="42" valign="middle" style="font-size:18px;" > 提醒内容：</td>
+        <td style="font-size:18px;" >
+		<input type="text"  zname="提醒内容" name="txnr"  style="width:200px" />		</td>
+    </tr>
+	
+	 <tr>
+    	<td  height="72" valign="middle" style="font-size:18px;" > 提醒类型：</td>
+        <td style="font-size:18px;" colspan="3" >
+	           <input  type="radio"  name="jjcd"  zname="紧急程度" value="普通" />普通
+			   <input  type="radio"  name="jjcd"  zname="紧急程度" value="较急"/>较急 
+			   <input  type="radio"  name="jjcd"  zname="紧急程度" value="紧急"/>紧急		</td>
+    </tr>
+	
+    <tr>
+    	<td  valign="middle" height="72" style="font-size:18px;" > 任务附件：</td>
+        <td colspan="3" style="font-size:18px;">
+        	<span id="zwshow"></span>
+             <input id="cebid" name="doc.cebid"  value="${doc.cebid}" />
+			<trueway:att zname="任务内容" onlineEditAble="true" id="${instanceId}zw" docguid="${instanceId}attzw" showId="zwshow" ismain="true"  downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="true" toStampAble="false" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss" />				</td>
+    </tr>
+    <tr>
+    	<td   valign="middle" height="160px" style="font-size:18px;" >任务内容：</td>
+        <td colspan="3" style="height:200px;font-size:18px;">
+		  <textarea zname="任务内容" name="rwnr" style="width:600px; height:185px"></textarea>        </td>
+    </tr>
+    <tr>
+    	<td   valign="middle" height="300" style="font-size:18px;" >任务完成情况：</td>
+        <td colspan="3" style="height:200px;font-size:18px;">	   	</td>
+    </tr>
+     </table>
+</div>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

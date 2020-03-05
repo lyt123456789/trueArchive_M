@@ -1,0 +1,17 @@
+1、确保工程导入如下9个jar包
+poi-3.9-20121203.jar
+poi-examples-3.9-20121203.jar
+poi-excelant-3.9-20121203.jar
+poi-ooxml-3.9-20121203.jar
+poi-ooxml-schemas-3.9-20121203.jar
+poi-scratchpad-3.9-20121203.jar
+dom4j-1.6.1.jar
+stax-api-1.0.1.jar
+xmlbeans-2.3.0.jar
+2、确保删除和上述导入jar包类似的冲突的jar包
+例如：
+geronimo-stax-api_1.0_spec-1.0.1.jar
+ooxml-schemas-1.0.jar
+openxml4j-bin-beta.jar
+xmlbeans-1.0.3.jar
+及其它低版本poi jar包

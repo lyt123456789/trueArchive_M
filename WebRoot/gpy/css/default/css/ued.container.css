@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+body{padding:5px;background:#fff;}
+.conten{background:#D5E8F6;width:1130px;}
+
+.yjlt{width:4px;height:4px;background:url(../images/con_lt.jpg); position:absolute;left:0;top:0; overflow:hidden;}
+.yjlb{width:4px;height:4px;background:url(../images/con_lb.jpg); position:absolute;left:0;bottom:0; overflow:hidden;}
+.yjrt{width:4px;height:4px;background:url(../images/con_rt.jpg); position:absolute;right:0;top:0; overflow:hidden;}
+.yjrb{width:4px;height:4px;background:url(../images/con_rb.jpg); position:absolute;right:0;bottom:0; overflow:hidden;}
+.bcon{background:#fff;height:250px;width:420px;} 
+.bcont{background:#fff;height:230px;width:550px;}
+.b_lt{width:10px;height:10px;background:url(../images/b_lt.jpg); position:absolute;left:0;top:0; overflow:hidden;}
+.b_lb{width:10px;height:10px;background:url(../images/b_lb.jpg); position:absolute;left:0;bottom:0; overflow:hidden;}
+.b_rt{width:10px;height:10px;background:url(../images/b_rt.jpg); position:absolute;right:0;top:0; overflow:hidden;}
+.b_rb{width:10px;height:10px;background:url(../images/b_rb.jpg); position:absolute;right:0;bottom:0; overflow:hidden;}
+
+
+
+.titio2 {
+    background: url(../images/io1.jpg) no-repeat scroll left center transparent;
+    color: #1E7DD6;
+   
+    font-weight: bolder;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+    padding-left: 40px;
+    overflow:hidden;*zoom:1;
+   
+}
+.titio{width:100px;height:28px;background:url(../images/io1.jpg) no-repeat left;padding-left:40px;margin-left:10px;margin-top:10px;color:#1E7DD6; font-weight:bolder;line-height:28px; display:inline;}
+.addyj{width:80px;height:16px;background:url(../images/io3.jpg) no-repeat left;padding-left:20px;margin-left:10px;margin-top:18px;line-height:16px;color:#757575;cursor:pointer;display:inline;}
+.re{width:80px;height:16px;background:url(../images/io4.jpg) no-repeat left;padding-left:20px;margin-left:10px;margin-top:18px;line-height:16px;color:#757575;cursor:pointer;display:inline;}
+.db{width:50px;height:16px;background:url(../images/io5.jpg) no-repeat left;padding-left:20px;margin-left:10px;margin-top:18px;line-height:16px;color:#757575;cursor:pointer;display:inline;}
+.yd{width:50px;height:16px;background:url(../images/io6.jpg) no-repeat left;padding-left:20px;margin-left:10px;margin-top:18px;line-height:16px;color:#757575;cursor:pointer;display:inline;}
+.hb{width:50px;height:16px;background:url(../images/io7.jpg) no-repeat left;padding-left:20px;margin-left:10px;margin-top:18px;line-height:16px;color:#757575;cursor:pointer;display:inline;}
+  
+.xx{width:400px; height:2px;border-bottom:1px solid #757575;margin-left:10px;;display:inline;}
+.xx2{width:530px; height:2px;border-bottom:1px solid #757575;margin-left:10px;;display:inline;}
+.box-con{margin-left:15px;width:400px;overflow:hidden;display:inline;;}
+.box-con2{margin-left:15px;width:520px;overflow:hidden;;display:inline;}
+
+.lx{width:38px;height:11px;background:url(../images/s.jpg) no-repeat; position:absolute;;display:inline;}
+
+.timebox{width:231px;height:251px;margin-left:10px; background:url(../images/time.jpg) no-repeat;;display:inline;}
+
+.lb{}
+.lb li{float:left;}
+.lb li.ico{width:25px;height:25px;background:url(../images/lb_ico.jpg) 5px 8px no-repeat;}
+.lb li.tit{width:300px;height:25px;line-height:25px;text-align:left;color:#333;overflow:hidden;}
+.lb li.tit a{color:#333;}
+.lb li.tit a:hover{color:#F60;}
+.lb li.time{width:70px;height:25px;line-height:25px;text-align:center;color:#333;}
+
+.lbs{}
+.lbs li{float:left;}
+.lbs li.ico{width:25px;height:25px;background:url(../images/lb_ico.jpg) 5px 8px no-repeat;}
+.lbs li.tit{width:410px;height:25px;line-height:25px;text-align:left;color:#333;overflow:hidden;}
+.lbs li.tit a{color:#333;}
+.lbs li.tit a:hover{color:#F60;}
+.lbs li.tits{width:170px;height:25px;line-height:25px;text-align:left;color:#333;overflow:hidden;color:#f00;text-align:left;}
+.lbs li.tits a{color:#f00;}
+.lbs li.tits a:hover{color:#f00;}
+.lbs li.time{width:70px;height:25px;line-height:25px;text-align:center;color:#333;}
+
+.lb-co{}
+.lb-co li{float:left;}
+.lb-co li.ico{width:25px;height:25px;background:url(../images/lb_ico.jpg) 5px 8px no-repeat;}
+.lb-co li.tit{width:420px;height:25px;line-height:25px;text-align:left;color:#333;overflow:hidden;}
+.lb-co li.tit a{color:#333;}
+.lb-co li.tit a:hover{color:#F60;}
+.lb-co li.time{width:70px;height:25px;line-height:25px;text-align:center;color:#333;}

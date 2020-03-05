@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin name="caseid" zhName="获取工单号" jar="caseid.jar"
+	class="cn.com.trueway.serverplugin.bjh.Bjh" returnMethod = "getBjh">
+
+	<server id="1" name="getBjh" zhName="获得工单号">
+		<inputFields>
+		</inputFields>
+		<outputFields>
+			<field name="bwdStr" zhName="返回工单号" type="varchar" length="50" />
+		</outputFields>
+	</server>
+
+</plugin>

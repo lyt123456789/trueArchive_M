@@ -1,0 +1,242 @@
+<html>
+<head>
+<title></title><style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+
+</style>	
+		
+<!--以下必须-->
+<script type="text/javascript" defer>
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+.infotan{width: 819px;margin:0 auto;border-collapse:collapse;align:center} 
+.infotan td{line-height:28px;border:1px #333 solid;text-align:center}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;}
+.infotan td textarea{width:100%;}
+.caption{
+	font-family:"方正小标宋_GBK";
+	font-size:38px;
+	font-weight:bold;
+}
+tr{
+	
+	font-family:"方正小标宋_GBK";
+	font-size:20px;
+	font-weight:bold;
+}
+.inputOne{
+	width:100%;
+	height:95%;
+}
+.inputTwo{
+	width:80%;
+	height:95%
+}
+</style>
+</HEAD>
+<body>
+	<div class="warp">	
+	<table class="infotan" align="center">
+		<caption class="caption">国投公司信息发布审批表</caption>
+		<tr>
+			<td style="width:190px;height:10px;border:0" ></td>
+			<td style="width:59px;border:0"></td>
+			<td style="width:190px;border:0"></td>
+			<td style="width:190px;border:0"></td>
+			<td style="width:190px;border:0"></td>			
+		</tr>
+		<tr>
+			<td style="height:60">登记号</td>
+			<td colspan="2">
+				<input  type="text" name="djh" zname="登记号" class="inputOne"/>
+			</td>
+			<td>登记日期</td>
+			<td>
+				<input type="text" name="djrq" zname="登记日期" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2" style="height:120">拟稿人</td>
+			<td rowspan="2" colspan="2">
+				<input type="text" name="ngr" zname="拟稿人" class="inputOne"/>
+			</td>
+			<td >部门/单位</td>
+			<td style="height:60">
+				<input type="text" name="bmdw" zname="部门单位" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:60">限办日期</td>
+			<td>
+				<input type="text" name="xbrq" zname="限办日期" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="6" style="height:300">信息材料具体内容</td>
+			<td height="50">序号</td>
+			<td colspan="2">信息名称</td>
+			<td>备注</td>
+		</tr>
+		<tr>
+			<td style="height:50">1</td>
+			<td colspan="2">
+				<input type="text" name="xxmcOne" zname="信息名称one" class="inputOne"/>
+			</td>
+			<td>
+				<input type="text" name="bzOne" zname="备注one" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:50">2</td>
+			<td colspan="2">
+				<input type="text" name="xxmcTwo" zname="信息名称Two" class="inputOne"/>
+			</td>
+			<td>
+				<input type="text" name="bzTwo" zname="备注Two" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:50">3</td>
+			<td colspan="2">
+				<input type="text" name="xxmcThree" zname="信息名称Three" class="inputOne"/>
+			</td>
+			<td>
+				<input type="text" name="bzThree" zname="备注Three" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:50">4</td>
+			<td colspan="2">
+				<input type="text" name="xxmcFour" zname="信息名称Four" class="inputOne"/>
+			</td>
+			<td>
+				<input type="text" name="bzFour" zname="备注Four" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:50">5</td>
+			<td colspan="2">
+				<input type="text" name="xxmcFive" zname="信息名称Five" class="inputOne"/>
+			</td>
+			<td>
+				<input type="text" name="bzFive" zname="备注Five" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:120">信息管理员</td>
+			<td colspan="4">
+				<input type="text" name="xxgly" zname="信息管理员" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:120">拟办意见</td>
+			<td colspan="4">
+				<input type="text" name="nbyj" zname="拟办意见" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:120">公司领导意见</td>
+			<td colspan="4">
+				<input type="text" name="gsldyj" zname="公司领导意见" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:120">办公室意见</td>
+			<td colspan="4">
+				<input type="text" name="bgsyj" zname="办公室意见" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:120">发布情况</td>
+			<td colspan="4">
+				<input type="text" name="fbqk" zname="发布情况" class="inputOne"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="height:120">备注</td>
+			<td colspan="4">
+				<input type="text" name="bzSix" zname="备注Six" class="inputOne"/>
+			</td>
+		</tr>
+	</table>
+
+<div style="display:none">
+	<span id="fjshow"></span>
+	<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

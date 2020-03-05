@@ -1,0 +1,29 @@
+<HTML>
+	<head>
+        <meta charset="UTF-8"/>
+        <script src="http://192.168.5.20:8080/trueWorkFlowV2.1_CCQ_GZ/dwz/style/js/jquery-1.7.1.min.js"></script>
+    </head>
+<body >
+<h1>test</h1>
+ <!-- <textarea rows="100" cols="100" id="data" name="data"></textarea> -->
+  <input type="button" value="测试" onclick="test()"/>
+<script language="javascript">
+function test(){
+		  $.ajax({
+			    url: 'http://192.168.5.20:8080/trueWorkFlowV2.1_CCQ_GZ/userGroup_getUserInfo.do',
+			    type: 'POST',
+			    timeout: 30000,
+			    error: function(o,e){
+			    },
+			    success: function(data){
+			    	alert(data);
+			    }
+			});
+}
+	
+</script>
+</body>
+</HTML>
+
+
+

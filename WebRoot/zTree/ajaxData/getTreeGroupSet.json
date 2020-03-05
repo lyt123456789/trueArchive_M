@@ -1,0 +1,13 @@
+[
+	{
+		"name":"所有部门",
+		"domId":"allOrg",
+		"searchOption":{
+			"domId":"mc",
+			"apiUrl":"departmentTree_getFullJsonTree.do"
+		},
+		"apiUrl":"departmentTree_getFullJsonTree.do",
+		"level":0,
+		"isCustomGroup":false
+	}
+]

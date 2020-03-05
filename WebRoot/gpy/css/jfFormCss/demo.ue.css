@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+body{padding:5px;}
+.ue_top{height:25px;line-height:25px; background:url(../images/ue_top.jpg) repeat-x;border:1px #99BBE8 solid;font-weight:bold;padding-left:10px;color:#15428B;}
+.ue_ancon{height:30px;line-height:30px; background:#EFEFEF;border-left:1px #99BBE8 solid;border-right:1px #99BBE8 solid;}
+.tabcon{border-left:1px #99BBE8 solid;border-right:1px #99BBE8 solid;}
+.ue_ancon a{margin-left:10px;padding-left:20px;display:block;height:30px;line-height:30px;float:left;}
+.ico_arr{background:url(../icons/edit_add.png) left center no-repeat;}
+.ico_del{background:url(../icons/edit_remove.png) left center no-repeat;}
+.ico_filesave{background:url(../icons/filesave.png) left center no-repeat;}
+.ico_pencil{background:url(../icons/pencil.png) left center no-repeat;}
+.obs{background:url(../icons/class.gif) left center no-repeat;}
+.obso{background:url(../icons/config.gif) left center no-repeat;font-weight:bold;}
+.ok{background:url(../icons/ok.png) left center no-repeat;}
+.no{background:url(../icons/back.png) left center no-repeat;}
+
+.bortop{border-top:1px #CCCCCC solid;}
+.borbottom{border-bottom:1px #CCCCCC solid;}
+.inpcx{width:50px;height:22px;line-height:22px; text-align:center;border:1px #cccccc solid; cursor:pointer;}
+.ue_table{border:1px #cccccc solid;border-left:0px;border-right:0px;}
+.ue_table thead th{height:22px;line-height:22px; text-align:center; background:url(../images/ue_th.jpg) repeat-x;border:1px #cccccc dotted;}
+.ue_table tbody td{height:22px;line-height:22px;border:1px #cccccc dotted;}
+.ue_lefttd{ background:#E4E9FF;}
+.ue_table3 thead th{height:30px;line-height:30px; text-align:center; background:#E4E9FF;border:1px #cccccc dotted;}
+.ue_table3 tbody td{height:30px;line-height:30px;border:1px #cccccc dotted;}
+.ue_table2 td{height:30px;line-height:30px;padding-left:10px;border:1px #cccccc dotted;}
+.tabtext{width:150px;height:20px;line-height:20px;border:1px #cccccc dotted;}
+.ue_page{height:30px;line-height:30px; background:#EFEFEF;border-left:1px #99BBE8 solid;border-right:1px #99BBE8 solid;border-bottom:1px #99BBE8 solid;}
+.tabtextcon{width:562px;height:200px;border:1px #cccccc dotted;}
+.bts{color:#f00;}
+.bts a{color:#f00;}
+.bts a:hover{color:#f00;}
+.jstext{width:40px;height:25px;border:0px;}
+.jstext2{height:25px;border:0px;border-bottom:1px #cccccc dotted;}
+.czjcon p{line-height:40px;font-size:14px;}

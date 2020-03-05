@@ -1,0 +1,57 @@
+.ticon_addDir{background-image:url(../images/icons/addDir.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_addrbook{background-image:url(../images/icons/addrbook.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_address{background-image:url(../images/icons/address.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_bigview{background-image:url(../images/icons/bigview.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_bmsche{background-image:url(../images/icons/bmsche.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_book{background-image:url(../images/icons/book.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_calender{background-image:url(../images/icons/calender.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_dail{background-image:url(../images/icons/dail.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_day{background-image:url(../images/icons/day.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_deleted{background-image:url(../images/icons/deleted.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_document{background-image:url(../images/icons/document.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_fm{background-image:url(../images/icons/fm.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_folders{background-image:url(../images/icons/folders.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_forum{background-image:url(../images/icons/forum.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_inbox{background-image:url(../images/icons/inbox.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_inmail{background-image:url(../images/icons/inmail.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_mail{background-image:url(../images/icons/mail.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_mans{background-image:url(../images/icons/mans.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_month{background-image:url(../images/icons/month.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_new{background-image:url(../images/icons/new.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_notes{background-image:url(../images/icons/notes.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_person{background-image:url(../images/icons/person.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_predoc{background-image:url(../images/icons/predoc.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_pro{background-image:url(../images/icons/pro.gif); background-repeat:no-repeat; background-position:center left;}
+.ticon_secpolicy{background-image:url(../images/icons/secpolicy.gif); background-repeat:no-repeat; background-position:center left;}
+
+.big-ico .ticon_addDir{background-image:url(../images/big-icons/addDir.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_addrbook{background-image:url(../images/big-icons/addrbook.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_address{background-image:url(../images/big-icons/address.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_bigview{background-image:url(../images/big-icons/bigview.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_bmsche{background-image:url(../images/big-icons/bmsche.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_book{background-image:url(../images/big-icons/book.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_calender{background-image:url(../images/big-icons/calender.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_dail{background-image:url(../images/big-icons/dail.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_day{background-image:url(../images/big-icons/day.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_deleted{background-image:url(../images/big-icons/deleted.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_document{background-image:url(../images/big-icons/document.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_fm{background-image:url(../images/big-icons/fm.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_folders{background-image:url(../images/big-icons/folders.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_forum{background-image:url(../images/big-icons/forum.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_inbox{background-image:url(../images/big-icons/inbox.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_inmail{background-image:url(../images/big-icons/inmail.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_mail{background-image:url(../images/big-icons/mail.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_mans{background-image:url(../images/big-icons/mans.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_month{background-image:url(../images/big-icons/month.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_new{background-image:url(../images/big-icons/new.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_notes{background-image:url(../images/big-icons/notes.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_person{background-image:url(../images/big-icons/person.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_predoc{background-image:url(../images/big-icons/predoc.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_pro{background-image:url(../images/big-icons/pro.png); background-repeat:no-repeat; background-position:center top;}
+.big-ico .ticon_secpolicy{background-image:url(../images/big-icons/secpolicy.png); background-repeat:no-repeat; background-position:center top;}
+
+.big-ico a{display:block; width:50%; text-align:center;margin:10px auto; border:1px dotted #F2F9FF;}
+.big-ico a img{margin:0 auto;}
+.big-ico a span{display:block;width:100%;padding:0px;}
+.big-ico a:hover{color:#c00; border:1px dotted #67B6F9;}
+#only_t li span{padding:0px;}

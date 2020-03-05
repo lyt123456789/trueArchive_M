@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="templates" extends="common-default">
+		<!-- 模板定义 -->
+		<action name="dataTemp_*" class="dataTempAction" method="{1}">
+			<result name="toDataTempJsp">/WEB-INF/pages/archives/templates/dataTemp/dataTempJsp.jsp</result>
+			<result name="toTempEditMainJsp">/WEB-INF/pages/archives/templates/dataTemp/tempEditMain.jsp</result>
+			<result name="toShowSJSTPage">/WEB-INF/pages/archives/templates/dataTemp/showSJSTPage.jsp</result>
+			<result name="toShowSJSTPage_edit">/WEB-INF/pages/archives/templates/dataTemp/showSJSTPage_edit.jsp</result>
+			<result name="toShowJGSTPage">/WEB-INF/pages/archives/templates/dataTemp/showJGSTPage.jsp</result>
+			<result name="toShowJGSTPage_field">/WEB-INF/pages/archives/templates/dataTemp/showJGSTPage_field.jsp</result>
+			<result name="toChooseStructurePage">/WEB-INF/pages/archives/templates/dataTemp/chooseStructurePage.jsp</result>
+			<result name="toQuoteStructurePage">/WEB-INF/pages/archives/templates/dataTemp/quoteStructurePage.jsp</result>
+			<result name="toCopyStructurePage">/WEB-INF/pages/archives/templates/dataTemp/copyStructurePage.jsp</result>
+			<result name="dampMatchMetaDataJsp">/WEB-INF/pages/archives/templates/dataTemp/dampMatchMetaData.jsp</result>
+			<result name="toShowZDXZJsp">/WEB-INF/pages/archives/templates/dataTemp/showZDXZPage.jsp</result>
+			<result name="toShowMCJsp">/WEB-INF/pages/archives/templates/dataTemp/showMCPage.jsp</result>
+			<result name="toShowPXJsp">/WEB-INF/pages/archives/templates/dataTemp/showPXPage.jsp</result>
+			<result name="toShowZDZJsp">/WEB-INF/pages/archives/templates/dataTemp/showZDZPage.jsp</result>
+			<result name="toShowDMZJsp">/WEB-INF/pages/archives/templates/dataTemp/showDMZPage.jsp</result>
+			<result name="toShowBLJsp">/WEB-INF/pages/archives/templates/dataTemp/showBLPage.jsp</result>
+			<result name="toShowZHZDJsp">/WEB-INF/pages/archives/templates/dataTemp/showZHZDPage.jsp</result>
+			<result name="toShowJDJsp">/WEB-INF/pages/archives/templates/dataTemp/showJDPage.jsp</result>
+			<result name="toShowMRZJsp">/WEB-INF/pages/archives/templates/dataTemp/showMRZPage.jsp</result>
+		</action>
+		<!-- 结构模板定义 -->
+		<action name="str_*" class="cn.com.trueway.archives.templates.action.StructureTempAction" method="{1}">
+		    <result name="toStrTemplateJsp">/WEB-INF/pages/archives/templates/structureTemp/strTemplate.jsp</result>
+		    <result name="structureTempAddJsp">/WEB-INF/pages/archives/templates/structureTemp/strTemplateAdd.jsp</result>
+		    <result name="structureTempEditJsp">/WEB-INF/pages/archives/templates/structureTemp/strTemplateEdit.jsp</result>
+		    <result name="setModelTagsMainJsp">/WEB-INF/pages/archives/templates/structureTemp/setModelTagsMain.jsp</result>
+		    <result name="setModelTagsEditJsp">/WEB-INF/pages/archives/templates/structureTemp/setModelTagsEdit.jsp</result>
+		    <result name="tempMatchMetaDataJsp">/WEB-INF/pages/archives/templates/structureTemp/tempMatchMetaData.jsp</result>
+		    <result name="matchOneMetaDataJsp">/WEB-INF/pages/archives/templates/structureTemp/nameSpaceAndMetaData.jsp</result>
+		</action>	
+		<!-- 业务管理 -->
+		<action name="bus_*" class="cn.com.trueway.archives.templates.action.BusinessManageAction" method="{1}">
+		    <result name="toBusinessManageJsp">/WEB-INF/pages/archives/templates/businessManage/businessManage.jsp</result>
+		    <result name="businessAddJsp">/WEB-INF/pages/archives/templates/businessManage/businessManageAdd.jsp</result>
+		    <result name="businessEditJsp">/WEB-INF/pages/archives/templates/businessManage/businessManageEdit.jsp</result>
+		</action>
+		
+		<!-- 命名空间管理 -->
+		<action name="met_*" class="cn.com.trueway.archives.templates.action.MetaDataAction" method="{1}">
+			<result name="toNameSpaceJsp">/WEB-INF/pages/archives/templates/nameSpace/nameSpace.jsp</result>
+			<result name="nameSpaceAddJsp">/WEB-INF/pages/archives/templates/nameSpace/nameSpaceAdd.jsp</result>
+			<result name="nameSpaceEditJsp">/WEB-INF/pages/archives/templates/nameSpace/nameSpaceEdit.jsp</result>
+			<result name="metaDataJsp">/WEB-INF/pages/archives/templates/nameSpace/showMetaData.jsp</result>
+			<result name="metaDataAddJsp">/WEB-INF/pages/archives/templates/nameSpace/metaDataAdd.jsp</result>
+			<result name="metaDataEditJsp">/WEB-INF/pages/archives/templates/nameSpace/metaDataEdit.jsp</result>
+			<result name="toMeDaPropertyJsp">/WEB-INF/pages/archives/templates/nameSpace/meDaProperty.jsp</result>
+			<result name="toMeDaPropertyAddJsp">/WEB-INF/pages/archives/templates/nameSpace/meDaPropertyAdd.jsp</result>
+			<result name="toMeDaPropertyEditJsp">/WEB-INF/pages/archives/templates/nameSpace/meDaPropertyEdit.jsp</result>
+		</action>
+		
+		<!-- 数据管理 -->
+		<action name="dataManage_*" class="dataManageAction" method="{1}">
+			<result name="toDataManagePortalPage">/WEB-INF/pages/archives/templates/dataManage/dataManagePortalPage.jsp</result>
+			<result name="toDataTreePage">/WEB-INF/pages/archives/templates/dataManage/dataTreePage.jsp</result>
+			<result name="toDataManageMainPage">/WEB-INF/pages/archives/templates/dataManage/dataManageMainPage.jsp</result>
+			<result name="toStructureDataPage">/WEB-INF/pages/archives/templates/dataManage/structureDataPage.jsp</result>
+		 	<result name="toAddStructureDataPage">/WEB-INF/pages/archives/templates/dataManage/addStructureDataPage.jsp</result>
+		 	<result name="toEditStructureDataPage">/WEB-INF/pages/archives/templates/dataManage/editStructureDataPage.jsp</result>
+		 	<result name="toShowZhcxPage">/WEB-INF/pages/archives/templates/dataManage/comprehensiveQuery.jsp</result>
+		    <result name="uploadDocumentPage">/WEB-INF/pages/archives/templates/dataManage/uploadDocumentPage.jsp</result>
+		</action>
+		<!-- 接收管理 -->
+		<action name="dataReception_*" class="dataReceptionAction" method="{1}">
+			<result name="toDataReceptionPortalPage">/WEB-INF/pages/archives/templates/dataReception/dataReceptionPortalPage.jsp</result>
+			<result name="toDataTreePage">/WEB-INF/pages/archives/templates/dataReception/dataTreePage.jsp</result>
+			<result name="toDataReceptionMainPage">/WEB-INF/pages/archives/templates/dataReception/dataReceptionMainPage.jsp</result>
+			<result name="toStructureDataPage">/WEB-INF/pages/archives/templates/dataReception/structureDataPage.jsp</result>
+		 	<result name="toAddStructureDataPage">/WEB-INF/pages/archives/templates/dataReception/addStructureDataPage.jsp</result>
+		 	<result name="toEditStructureDataPage">/WEB-INF/pages/archives/templates/dataReception/editStructureDataPage.jsp</result>
+		 	<result name="toShowZhcxPage">/WEB-INF/pages/archives/templates/dataReception/comprehensiveQuery.jsp</result>
+		    <result name="uploadDocumentPage">/WEB-INF/pages/archives/templates/dataReception/uploadDocumentPage.jsp</result>
+			<result name="importData">/WEB-INF/pages/archives/templates/dataReception/importData.jsp</result>
+			<result name="toImportDataTwo">/WEB-INF/pages/archives/templates/dataReception/importDataTwo.jsp</result>
+		</action>
+		
+		<!-- demo -->
+		<action name="demos_*" class="demosAction" method="{1}">
+			<result name="toDaxxdyJsp">/WEB-INF/pages/demo/档案信息订阅.jsp</result>
+			<result name="toDyxxckJsp">/WEB-INF/pages/demo/订阅信息查看.jsp</result>
+			<result name="toWdscJsp">/WEB-INF/pages/demo/我的收藏.jsp</result>
+			<result name="toHujblpzJsp">/WEB-INF/pages/demo/环境变量配置.jsp</result>
+			<result name="toTysjwjzhJsp">/WEB-INF/pages/demo/通用数据文件转换.jsp</result>
+			<result name="toLxsjzlgjzzJsp">/WEB-INF/pages/demo/离线数据著录工具制作.jsp</result>
+            <result name="toDajsJsp">/WEB-INF/pages/demo/档案接收.jsp</result>
+            
+            <result name="toYcglJsp">/WEB-INF/pages/demo/移出管理.jsp</result>
+            <result name="toJsglJsp">/WEB-INF/pages/demo/接收管理.jsp</result>
+            <result name="toYcjstjJsp">/WEB-INF/pages/demo/移出接收统计.jsp</result>
+            <result name="toJsyctzJsp">/WEB-INF/pages/demo/接收移出台账.jsp</result>
+            
+            <result name="toBgglJsp">/WEB-INF/pages/demo/保管管理.jsp</result>
+            <result name="toKufstdaglJsp">/WEB-INF/pages/demo/库房实体档案管理.jsp</result>
+            <result name="toKufgltzJsp">/WEB-INF/pages/demo/库房管理台账.jsp</result>
+            
+            <result name="toXiaohglJsp">/WEB-INF/pages/demo/销毁管理.jsp</result>
+            <result name="toDaxhtzJsp">/WEB-INF/pages/demo/档案销毁台账.jsp</result>
+            <result name="toHuakjdglJsp">/WEB-INF/pages/demo/划控鉴定管理.jsp</result>
+            <result name="toXiubglJsp">/WEB-INF/pages/demo/修裱管理.jsp</result>
+            
+            <result name="toGuanctjJsp">/WEB-INF/pages/demo/馆藏统计.jsp</result>
+            <result name="toNianbglJsp">/WEB-INF/pages/demo/年报管理.jsp</result>
+            <result name="toDangaszhJsp">/WEB-INF/pages/demo/档案数字化.jsp</result>
+            
+			<result name="toQuzglJsp">/WEB-INF/pages/demo/全宗管理.jsp</result>
+			<!-- <result name="toXinxfbglJsp">/WEB-INF/pages/demo/信息发布管理.jsp</result> -->
+			
+			<!-- <result name="toMingmkjglJsp">/WEB-INF/pages/demo/命名空间管理.jsp</result>
+			<result name="toYewglJsp">/WEB-INF/pages/demo/业务管理.jsp</result> -->
+			<result name="toBaobwhJsp">/WEB-INF/pages/demo/报表维护.jsp</result>
+			<result name="toQuanzqglJsp">/WEB-INF/pages/demo/全宗群管理.jsp</result>
+			
+			<result name="toZhywcxJsp">/WEB-INF/pages/demo/综合业务查询.jsp</result>
+			<result name="toGuanjccxJsp">/WEB-INF/pages/demo/关键词查询.jsp</result>
+			<result name="toDangabyglJsp">/WEB-INF/pages/demo/档案编研管理.jsp</result>
+			<result name="toChakbywdJsp">/WEB-INF/pages/demo/查看编研文档.jsp</result>
+			
+			<result name="toChayglJsp">/WEB-INF/pages/demo/查阅管理.jsp</result>
+			<result name="toJieyglJsp">/WEB-INF/pages/demo/借阅管理.jsp</result>
+			<result name="toJieymbszJsp">/WEB-INF/pages/demo/借阅模板设置.jsp</result>
+			<result name="toSuoykglJsp">/WEB-INF/pages/demo/索引库管理.jsp</result>
+			
+			<result name="toJighyhglJsp">/WEB-INF/pages/demo/机构和用户管理.jsp</result>
+			<result name="toJuesglJsp">/WEB-INF/pages/demo/角色管理.jsp</result>
+			<result name="toGonnsqJsp">/WEB-INF/pages/demo/功能授权.jsp</result>
+			<result name="toShujsqJsp">/WEB-INF/pages/demo/数据授权.jsp</result>
+			<result name="toChakyhqxJsp">/WEB-INF/pages/demo/查看用户权限.jsp</result>
+			<result name="toWenjfwqszJsp">/WEB-INF/pages/demo/文件服务器设置.jsp</result>
+			
+			<result name="toRizglJsp">/WEB-INF/pages/demo/日志管理.jsp</result>
+			
+		</action>
+		
+	</package>
+	
+</struts>

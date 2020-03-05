@@ -1,0 +1,222 @@
+<head>
+<title>表单元素说明</title>
+<link type="text/css" rel="stylesheet"  href="${ctx}/dwz/style/css/ued.base.css"  />
+<link type="text/css" rel="stylesheet" href="${ctx}/dwz/style/css/ued.demo.css"  />
+<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/base/jquery.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/sea.js"></script>  
+<script type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>  
+			
+<!--以下必须-->
+<script type="text/javascript" src="src/mapSelected.js" ></script>
+<script type="text/javascript" src="${ctx}/form/jsp/widgets/common/js/doublelist.js" ></script>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function trim(str){
+		return str.replace(/^\s*/,'').replace(/\s*$/,'');
+	}
+	//Ie生成时间
+	 function newDate(str){
+     		str = str.split("-");
+     		var date = new Date();
+     		date.setUTCFullYear(str[0],str[1]-1,str[2]);
+     		date.setUTCHours(0,0,0,0);
+     		return date;
+     	}
+     	
+		//获取申请时间内的可用车辆
+     	function getCanUseCar(){
+     		if(document.getElementById("applystartdate").value!="" && document.getElementById("applyenddate").value!=""){
+     			var  startDate =document.getElementById("applystartdate").value;
+    			var  backDate =document.getElementById("applyenddate").value;
+    			var  userid =document.getElementById("userId").value;
+    			var  dateStart = new Date(startDate);
+    			var  dateBack = new Date(backDate);
+				//Ie时间单独生成
+    			if(!-[1,]){
+    				dateStart = newDate(startDate);
+    				dateBack = newDate(backDate);
+    			}
+    			if(dateStart<=dateBack){
+		     		$.ajax({                    
+						type: "POST",                    
+						contentType: "application/json",               
+						url: "http://61.155.85.78:9488/functions/carmanage_getCanUseCar.do?startDate="+startDate+"&backDate="+backDate+"&userid="+userid+"&callback=?",  
+						dataType: 'json',          
+						success: function(result) { 
+							if(result!=''){
+								var carNumber = $("#carnumber");
+	                            //清空原先下拉框
+		                        RemoveOption();
+	
+		                        carNumber.append("<option value=''>--请选择申请车辆--</option>");
+		                        //解析获得的车辆列表
+		                        var data = eval(result);
+	
+		                        if(data.length<=0){
+		                        	alert("所选时间段内没有可申请的车辆");
+		                        }else{
+			                        $(data).each(function (key) {
+		
+			                            var carno = data[key].carno;
+			                            
+			                            AppendOption(carno, carno);
+			                         });
+		                        }
+				   				return false;
+							}else{
+				   				return false;
+							}
+						},
+						error:function(result){
+							alert("系统错误请重试!");
+						}
+	                
+					});
+    			}else{
+    				alert("申请开始时间必须小于申请结束时间");
+    			}
+     		}
+     	}
+
+     	 function RemoveOption() {
+             $("#carnumber option").remove();
+         }
+ 
+         function AppendOption(value, text) {
+            $("#carnumber").append("<option value='" + value + "'>"+ text + "</option>");
+        }
+</script>
+<!--以上必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.warp{width:595px;overflow:hidden;*zoom:1;}
+.infotan td{height:25px;line-height:25px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+table{border-collapse:collapse;border-spacing:0;}
+.infotan td textarea{width:430px;height:100px;}
+.infotan td select{width:120px;}
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>出车申请审批单</strong>
+</p>
+<table width="100%" class="infotan mt5">
+<tr>
+<input name="userId"  id="userId" value="${userId}"/>
+		<td width="20%" valign="top" class="bgs ls"><div align="center">申请开始时间：</div></td>
+		<td  class="tdcol">
+ 		<input name="applystartdate" type="text" id="applystartdate"  style="width:35%"     onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly zname="申请开始日期" onchange="getCanUseCar();" />
+		</td>
+</tr>
+<tr>
+		<td width="20%" valign="top" class="bgs ls"><div align="center">申请结束时间：</div></td>
+		<td  class="tdcol">
+ 		<input name="applyenddate" type="text" id="applyenddate"   style="width:35%"    onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})" readonly zname="申请结束日期" onchange="getCanUseCar();"/>
+		</td>
+</tr>
+  <tr>
+		<td width="20%" valign="top" class="bgs ls" ><div align="center">申请车牌号：</div></td>
+		<td class="tdcol">
+		<select id="carnumber" name="carnumber"  style="width:150px;height:30px" zname="申请车牌号"><option value="">--请选择申请车辆--</option>
+  	      </select></td>
+
+  </tr>
+
+	<tr>
+		<td width="20%" valign="top" class="bgs ls"><div align="center">申请原因：</div></td>
+		<td  class="tdcol" >
+		 <textarea name="applyreason" id="applyreason" style="width:96% ; height:100px" zname="申请原因" ></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td width="20%" valign="top" class="bgs ls" >  <div align="center">备注：</div></td>
+		<td  class="tdcol" >
+		<textarea name="applycomment" id="applycomment" style="width:96% ; height:100px" zname="备注" ></textarea>
+		</td>
+	</tr>
+        <tr>
+		<td width="20%" valign="top" class="bgs ls" ><div align="center">安排车辆：</div></td>
+		<td class="tdcol">
+		</td>
+
+        </tr>
+
+
+	
+</table>
+</div>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">
+<INPUT  id="plancarnumber" name="plancarnumber" value="">  
+</body>
+<script src="/trueWorkFlowV2.1_GT/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlowV2.1_GT/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

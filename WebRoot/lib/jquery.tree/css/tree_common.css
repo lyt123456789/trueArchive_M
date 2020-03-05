@@ -1,0 +1,362 @@
+.treeview, .treeview ul { 
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	
+}
+
+.treeview ul {
+	background-color:#F1EFF0 ;
+	margin-top: 4px;
+}
+ body {
+      font-family: Arial;
+       font-size: 12px;
+        color: #000;  
+       background-color:#F1EFF0; 
+       background-image:none;
+        over-flow-x:hidden; 
+     }
+.checked {
+       background-color:#D0DAF3;
+		/*font-weight: bold;*/
+      }
+a:link, a:visited {
+     color: #000000;
+      text-decoration: none;
+     
+      }
+         
+ a:hover, a:active {
+      color: #000000;
+      text-decoration: none;
+ }
+.treeview .hitarea {
+	background: url(../imgs/tree/treeview-default.gif) -64px -25px no-repeat;
+	height: 16px;
+	width: 16px;
+	margin-left: -16px;
+	float: left;
+	cursor: pointer;
+	
+}
+/* fix for IE6 */
+* html .hitarea {
+	display: inline;
+	float:none;
+}
+
+.treeview li { 
+	margin: 0;
+	padding: 3px 0pt 3px 16px;
+	
+}
+
+.treeview a.selected {
+	background-color: ;
+	
+}
+
+#treecontrol { margin: 1em 0; display: none; }
+
+.treeview .hover { color: #000; cursor: pointer; }
+.treeview li .hover{background-color:#D0DAF3 ;}
+
+.treeview li { background: url(../imgs/tree/treeview-default-line.gif) 0 0 no-repeat; }
+.treeview li.collapsable, .treeview li.expandable { background-position: 0 -176px; }
+
+.treeview .expandable-hitarea { background-position: -80px -3px; }
+
+.treeview li.last { background-position: 0 -1766px }
+.treeview li.lastCollapsable, .treeview li.lastExpandable { background-image: url(../imgs/tree/treeview-default.gif); }  
+.treeview li.lastCollapsable { background-position: 0 -111px }
+.treeview li.lastExpandable { background-position: -32px -67px }
+
+.treeview div.lastCollapsable-hitarea, .treeview div.lastExpandable-hitarea { background-position: 0; }
+
+.treeview-red li { background-image: url(../imgs/tree/treeview-red-line.gif); }
+.treeview-red .hitarea, .treeview-red li.lastCollapsable, .treeview-red li.lastExpandable { background-image: url(../imgs/tree/treeview-red.gif);  } 
+
+.treeview-black li { background-image: url(../imgs/tree/treeview-black-line.gif); }
+.treeview-black .hitarea, .treeview-black li.lastCollapsable, .treeview-black li.lastExpandable { background-image: url(../imgs/tree/treeview-black.gif); }  
+
+.treeview-gray li { background-image: url(../imgs/tree/treeview-gray-line.gif); }
+.treeview-gray .hitarea, .treeview-gray li.lastCollapsable, .treeview-gray li.lastExpandable { background-image: url(../imgs/tree/treeview-gray.gif); } 
+
+.treeview-famfamfam li { background-image: url(../imgs/tree/treeview-famfamfam-line.gif); }
+.treeview-famfamfam .hitarea, .treeview-famfamfam li.lastCollapsable, .treeview-famfamfam li.lastExpandable { background-image: url(../imgs/tree/treeview-famfamfam.gif); } 
+
+
+.ie .bbit-tree .bbit-tree-bwrap{
+    /*position:relative;
+    overflow:hidden;
+   */
+   background-color:#F1EFF0 ;
+}
+.bbit-tree ul,.bbit-tree li
+{
+    list-style-type:none;
+    margin:0px;
+    padding:0px;
+    
+}
+.bbit-tree-body
+{
+     font-size:12px;
+}
+.bbit-tree-icon, .bbit-tree-ec-icon, .bbit-tree-node-cb,.bbit-tree-elbow-line, .bbit-tree-elbow, .bbit-tree-elbow-end, .bbit-tree-elbow-plus, .bbit-tree-elbow-minus, .bbit-tree-elbow-end-plus, .bbit-tree-elbow-end-minus{
+	border: 0 none;
+	height: 18px;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	width: 16px;
+    background-repeat: no-repeat;
+}
+ .bbit-tree-node-cb
+ {
+     height:16px;
+ }
+.bbit-tree-node-collapsed .bbit-tree-node-icon, .bbit-tree-node-expanded .bbit-tree-node-icon, .bbit-tree-node-leaf .bbit-tree-node-icon{
+	border: 0 none;
+	height: 18px;
+	margin: 0;
+	padding: 0;
+	vertical-align: top;
+	width: 16px;
+	background-position:center;
+    background-repeat: no-repeat;
+}
+
+.ie .bbit-tree-node-indent img, .ie .bbit-tree-node-icon, .ie .bbit-tree-ec-icon {
+    vertical-align:middle !important;
+}
+
+.bbit-tree-noicon .bbit-tree-node-icon{
+	width:0; height:0;
+}
+
+/* No line styles */
+.bbit-tree-no-lines .bbit-tree-elbow{
+	background:transparent;
+}
+
+.bbit-tree-no-lines .bbit-tree-elbow-end{
+	background:transparent;
+}
+
+.bbit-tree-no-lines .bbit-tree-elbow-line{
+	background:transparent;
+}
+
+/* Arrows */
+.bbit-tree-arrows .bbit-tree-elbow{
+	background:transparent;
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-plus{
+    background:transparent no-repeat 0 0;
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-minus{
+    background:transparent no-repeat -16px 0;
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-end{
+	background:transparent;
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-end-plus{
+    background:transparent no-repeat 0 0;
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-end-minus{
+    background:transparent no-repeat -16px 0;
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-line{
+	background:transparent;
+}
+
+.bbit-tree-arrows .bbit-tree-ec-over .bbit-tree-elbow-plus{
+    background-position:-32px 0;
+}
+
+.bbit-tree-arrows .bbit-tree-ec-over .bbit-tree-elbow-minus{
+    background-position:-48px 0;
+}
+
+.bbit-tree-arrows .bbit-tree-ec-over .bbit-tree-elbow-end-plus{
+    background-position:-32px 0;
+}
+
+.bbit-tree-arrows .bbit-tree-ec-over .bbit-tree-elbow-end-minus{
+    background-position:-48px 0;
+}
+
+.bbit-tree-elbow-plus, .bbit-tree-elbow-minus, .bbit-tree-elbow-end-plus, .bbit-tree-elbow-end-minus{
+	cursor:pointer;
+}
+
+.ie ul.bbit-tree-node-ct{
+    font-size:0;
+    line-height:0;
+    zoom:1;
+}
+
+.bbit-tree-node{
+	white-space: nowrap;
+}
+
+.bbit-tree-node-el {
+    line-height:18px;
+    cursor:default;
+   /* cursor:pointer;*/
+}
+
+.bbit-tree-node a{
+	text-decoration:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+    -webkit-user-select:ignore;
+    -kthml-user-focus:normal;
+    -moz-user-focus:normal;
+    -moz-outline: 0 none;
+    outline:0 none;
+}
+
+.bbit-tree-node a span{
+	text-decoration:none;
+	padding:1px 3px 1px 2px;
+}
+
+.bbit-tree-node .bbit-tree-node-disabled .bbit-tree-node-icon{
+   -moz-opacity: 0.5;
+   opacity:.5;
+   filter: alpha(opacity=50);
+}
+
+.bbit-tree-node .bbit-tree-node-inline-icon{
+	background:transparent;
+}
+
+.bbit-tree-node a:hover{
+	text-decoration:none;
+}
+
+
+
+/* Fix for ie rootVisible:false issue */
+.bbit-tree-root {
+    zoom:1;
+}
+
+
+/****************************/
+.bbit-tree-node-expanded .bbit-tree-node-icon{
+	background-image:url(../imgs/tree/folder-open.png);
+}
+
+.bbit-tree-node-leaf .bbit-tree-node-icon{
+	background-image:url(../imgs/tree/leaf.gif);
+}
+
+.bbit-tree-node-collapsed .bbit-tree-node-icon{
+	background-image:url(../imgs/tree/folder.png);
+}
+
+.bbit-tree-node-loading .bbit-tree-node-icon{
+	background-image:url(../imgs/tree/loading.gif) !important;
+}
+
+.bbit-tree-node .bbit-tree-node-inline-icon {
+    background-image: none;
+}
+
+.bbit-tree-node-loading a span{
+	 font-style: italic;
+	 color:#444444;
+}
+
+.bbit-tree-lines .bbit-tree-elbow{
+	background-image:url(../imgs/tree/elbow.gif);
+}
+
+.bbit-tree-lines .bbit-tree-elbow-plus{
+	background-image:url(../imgs/tree/elbow-plus.gif);
+}
+
+.bbit-tree-lines .bbit-tree-elbow-minus{
+	background-image:url(../imgs/tree/elbow-minus.gif);
+}
+
+.bbit-tree-lines .bbit-tree-elbow-end{
+	background-image:url(../imgs/tree/elbow-end.gif);
+}
+
+.bbit-tree-lines .bbit-tree-elbow-end-plus{
+	background-image:url(../imgs/tree/elbow-end-plus.gif);
+}
+
+.bbit-tree-lines .bbit-tree-elbow-end-minus{
+	background-image:url(../imgs/tree/elbow-end-minus.gif);
+}
+
+.bbit-tree-lines .bbit-tree-elbow-line{
+	background-image:url(../imgs/tree/elbow-line.gif);
+}
+
+.bbit-tree-no-lines .bbit-tree-elbow-plus{
+	background-image:url(../imgs/tree/elbow-plus-nl.gif);
+}
+
+.bbit-tree-no-lines .bbit-tree-elbow-minus{
+	background-image:url(../imgs/tree/elbow-minus-nl.gif);
+}
+
+.bbit-tree-no-lines .bbit-tree-elbow-end-plus{
+	background-image:url(../imgs/tree/elbow-end-plus-nl.gif);
+}
+
+.bbit-tree-no-lines .bbit-tree-elbow-end-minus{
+	background-image:url(../imgs/tree/elbow-end-minus-nl.gif);
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-plus{
+    background-image:url(../imgs/tree/arrows.gif);
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-minus{
+    background-image:url(../imgs/tree/arrows.gif);
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-end-plus{
+    background-image:url(../imgs/tree/arrows.gif);
+}
+
+.bbit-tree-arrows .bbit-tree-elbow-end-minus{
+    background-image:url(../imgs/tree/arrows.gif);
+}
+
+.bbit-tree-node{
+	color:#000;
+	font: normal 11px arial, tahoma, helvetica, sans-serif;
+}
+
+.bbit-tree-node a{
+	color:#000;
+}
+.bbit-tree-node a span{
+	color:#000;
+}
+.bbit-tree-node .bbit-tree-node-disabled a span{
+	color:gray !important;
+}
+/*变色*/
+.bbit-tree-node .bbit-tree-node-over {
+	background-color: #D5DEF4;
+}
+
+.bbit-tree-node .bbit-tree-selected {
+	background-color: #D5DEF4;
+}

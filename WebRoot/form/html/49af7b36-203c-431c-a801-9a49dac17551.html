@@ -1,0 +1,163 @@
+<html>
+<head>
+<title>南通市规划局城市规划审查业务会登记审批单</title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:28px;line-height:28px;font-size:18px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>	
+		
+<!--以下必须-->
+<script type="text/javascript" defer>
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+.infotan td {
+	text-align:center;
+}
+.topinfotan td {
+	line-height: 30px;
+	text-align:left;
+        padding:5px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="warp">
+<center>
+     <table width="819" align="center" class="topinfotan" style="height:80px;">
+    <tr>
+    <td  colspan="3" align="center">
+        <p style="font-size:30px;line-height:35px;width:819;text-align:center;padding-top:30px;font-family:华文中宋;">南通市规划局城市规划审查业务会批量签发单</p>
+    </td>
+    </tr>
+    </table>
+
+</center>
+<table width="819" class="infotan" align="center" >
+		
+		<tr>
+			<td colspan="1"   valign="middle"  style="font-size:18px;line-height: 20px;height:52px;">
+				项目名称：
+			</td>
+			<td colspan="2"   valign="middle"  style="font-size:18px;line-height: 30px;height:300px;">
+				<textarea id="xmmc" name="xmmc" style="width: 95%;height:85%;" zname="项目名称" ></textarea>
+			</td>
+			
+		</tr>
+		<tr>
+			<td colspan="1"   valign="middle"  style="font-size:18px;line-height: 20px;height:52px;">
+				局长签发：
+			</td>
+			<td colspan="2"   valign="middle"  style="font-size:18px;line-height: 30px;height:200px;">
+				
+			</td>
+		</tr>
+		
+		<tr>
+			<td colspan="1" width="163px" rowspan="5"  valign="middle"  style="text-align: center;font-size:18px;line-height: 30px;border-style:none">
+				
+			</td>
+			<td colspan="2" width="650px"  valign="middle"  style="text-align: center;font-size:18px;line-height: 30px;border-style:none">
+			
+			</td>
+			
+			
+		</tr>
+   </table>
+<div style="display:none">
+				
+         <span id="fjshow"></span>
+			<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+			downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+<input type="hidden" id="keyword" name="keyword" value="空" />
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

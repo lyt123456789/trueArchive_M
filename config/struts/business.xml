@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="business" extends="common-default">
+		<action name="rec_*" class="cn.com.trueway.document.business.action.ReceiveDocAction" method="{1}">
+			<result name="tobeReceiveList">/WEB-INF/pages/document/business/receive/tobeReceiveList.jsp</result>
+			<result name="receivedDocList">/WEB-INF/pages/document/business/receive/receivedDocList.jsp</result>
+			<result name="receivedDocDetail">/WEB-INF/pages/document/business/receive/receivedDocDetail.jsp</result>
+			<result name="toImportDoc">/WEB-INF/pages/document/business/receive/importDoc.jsp</result>
+			<result name="toReceivedDocList4SW">/WEB-INF/pages/document/business/receive/toReceivedDocList4SW.jsp</result>
+			<result name="receivedDocList4SW">/WEB-INF/pages/document/business/receive/receivedDocList4SW.jsp</result>
+			<result name="receivedDocListShow">/WEB-INF/pages/document/business/receive/receivedDocListShow.jsp</result>
+			<result name="receivedDocDetailShow">/WEB-INF/pages/document/business/receive/receivedDocDetailShow.jsp</result>
+		</action>
+		<action name="freeSet_*" class="cn.com.trueway.document.business.action.FreeSetAction" method="{1}">
+			<result name="freeSet">/WEB-INF/pages/document/business/freeSet/freeSet.jsp</result>
+			<result name="itemLeft">/WEB-INF/pages/document/business/freeSet/itemLeft.jsp</result>
+			<result name="tableMiddle">/WEB-INF/pages/document/business/freeSet/tableMiddle.jsp</result>
+			<result name="fieldRight">/WEB-INF/pages/document/business/freeSet/fieldRight.jsp</result>
+			<result name="sqlBottom">/WEB-INF/pages/document/business/freeSet/sqlBottom.jsp</result>
+			<result name="freeView">/WEB-INF/pages/document/business/freeSet/freeView.jsp</result>
+		</action>
+		<action name="send_*" class="cn.com.trueway.document.business.action.SendDocAction" method="{1}">
+			<result name="directSendDoc">/WEB-INF/pages/document/business/send/directSendDoc.jsp</result>
+			<result name="sentDocListJsp">/WEB-INF/pages/document/business/send/sentDocList.jsp</result>
+			<result name="sentDocDetailJsp">/WEB-INF/pages/document/business/send/sentDocDetail.jsp</result>
+			<result name="sendInProgress">/WEB-INF/pages/document/business/send/sendInProgress.jsp</result>
+			<result name="sendwd">/WEB-INF/pages/document/business/send/sendwd.jsp</result>
+			<result name="sentDocList4Myself">/WEB-INF/pages/document/business/send/sentDocList4Myself.jsp</result>
+		</action>
+		<action name="selectTree_*" class="cn.com.trueway.document.business.action.SelectTreeAction" method="{1}">
+			<result name="showDepartment">/WEB-INF/pages/document/business/selectTree/selectDepartment.jsp</result>
+			<result name="showDepartment4Statistics">/WEB-INF/pages/document/business/selectTree/selectDepartment4Statistics.jsp</result>
+			<result name="showTemplateDepTreeJsp">/WEB-INF/pages/document/business/selectTree/showTemplateDepTree.jsp</result>
+			<result name="selectEmployeeForStep">/WEB-INF/pages/document/business/selectTree/selectEmployeeForStep.jsp</result>
+			<result name="selectEmployeeForSend">/WEB-INF/pages/document/business/selectTree/selectEmployeeForSend.jsp</result>
+			<result name="selectEmployeeForAttention">/WEB-INF/pages/document/business/selectTree/selectEmployeeForAttention.jsp</result>
+			<result name="showGroup">/WEB-INF/pages/document/business/selectTree/showGroup.jsp</result>
+			<result name="showEmpGroup">/WEB-INF/pages/document/business/selectTree/showEmpGroup.jsp</result>
+			<result name="saveGroup">/WEB-INF/pages/document/business/selectTree/saveGroup.jsp</result>
+			<result name="saveEmpGroup">/WEB-INF/pages/document/business/selectTree/saveEmpGroup.jsp</result>
+			<result name="showEmpTree">/WEB-INF/pages/document/business/selectTree/showEmpTree.jsp</result>
+			<result name="showDeptTree">/WEB-INF/pages/document/business/selectTree/showDeptTree.jsp</result>
+			<result name="relationset">/WEB-INF/pages/document/business/selectTree/relationset.jsp</result>
+			<result name="chooseRebacker">/WEB-INF/pages/document/business/selectTree/chooseRebacker.jsp</result>
+			<result name="showReceiveDepts">/WEB-INF/pages/document/business/selectTree/receiveDepts.jsp</result>
+			<result name="setDeptGroup">/WEB-INF/pages/document/business/selectTree/setDeptGroup.jsp</result>
+		</action>
+		
+		<action name="fieldMatching_*" class="fieldMatchingAction" method="{1}">
+			<result name="fieldItemList">/WEB-INF/pages/document/business/fieldmaching/fieldItemList.jsp</result>
+			<result name="fieldMatching">/WEB-INF/pages/document/business/fieldmaching/fieldMatching.jsp</result>
+		</action>
+		
+		<action name="toRecDoc_*" class="toRecDocAction" method="{1}">
+			<result name="toRecDocList">/WEB-INF/pages/document/business/toRecDoc/toRecDocList.jsp</result>
+			<result name="toRecedDocList">/WEB-INF/pages/document/business/toRecDoc/toRecedDocList.jsp</result>
+			<result name="toSendDocList">/WEB-INF/pages/document/business/toRecDoc/toSendDocList.jsp</result>
+			<result name="recDepList">/WEB-INF/pages/document/business/toRecDoc/recDepList.jsp</result>
+			<result name="toRecDocInfo">/WEB-INF/pages/document/business/toRecDoc/toRecDocInfo.jsp</result>
+		</action>
+		
+	</package>
+</struts>

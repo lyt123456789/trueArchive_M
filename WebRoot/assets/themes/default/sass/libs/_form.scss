@@ -1,0 +1,205 @@
+/*
+*@module: form
+*@Author: juhailin 2015-11-11
+*@Update: 
+*/
+
+//变量
+//---------------------------------
+$formItemMargin:           10px !default; //上下元素的间距
+$formLabelWidth:           100px !default; //当label和元素同行时，label的宽度
+$formTextWidth:            200px !default; //输入框的宽度
+$formTextarea:             500px 80px !default; //文本域宽度和高度
+$formEleHeight:            28px !default; //输入框的高度，label的高度，选择框的高度...
+$formInlineMargin:         10px !default; //相邻同行元素的间距
+$formUploadBgColor:        $primary !default; //upload按钮默认背景颜色
+$formRadius:               3px !default; //圆角大小，默认0将不会产生圆角
+
+
+
+// mixin
+//---------------------------------
+// radio & checkbox 的重置
+@mixin reset-radio-checkbox{
+	margin:0 5px 0 0;
+	padding:0;
+	font-size:13px;	
+}
+// 默认的样式mixin定义
+// 定义了border，padding及圆角
+@mixin ele-border($borderColor:$gray, $radius:$formRadius){
+	border: 1px solid #d0d0d0;
+	padding:3px 4px;
+	border-radius: $formRadius;
+	vertical-align: middle;
+}
+
+
+
+
+// 基本元素
+//---------------------------------
+.#{$baseClass}form-label{
+	font-size:12px;
+	line-height:$formEleHeight;
+}
+.#{$baseClass}form-text{
+	vertical-align:middle;
+	width:$formTextWidth;
+	height:$formEleHeight - 10px;//padding:4px;border-width:1px;
+}
+.#{$baseClass}form-textarea{
+	resize:none;
+	vertical-align:top;
+	overflow:auto;
+	width:nth($formTextarea,1);
+	height:nth($formTextarea,2);
+}
+.#{$baseClass}form-text, 
+.#{$baseClass}form-textarea, 
+.#{$baseClass}form-select{
+	@include ele-border;
+}
+.#{$baseClass}form-text:focus, 
+.#{$baseClass}form-textarea:focus, 
+.#{$baseClass}form-select:focus{
+	outline: 0 none;
+}
+
+
+.#{$baseClass}form-select{
+    // via Foundation
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important; // since Firefox 31 ?
+    padding: 3px 4px 2px;
+    padding-right: 20px;
+    background: #fff url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+') no-repeat 100% center;
+    &[multiple="multiple"] {
+      	background-image: none;
+    }
+    max-width: 200px;
+}
+
+
+// checkbox & radio
+// rc中的r表示radio，c表示checkbox
+.#{$baseClass}form-radio, 
+.#{$baseClass}form-checkbox{
+	@include reset-radio-checkbox;	
+}
+// rc's wrap
+.#{$baseClass}form-field-rc{
+	@extend %clearfix;
+}
+// rc inline
+.#{$baseClass}form-label-rc{
+    display: inline;
+    float: left;
+    font-size: 12px;
+    margin-right:$formInlineMargin;
+	line-height:$formEleHeight - 10px;// input height
+
+	.#{$baseClass}form-radio,
+	.#{$baseClass}form-checkbox,
+	span{
+		@include float;
+		line-height:$formEleHeight - 10px;// input height
+	}
+	.#{$baseClass}form-radio,
+	.#{$baseClass}form-checkbox{
+		margin-top:($formEleHeight - 10px - 13px) / 2;
+	}
+}
+
+
+.#{$baseClass}form-horizontal{
+	.#{$baseClass}form-label{
+		@include float;
+	    text-align: right;
+		width:$formLabelWidth;
+	}
+	.#{$baseClass}form-field, 
+	.#{$baseClass}action-left{
+		margin-left: $formLabelWidth + 10px;
+	}
+	.#{$baseClass}form-field-rc{
+	    margin-top:5px;
+	}
+}
+
+.#{$baseClass}form{
+	font-size: 12px;
+	margin-bottom: $formItemMargin;
+	fieldset {
+	  padding: 0;
+	  margin: 0;
+	  border: 0;
+	}
+	legend {
+	  display: block;
+	  width: 100%;
+	  padding: 0;
+	  margin-bottom: $formItemMargin;
+	  font-size: $baseFontSize * 1.5;
+	  line-height: $baseLineHeight * 2;
+	  color: $grayDark;
+	  border: 0;
+	  border-bottom: 1px solid #e5e5e5;
+	}
+	.#{$baseClass}form-item{
+		margin-bottom:$formItemMargin;
+		clear: both;
+		@extend %clearfix;
+	}
+	
+	//提交操作按钮
+	.#{$baseClass}form-action{
+		clear:both;
+		text-align: center;
+	}
+	.#{$baseClass}action-left{
+		text-align: left;
+	}
+}
+
+
+
+.#{$baseClass}search-bar,
+.#{$baseClass}form-inline{
+	.#{$baseClass}form-label{
+		@extend %ib;
+		vertical-align: middle;
+	}
+	.#{$baseClass}form-label-rc{
+		float: none;
+		@extend %ib;
+		vertical-align: middle;
+	}
+	.#{$baseClass}form-text,
+	.#{$baseClass}form-select,
+	.#{$baseClass}form-label-rc{
+		margin-right: $formInlineMargin;
+	}
+} 
+
+
+
+.wf-form-date{
+	width: 130px!important;
+}
+
+.wf-input-datepick{
+	position: relative;
+
+	@include ib;
+	.wf-form-readonly{
+		// background-color: #fff!important;
+	}
+	.wf-icon-calendar{
+		position: absolute;
+		right: 7px;
+		top: 7px;
+	}
+}
+
+

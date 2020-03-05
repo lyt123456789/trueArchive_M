@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+/** tips **/
+.mice-tips{position:absolute; z-index:999; max-width:300px !important;}
+.mice-tips .mice-top,.mice-tips .mice-bottom{position:relative; overflow:hidden; height:6px; width:100%;}
+.mice-tips .mice-top span,.mice-tips .mice-bottom span{background-image:url(images/tips/round.png); display:block; height:6px;}
+.mice-tips .mice-top .l,.mice-tips .mice-top .r,.mice-tips .mice-bottom .l,.mice-tips .mice-bottom .r{position:absolute; top:0; z-index:99; width:6px; height:6px;}
+.mice-tips .mice-top .l{left:0px; background-position:0 0; background-repeat:no-repeat;}
+.mice-tips .mice-top .r{right:0px; background-position:-9px 0; background-repeat:no-repeat;}
+.mice-tips .mice-top .c,.mice-tips .mice-bottom .c{background-image:url(images/tips/roundbg.png); margin:0 6px;}
+.mice-tips .mice-bottom .l{left:0px; background-position:0 -9px; background-repeat:no-repeat;}
+.mice-tips .mice-bottom .r{right:0px; background-position:-9px -9px; background-repeat:no-repeat;}
+.mice-tips .mice-content{padding:0 6px; background-image:url(images/tips/roundbg.png); line-height:1.5em;}
+.mice-tips .mice-content div{color:#FFF; letter-spacing:0.1em; display:inline-table;}
+.mice-arror-icon{position:absolute; z-index:999; background:url(images/tips/arror.png) no-repeat 0 0; width:8px; height:8px; display:block;}
+.mice-arror-icon-lb{ top:8px; left:-8px;}
+.mice-arror-icon-rb{left:100%; background-position:-8px 0;}
+.mice-arror-icon-l{top:8px; left:-8px; background-position:0 0;}
+.mice-arror-icon-r{left:100%; right:-8px; top:8px; background-position:-8px 0;}
+.mice-arror-icon-t{left:8px; top:-8px; background-position:0 -8px;}
+.mice-arror-icon-b{left:8px; bottom:-8px; background-position:-8px -8px;}
+
+
+/** calendar **/
+.calendar .title{background:url(images/calendar/title.gif) no-repeat; height:40px; margin-top:5px;}
+.calendar table{width:100%;}
+.calendar td{text-align:center; vertical-align:middle;}
+.calendar .date{color:#FFF; height:34px; background:url(images/calendar/calendar_bg.jpg) repeat-x 0 0;}
+.calendar .datemap{border:1px solid #E5E5E5;}
+.calendar .datemap thead{height:20px;color:#999999;}
+.calendar .days td{border:1px solid #E5E5E5; height:45px; color:#8E8E8E; cursor:pointer;}
+.calendar .nextcalendar{background:url(images/calendar/calendar_next.jpg) no-repeat; width:24px; cursor:pointer;}
+.calendar .nextcalendar_over{background:url(images/calendar/calendar_next_over.jpg) no-repeat; width:24px; cursor:pointer;}
+.calendar .precalendar{background:url(images/calendar/calendar_prev.jpg) no-repeat; width:24px; cursor:pointer;}
+.calendar .precalendar_over{background:url(images/calendar/calendar_prev_over.jpg) no-repeat; width:24px; cursor:pointer;}
+.calendar .week{height:20px;}
+.calendar td.today{background:url(images/calendar/grid_today.png) no-repeat center; background-color:#F5F7F9;}
+.calendar td.selected{background-color:#EDEDED; color:#2F2F2F;}
+.calendar td.work{background:url(images/calendar/work.gif) no-repeat 2px 2px;}
+.calendar td.rest{background:url(images/calendar/rest.gif) no-repeat 2px 2px;}
+
+.calendar .agenda{background:url(images/calendar/schedule.gif) no-repeat; height:34px; text-indent:-100%; overflow:hidden; display:block; margin-top:5px;}
+.calendar .agendalist{background-color:#FFFDF2; border:1px solid #E6A981; height:200px; min-height:200px;}
+.calendar .agendalist li{ line-height:26px; background: url(images/calendar/agendalist-ico.gif) no-repeat 5px 6px; padding-left:26px; margin:0 5px; border-bottom:1px dashed #C88A6A;}
+

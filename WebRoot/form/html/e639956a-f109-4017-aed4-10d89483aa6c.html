@@ -1,0 +1,182 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<link type="text/css" rel="stylesheet"  href="${ctx}/dwz/style/css/ued.base.css"  />
+<link type="text/css" rel="stylesheet" href="${ctx}/dwz/style/css/ued.demo.css"  />
+<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/base/jquery.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/sea.js"></script>  
+<script type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>  
+			
+<!--以下必须-->
+<script type="text/javascript" src="src/mapSelected.js" ></script>
+<script type="text/javascript" src="${ctx}/form/jsp/widgets/common/js/doublelist.js" ></script>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.warp{width:820px;overflow:hidden;*zoom:1;}
+.infotan td{height:25px;line-height:25px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+table{border-collapse:collapse;border-spacing:0;}
+.infotan td textarea{width:600px;height:180px;}
+.infotan td select{width:120px;}
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>南通市国土资源局文书批办单</strong>
+</p>
+<p style="font-size:15px;padding-top:5px;padding-bottom:5px;text-align:right;">
+收文号：<input style="border:0px;border-bottom:1px #cccccc dotted;line-height:22px;" type="text" id="swh" name="swh" zname="收文号" value=""/>
+</p>
+<table width="819" class="infotan">
+	<tr>
+      <td width="25%" class="bgs ls">来文单位：</td>
+	  <td width="25%" class="tdcol docformTableNoBD"><select id="lwdw" name="lwdw" zname="来文单位"></select></td>
+	  <td width="25%" class="bgs ls">收文时间：</td>
+	  <td width="25%" class="tdcol docformTableNoBD"><input type="text" id="receivetime" name="receivetime" zname="收文时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/></td>
+  </tr>
+  <tr>
+      <td   class="bgs ls">文号：</td>
+	  <td  class="tdcol docformTableNoBD">
+	  <input type="text" id="wh" name="wh" zname="文号"/>
+	  </td>
+	  <td   class="bgs ls">成文时间：</td>
+	  <td   class="tdcol docformTableNoBD">
+             <input type="text" id="generatetime" name="generatetime" zname="成文时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/></td>
+  </tr>
+    <tr>
+    	<td   class="bgs ls">标题：</td>
+        <td >
+				  <input type="text" id="title" name="title" zname="标题"/>
+		</td>
+		<td   class="bgs ls">紧急程度：</td>
+        <td>
+				  <select  id="jjcd" name="jjcd" zname="紧急程度"></select>
+		</td>
+    </tr>
+	<tr>
+    	<td   class="bgs ls">测试：</td>
+        <td colspan="3"><div class="love">
+				  <input type="checkbox" id="love" name="love" value="体育" zname="测试"/>体育
+				   <input type="checkbox" id="love" name="love" value="美术" zname="测试"/>美术
+				    <input type="checkbox" id="love" name="love" value="钢琴" zname="测试"/>钢琴</div>
+		</td>
+    </tr>
+    <tr>
+    	<td   class="bgs ls">拟办意见：</td>
+        <td colspan="3">
+        <div class="cbo" style="height:100px;">
+        	<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}nbyj" instanceId="${instanceId}nbyj" currentStepId="${processId}" isSatisfied="false" zname="拟办意见"/>
+		</div>
+        </td>
+    </tr>
+    <tr>
+    	<td   class="bgs ls">领导批示：</td>
+        <td colspan="3">
+        <div class="cbo" style="height:100px;">
+        	<trueway:comment typeinAble="true" deleteAbled="true" id="${instanceId}ldps" instanceId="${instanceId}ldps" currentStepId="${instanceId}ldps" isSatisfied="false" zname="领导批示"/>
+		</div>
+        </td>
+    </tr>
+    <tr>
+    	<td   class="bgs ls">承办情况：</td>
+        <td colspan="3">
+        <div class="cbo" style="height:190px;">
+        		<textarea id="cbqk" name="cbqk"></textarea>
+                 </div>
+		</td>
+    </tr>
+    <tr>
+    	<td   class="bgs ls">办理结果：</td>
+        <td colspan="3">
+        <div class="cbo" style="height:190px;">
+        		<textarea id="bljg" name="bljg"></textarea>
+                 </div>
+		</td>
+    </tr>
+    <tr>
+    	<td   class="bgs ls">备注：</td>
+        <td colspan="3">
+        <div class="cbo" style="height:190px;">
+               <textarea id="bz" name="bz"></textarea>
+         </div>
+		</td>
+    </tr>
+</table>
+</div>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">  
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

@@ -1,0 +1,20 @@
+.table-con1 td{height:33px;line-height:33px;border:1px solid #6DC9FA;font-size:12px;}
+.table-con1 td.td1{background:url(../images/dis-table-tittd.jpg) repeat-x;text-align:center; font-weight:bolder; color:#000;line-height:33px;}
+.table-con1 td.td2{line-height:33px;color:#000;}
+.table-con1 td.td3{height:150px;;color:#000;}
+.table-con1 td.tdtit{background:url(../images/tdtit.jpg) bottom repeat-x;}
+
+.bread-box{background:url(../images/86.bread_03.gif) repeat-x; border:1px solid #BCBCBC;}
+.bread{background:url(../images/blue_breadico.gif) no-repeat center left;/**need edit images **/ line-height:32px; padding-left:35px;}
+.flowerline{background:url(../images/86.table_04.gif) repeat-x center left; height:30px; display:block;}
+.pagecontextBox{background:#fff;padding-top:8px; border:1px solid #CCCCCC;}
+.pagecontext{background:url(../images/86.bg_10.gif) repeat-x bottom left; padding:0 5px 5px;}
+
+.btn{background: url("../images/pb.gif") repeat-x center;
+	border: 1px solid #A2D3FB;
+	padding:0 5px;
+	height: 22px;
+	_line-height:20px;
+	cursor: pointer;
+	color:#333;
+	}

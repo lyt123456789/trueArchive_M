@@ -1,0 +1,284 @@
+<head>
+<title>发文单</title>
+	<link href="${ctx}/dwz/style/css/ued.base.css" rel="stylesheet" type="text/css" />
+	<link href="${ctx}/dwz/style/css/ued.demo.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+    <link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+	<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+    <script src="${ctx}/widgets/plugin/js/base/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+	<script src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" type="text/javascript"></script>
+	<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+	<script src="${ctx}/widgets/plugin/js/sea.js"></script>  
+	<script language="javascript" type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>
+	<script type="text/javascript">
+	      //获得信息
+	    	//demo _getValue(obj,['id','name','parentid'],'|')
+	    	function _getValue(obj,fields,splitstr){
+	    		var result=[],str='';
+	    		for(n in obj){
+	    			var o=obj[n];
+	    			var children=o.children;
+	    			if(children==null){
+	    				str="";
+	    				var i=0,l=fields.length;
+	    				for(i;i<l;i++){
+	    					if(str!=''&&l>1){
+	    						str+=splitstr;
+	    					}
+	    					str+=o[fields[i]];
+	    				}
+	    				result.push(str);
+	    			}
+	    		}
+	    		return result; //Array
+	    	}
+	       	var mainSender={},subSender={};
+	       	var mainNum=5,subNum=5;
+	       	//主送选择	
+	    	function selectSupman(fWidth, fHeight){
+	    		var obj ={};
+	    		obj.dep=mainSender;
+	    		obj.num=mainNum; 
+	    		var retVal = window.showModalDialog('${ctx}/selectTree_showDepartment.do?t='+new Date().getTime(), obj, 
+	    			'dialogWidth: '+fWidth+'px;dialogHeight: '+fHeight+'px; status: no; scrollbars: no; Resizable: no; help: no;');
+				if (retVal == null)
+	    				return;
+	    			mainSender=retVal.src; //Object
+	    			mainNum=retVal.num; //String
+	    			$("#xto").val(_getValue(retVal.src,['name','id','nums','gzname'],'|').join(';'));
+	    			$("#xtoname").val(_getValue(retVal.src,['name'],'|').join(';'));
+	    			//alert( document.getElementById("xto").value);
+	    	}
+
+	    	//抄送选择
+	    	function selectSubman(fWidth, fHeight){
+	    		var obj ={};
+	    		obj.dep=subSender;
+	    		obj.num=subNum;
+	    		var retVal = window.showModalDialog('${ctx}/selectTree_showDepartment.do?t='+new Date().getTime(), obj, 
+	    			'dialogWidth: '+fWidth+'px;dialogHeight: '+fHeight+'px; status: no; scrollbars: no; Resizable: no; help: no;');
+	    			if (retVal == null)
+	    				return;
+	    			subSender=retVal.src; //Object
+	    			subNum=retVal.num; //String
+	    			$("#xcc").val(_getValue(retVal.src,['name','id','nums','gzname'],'|').join(';'));
+	    			$("#xccname").val(_getValue(retVal.src,['name'],'|').join(';'));
+	    	}
+        </script>
+<!--以下必须-->
+	<script src="${ctx}/form/jsp/widgets/common/js/doublelist.js" type="text/javascript"></script>
+	<script type="text/javascript" defer="defer">
+	window.onload=function(){
+		var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+		var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+		var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+		var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+		var instanceId = '${instanceId}';
+		if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+		if(instanceId.length==13){registerTag();}//注册标签选中效果
+	};
+</script>
+<!--以上必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 5px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+sup {
+	vertical-align: text-top;
+}
+
+sub {
+	vertical-align: text-bottom;
+}
+
+legend {
+	color: #000;
+}
+legend{float:left;margin-bottom:5px;margin-top:5px;background:#F1F5F6;height:25px; line-height:25px; text-align: center; padding-left:10px; padding-right:10px; border:#B8D0D6 1px solid;}
+fieldset,img {
+	border: 0;
+}
+
+img {
+	vertical-align: middle;
+}
+
+button,input,select,textarea {
+	font-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+q:before,q:after {
+	content: '';
+}
+
+section,article,aside,header,footer,nav,dialog,figure {
+	display: block;
+}
+
+.pagescon {
+	padding: 5px;
+	background: #EBF6FC;
+	overflow: hidden;
+	border: 1px #B8B8B8 solid;
+}
+
+.infotan td {
+	border: 1px solid #CCCCCC;
+	height: 30px;
+	line-height: 30px;
+	text-indent: 1em;
+}
+
+.mt5 {
+	margin-top: 5px;
+}
+
+.texts {
+	height: 28px;
+	line-height: 28px;
+	border: 1px #999999 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.bgs {
+	background: #F1F5F6;
+	font-weight: bold;
+}
+
+.ls {
+	text-align: right;
+}
+.docformTableNoBD td{
+	border:0 none;
+}
+.txt_shuru{width:200px;height:28px;}
+
+.ty_ul{ border-bottom:1px solid #CCC; overflow:hidden;*zoom:1; padding:0px; margin-top:10px; margin-bottom:10px; }
+.ty_ul li{ border-bottom:1px solid #F00; float:left; padding:0px; padding-bottom:5px; padding-left:5px; } 
+
+.btn_an{ border:1px solid #ccc; padding:5px 15px; background:#F1F5F6; cursor:pointer}
+.some {
+	font-size: 18px;
+}
+.some strong {
+	font-size: 36px;
+}
+</style>
+</head>
+
+<body>
+<center style="font-size:25px;">
+  <h3>南通市食品药品监督管理局</h3>
+  <p class="some"><strong>信息公开保密审查单</strong></p>
+  <p align="right" class="some">            （&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日）</p>
+</center>
+<table class="infotan mt5" width="100%">
+<Tr>
+  <td class="bgs ls">信息标题：</td>
+  <td colspan="4"><input type="text"   style="width:99%" id="xxbt"  name="xxbt"/></td>
+</Tr>
+<Tr>
+<td class="bgs ls">拟稿部门：</td>
+<td><input type="text" id="ngbm" name="ngbm"  style="width:95%"/></td>
+<td width="130" class="bgs ls">承办人：</td>
+<td width="278"><input type="text" id="cbr" name="cbr" style="width:99%"/></td>
+
+</Tr>
+    <tr>
+        <td width="180" valign="top" class="bgs ls">承办人意见：</td>
+        <td width="233"><p>信息公开（选择公开形式）：</p>
+        <p><input type="radio" name="gongkai"/>主动公开。</p>
+        <p>
+          <input type="radio" name="gongkai"/>
+        依申请公开。</p></td>
+	      <td colspan="2" class="tdcol docformTableNoBD">信息
+	    
+      不公开（说明理由）：
+<div>
+<trueway:comment zname="承办意见" typeinAble="true" deleteAbled="true" id="${instanceId}cbyj" instanceId="${instanceId}" currentStepId="${processId}" />
+</div>
+</td>
+  </tr>
+    <tr>
+		<td width="180" valign="top" class="bgs ls">初步审查：</td>
+		<td colspan="3" class="tdcol docformTableNoBD"><p>处（室）负责人意见：</p>
+	    <p>
+	      <input type="radio" name="gongkais"/>
+	      同意主动公开。</p>
+	    <p>
+	      <input type="radio" name="gongkais"/>
+	      同意依申请公开。</p>
+	    <p>
+	      <input type="radio" name="gongkais"/>
+        同意不公开。              </p>
+        <div>
+         <trueway:comment zname="处室负责人意见" typeinAble="true" deleteAbled="true" id="${instanceId}csyj" instanceId="${instanceId}" currentStepId="${processId}" />
+        </div>
+        <div align="right">签名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;日&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+	</tr>
+  	
+</table>
+（注：发文需要凭本审查单领取文号，文印室凭本审查单印制公文1）
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+<input type="hidden" id="keyword" name="keyword" value="空" />
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

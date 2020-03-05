@@ -1,0 +1,220 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:17px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+.infotan td {
+	text-align:center;
+}
+.topinfotan td {
+	line-height: 30px;
+	text-align:left;
+        padding:5px;
+}
+</style>
+</head>
+
+<body>
+<div class="warp">
+	<center>
+<p style="font-size:30px;line-height:35px;width:819;text-align:center;padding-top:30px;font-family:华文中宋;">
+		<strong style="font-family:华文中宋;">南通滨海园区东凌片区特色产业园开发办公室
+		<br />文件传阅批办单</strong></p>
+	</center>
+	<table align="center" width="819" class="topinfotan" cellspacing="0" border="0">
+		<tr>
+			<td width="110px" valign="middle" style="font-size:18px;">缓急程度：</td>
+			<td width="" colspan="3"  style="font-size:18px;"><select id="hjcd" name="hjcd" zname="缓急程度" style="width:120px"></select></td>
+		</tr>
+		<tr>
+			<td width="110px" valign="middle" style="font-size:18px;">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：</td>
+			<td width="" colspan="3"  style="font-size:18px;"><select id="mj" name="mj" zname="密级"  style="width:120px"></select></td>
+		</tr>
+		<tr>
+			<td width="110px" valign="middle" style="font-size:18px;">登&nbsp;&nbsp;记&nbsp;&nbsp;号：</td>
+			<td width="420px" style="font-size:18px;"><input style="width:380px;border: 0px; border-bottom: 1px #cccccc dotted; line-height: 17px;" type="text" id="djh" name="djh" zname="登记号" /></td>
+			<td width="150px" style="font-size:18px;text-align: right;">来文日期：</td>
+			<td width="139px" style="font-size:18px;"><input type="text" id="lwtime" name="lwtime" zname="来文日期" style="width: 120px;border: 0px; border-bottom: 1px #cccccc dotted;" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" /></td>
+		</tr>
+	</table>
+	<table align="center" width="819" class="infotan" >
+		<tr>
+			<td width="16%" valign="middle"  style="font-size:18px;">来文单位</td>
+			<td width="23%">
+				<input type="text" id="lwdw" name="lwdw" style="width:160px;line-height: 17px" zname="来文单位" />
+			</td>
+			<td width="16%" valign="middle"  style="font-size:18px;">来&nbsp;&nbsp;文&nbsp;&nbsp;号</td>
+			<td width="20%">
+			<input type="text" id="lwh" name="lwh" style="width:130px;line-height: 17px" zname="来文号" />
+						</td>
+			<td width="13%" valign="middle"  style="font-size:18px;">份&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数</td>
+			<td width="11%">
+				<input type="text" id="fs" name="fs" style="width:60px;line-height: 17px" zname="份数" />
+			</td>		</tr>
+		<tr>
+			<td width="16%" style="font-size:18px;line-height: 70px;">文件标题</td>
+			<td colspan="5" style="font-size:18px;line-height: 70px;">
+				 <textarea id="wjbt" name="wjbt" style="width: 620px;height:55px;" zname="文件标题" ></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td valign="middle"  style="font-size:18px;">传阅名单</td>
+			<td valign="middle"  style="font-size:18px;">阅文日期</td>
+			<td width="16%" rowspan="2" valign="middle" style="font-size:18px;">拟办意见：</td>
+			<td colspan="3" rowspan="2" class="tdcol docformTableNoBD">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="font-size:18px;line-height: 70px;">王&nbsp;&nbsp;&nbsp;华</td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="whywrq" name="whywrq" style="width:160px;line-height: 17px" zname="王华_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="font-size:18px;line-height: 70px;">苏&nbsp;&nbsp;&nbsp;平</td>
+			<td>
+				<span class="tdcol docformTableNoBD">
+				<input type="text" id="dzfywrq" name="dzfywrq" style="width:160px;line-height: 17px" zname="苏平_阅文日期" />
+				</span>
+			</td>
+			<td width="16%" rowspan="2" valign="middle" style="font-size:18px;">领导批示：</td>
+			<td colspan="3" rowspan="2" class="tdcol docformTableNoBD">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="font-size:18px;line-height: 70px;">殷&nbsp;&nbsp;&nbsp;栋</td>
+			<td>
+				<span class="tdcol docformTableNoBD">
+					<input type="text" id="ydywrq" name="ydywrq" style="width:160px;line-height: 17px" zname="殷栋_阅文日期" />
+				</span>
+			</td>
+		</tr>
+	
+
+	
+		<tr>
+			<td class="ls" style="font-size:18px;line-height: 70px;"></td>
+			<td>
+				<span class="tdcol docformTableNoBD">
+					&nbsp;
+				</span>
+			</td>
+			<td width="16%" rowspan="2" valign="middle" style="font-size:18px;">办理结果：</td>
+			<td colspan="3" rowspan="2" class="tdcol docformTableNoBD">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="font-size:18px;line-height: 70px;"></td>
+			<td>
+				<span class="tdcol docformTableNoBD">
+					&nbsp;
+				</span>
+			</td>
+		</tr>
+		<tr> 
+			<td align="center" valign="middle"  style="font-size:18px;"> 附&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;件</td>
+			<td  colspan="5"  class="tdcol docformTableNoBD">
+				<span id="fjshow"></span>
+				<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" 
+				downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add"             otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+			</td>
+		</tr>
+	</table>
+</div>
+<INPUT  id="instanceId" name="instanceId" value=""> 
+<INPUT  id="formId" name="formId" value=""> 
+<INPUT  id="workFlowId" name="workFlowId" value="">   
+<INPUT  id="processId" name="processId" value="">
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

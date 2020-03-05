@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+body{ background:url(../img/body.jpg) repeat-x;}
+.warp1002{width:1002px;overflow:hidden;margin:0px auto;}
+.banner{width:1002px;height:137px;overflow:hidden;background:url(../img/banner.jpg) no-repeat;}
+.bodytop{width:1002px;overflow:hidden;margin:0px auto;background:#FFF url(../img/bodytop.jpg) top no-repeat;}
+.cons1{margin:10px;border:1px #cccccc solid; background:#F9F9F9;}
+.dlcon{border:8px #E0D3C0 solid;width:480px;margin:50px auto 50px;overflow:hidden; background:#FFFFFF;}
+.footertop{width:1004px;height:10px; background:url(../img/footertop.jpg) no-repeat;margin:0px auto;}
+.dltable{width:500px;}
+.dltable td{height:30px;line-height:30px;padding-left:2px;padding-right:2px;}
+.text{height:21px;line-height:21px;padding-left:2px;padding-right:2px; background:url(../img/textbg.jpg) repeat-x;border:1px #A8ACAD solid;}
+.dlbtn{width:100px;height:24px;line-height:24px; text-align:center;border:1px #C2700A solid; background:url(../img/dlbtn.jpg) repeat-x; cursor:pointer;}
+.footer{ text-align:center;line-height:50px;height:50px;}
+
+.jltit{color:#835729; font-size:16px; font-weight:bold; text-align:center; height:60px;line-height:60px;}
+.jlbt{ text-indent:2em; line-height:25px;}
+.listtit{ width:82px;height:24px;line-height:24px; text-align:center; background:url(../img/listtit.gif) no-repeat; overflow:hidden; display:block;}
+.titcon{overflow:hidden;line-height:24px;padding-left:5px; display:block;overflow:hidden;}
+.leftcon{width:197px;overflow:hidden;float:left;}
+.rightcon{width:774px;overflow:hidden;float:right;}
+.lefttit{width:160px;padding-left:37px;height:36px;line-height:36px; background:url(../img/lefttit.jpg) no-repeat;overflow:hidden;color:#31210D; cursor:pointer;}
+.lefttito{width:160px;padding-left:37px;height:36px; line-height:36px;background:url(../img/lefttito.jpg) no-repeat;overflow:hidden;color:#ffffff;}
+.rightcontop{border:1px #cccccc solid;height:31px;line-height:31px; background:url(../img/righttopbg.jpg) repeat-x;}
+.spanarr{background:url(../img/righttoparr.jpg) left no-repeat;padding-left:20px;margin-left:20px;}
+.con2{border:1px #cccccc solid;border-top:0px; background:#F9F9F9;overflow:hidden;}
+
+.left2{width:242px;overflow:hidden;float:left;}
+.right2{width:733px;overflow:hidden;float:right;border:1px #cccccc solid;}
+
+.left2tit{width:202px;height:36px; background:url(../img/lefttit2.jpg) no-repeat;padding-left:40px;line-height:36px;color:#31210D;}
+.left2con{width:240px;border:1px #cccccc solid;border-top:0px;overflow:hidden;}
+.wyarr{padding-left:10px; background:url(../img/left2arr.gif) no-repeat left center; line-height:20px;}
+.p2t{width:220px;height:9px; background:url(../img/p2t.jpg) no-repeat;overflow:hidden;}
+.p2z{width:210px;padding-left:5px;padding-right:5px;background:url(../img/p2z.jpg) repeat-y;overflow:hidden;}
+
+.p2z p{line-height:22px;}
+.p2b{width:220px;height:4px; background:url(../img/p2b.jpg) no-repeat;overflow:hidden;}
+
+.fbpl{width:132px;height:31px; line-height:31px; text-align:center; color:#ffffff;font-weight:bold; font-size:14px; background:url(../img/fb.jpg) no-repeat; display:block;}
+.fbbtn{width:100px;height:27px; background:url(../img/fbbtn.jpg) repeat-x; cursor:pointer; border:0px; color:#ffffff;}
+
+.hmdcon{ background:#C0AA92; border:1px #784D0F solid;width:180px;height:300px;overflow:hidden;}
+.hmdz{ background:#ffffff;width:176px;height:296px;margin:2px;overflow:hidden;}
+.hmdtit{width:170px;height:24px; line-height:24px;margin-left:3px;margin-top:3px;margin-bottom:12px; background:url(../img/hmdtit.jpg) repeat-x; text-indent:1em; font-weight:bold; color:#865A2C;}
+.hmdlb{width:170px;margin-left:3px;height:250px; overflow:auto;}
+.hmp1{font-weight:bold;height:25px;line-height:25px;}
+.hmp2{height:25px;line-height:25px; background:url(../img/hmp2.jpg) repeat-x;}
+.hmdlb span{width:40px;height:25px; text-align:center; display:block;}
+.hmdlb span a{color:#000000;}
+.hmdlb span a:hover{color:#f00;}
+
+.legend{height:25px; line-height:25px; background:url(../images/legendbg.jpg) repeat-x;text-align: center; padding-left:10px; padding-right:10px; border:#B8D0D6 1px solid;}
+.legendarr{ background:url(../images/legendarr.gif) no-repeat left center; padding-left:15px;}

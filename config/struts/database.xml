@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="database" extends="common-default">
+		<action name="field_*" class="fieldInfoAction" method="{1}">
+			<result name="fieldList">/WEB-INF/pages/workflow/database/fieldList.jsp</result>
+			<result name="toAddJsp">/WEB-INF/pages/workflow/database/addField.jsp</result>
+			<result name="toEditJsp">/WEB-INF/pages/workflow/database/editField.jsp</result>
+		</action>
+		
+		<action name="template_*" class="templateAction" method="{1}">
+			<result name="templateList">/WEB-INF/pages/workflow/database/templateList.jsp</result>
+			<result name="templateRedList">/WEB-INF/pages/workflow/database/templateRedList.jsp</result>
+			<result name="toAddJsp">/WEB-INF/pages/workflow/database/addTemplate.jsp</result>
+			<result name="toAddRedJsp">/WEB-INF/pages/workflow/database/addTemplateRed.jsp</result>
+			<result name="toDocJsp">/WEB-INF/pages/workflow/database/sdoc.jsp</result>
+			<result name="toEditDocJsp">/WEB-INF/pages/workflow/database/udoc.jsp</result>
+			<result name="toEditToDbDocJsp">/WEB-INF/pages/workflow/database/toDbdoc.jsp</result>
+			<result name="toEditJsp">/WEB-INF/pages/workflow/database/editTemplate.jsp</result>
+			<result name="toEditRedJsp">/WEB-INF/pages/workflow/database/editTemplateRed.jsp</result>
+			<result name="download1">/WEB-INF/pages/workflow/database/doc.jsp</result>
+			<result name="toDyJsp">/WEB-INF/pages/workflow/database/report.jsp</result>
+			<result name="getTemplateForNode">/WEB-INF/pages/workflow/database/templateNodeList.jsp</result>
+			<result name="getTemplateForPrint">/WEB-INF/pages/workflow/database/templatePrintList.jsp</result>
+			<result name="toRefJsp">/WEB-INF/pages/workflow/database/refTemplate.jsp</result>
+		</action>
+		
+		<action name="dictionary_*" class="dictionaryAction" method="{1}">
+			<result name="dictionaryList">/WEB-INF/pages/workflow/database/dictionaryList.jsp</result>
+			<result name="toAddJsp">/WEB-INF/pages/workflow/database/addDictionary.jsp</result>
+			<result name="toEditJsp">/WEB-INF/pages/workflow/database/editDictionary.jsp</result>
+		</action>
+		
+		<action name="customStatus_*" class="customStatusAction" method="{1}">
+			<result name="customStatusList">/WEB-INF/pages/workflow/database/customStatusList.jsp</result>
+			<result name="toAddJsp">/WEB-INF/pages/workflow/database/addCustomStatus.jsp</result>
+			<result name="toEditJsp">/WEB-INF/pages/workflow/database/editCustomStatus.jsp</result>
+		</action>
+		
+		<action name="item_*" class="itemAction" method="{1}">
+			<result name="itemList">/WEB-INF/pages/workflow/database/itemList.jsp</result>
+			<result name="toAddJsp">/WEB-INF/pages/workflow/database/addItem.jsp</result>
+			<result name="toEditJsp">/WEB-INF/pages/workflow/database/editItem.jsp</result>
+			<result name="showDepartmentTreeView">/WEB-INF/pages/workflow/database/showDepTreeForItem.jsp</result>
+			<result name="showTree">/WEB-INF/pages/workflow/database/showpTree.jsp</result>
+			<result name="showItemList">/WEB-INF/pages/workflow/database/showItemList.jsp</result>
+			<result name="setItemBinding">/WEB-INF/pages/workflow/database/setItemBinding.jsp</result>
+			<result name="dicItemList">/WEB-INF/pages/workflow/database/dicItemList.jsp</result>
+			<result name="startList">/WEB-INF/pages/workflow/database/itemStartList.jsp</result>
+		</action>
+		
+		<action name="permit_*" class="permitAction" method="{1}">
+			<result name="formList">/WEB-INF/pages/workflow/database/formListForPermit.jsp</result>
+			<result name="formListForComment">/WEB-INF/pages/workflow/database/formListForCommentPermit.jsp</result>
+			<result name="tagList">/WEB-INF/pages/workflow/database/tagListForPermit.jsp</result>
+			<result name="formPermitList">/WEB-INF/pages/workflow/database/formPermitList.jsp</result>
+			<result name="tagPermitList">/WEB-INF/pages/workflow/database/tagPermitList.jsp</result>
+			<result name="toAddFormPermitJsp">/WEB-INF/pages/workflow/database/addFormPermit.jsp</result>
+			<result name="toAddTagPermitJsp">/WEB-INF/pages/workflow/database/addTagPermit.jsp</result>
+			<result name="toEditFormPermitJsp">/WEB-INF/pages/workflow/database/editFormPermit.jsp</result>
+			<result name="showDepartmentTreeView">/WEB-INF/pages/workflow/database/showDepartmentTreeView.jsp</result>
+			<result name="getInnerUserList">/WEB-INF/pages/workflow/database/groupList.jsp</result>
+			<result name="permitJsp">/WEB-INF/pages/workflow/database/permit.jsp</result>
+		</action>
+		
+		<action name="attachmentType_*" class="attachmentTypeAction" method="{1}">
+			<result name="attachmentTypeList">/WEB-INF/pages/workflow/database/attachmentTypeList.jsp</result>
+			<result name="addAttachmentType">/WEB-INF/pages/workflow/database/addAttachmentType.jsp</result>
+			<result name="editAttachmentType">/WEB-INF/pages/workflow/database/editAttachmentType.jsp</result>
+		</action>
+		
+		<action name="permition_*" class="permitionAction" method="{1}">
+			<result name="formList">/WEB-INF/pages/workflow/permit/formListForPermit.jsp</result>
+			<result name="formListForComment">/WEB-INF/pages/workflow/permit/formListForCommentPermit.jsp</result>
+			<result name="tagList">/WEB-INF/pages/workflow/permit/tagListForPermit.jsp</result>
+			<result name="formPermitList">/WEB-INF/pages/workflow/permit/formPermitList.jsp</result>
+			<result name="tagPermitList">/WEB-INF/pages/workflow/permit/tagPermitList.jsp</result>
+			<result name="toAddFormPermitJsp">/WEB-INF/pages/workflow/permit/addFormPermit.jsp</result>
+			<result name="toAddTagPermitJsp">/WEB-INF/pages/workflow/permit/addTagPermit.jsp</result>
+			<result name="toEditFormPermitJsp">/WEB-INF/pages/workflow/permit/editFormPermit.jsp</result>
+			<result name="showDepartmentTreeView">/WEB-INF/pages/workflow/permit/showDepartmentTreeView.jsp</result>
+			<result name="getInnerUserList">/WEB-INF/pages/workflow/permit/groupList.jsp</result>
+			<result name="permitJsp">/WEB-INF/pages/workflow/permit/permit.jsp</result>
+			
+			<result name="toSetPermitJsp">/WEB-INF/pages/workflow/permit/permitSet.jsp</result>
+			<result name="permitLeft">/WEB-INF/pages/workflow/permit/permitLeft.jsp</result>
+			<result name="permitMiddleList">/WEB-INF/pages/workflow/permit/permitMiddleList.jsp</result>
+			<result name="permitMiddle">/WEB-INF/pages/workflow/permit/permitMiddle.jsp</result>
+			<result name="permitRight">/WEB-INF/pages/workflow/permit/permitRight.jsp</result>
+			<result name="toSetAttsJsp">/WEB-INF/pages/workflow/permit/attSet.jsp</result>
+			
+		</action>
+		
+		<action name="Special_*" class="specialAction" method="{1}">
+		</action>
+		
+		<action name="tableForMobile_*" class="tableForMobileAction" method="{1}">
+		</action>
+		
+		
+		<action name="itemRelation_*" class="itemRelationAction" method="{1}">
+			<result name="toadd">/WEB-INF/pages/workflow/database/addItemRelation.jsp</result>
+			<result name="toupdate">/WEB-INF/pages/workflow/database/editItemRelation.jsp</result>
+		</action>
+		
+		<action name="employeeRole_*" class="employeeRoleAction" method="{1}">
+			<result name="roleList">/WEB-INF/pages/workflow/role/roleList.jsp</result>
+			<result name="toadd">/WEB-INF/pages/workflow/role/addrole.jsp</result>
+			<result name="toupdate">/WEB-INF/pages/workflow/role/updaterole.jsp</result>
+		</action>
+		
+		<action name="personComment_*" class="personCommentAction" method="{1}">
+		</action>
+		
+		<action name="noticeInfo_*" class="noticeInfoAction" method="{1}">
+			<result name="noticeInfoList">/WEB-INF/pages/workflow/todo/getNoticeInfoList.jsp</result>
+			<result name="XMList">/WEB-INF/pages/workflow/todo/XMList.jsp</result>
+		</action>
+		
+		<action name="employeeLeader_*" class="employeeLeaderAction" method="{1}">
+			<result name="leaderList">/WEB-INF/pages/workflow/leader/leaderList.jsp</result>
+			<result name="toAdd">/WEB-INF/pages/workflow/leader/add.jsp</result>
+			<result name="leaderTree">/WEB-INF/pages/workflow/leader/leaderTree.jsp</result>
+			<result name="toUpdate">/WEB-INF/pages/workflow/leader/update.jsp</result>
+			<result name="employeeList">/WEB-INF/pages/workflow/leader/employeeList.jsp</result>
+		</action>
+		
+		<action name="trueJson_*" class="trueJsonAction" method="{1}">
+			<result name="trueJsonLogList">/WEB-INF/pages/workflow/trueJsonLog/trueJsonLogList.jsp</result>
+			<result name="delFileLogList">/WEB-INF/pages/workflow/trueJsonLog/delFileLogList.jsp</result>
+			<result name="openTrueJsonPage">/WEB-INF/pages/workflow/trueJsonLog/openTrueJsonPage.jsp</result>
+		</action>
+		
+		<action name="tableExtend_*" class="tableInfoExtendAction" method="{1}">
+			<result name="followList">/WEB-INF/pages/workflow/todo/followList.jsp</result>
+			<result name="outOfDateList">/WEB-INF/pages/workflow/todo/outOfDateList.jsp</result>
+			<result name="pendingListOfReadFile">/WEB-INF/pages/workflow/todo/pendingListOfReadFile.jsp</result>
+			<result name="overListOfReadFile">/WEB-INF/pages/workflow/todo/overListOfReadFile.jsp</result>
+			<result name="accesslogList">/WEB-INF/pages/workflow/core/accesslogList.jsp</result>
+			<result name="portalFileList">/portal/list.jsp</result>
+			<result name="downloadlogList">/WEB-INF/pages/workflow/core/downloadlogList.jsp</result>
+		</action>
+		
+		<action name="depConfig_*" class="depConfigAction" method="{1}">
+			<result name="depAllList">/WEB-INF/pages/workflow/depConfig/depAllList.jsp</result>
+			<result name="depConfigList">/WEB-INF/pages/workflow/depConfig/depConfigList.jsp</result>
+			<result name="addDep_F">/WEB-INF/pages/workflow/depConfig/addDep_F.jsp</result>
+			<result name="updateDep_F">/WEB-INF/pages/workflow/depConfig/updateDep_F.jsp</result>
+			<result name="depChildList">/WEB-INF/pages/workflow/depConfig/depChildList.jsp</result>
+		</action>
+		
+		<action name="monitor_*" class="monitorAction" method="{1}">
+			<result name="getNoOwnerDofileList">/WEB-INF/pages/workflow/monitor/getNoOwnerDofileList.jsp</result>
+			<result name="getExceedPendingList">/WEB-INF/pages/workflow/monitor/getExceedPendingList.jsp</result>
+			<result name="getExceedPendingListForDept">/WEB-INF/pages/workflow/monitor/getExceedPendingListForDept.jsp</result>
+			<result name="getExceedUnresolvedList">/WEB-INF/pages/workflow/monitor/getExceedUnresolvedList.jsp</result>
+			<result name="getLostCmtDfList">/WEB-INF/pages/workflow/monitor/getLostCmtDfList.jsp</result>
+			<result name="getLostAttDfList">/WEB-INF/pages/workflow/monitor/getLostAttDfList.jsp</result>
+			<result name="getMonitorIndex">/WEB-INF/pages/workflow/monitor/getMonitorIndex.jsp</result>
+			<result name="getInterfaceCheckPage">/WEB-INF/pages/workflow/monitor/getInterfaceCheckPage.jsp</result>
+			<result name="getMonitorChart">/WEB-INF/pages/workflow/monitor/getMonitorChart.jsp</result>
+			<result name="toSendUser">/WEB-INF/pages/workflow/monitor/sendMSG.jsp</result>
+		</action>
+	</package>
+</struts>

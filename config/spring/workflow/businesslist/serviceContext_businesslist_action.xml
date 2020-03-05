@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	
+	<bean id="businessAction" class="cn.com.trueway.workflow.business.action.BusinessAction" singleton="false" autowire="byName">
+		<property name="businessService" ref="businessService" ></property>
+		<property name="itemService" ref="itemService" ></property>
+		<property name="tableInfoService" ref="tableInfoService" ></property>
+		<property name="pendingService" ref="pendingService" ></property>
+		<property name="departmentService" ref="departmentService" ></property>
+		<property name="employeeService" ref="employeeService" ></property>
+	</bean>
+</beans>

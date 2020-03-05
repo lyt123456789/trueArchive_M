@@ -1,0 +1,43 @@
+jQuery
+
+
+
+## 常见问题
+
+* 兼容性问题
+* window.onload
+* console.log()
+* 
+
+
+API
+
+
+
+## 插件 
+
+* 焦点图
+  flexslider 
+  http://flexslider.woothemes.com/
+
+* 图片滚动
+  jcarousellite
+  http://www.gmarwaha.com/jquery/jcarousellite/
+
+* 表单验证
+  jquery.validate
+  https://jqueryvalidation.org/
+
+* 拖动排序
+  sortable
+
+* 弹框插件
+  layer
+  http://layer.layui.com/
+
+* 树形插件
+  jquery.treeview
+  
+
+
+

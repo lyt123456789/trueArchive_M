@@ -1,0 +1,243 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<style>
+</style>
+<script type="text/javascript">
+function getHyList() {
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "http://61.155.85.78:9495/trueWorkFlow/meeting_getHyList.do?callback=?",
+        dataType: 'json',
+        success: function(result) {
+            if (result != '') {
+                var hymc = $("#hymc");
+                RemoveOption();
+
+                hymc.append("<option value=''>--请选择请假会议--</option>");
+
+                var data = eval(result);
+
+                if (data.length <= 0) {
+                    alert("没有可以请假的会议");
+                } else {
+                    $(data).each(function(key) {
+
+                        var hyname = data[key].hyname;
+                        var hyid = data[key].hyinsid;
+
+                        AppendOption(hyid, hyname);
+                    });
+                }
+                return false;
+            } else {
+                alert("没有可以请假的会议");
+                return false;
+            }
+        },
+        error: function(result) {
+            alert("系统错误请重试!");
+        }
+
+    });
+}
+function AppendOption(value, text) {
+    $("#hymc").append("<option value='" + value + "'>" + text + "</option>");
+}
+function RemoveOption() {
+    $("#hymc option").remove();
+}
+
+function getChryList(insId) {
+    $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "http://61.155.85.78:9495/trueWorkFlow/meeting_getChryByInsId.do?instanceId=" + insId + "&callback=?",
+        dataType: 'json',
+        success: function(result) {
+            if (result != '') {
+                var qjr = $("#qjr");
+                RemoveRYOption();
+
+                qjr.append("<option value=''>--请选择请假人--</option>");
+
+                var data = eval(result);
+
+                if (data.length <= 0) {
+                    alert("没有可以请假的人员");
+                } else {
+                    $(data).each(function(key) {
+
+                        var hyry = data[key];
+
+                        AppendRYOption(hyry, hyry);
+                    });
+                }
+                return false;
+            } else {
+                alert("没有可以请假的人员");
+                return false;
+            }
+        },
+        error: function(result) {
+            alert("系统错误请重试!");
+        }
+
+    });
+
+}
+function AppendRYOption(value, text) {
+    $("#qjr").append("<option value='" + value + "'>" + text + "</option>");
+}
+function RemoveRYOption() {
+    $("#qjr option").remove();
+}
+function choosehy(){
+	var winoption ="dialogHeight:500px;dialogWidth:1200px;center:yes";
+	var ret = window.showModalDialog('http://61.155.85.78:9495/trueWorkFlow/meeting_getHyListForQj.do', null, winoption);
+	if(ret != null){
+		document.getElementById("hymc").value = ret.split("@#@")[1];
+		document.getElementById("hyslId").value = ret.split("@#@")[0];
+	}
+        getChryList(ret.split("@#@")[0]);
+}	
+</script>
+</head>
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>南通市国土资源局会议请假单</strong>
+</p>
+<table width="819" align="center" class="infotan">
+<tr>
+        <td  height="72" valign="middle" style="font-size:18px;width:200px"> 会议名称：</td>
+   <td  colspan="3" style="font-size:18px;" ><input id="hymc" name="hymc" zname="会议名称" type="text" style="width:250px;height:46px"/><input type="button" value="选择会议" id="choosehy" onclick="choosehy();" />
+  </td>
+ </tr>
+  <tr>
+        <td  height="72" valign="middle" style="font-size:18px;"> 请 假 人：</td>
+   <td  colspan="3" style="font-size:18px;" ><select id="qjr" name="qjr"  style="width:200px;height:23px;" zname="请假人"><option value="">--请选择请假人--</option></select>
+  
+  </td>
+ </tr>
+    <tr>
+     <td  valign="middle" style="font-size:18px;" >请假原因：</td>
+        <td colspan="3" style="height:200px;font-size:18px;padding:5px;">
+         <textarea style="width:600px;height:185px;" id="qjyy" name="qjyy" zname="请假原因"></textarea>
+</td>
+    </tr>
+    <tr>
+     <td valign="middle" style="font-size:18px;" >审批意见：</td>
+        <td colspan="3" style="height:200px;font-size:18px;padding:5px;">
+         <textarea style="width:600px; height:185px;" id="spyj" name="spyj" zname="审批意见"></textarea>
+</td>
+    </tr>
+    <tr>
+     <td valign="middle" style="font-size:18px;" >审批结果：</td>
+        <td colspan="3" style="height:200px;font-size:18px;padding:5px;">
+         <textarea style="width:600px; height:185px;" id="spjg" name="spjg" zname="审批结果"></textarea>
+</td>
+    </tr>
+    <tr>
+     <td valign="middle" style="font-size:18px;" >备注：</td>
+        <td colspan="3"  style="height:200px;font-size:18px;padding:5px;">
+               <textarea style="width:600px; height:185px;" id="bz" name="bz" zname="备注"></textarea>
+</td>
+    </tr>   </table>
+</div>
+<INPUT type="hidden" id="hyslId" name="hyslId" value="">
+
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

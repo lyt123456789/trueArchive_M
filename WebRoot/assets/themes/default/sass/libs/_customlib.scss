@@ -1,0 +1,32 @@
+
+// 主
+.wf-badge-main{
+	@extend %badge-basic;
+	@include badge-size(3px,5px,12px);
+	@include badge-color($purple,#fff);
+}
+// 子
+.wf-badge-sub{
+	@extend %badge-basic;
+	@include badge-size(3px,5px,12px);
+	@include badge-color($orangered,#fff);
+}
+
+// 未
+.wf-badge-not{
+	@extend %badge-basic;
+	@include badge-size(5px,8px,12px);
+	@include badge-color($blue,#fff);
+}
+// 办
+.wf-badge-doing{
+	@extend %badge-basic;
+	@include badge-size(5px,8px,12px);
+	@include badge-color($green,#fff);
+}
+// 超
+.wf-badge-over{
+	@extend %badge-basic;
+	@include badge-size(5px,8px,12px);
+	@include badge-color($red,#fff);
+}

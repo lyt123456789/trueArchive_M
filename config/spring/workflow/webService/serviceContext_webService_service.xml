@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	 <bean id="webServiceService" class="cn.com.trueway.workflow.webService.service.impl.WebServiceServiceImpl">
+		<property name="webServiceDao"  ref="webServiceDao"/>
+		<property name="tableInfoDao"  ref="tableInfoDao"/>
+		<property name="itemDao"  ref="itemDao"/>
+		<property name="attachmentDao"  ref="attachmentDao"/>
+		<property name="workflowBasicFlowDao"  ref="workflowBasicFlowDao"/>
+		<property name="fieldMatchingService"  ref="fieldMatchingService"/>
+		<property name="zwkjFormDao"  ref="zwkjFormDao"/>
+		<property name="employeeDao"  ref="employeeDao"/>
+	</bean>
+	
+	
+	<bean id="exchangeSendService" class="cn.com.trueway.workflow.webService.service.impl.ExchangeSendServiceImpl">
+		<property name="employeeDao"  ref="employeeDao"/>
+		<property name="employeeService"  ref="employeeService"/>
+		<property name="departmentService"  ref="departmentService"/>
+		<property name="tableInfoDao"  ref="tableInfoDao"/>
+		<property name="pendingService"  ref="pendingService"/>
+		<property name="dictionaryService"  ref="dictionaryService"/>
+		<property name="attachmentService"  ref="attachmentService"/>
+		<property name="flowService"  ref="flowService"/>
+		<property name="exchangeSendDao"  ref="exchangeSendDao"/>
+	</bean>
+	
+	<bean id="exchangeReceiveService" class="cn.com.trueway.workflow.webService.service.impl.ExchangeReceiveServiceImpl">
+		<property name="tableInfoDao"  ref="tableInfoDao"/>
+		<property name="attachmentDao"  ref="attachmentDao"/>
+		<property name="flowService"  ref="flowService"/>
+	</bean>
+	<bean id="archiveWebService" class="cn.com.trueway.workflow.webService.service.impl.ArchiveWebServiceImpl">
+		<property name="archiveWebServiceDao"  ref="archiveWebServiceDao"/>
+		<property name="attachmentDao"  ref="attachmentDao"/>
+	</bean>
+	
+	
+</beans>

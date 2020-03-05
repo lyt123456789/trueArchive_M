@@ -1,0 +1,222 @@
+/*
+*@module: Common core setting
+*@Author: juhailin 2015-11-11
+*@Update: 
+*/
+/*
+*@module: Common core mixin
+*@Author: juhailin 2015-11-11
+*@Update: 
+*/
+.tm-layout-left {
+  width: 30%;
+  float: left;
+}
+
+.tm-layout-right {
+  width: 70%;
+  float: left;
+  border-left: 1px solid #eee;
+}
+
+.tm-container {
+  padding: 0;
+}
+
+.tm-table-form th {
+  background: #e8eff9;
+  text-align: right;
+}
+
+.tm-table-form th em {
+  color: #f55656;
+  margin: 0 5px;
+  font-style: normal;
+}
+
+.tm-table-form .tw-form-text {
+  width: 80%;
+}
+
+.tm-table-list a {
+  font-weight: bolder;
+}
+
+.tm-table-list .tw-fixtable-header th,
+.tm-table-list .tw-fixtable thead th {
+  border-right: none;
+}
+
+.tm-table-list .tw-fixtable-tbody td,
+.tm-table-list .tw-fixtable tbody td {
+  border-right: none;
+  border-bottom: 1px solid #d1d7db;
+}
+
+.tm-table-list .tw-fixtable-thead table {
+  border-right: 1px solid #d1d7db;
+}
+
+.tm-table-list .tw-fixtable-tbody table {
+  border-right: 1px solid #d1d7db;
+}
+
+.tm-table-list .tm-open a {
+  font-weight: normal;
+}
+
+.tm-message {
+  margin: 40px 0 0 80px;
+}
+
+.tm-message .tw-icon-check-circle {
+  font-size: 60px;
+  color: #E6EFC2;
+  float: left;
+  margin-top: 10px;
+}
+
+.tm-message .tm-msg-cnt {
+  margin-left: 80px;
+  line-height: 2;
+}
+
+.tm-message .tm-msg-cnt h3 {
+  color: #59b85c;
+}
+
+.tm-message .tm-msg-cnt a {
+  /*text-decoration: underline;*/
+}
+
+[class*=tm-icon-] {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  background: url(../img/icons/tm-icon.png) no-repeat;
+}
+
+.tm-icon-status {
+  background-position: 0 -20px;
+}
+
+.tm-open .tm-icon-status {
+  background-position: 0 -0px;
+}
+
+.tm-icon-status-o {
+  background-position: 0 0px;
+}
+
+.tm-icon-attr {
+  background-position: 0 -40px;
+}
+
+.tm-icon-star {
+  background-position: 0 -60px;
+}
+
+.tm-icon-unstar {
+  background-position: 0 -80px;
+}
+
+.tm-add-attach {
+  display: inline-block;
+  margin: 4px 0;
+  color: #3268b5;
+}
+
+.tm-add-attach i {
+  color: #3268b5;
+}
+
+.tm-attach-list {
+  background: #dee8f7;
+  width: 80%;
+}
+
+.tm-attach-list li {
+  padding: 5px 10px;
+}
+
+.tm-attach-list .tm-attach-name {
+  color: #4e5a64;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.tm-attach-list .tm-attach-name b {
+  margin-left: 5px;
+  font-weight: normal;
+  color: #7c868e;
+}
+
+.tm-attach-list a {
+  color: #2163bd;
+}
+
+.tm-form {
+  background: #eff5fe;
+  padding-top: 10px;
+}
+
+.tm-form .tw-form-label {
+  color: #4e5a64;
+}
+
+.tm-form .tw-form-text {
+  width: 80%;
+}
+
+.tm-form-static {
+  background: #eff5fe;
+  padding-top: 10px;
+}
+
+.tm-form-static .tw-form-item {
+  margin-bottom: 0;
+}
+
+.tm-form-static .tw-form-label {
+  color: #4e5a64;
+}
+
+.tm-form-static .tw-form-field {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 20px;
+}
+
+.tm-mail-contain {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #d1d7db;
+}
+
+.tw-second td {
+  background-color:#d1d7db!important;
+  padding:5px 5px 5px 20px!important;
+}
+.tw-second td div {
+  color:#888!important;
+}
+.tw-preview div {
+  max-height:200px;
+  width:100%!important;
+  overflow-y:auto!important;
+  padding:10px 20px!important;
+}
+.tw-preview td {
+  background-color:#eff1f4;
+  border:#828282 1px solid!important;
+}
+.tw-fixtable-wrap table {
+  border-collapse:inherit!important;
+}
+.tw-badge {
+  padding:2px 4px!important;
+}
+.tw-badge-blue {
+   padding:2px!important;
+}

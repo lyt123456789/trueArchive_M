@@ -1,0 +1,48 @@
+<HTML>
+	<head>
+        <meta charset="UTF-8"/>
+        <script src="http://192.168.5.20:8080/trueWorkFlowV2.1_CCQ_GZ/dwz/style/js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="http://192.168.5.20:8080/trueWorkFlowV2.1_CCQ_GZ/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script> 
+    </head>
+<body >
+<h1>test</h1>
+  <input type="button" value="测试" onclick="test()"/>
+  <textarea rows="100" cols="100" id="data" name="data"></textarea>
+  <script src="http://192.168.5.20:8080/trueWorkFlowV2.1_CCQ_GZ/pdfocx/json2.js" type="text/javascript"></script>
+   <input type="text" id="date" name="date" style="width:200px" zname="成文时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/>
+<script language="javascript">
+function test(){
+		/* var objs ={
+				'userId':'{BFA811EA-0000-0000-4549-B7EBFFFFFFB0}',
+				'itemIds':'AE94B59E-12CA-493A-8EE0-935676DB3078',
+				'pagesize':'10',
+				'column':'0'
+		}; */
+	var	objs ={};
+		objs['userId'] = '{09870F0B-0000-0000-4245-A01900000029}';
+		//objs['itemIds'] = 'C168E8DE-9D2F-4417-A213-36E22CABECE2';
+		objs['pagesize'] = '10';
+		objs['column'] = '0';
+		objs['type'] = '0';
+		//objs['title'] = '测试04'; 
+		$.ajax({
+		    url: 'http://192.168.5.20:8080/trueWorkFlowV2.1_CCQ_GZ/table_getTodoListOfMobile.do',
+		    type: 'POST',
+		    data:  objs,
+		    cache : false,
+			async : false,
+		    timeout: 30000,
+		    error: function(o,e){
+		        alert('加载form元素错误, error:'+e+'。');
+		    },
+		    success: function(data){
+		    	$('#data').val(data);
+		    }
+		});
+	}
+</script>
+</body>
+</HTML>
+
+
+

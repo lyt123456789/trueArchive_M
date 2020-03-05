@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+
+// 导入core中的基础文件
+//-----------------------------------------------------
+@import "core/_setting.scss";
+@import "core/_mixin.scss";
+@import "core/_reset.scss";
+@import "core/_helper.scss";
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@import "font-awesome/font-awesome";
+@import "libs/btn";
+
+
+// @import "libs/message";
+// @import "libs/table";
+// @import "libs/fixtable";
+// @import "libs/btn";
+// @import "libs/pagination";
+// @import "libs/form";
+// @import "libs/badge";
+// @import "libs/tabs";
+
+// @import "libs/customlib";
+
+// @import "page/list-layout";
+
+// @import "doc";
+
+
+
+.tw-ie-warning{
+	// position: relative;
+	.tw-close{
+	    display: inline-block;
+		width: 24px;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 24px;
+		color: #000;
+		text-shadow: 0 1px 0 #fff;
+		opacity: .2;
+		-webkit-transition: all .3s;
+		transition: all .3s;
+		padding: 0;
+		cursor: pointer;
+		background: 0 0;
+		border: 0;
+		-webkit-appearance: none;
+		float: right;
+		height: auto;
+		margin: -3px -5px auto auto;
+	}	
+}
+
+

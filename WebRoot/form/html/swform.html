@@ -1,0 +1,117 @@
+﻿<html>
+    <head>
+        <title>
+            表单元素说明
+        </title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+table{border-collapse:collapse;border-spacing:0; border-color:#FF0000;}
+.infotan{width: 820px;margin:0 auto; border-color:#FF0000;} 
+.infotan td{align="center";height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px;color:red;border-color:#FF0000;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<body>
+	<div class="warp">
+		<table class="infotan" width=819px cellspacing="0" align="center" style="border-top:2px solid red;">
+			<caption>
+				<br/>
+				 <p style="font-size:40px;line-height:35px; color:#FF0000; text-align:center;padding-top:30px;">
+				   <strong >
+					收&nbsp;&nbsp;文&nbsp;&nbsp;登&nbsp;&nbsp;记&nbsp;&nbsp;信&nbsp;&nbsp;息
+			   	</strong>
+				</p>
+				<br/>
+			</caption>
+			<tr>
+			  <td width="16%"  align="center" valign="middle"  style="font-size:18px; height:100px; border:1px solid red; color:red;  ">主送</td>
+			  <td width="70%"  colspan="3" style="border:1px solid red;font-size:18px;color:black;">
+						<textarea  id="zsdw" name="zsdw" style="width:400px;height:80px"></textarea></td>
+			</tr>
+   
+			<tr>
+			  <td width="16%"  align="center" valign="middle"  style="font-size:18px; height:100px; border:1px solid red; color:red;  ">抄送</td>
+			  <td width="70%"  colspan="3" style="border:1px solid red;font-size:18px;color:black;">
+						<textarea id="csdw" name="csdw" style="width:400px;height:80px"></textarea></td>
+			</tr>
+			<tr>
+				<td width="16%"  align="center" valign="middle"  style="font-size:18px; height:35px; border:1px solid red; color:red;  ">标题词</td>
+			  <td width="70%"  colspan="3" style="border:1px solid red;font-size:18px;color:black;">
+						<textarea  id="lwbt" name="lwbt" zname="标题词" style="width:400px;height:80px"></textarea></td>
+			</tr>
+			<tr>
+				<td width="16%"  align="center" valign="middle"  style="font-size:18px; height:35px; border:1px solid red; color:red;  ">印发时间</td>
+			  <td width="35%"   style="border:1px solid red;font-size:18px;color:black;">
+						<input style="height:33px;width:240px;" type="text" id="fwsj" name="fwsj" zname="印发时间" /></td>
+						<td width="16%"  align="center" valign="middle"  style="font-size:18px; height:35px; border:1px solid red; color:red;  ">缮印份数</td>
+			  <td width="35%"   style="border:1px solid red;font-size:18px;color:black;">
+						<input style="height:33px;width:240px;" type="text" id="fs" name="fs" zname="缮印份数" /></td>
+			</tr>
+			<tr>
+				<td width="16%"  align="center" valign="middle"  style="font-size:18px; height:35px; border:1px solid red; color:red;  ">文号</td>
+			  <td colspan="3" style="border:1px solid red;font-size:18px;color:black;">
+						<input style="height:33px;width:240px;" type="text" id="lwh" name="lwh" zname="文号" /></td>
+			</tr>
+</table>
+</div>
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript">
+	//以下必须有
+	function loadCss() {
+		seajs.use('lib/form', function() {
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+		});
+	}
+	//以上必须有
+</script>
+</html>

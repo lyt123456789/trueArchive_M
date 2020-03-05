@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<bean id="fieldInfoDao" class="cn.com.trueway.workflow.core.dao.impl.FieldInfoDaoImpl" />
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+    	<constructor-arg ref="dataSource" />
+	</bean>
+	
+	<bean id="jdbcBase" class="cn.com.trueway.base.util.JDBCBase">
+          <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+ 	</bean>
+ 	
+ 	<bean id="wftemplateDao" class="cn.com.trueway.workflow.core.dao.impl.TemplateDaoImpl" />
+ 	
+ 	<bean id="labelDao" class="cn.com.trueway.workflow.core.dao.impl.LabelDaoImpl" />
+ 	
+ 	<bean id="dictionaryDao" class="cn.com.trueway.workflow.core.dao.impl.DictionaryDaoImpl" />
+ 	
+ 	<bean id="customStatusDao" class="cn.com.trueway.workflow.core.dao.impl.CustomStatusDaoImpl" />
+ 	
+ 	<bean id="itemDao" class="cn.com.trueway.workflow.core.dao.impl.ItemDaoImpl" />
+ 	
+ 	<bean id="formPermitDao" class="cn.com.trueway.workflow.core.dao.impl.FormPermitDaoImpl" />
+	
+	<bean id="attachmentTypeDao" class="cn.com.trueway.workflow.core.dao.impl.AttachmentTypeDaoImpl" />
+	
+	<bean id="attachmentTypeFZDao" class="cn.com.trueway.document.component.taglib.attachment.dao.impl.AttachmentTypeFZDaoImpl" />
+	
+	<bean id="workflowCalendarDao" class="cn.com.trueway.workflow.core.dao.impl.WorkflowCalendarDaoImpl" />
+	
+	<bean id="workflowSoftRouteDao" class="cn.com.trueway.workflow.core.dao.impl.WorkflowSoftRouteDaoImpl" />
+	
+	<bean id="workflowBasicFlowDao" class="cn.com.trueway.workflow.core.dao.impl.WorkflowBasicFlowDaoImpl" />
+	
+	<bean id="workflowNoteDao" class="cn.com.trueway.workflow.core.dao.impl.WorkflowNoteDaoImpl" />
+	
+	<bean id="pendingDao" class="cn.com.trueway.workflow.core.dao.impl.PendingDaoImpl" />
+	
+	<bean id="itemRelationDao" class="cn.com.trueway.workflow.core.dao.impl.ItemRelationDaoImpl" />
+	
+	<bean id="employeeRoleDao" class="cn.com.trueway.workflow.set.dao.impl.EmployeeRoleDaoImpl" />
+	
+	<bean id="replayDao" class="cn.com.trueway.workflow.core.dao.impl.ReplayDaoImpl" />
+	
+	<bean id="noticeInfoDao" class="cn.com.trueway.workflow.core.dao.impl.NoticeInfoDaoImpl" />
+
+	<bean id="filingDao" class="cn.com.trueway.workflow.core.dao.impl.FilingDaoImpl" />
+	
+	<bean id="employeeLeaderDao" class="cn.com.trueway.workflow.set.dao.impl.EmployeeLeaderDaoImpl" />
+	
+	<bean id="doArticlePostDao" class="cn.com.trueway.workflow.core.dao.impl.DoArticlePostDaoImpl" />
+	
+	<bean id="dataCenterDao" class="cn.com.trueway.workflow.core.dao.impl.DataCenterDaoImpl" />
+	
+	<bean id="pushDao" class="cn.com.trueway.workflow.set.dao.impl.PushDaoImpl" />
+	
+	<bean id="integrateDao" class="cn.com.trueway.workflow.core.dao.impl.IntegrateDaoImpl" />
+	
+	<bean id="tableInfoExtendDao" class="cn.com.trueway.workflow.core.dao.impl.TableInfoExtendDaoImpl" />
+
+	<bean id="depConfigDao" class="cn.com.trueway.workflow.core.dao.impl.DepConfigDaoImpl" />
+		
+	<bean id="monitorDao" class="cn.com.trueway.workflow.core.dao.impl.MonitorDaoImpl" />
+	
+	<bean id="thirdpartyInterfaceLogDao" class="cn.com.trueway.workflow.set.dao.impl.ThirdpartyInterfaceLogDaoImpl" />
+</beans>

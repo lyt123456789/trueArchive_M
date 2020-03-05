@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="form" extends="common-default">
+		<action name="form_*" class="formAction" method="{1}">
+			<result name="selectTable">/WEB-INF/pages/workflow/form/selectTable.jsp</result>
+			<result name="toAddFormJsp">/WEB-INF/pages/workflow/form/formAdd.jsp</result>
+			<result name="toAddFormJspByCode">/WEB-INF/pages/workflow/form/formAddByCode.jsp</result>
+			<result name="readHTML">/form/html/src/viewCode.jsp</result>
+			<result name="saveStringToHTML">/form/html/src/saveOK.jsp</result>
+			<result name="getFormList">/WEB-INF/pages/workflow/form/formList.jsp</result>
+			<result name="toUpdateFormJsp">/WEB-INF/pages/workflow/form/formUpdate.jsp</result>
+			<result name="toUpdateFormJspByCode">/WEB-INF/pages/workflow/form/formUpdateByCode.jsp</result>
+			<result name="toHTMLTag2ColumnJsp">/WEB-INF/pages/workflow/form/htmlTag2Column.jsp</result>
+			<result name="addFormTagMapColumn">/WEB-INF/pages/workflow/form/saveOK.jsp</result>
+			<result name="loginout">/WEB-INF/pages/login.jsp</result>
+			<result name="preview">/WEB-INF/pages/workflow/form/formPreview.jsp</result>
+			<result name="addFormStyle">/WEB-INF/pages/workflow/form/addFormStyle.jsp</result>
+		</action>
+		<action name="workday_*" class="workdayAction" method="{1}">
+			<result name="getList">/WEB-INF/pages/workday/list.jsp</result>
+			<result name="toAddJsp">/WEB-INF/pages/workday/add.jsp</result>
+			<result name="toUpdateJsp">/WEB-INF/pages/workday/update.jsp</result>
+		</action>
+		<action name="procedure_*" class="procedureAction" method="{1}">
+			<result name="getList">/WEB-INF/pages/workflow/procedure/list.jsp</result>
+			<result name="toAdd">/WEB-INF/pages/workflow/procedure/add.jsp</result>
+			<result name="toUpdate">/WEB-INF/pages/workflow/procedure/update.jsp</result>
+			<result name="view">/WEB-INF/pages/workflow/procedure/view.jsp</result>
+			<result name="test">/WEB-INF/pages/workflow/procedure/test.jsp</result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+/**侧栏导航布局样式**/
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+body{ background:#D7D7D7; font-size: 12px; line-height: 1.7em; margin:0 2px;}
+
+#sideNaver{/**background:url(../images/bg-sidebar.gif) no-repeat 0 0;**/}
+.treenaver .border-topl,.treenaver .border-bottoml{overflow:hidden; display:block;}
+.treenaver a{text-decoration:none;}
+/**淡蓝色**/
+.tree-lightblue-style .treenaver-name{line-height:100%; padding:10px 0 0; text-align:center; width:160px; font-size:18px; color:#333; text-shadow:1px 1px 0px #FFF;}
+
+.tree-lightblue-style .trees{padding:5px 0; margin-left:1px;}
+.tree-lightblue-style .trees .trees-node{height:35px; overflow:hidden; margin:3px 0;}
+.tree-lightblue-style .trees .trees-node h2{height:35px; font-size:14px; text-shadow:1px 1px 0px #FFF; line-height:35px; text-align:center; cursor:pointer; background:url(../images/bg-menu-item-green.png) right -35px; color:#666;}
+.tree-lightblue-style .trees .trees-node h2.open{background:url(../images/bg-menu-item-current.png) no-repeat right -35px; color:#555555; text-shadow:1px 1px 0px #efefef;}
+.tree-lightblue-style .trees .trees-node h2 span{ display:block; line-height:35px; background:url(../images/bg-menu-item-green.png) no-repeat 0 0; margin-right:10px;color:#434343;}
+.tree-lightblue-style .trees .trees-node h2.open span{background:url(../images/bg-menu-item-current.png) no-repeat 0 0;color:#00558E;}
+.tree-lightblue-style .trees .trees-node ul li{height:30px; margin:0 2px; text-align:center; cursor:pointer; background:url(../images/bg-menu-item-sub.gif) no-repeat right -28px;}
+.tree-lightblue-style .trees .trees-node ul li a{line-height:30px; margin-right:3px; color:#666; background:url(../images/bg-menu-item-sub.gif) no-repeat 0 0; display:block;}
+.tree-lightblue-style .trees .trees-node ul li a:hover{color:#000;text-shadow:1px 1px 0px #FFF;}
+
+.en{font-size:9px;}

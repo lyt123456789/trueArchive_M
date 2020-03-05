@@ -1,0 +1,3 @@
+.col-tab tr.even td{background-color:#FFFFFF;}
+.col-tab tr.odd td{background-color:#FBFBFC;}
+.col-tab tr.hover td{background-color:#DEE3D8;}

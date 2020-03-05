@@ -1,0 +1,61 @@
+<HTML>
+	<head>
+        <meta charset="UTF-8"/>
+        <script src="http://192.168.5.20:8070/trueWorkFlowV2.1_WXBT_Common/dwz/style/js/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="http://192.168.5.20:8070/trueWorkFlowV2.1_WXBT_Common/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script> 
+    </head>
+<body >
+<h1>test</h1>
+  <input type="button" value="测试" onclick="test()"/>
+    <textarea rows="100" cols="100" id="data" name="data"></textarea>
+  <script src="http://192.168.5.20:8070/trueWorkFlowV2.1_WXBT_Common/pdfocx/json2.js" type="text/javascript"></script>
+   <input type="text" id="date" name="date" style="width:200px" zname="成文时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/>
+<script language="javascript">
+function test(){
+
+	var	objs ={};
+		 objs['formId'] = 'C3851AC2-9B83-464F-BE2F-C7FD8C5A9792';
+		objs['instanceId'] = 'E0ED4E65-5085-450D-99C1-9592377CFF84';
+		objs['nodeId'] = '68A39757-C68A-4D23-8758-9055D78621CF';
+		objs['processId'] = '695C4C43-1753-4E9A-9F5D-D44EFCA990F4';
+		objs['userId'] = '{BFA8003D-0000-0000-628D-3DCB00000035}';
+		 objs['workflowId'] = 'A9CA4795-306D-420A-B45E-0D94CCCF873B'; 
+		objs['oldFormId'] = 'C3851AC2-9B83-464F-BE2F-C7FD8C5A9792'; 
+		/* objs['formId'] = '83461BEA-E3EA-4EC1-A077-7AEC8B6728FF'; 
+		
+		objs['instanceId'] = 'D650A76D-1308-4EFE-9322-7245BAD3B48F';
+		objs['nodeId'] = '95BB17CA-1DE4-4891-AA8E-1D5C387389FF';
+		objs['processId'] = 'CD888CB5-0506-4D02-807A-5A442C911F68';
+		objs['userId'] = '{BFA8003B-0000-0000-2CBF-AE8B0000003B}';
+		objs['workflowId'] = '47ABC9FA-25A7-4A80-93DE-9899CA7E2DD0'; 
+		objs['oldFormId'] = '';  
+		 */
+	/* 	objs['formId'] = 'AA033775-2D9D-4B79-A4A0-381F4A00E29B'; 
+		
+		objs['instanceId'] = 'CE4D24FF-35CE-47AC-AC79-BABEF3A5A906';
+		objs['nodeId'] = '95BB17CA-1DE4-4891-AA8E-1D5C387389FF';
+		objs['processId'] = 'D11FB10C-9B6D-4FFE-A0F9-841D684698EE';
+		objs['userId'] = '{BFA8003B-0000-0000-2CE7-9C2300000050}';
+		objs['workflowId'] = 'B828F52B-2AC3-42D1-937E-B1BA1CFFF484'; 
+		objs['oldFormId'] = '';   */
+		$.ajax({
+		    url: 'http://192.168.5.20:8070/trueWorkFlowV2.1_WXBT_Common/table_getAllTrueJson.do',
+		    type: 'POST',
+		    data:  objs,
+		    cache : false,
+			async : false,
+		    timeout: 30000,
+		    error: function(o,e){
+		        alert('加载form元素错误, error:'+e+'。');
+		    },
+		    success: function(data){
+		    	$('#data').val(data);
+		    }
+		});
+	}
+</script>
+</body>
+</HTML>
+
+
+

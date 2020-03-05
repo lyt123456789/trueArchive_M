@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>连云港市重大项目审批系统-首页</title>
+<link href="theme/default/css/layout.base.css" rel="stylesheet" type="text/css" />
+<link href="theme/default/css/layout.list.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<!--头部-->
+	<div id="header-box" class="warp1002">
+    	<div id="header-logo"></div>
+    </div>
+    <!--导航-->
+    <div id="naver-box" class="warp1002">
+    	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td class="lpic">欢迎您，admin。</td>
+            <td class="cpic">
+            <!--naver begin-->
+            	<table border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td class="line">&nbsp;</td>
+                    <td class="menu"><a href="index.html">投资</a></td>
+                    <td class="line">&nbsp;</td>
+                    <td class="menu"><a href="list-1.html">教育</a></td>
+                    <td class="line">&nbsp;</td>
+                    <td class="menu"><a href="list-2.html">交通</a></td>
+                    <td class="line">&nbsp;</td>
+                    <td class="menu"><a href="list-3.html">住房</a></td>
+                    <td class="line">&nbsp;</td>
+                  </tr>
+                </table>
+            <!--naver end-->
+            </td>
+          </tr>
+        </table>
+	</div>
+    <!--主体部分-->
+    <div id="bodyer-box" class="warp1002">
+      <div id="bodyer-box2" class="warp1002">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top" class="left"><div class="toper">
+              <div id="TextField"> TextField </div>
+            </div>
+              <div class="bodyer">
+                <!--侧栏导航-->
+                <div id="TreeListBox">
+                  <ul>
+                    <li><a href="#">在线投诉</a>
+                      <div> <a href="#">未办结</a> <a href="#">已办结</a> <a href="#">已超期</a> </div>
+                    </li>
+                    <li><a href="#">接件登记</a>
+                      <div> <a href="#">政府投资项目审批</a> <a href="#">已办结</a> <a href="#">已超期</a> </div>
+                    </li>
+                    <li><a href="#">业务受理</a>
+                      <div> <a href="#">未办结</a> <a href="#">已办结</a> <a href="#">已超期</a> </div>
+                    </li>
+                    <li><a href="#">复议箱</a>
+                      <div> <a href="#">未办结</a> <a href="#">已办结</a> <a href="#">已超期</a> </div>
+                    </li>
+                    <li><a href="#">诉讼箱</a>
+                      <div> <a href="#">未办结</a> <a href="#">已办结</a> <a href="#">已超期</a> </div>
+                    </li>
+                    <li><a href="#">审理</a>
+                      <div> <a href="#">未办结</a> <a href="#">已办结</a> <a href="#">已超期</a> </div>
+                    </li>
+                    <li><a href="#">调查</a>
+                      <div> <a href="#">未办结</a> <a href="#">已办结</a> <a href="#">已超期</a> </div>
+                    </li>
+                    <li><a href="#">回访</a>
+                      <div> <a href="#">未办结</a> <a href="#">已办结</a> <a href="#">已超期</a> </div>
+                    </li>
+                  </ul>
+                </div>
+                <!--结束-->
+              </div></td>
+            <td valign="top" class="right">
+            	<!--右侧内容开始-->
+                <div class="subTitleBox mt6">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="300"><h3>数据分析</h3></td>
+                        <td align="right" class="tools"></td>
+                      </tr>
+                    </table>
+                </div>
+                <div class="tabBox">
+                  <div id="citys">&nbsp;</div>
+                </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!--底部信息-->
+  <div id="footer-box" class="warp1002">
+    	<p>Copyright &copy; 2011 建议使用IE6.以上浏览器 分辨率 1024x768</p>
+        <p>版权所有：连云港市电子政务内网工作门户所有 技术支持：连云港市政府信息网络中心</p>
+    </div>
+    <!--请尽可能的将JS放入页面底部，减少加载引起的阻塞-->
+    <script type="text/javascript" src="pluign/CUI/jquery.min.js"></script>
+    <script type="text/javascript" src="pluign/CUI/jquery.menulist.js"></script>
+    <script type="text/javascript" src="pluign/CUI/swfobject.js"></script>
+    <script type="text/javascript">
+	$('#TreeListBox').animateListMenu('li > a',{outAnimateStyle:[['fontSize',12]],overAnimateStyle:[['fontSize',14]],outUnanimateStyle:[['background-position','left top']],overUnanimateStyle:[['background-position','left bottom']]});
+	
+	var params = {
+		menu: "false",
+		scale: "noScale",
+		allowFullscreen: "true",
+		allowScriptAccess: "always",
+		bgcolor: "#FFFFFF",
+		wmode: "transparent"
+	};
+	swfobject.embedSWF("pluign/swf/TextField.swf", "TextField", "182", "80", "10.0.0", "pluign/swf/expressInstall.swf", {zh:"业务办理",en:"YEWU BANLI",fc:"0xFFFFFF"	}, params, {id:"TextField"});
+	swfobject.embedSWF("pluign/swf/citys.swf", "citys", "800", "400", "10.0.0", "pluign/swf/expressInstall.swf", '', params, {id:"citys"});
+	</script>
+</body>
+</html>

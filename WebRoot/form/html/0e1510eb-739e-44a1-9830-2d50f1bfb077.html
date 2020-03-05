@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<link rel="stylesheet" href="../jsp/widgets/theme/dm/css/form.css" />
+<!--以上必须-->
+<style>
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>南通市国土资产报修批办单</strong>
+</p>
+
+<table width="819" class="infotan">
+<tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 报修部门：</td>
+	  	<td  class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" >
+		   <input type="text" id="bxbm" name="bxbm" style="width:200px" zname="报修部门" value="${deparmentName}" />
+	  </td>
+	  <td  height="72" valign="middle" width="20%;" style="font-size:18px;" > 申&nbsp;&nbsp;请&nbsp;&nbsp;人：</td>
+	  <td   class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" >
+	  <input type="text" id="sqr" name="sqr" style="width:200px" zname="申请人" value="${loginEmployee.employeeName}" />
+	  </td>
+  </tr>
+  <tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 申请时间：</td>
+	  	<td  class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" >
+		 <input type="text" id="sqsj" name="sqsj" style="width:200px" zname="申请时间" value="" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/>
+		
+	  </td>
+	  <td  height="72" valign="middle" width="20%;" style="font-size:18px;" > 申请内容：</td>
+	  <td   class="tdcol docformTableNoBD" width="30%;" style="font-size:18px;" >
+	  <input type="text" id="sqnr" name="sqnr" style="width:200px" zname="申请内容" value="" />
+	  </td>
+  </tr>
+  <tr>
+        <td  height="72" valign="middle" style="font-size:18px;" width="20%;"> 资产编号：</td>
+	  	<td  class="tdcol docformTableNoBD" width="80%;" colspan="3" style="font-size:18px;" >
+		  <input type="text" id="bxzcbh" name="bxzcbh"  readonly="readonly" onClick="chooseass22()"  style="width:200px" zname="报修资产编号"/>
+	  </td>
+	  </tr>
+	  <tr>
+	  <td   valign="middle" width="20%;" style="font-size:18px;" > 备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</td>
+	  <td   class="tdcol docformTableNoBD" width="80%;" colspan="3" style="font-size:18px; height: 210px;" >
+	    <textarea style="width: 600px; height: 200px;" id="bz" name="bz"></textarea>
+	  </td>
+  </tr>
+  <tr>
+        <td   valign="middle" style="font-size:18px; height:400px;" width="20%;"> <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>审批意见：</p>
+        <p>&nbsp;</p></td>
+	  	<td  class="tdcol docformTableNoBD" width="80%;" style="font-size:18px;" colspan="3" >
+	  </td>
+	 
+  </tr>
+     </table>
+</div>
+ <input type="hidden" id="bxzcid" name="bxzcid"   style="width:40px" zname="报修资产ID"/>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+ function chooseass22(){
+     var winoption ="dialogHeight:800px;dialogWidth:800px;status:no;scroll:no;resizable:no;center:yes";
+     var retVal = window.showModalDialog('${ctx}/chooseassets.html','', winoption);
+		//	alert(retVal);	
+		//	alert(retVal[0]);	
+			//alert(retVal[1]);	
+     if(retVal){
+	    $("#bxzcid").val(retVal[0]);
+		$("#bxzcbh").val(retVal[1]);
+
+     }
+ 
+ }
+
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

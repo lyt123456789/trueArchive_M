@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Regx Method</title>
+</head>
+<body>
+<script src="json2.js" type="text/javascript"></script>
+	<script>
+	//获取字段对象
+	function __getFieldObject(id,json){
+		var obj=null;
+		var i=0,l=json.length;
+		for(;i<l;i++){
+			if(id==json[i].name){
+				obj=json[i];
+				break;
+			}
+		}
+		return obj;
+	}
+	//获取对象属性
+	function __getFieldAttribute(kv,json){
+		var kvo=kv.split("::::"),k=kvo[0],v=kvo[1];
+		var o=__getFieldObject(k,json);
+		return o[v];
+	}
+	function formatStr(url,json){
+		var json=(typeof json=="object")?json:JSON2.parse(json);
+		var regx=/\{\{(.*?)\}\}/g;
+		var str=url;
+		//var str=url.substring(url.indexOf("?")+1);
+		var matchs=str.match(regx),i=0,l=matchs==null?0:matchs.length;
+		var keys = url.substring(url.indexOf("?")+1).split("&");
+		var params = {};
+		for(var t = 0 ; t<keys.length; t++){
+		//	keys[t] = keys[t].substring(0,keys[t].indexOf("="));
+			params[keys[t].substring(0,keys[t].indexOf("="))] =  keys[t].substring(keys[t].indexOf("=")+1);
+			keys[t] = keys[t].substring(0,keys[t].indexOf("="));
+		}
+		var replaces=[],mi;
+		var ret ={};
+		ret['type'] = 0;
+		ret['url'] = url.substring(0,url.indexOf("?"));
+		if(ret['url'].indexOf(".do")>-1){
+			ret['type'] = 1;
+		}
+		if(url.indexOf("::::")== -1){
+			ret['type'] = 0;
+		}
+		for(;i<l;i++){
+			mi=matchs[i].replace("{{","").replace("}}","");
+			replaces.push([mi,__getFieldAttribute(mi,json)]);
+		}
+		i=0,l=replaces.length;
+		for(;i<l;i++){
+			str=str.replace("{{"+replaces[i][0]+"}}",encodeURI(replaces[i][1]));
+			params[keys[i]] = replaces[i][1];
+		}
+		ret['params'] = params;
+		
+		if(ret['type'] == 0){
+			ret['url'] = str;
+		}
+		return JSON2.stringify(ret);
+	}
+	
+	//Value format
+	function formatEval(valueformat,json){
+		var json=(typeof json=="object")?json:JSON2.parse(json);
+		var regx=/\{\{(.*?)\}\}/g;
+		var str=valueformat,rstr="";
+		var matchs=str.match(regx),i=0,l=matchs==null?0:matchs.length;
+		var replaces=[],mi;
+		for(;i<l;i++){
+			mi=matchs[i].replace("{{","").replace("}}","");
+			//console.log('formatURL::'+i,mi);
+			replaces.push([mi,__getFieldAttribute(mi,json)]);
+		}
+		//console.log('formatURL::'+'replaces',replaces);
+		i=0,l=replaces.length;
+		for(;i<l;i++){
+			str=str.replace("{{"+replaces[i][0]+"}}",replaces[i][1]);
+		}
+		alert(str);
+		str=eval(str)
+		return str.toString();
+	}
+
+	function formatBindfields(bindfields,json){
+		var json=(typeof json=="object")?json:JSON2.parse(json);
+		var ids=(bindfields.indexOf(',')>-1)?bindfields.split(','):[bindfields];
+		var i=0,l=ids.length;
+		var o,f,ov,nv,es=[];
+		for(;i<l;i++){
+			o=__getFieldObject(ids[i],json);
+			ov=o.value;
+			if(!!o.valueformat){
+				nv=formatEval(o.valueformat,json);
+				o.value=nv;
+			}
+			if(!!o.verifyformat){
+				f=formatEval(o.verifyformat,json);
+				if(f=="true"){
+					if(o.valueformat!=""){
+						o.value=nv;
+					}
+				}else{
+					o.value="";
+					es.push(ids[i]);
+				}
+			}
+		}
+		return JSON2.stringify({"trueform":json});
+	}
+	/* console.log('formatStr',formatStr("url?key={{id1::::x}}<{{id2::::x}}&page={{id2::::page}}",json));
+	console.log('formatEval',formatEval("{{id1::::x}}<{{id2::::x}}",json));
+	console.log('formatEval',formatEval("2013-12-12>2014-12-12",json)); */
+	</script>
+</body>
+</html>

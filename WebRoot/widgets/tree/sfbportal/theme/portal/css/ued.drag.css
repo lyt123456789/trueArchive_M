@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+.jQcol{width:300px; float:left; margin:5px;}
+.jQrow{margin:5px;}
+.jQnel{border-width: 1px; border-style: dashed; border-color:#999; padding:5px; margin:5px;}
+.jQtel{position:absolute; left:0; top:0; z-index:99; border-width: 1px; border-style: dashed; border-color:#999; padding:5px; margin:5px; background-color:#FFF; }
+.jQtel .content{ overflow:hidden;}
+.col-hover{background-color:#DFFAD8;}
+.row-hover{border-color:#f00;}
+.cols .content{overflow:hidden;}
+.cols .title{position:relative; overflow:hidden;}
+.cols .title h2{cursor:move;}
+.tools{width:54px; height:18px; overflow:hidden; position:absolute; top:-20px; right:15px;}
+.tools span{display:inline-block; zoom:1; width:18px; height:18px; cursor:pointer; background-image:url(../images/zoom.gif); background-repeat:no-repeat;}
+.tools span.window{background-position:0 0;}
+.tools span.lock{background-position:-72px 0;}
+.tools span.close{background-position:-96px 0;}
+.tools span.windowHover{background-position:0 -39px;}
+.tools span.lockHover{background-position:-72px -39px;}
+.tools span.closeHover{background-position:-96px -39px;}
+
+.tools span.iwindow{background-position:-24px 0;}
+.tools span.ilock{background-position:-48px 0;}
+.tools span.iwindowHover{background-position:-24px -39px;}
+.tools span.ilockHover{background-position:-48px -39px;}
+
+#jQaddBtn{position:absolute; top:20px; right:20px; z-index:99; cursor:pointer; width:100px; height:20px; line-height:20px;}
+#jQselect{overflow:hidden; zoom:1;}
+#jQselect label{display:block; float:left; width:50%;}
+#jQselect label input{vertical-align:middle; margin-right:5px;}

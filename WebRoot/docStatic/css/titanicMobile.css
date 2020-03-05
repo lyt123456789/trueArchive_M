@@ -1,0 +1,143 @@
+body {
+	overflow: hidden;
+}
+.wrapper {
+	overflow: auto;
+}
+.header {
+	height: .88rem;
+	background: #248be8;
+	color: #fff;
+	font-size: .4rem;
+	text-align: center;
+	line-height: .88rem;
+}
+.app-ios .header {
+	height: 1.28rem;
+	padding-top: .4rem;
+}
+.app-iosx .header {
+	height: 1.45rem;
+	padding-top: .57rem;
+}
+.go-back {
+	display: block;
+	width: 12%;
+	float: left;
+}
+.icon-back {
+	display: inline-block;
+	width: .22rem;
+	height: .38rem;
+	background: url('../img/icon-back.png') no-repeat center center/100%;
+	vertical-align: middle;
+}
+.header-tit {
+	width: 73%;
+	float: left;
+	text-align: center;
+	line-height: .88rem;
+}
+.header-oper {
+	width: 15%;
+	float: right;
+	text-align: center;
+}
+.form-group {
+	padding: .36rem .26rem;
+}
+.bdb {
+	border-bottom: 1px solid #cccccc;
+}
+
+.form-tit {
+	float: left;
+	color: #262626;
+	font-size: .32rem;
+}
+.form-input-group {
+	float: left;
+	width: 60%;
+}
+.form-input-group span {
+	display: block;
+	float: left;
+	height: .5rem;
+	color: #929292;
+	font-size: .28rem;
+	text-align: center;
+	line-height: .5rem;
+	vertical-align: middle;
+}
+.form-input-group .form-input-control {
+	float: left;
+	width: 25%;
+	height: .5rem;
+	min-width: 20%;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	color: #929292;
+	text-align: center;
+	font-size: .28rem;
+}
+.form-input-group span:last-child {
+	/*  min-width: 30%;*/
+}
+.generate-num {
+	display: block;
+	float: right;
+	height: .5rem;
+	padding: 0 .1rem;
+	border-radius: 3px;
+	border: none;
+	background: #248be8;
+	color: #fff;
+	font-size: .26rem;
+}
+.titanic-list-area {
+	padding: .3rem;
+}
+.titanic-list-area p {
+	color: #292929;
+	font-size: .3rem;
+}
+.titanic-list-li {
+	margin-top: .4rem;
+	margin-left: -2%;
+	margin-right: -2%;
+	overflow: auto;
+}
+.titanic-list-li li {
+	float: left;
+	width: 46%;
+	height: .6rem;
+	margin: .11rem 2%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	color: #999;
+	font-size: .26rem;
+	text-align: center;
+	line-height: .6rem;
+
+}
+.titanic-list-li li.on {
+	background: #248be8;
+	color: #fff;
+	border: 1px solid #248be8;
+}
+.weui-cell:before {
+	border: none;
+}
+.weui-cell_select .weui-cell__bd:after {
+	width: .16rem;
+	height: .16rem;
+	margin-top: -8px;
+}
+.weui-select {
+	float: left;
+	height: .5rem;
+	padding-left: 10%;
+	line-height: .5rem;
+	font-size: .28rem;
+	color: #929292;
+}

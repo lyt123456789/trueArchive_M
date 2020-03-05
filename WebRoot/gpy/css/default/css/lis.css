@@ -1,0 +1,21 @@
+.tree-ico-house{background:url(../images/treeico_03.gif) no-repeat center left; padding-left:16px;}
+.tree-ico-folder{background:url(../images/treeico_06.gif) no-repeat center left; padding-left:16px;}
+.tree-ico-user{background:url(../images/treeico_08.gif) no-repeat center left; padding-left:16px;}
+.tree-ico-img{background:url(../images/treeico_10.gif) no-repeat center left; padding-left:16px;}
+.tree-ico-book{background:url(../images/treeico_13.gif) no-repeat center left; padding-left:16px;}
+.side-naver{width:178px;background:#F2F9FF;}
+.side-naver a{color:#333; text-decoration:none;}
+.side-naver  a:hover{color:#333; text-decoration:none;}
+.side-naver li{overflow:hidden;height:25px;}
+.side-naver li.first{height:100%;}
+.side-naver h2{background:url(../images/left_litit.jpg) no-repeat;width:178px; height:25px;cursor:pointer;}
+.side-naver h2 span{line-height:25px; padding-left:36px; font-weight:normal;}
+.side-naver .content2{width:178px;padding:10px;}
+.side-naver .content2 a{width:120px;height:30px;line-height:30px;color:#333; display:block;overflow:hidden;padding-left:20px;}
+.side-naver .content2 a:hover{border:1px solid #CCC;color:#F60;display:block;overflow:hidden;padding-left:20px;}
+.side-naver .content{width:178px;}
+.side-naver .content a{width:178px;height:80px;display:block;text-align:center;}
+.side-naver .content a:hover{width:178px;background:url(../images/liconbk.jpg) center no-repeat;display:block;}
+.side-naver li.unheight{height:auto;overflow:none;}
+ul#black li{height:auto;overflow:none; background-color:transparent;}
+ul#black ul{background-color:transparent;}

@@ -1,0 +1,282 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ include file="/common/header.jsp"%>
+<%@ include file="/common/formJs.jsp"%>
+<html>
+<head>
+<title>表单元素说明</title>		
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:35px;font-size:18px;border:1px #333 solid;padding:8px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;height:30px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+function trim(str){
+		return str.replace(/^\s*/,'').replace(/\s*$/,'');
+	}
+	//Ie生成时间
+	 function newDate(str){
+     		str = str.split("-");
+     		var date = new Date();
+     		date.setUTCFullYear(str[0],str[1]-1,str[2]);
+     		date.setUTCHours(0,0,0,0);
+     		return date;
+     	}
+     	
+		//获取申请时间内的可用车辆
+     	function getCanUseCar(){
+     		if(document.getElementById("applystartdate").value!="" && document.getElementById("applyenddate").value!=""){
+     			var  startDate =document.getElementById("applystartdate").value;
+    			var  backDate =document.getElementById("applyenddate").value;
+    			var  dateStart = new Date(startDate);
+    			var  dateBack = new Date(backDate);
+				//Ie时间单独生成
+    			if(!-[1,]){
+    				dateStart = newDate(startDate);
+    				dateBack = newDate(backDate);
+    			}
+    			if(dateStart<=dateBack){
+		     		$.ajax({                    
+						type: "POST",                    
+						contentType: "application/json",               
+						url: "http://221.226.191.132:9493/functions/carmanage_getCanUseCar.do?startDate="+startDate+"&backDate="+backDate+"&callback=?",  
+						dataType: 'json',          
+						success: function(result) { 
+							if(result!=''){
+								var carNumber = $("#carnumber");
+	                            //清空原先下拉框
+		                        RemoveOption();
+	
+		                        carNumber.append("<option value=''>--请选择申请车辆--</option>");
+		                        //解析获得的车辆列表
+		                        var data = eval(result);
+	
+		                        if(data.length<=0){
+		                        	alert("所选时间段内没有可申请的车辆");
+		                        }else{
+			                        $(data).each(function (key) {
+		
+			                            var carno = data[key].carno;
+			                            
+			                            AppendOption(carno, carno);
+			                         });
+		                        }
+				   				return false;
+							}else{
+alert("所选时间段内没有可申请的车辆");
+				   				return false;
+							}
+						},
+						error:function(result){
+							alert("系统错误请重试!");
+						}
+	                
+					});
+    			}else{
+    				alert("申请开始时间必须小于申请结束时间");
+    			}
+     		}
+     	}
+
+     	 function RemoveOption() {
+             $("#carnumber option").remove();
+         }
+ 
+         function AppendOption(value, text) {
+            $("#carnumber").append("<option value='" + value + "'>"+ text + "</option>");
+        }
+</script>
+<!--以上必须-->
+<style>
+</style>
+</HEAD>
+
+<body>
+<div class="warp">
+	<br/>
+<p style="font-size:40px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>盐城交通局用车申请单</strong>
+</p>
+<br/>
+<br/>
+	<table width="300" border="0" align="center" style="padding-top:60px;">
+	<tr style="height:50px;">  
+		<td>
+			<span style="font-size:18px;text-align:right;">日期:</span>
+		</td>
+		<td style="line-height:30px;padding:5px;">
+			<input style="border:0px;border-bottom:1px #cccccc dotted;" type="text" id="tbrq" name="tbrq"  value=""/>
+		</td>
+	</tr>
+</table>
+
+	<br/>
+<table width="819" align="center"  class="infotan">
+
+<tr>		
+        <td valign="middle" width="20%;" style="height:60px;"> <div align="center">申请部门</div></td>
+	  	<td width="30%;">
+		<input type="text" id="sqbm" name="sqbm" style="width:200px;"  />
+	  </td>
+        <td width="20%;" valign="middle"><div align="center">车牌号</div></td>
+	<td width="30%;" >
+          <textarea name="cph" type="text" id="cph" style="width:220px;"  ></textarea>
+        </td>
+  </tr>
+ <tr>
+      <td  height="72" valign="middle"><div align="center">申请人</div></td>
+	  <td height="72" >
+	  <input name="syclmc" type="text" id="syclmc" style="width:220px;"  />
+	  </td>
+	<td  valign="middle" ><div align="center">人数</div></td>
+        <td height="72">
+             <input style="width:220px;" id="rs" name="rs" />
+	</td>
+ </tr>
+<tr>
+    	<td  valign="middle" ><div align="center">出车类别</div></td>
+        <td height="72" colspan="3"   style="height:60px ;">
+               <select style="width:50px; height:40px;" id="cclb" name="cclb" ></select>
+		</td>
+    </tr>
+
+<tr>
+    	<td  valign="middle" ><div align="center">用车理由</div></td>
+        <td height="72" colspan="3"   style="height:200px ;">
+               <textarea style="width:600px; height:180px;" id="sy" name="sy" ></textarea>
+		</td>
+    </tr>
+   <tr>
+    	<td  valign="middle" ><div align="center">开始时间</div></td>
+        <td height="72" style="height:60px ;padding-top:2px;">
+               <textarea  style="width:220px; height:45px;" id="kssj" name="kssj" ></textarea>
+		</td>
+		<td  valign="middle" ><div align="center">结束时间</div></td>
+        <td height="72" style="height:60px ;padding-top:2px;">
+               <textarea  style="width:220px; height:45px;" id="jssj" name="jssj" ></textarea>
+		</td>
+    </tr>
+
+	<tr>
+    	<td  valign="middle" ><div align="center">用车联系人</div></td>
+        <td height="72">
+               <input style="width:220px;" id="bmyclxr" name="bmyclxr" />
+		</td>
+		<td  valign="middle" ><div align="center">联系电话</div></td>
+        <td height="72" >
+               <input style=" width:220px;" id="lxdh" name="lxdh" />
+		</td>
+    </tr>
+	
+	<tr>
+	<td  valign="middle" ><div align="center">部门负责人<br/>审定</div></td>
+        <td style="height:300px;" colspan="3">&nbsp;</td>
+    </tr>
+	<tr>
+    	<td  valign="middle" ><div align="center">调度安排</div></td>
+        <td style="height:350px;" colspan="3" valign="top">
+			<table style="width:400;height:100px;" border="0" align="left" >
+				<tr>
+					<td style="text-align:left;height:50px;border:0px;width:450px;">出车司机</td>
+					<td style="border:0px;"><input id="ccsj" name="ccsj"  style="width:200px;height:30px;" ></input></td>
+					<td style="text-align:left;height:50px;border:0px;width:20%;">&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="text-align:left;height:50px;border:0px;">联系电话</td>
+					<td style="border:0px;"><input id="sjlxdh" name="sjlxdh"  style="width:200px;height:30px;"></input></td>
+				</tr>
+            </table>
+		</td>
+    </tr>
+
+
+    
+       </table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

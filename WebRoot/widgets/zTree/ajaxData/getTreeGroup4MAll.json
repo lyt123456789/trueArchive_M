@@ -1,0 +1,29 @@
+[
+	{
+		"name":"本部门",
+		"domId":"ownOrg",
+		"searchOption":null,
+		"apiUrl":"ztree_getFullJsonTree.do?isowner=1",
+		"level":1,
+		"isCustomGroup":false
+	},
+	{
+		"name":"所有部门",
+		"domId":"allOrg",
+		"searchOption":{
+			"domId":"mc",
+			"apiUrl":"ztree_getFullJsonTree.do"
+		},
+		"apiUrl":"ztree_getFullJsonTree.do",
+		"level":0,
+		"isCustomGroup":false
+	},
+	{
+		"name":"常用组",
+		"domId":"groupOrg1",
+		"searchOption":null,
+		"apiUrl":"ztree_getUserGroups.do",
+		"level":1,
+		"isCustomGroup":true
+	}
+]

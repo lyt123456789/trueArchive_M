@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit|ie-stand|ie-comp">
+<title>南京市信息中心</title>
+<meta name="description" content="" />
+<meta name="Keywords" content="" />
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="index-cont">
+		<div class="chart-list">
+			<div class="chart-box fl" id="time-chart"></div>
+			<div class="chart-box fr" id="module-chart"></div>
+		</div>
+		<div class="chart-list">
+			<div class="chart-box fl" id="site-chart"></div>
+			<div class="chart-box fr" id="banjian-chart"></div>
+		</div>
+		<div class="chart-list">
+			<div class="chart-box fl" id="zhongduan-chart"></div>
+			<div class="chart-box fr" id="online-chart"></div>
+		</div>
+		<div class="chart-box" id="dept-chart" style="width: 1170px;"></div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/echarts.min.js"></script>
+<script type="text/javascript">
+	var myChart1 = echarts.init(document.getElementById('time-chart'));
+	var option1 = {
+	    title: {
+	        text: '时间轴',
+	        left: '10px',
+	        top: '10px'
+	    },
+	    tooltip: {
+	        trigger : 'item',  
+            show:true,  
+            showDelay: 0,  
+            hideDelay: 0,  
+            transitionDuration:0,   
+            backgroundColor : '#fff',  
+            borderColor : '#dbe1f5',  
+            textStyle:{
+            	color: '#666'
+            },
+            borderRadius : 5,  
+            borderWidth: 1,  
+            padding: [5,10],
+            formatter: function (params,ticket,callback) {  
+                // console.log(params);  
+                 var res = params.name+'<br/>'+ params.seriesName +': ' + '<span style="color:#1170dc">'+params.value+'人</span>';  
+                 return res;  
+            }  
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '5%',
+	        containLabel: true
+	    },
+	    xAxis : [
+	        {
+	            type : 'category',
+	            boundaryGap : false,
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+                    textStyle: {
+                        color: '#72879b',
+                    }
+                },
+                axisTick:{
+			        show:false
+			    },
+	            data : ['8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00']
+	        }
+	    ],
+	    yAxis : [
+	        {
+	            type : 'value',
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+	                textStyle: {
+	                    color: '#72879b',
+
+	                }
+	            },
+	            splitLine: { 
+	            	lineStyle: {
+		            	color: '#f0f0f0'
+		            }
+		        },
+		        axisTick:{
+			        show:false
+			    },
+	        },
+	    ],
+	    series : [
+	        {
+	            name:'使用人数',
+	            type:'line',
+	            stack: '总量',
+	            areaStyle: {
+	            	color: {
+	            		type: 'linear',
+					    x: 0,
+					    y: 1,
+					    x2: 0,
+					    y2: 0,
+					    colorStops: [{
+					        offset: 0, color: '#ecf5fe' // 0% 处的颜色
+					    }, {
+					        offset: 1, color: '#82baf8' // 100% 处的颜色
+					    }],
+					    globalCoord: false // 缺省为 false
+	            	}
+	            },
+	            lineStyle: {color: '#2884ed'},
+	            itemStyle: {color: '#2884ed'},
+	            smooth:true,
+	            data:[20, 85, 70, 40, 25, 45, 55, 40, 55, 30, 10]
+	        }
+	    ]
+	};
+	myChart1.setOption(option1);
+
+	var myChart2 = echarts.init(document.getElementById('module-chart'));
+	var option2 = {
+		title: {
+	        text: '各模块',
+	        left: '10px',
+	        top: '10px'
+	    },
+	    tooltip: {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b}: {c} ({d}%)"
+	    },
+	    series: [
+	        {
+	            type:'pie',
+	            radius: ['40%', '80%'],
+	            avoidLabelOverlap: true,
+	            itemStyle:{ 
+                    normal:{ 
+                        label:{ 
+                           show: true, 
+                           formatter: '{b} : {c} 人' 
+                        }, 
+                        labelLine :{show:true}
+                    } 
+                },
+	            data:[
+	                {value:35, name:'邮件使用人数'},
+	                {value:27, name:'通知使用人数'},
+	                {value:52, name:'云存储使用人数'},
+	                {value:105, name:'公文使用人数'}
+	            ],
+	            color: ['#fab15b','#508cfa','#82c34d','#f65e73']
+	        }
+	    ]
+	};
+	myChart2.setOption(option2);
+
+	var myChart3 = echarts.init(document.getElementById('site-chart'));
+	var option3 = {
+	    title: {
+	        text: '站点划分',
+	        left: '10px',
+	        top: '10px'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        axisPointer: {
+	            type: 'shadow'
+	        }
+	    },
+	    color: '#4ea9f0',
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '5%',
+	        containLabel: true
+	    },
+	    xAxis : [
+	        {
+	            type : 'value',
+	            boundaryGap : false,
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+                    textStyle: {
+                        color: '#72879b',
+                    }
+                },
+                axisTick:{
+			        show:false
+			    },
+			    splitLine: {
+			    	show: true,
+			    	lineStyle: {
+			    		color: '#f0f0f0'
+			    	}
+			    }
+	        }
+	    ],
+	    yAxis: {
+	        type: 'category',
+	        data: ['机关事务局','编办','中山陵','残联','发改委','信息中心'],
+	        axisLine: {
+            	lineStyle: {
+            		color: '#f0f0f0'
+            	}
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#72879b',
+
+                }
+            },
+	        axisTick:{
+		        show:false
+		    },
+		    splitLine: {
+		    	show: true,
+		    	lineStyle: {
+		    		color: '#f0f0f0'
+		    	}
+		    }
+	    },
+	    series: [
+	        {
+	            type: 'bar',
+	            barWidth: '20',
+	            data: [43, 75, 55, 37, 48, 64]
+	        }
+	    ]
+	};
+	myChart3.setOption(option3);
+
+	var myChart4 = echarts.init(document.getElementById('banjian-chart'));
+	var option4 = {
+	    title: {
+	        text: '办件数',
+	        left: '10px',
+	        top: '10px'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        axisPointer: {
+	            type: 'shadow'
+	        }
+	    },
+	    color: '#fc6e55',
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '5%',
+	        containLabel: true
+	    },
+	    xAxis : [
+	        {
+	            type: 'category',
+	            data: ['发文','办文','公文交换','人事'],
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+                    textStyle: {
+                        color: '#72879b',
+                    }
+                },
+                axisTick:{
+			        show:false
+			    },
+			    splitLine: {
+			    	show: true,
+			    	lineStyle: {
+			    		color: '#f0f0f0'
+			    	}
+			    }
+	        }
+	    ],
+	    yAxis: {
+	        type: 'value',
+	        axisLine: {
+            	lineStyle: {
+            		color: '#f0f0f0'
+            	}
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#72879b',
+
+                }
+            },
+	        axisTick:{
+		        show:false
+		    },
+		    splitLine: {
+		    	show: true,
+		    	lineStyle: {
+		    		color: '#f0f0f0'
+		    	}
+		    }
+	    },
+	    series: [
+	        {
+	            type: 'bar',
+	            barWidth: '30',
+	            data: [155, 220, 126, 48]
+	        }
+	    ]
+	};
+	myChart4.setOption(option4);
+
+	var myChart5 = echarts.init(document.getElementById('zhongduan-chart'));
+	var option5 = {
+		title: {
+	        text: '各终端',
+	        left: '10px',
+	        top: '10px'
+	    },
+	    tooltip: {
+	        trigger: 'item',
+	        formatter: "{a} <br/>{b}: {c} ({d}%)"
+	    },
+	    series: [
+	        {
+	            type:'pie',
+	            radius: ['50%', '70%'],
+	            avoidLabelOverlap: true,
+	            itemStyle:{ 
+                    normal:{ 
+                        label:{ 
+                           show: true, 
+                           formatter: '{b} : {c} 人' 
+                        }, 
+                        labelLine :{show:true},
+                        borderColor: '#fff',
+                		borderWidth: 2,
+                    } 
+                },
+	            data:[
+	                {value:50, name:'iOS端使用人数'},
+	                {value:64, name:'Android端使用人数'},
+	                {value:105, name:'PC端使用人数'},
+	            ],
+	            color: ['#3e82ff','#9cc936','#ff7447']
+	        }
+	    ]
+	};
+	myChart5.setOption(option5);
+
+	var myChart6 = echarts.init(document.getElementById('online-chart'));
+	var option6 = {
+	    title: {
+	        text: '登录(在线人数)',
+	        left: '10px',
+	        top: '10px'
+	    },
+	    tooltip: {
+	        trigger : 'item',  
+            show:true,  
+            showDelay: 0,  
+            hideDelay: 0,  
+            transitionDuration:0,   
+            backgroundColor : '#fff',  
+            borderColor : '#dbe1f5',  
+            textStyle:{
+            	color: '#666'
+            },
+            borderRadius : 5,  
+            borderWidth: 1,  
+            padding: [5,10],
+            formatter: function (params,ticket,callback) {  
+                // console.log(params);  
+                 var res = params.name+'<br/>'+ params.seriesName +': ' + '<span style="color:#1170dc">'+params.value+'人</span>';  
+                 return res;  
+            }  
+	    },
+	    grid: {
+	        left: '3%',
+	        right: '4%',
+	        bottom: '5%',
+	        containLabel: true
+	    },
+	    xAxis : [
+	        {
+	            type : 'category',
+	            boundaryGap : false,
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+                    textStyle: {
+                        color: '#72879b',
+                    }
+                },
+                axisTick:{
+			        show:false
+			    },
+	            data : ['8:00','9:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00']
+	        }
+	    ],
+	    yAxis : [
+	        {
+	            type : 'value',
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+	                textStyle: {
+	                    color: '#72879b',
+
+	                }
+	            },
+	            splitLine: { 
+	            	lineStyle: {
+		            	color: '#f0f0f0'
+		            }
+		        },
+		        axisTick:{
+			        show:false
+			    },
+	        },
+	    ],
+	    series : [
+	        {
+	            name:'在线人数',
+	            type:'line',
+	            stack: '总量',
+	            areaStyle: {
+	            	color: {
+	            		type: 'linear',
+					    x: 0,
+					    y: 1,
+					    x2: 0,
+					    y2: 0,
+					    colorStops: [{
+					        offset: 0, color: '#eaf6fd' // 0% 处的颜色
+					    }, {
+					        offset: 1, color: '#bce5ff' // 100% 处的颜色
+					    }],
+					    globalCoord: false // 缺省为 false
+	            	}
+	            },
+	            lineStyle: {color: '#5ab4ec'},
+	            itemStyle: {color: '#5ab4ec'},
+	            smooth:true,
+	            data:[20, 85, 70, 40, 25, 45, 55, 40, 55, 30, 10]
+	        }
+	    ]
+	};
+	myChart6.setOption(option6);
+
+	var myChart7 = echarts.init(document.getElementById('dept-chart'));
+	var option7 = {
+	    title: {
+	        text: '活跃部门Top10',
+	        left: '10px',
+	        top: '10px'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        axisPointer: {
+	            type: 'shadow'
+	        }
+	    },
+	    color: '#4ea9f0',
+	    grid: {
+	        left: '3%',
+	        right: '5%',
+	        bottom: '5%',
+	        containLabel: true
+	    },
+	    xAxis : [
+	        {
+	            type: 'category',
+	            data: ['建设房产和交通局','市场监督管局','人社局（公务员局）','物价局', '教育局', '司法局', '财政局', '环保局', '审计局', '安监局'],
+	            axisLine: {
+	            	lineStyle: {
+	            		color: '#f0f0f0'
+	            	}
+	            },
+	            axisLabel: {
+                    textStyle: {
+                        color: '#72879b',
+                    },
+                    interval: 0
+                },
+                axisTick:{
+			        show:false
+			    },
+			    splitLine: {
+			    	show: true,
+			    	lineStyle: {
+			    		color: '#f0f0f0'
+			    	}
+			    }
+	        }
+	    ],
+	    yAxis: {
+	        type: 'value',
+	        axisLine: {
+            	lineStyle: {
+            		color: '#f0f0f0'
+            	}
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#72879b',
+
+                }
+            },
+	        axisTick:{
+		        show:false
+		    },
+		    splitLine: {
+		    	show: true,
+		    	lineStyle: {
+		    		color: '#f0f0f0'
+		    	}
+		    }
+	    },
+	    series: [
+	        {
+	            type: 'bar',
+	            barWidth: '30',
+	            data: [24500, 22000, 20000, 20000,19800, 18500,15000,13500,11000,8000]
+	        }
+	    ]
+	};
+	myChart7.setOption(option7);
+</script>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin name="createTime" zhName="获取当前时间" jar="createTime.jar"
+	class="cn.com.trueway.serverplugin.time.CreateTime" returnMethod = "getBjh">
+
+	<server id="1" name="getBjh" zhName="获得当前时间">
+		<inputFields>
+		</inputFields>
+		<outputFields>
+			<field name="bwdStr" zhName="返回当前时间" type="varchar" length="50" />
+		</outputFields>
+	</server>
+
+</plugin>

@@ -1,0 +1,180 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>表单元素说明</title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:40px;font-size:14px;border:1px #333 solid;padding:10px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+
+</script>
+<!--以上必须-->
+</head>
+
+<body>
+<div class="warp">
+<center>
+<p style="font-size:25px;height:35px; text-align:center;padding-top:35px;">
+<strong style="font-size:38px;">南&nbsp;通&nbsp;市&nbsp;教&nbsp;育&nbsp;局&nbsp;办&nbsp;文&nbsp;单</strong></p>
+</center>
+<br/>
+<table align="center" width="819" class="infotan">
+    <tr>
+        <td  valign="middle" style="font-size:18px;height:50px;text-align:center;" width="180px;">来文单位</td> 
+        <td   colspan="2" style="width:190px;text-align:left;font-size:26px;font-family:FangSong;" >
+            <input id="lwdw" name="lwdw" zname="来文单位" type="text" style="width:180px;height:30px;"/>
+        </td>
+        <td   valign="middle"style="font-size:18px;height:50px;text-align:center;" width="180px;">收文编号</td>
+        <td   style="width:230px;text-align:left;font-size:26px;font-family:FangSong;">
+	    <input name="swbh" type="text" id="swbh" style="font-size:5px;width:220px;height:30px;" zname="收文编号"  />
+	</td>
+    </tr>  
+    <tr>
+        <td  valign="middle" style="font-size:18px;height:50px;text-align:center;" width="180px;">原&nbsp;&nbsp;文&nbsp;&nbsp;号</td>
+	<td   colspan="2" style="width:190px;text-align:left;font-size:26px;font-family:FangSong;" >
+	    <input id="ywh" name="ywh" zname="原文号" type="text" style="width:180px;height:30px;"/>
+	</td>
+	<td  valign="middle" style="font-size:18px;text-align:center;"width="150px;" >收文日期</td>
+	<td   style="width:230px;text-align:left;font-size:26px;font-family:FangSong; ">
+	    <input id="swrq" name="swrq" zname="收文日期" type="text" />
+	</td>
+    </tr>
+    <tr>
+	<td  valign="middle" style="font-size:18px;height:200px;text-align:center;" >文件标题</td>
+	<td  colspan="4"  style="text-align:left;font-size:26px;font-family:FangSong;">
+	    <textarea name="wjbt" id="wjbt" style="width:96%;height:180px;" zname="文件标题"></textarea>
+	</td>
+    </tr>
+      <tr>
+        <td  valign="middle" style="font-size:18px;height:50px;text-align:center;" width="180px;">办理期限</td>
+	<td   style="width:190px;border-right:none;text-align:left;font-size:26px;font-family:FangSong;line-height:48px;padding:14px;" >
+	    <input id="blqx" name="blqx" zname="办理期限" type="text" />
+	</td>
+        <td  style="text-align:left;width: 50px;border-left:none;font-size:26px;" >
+            天
+         </td>
+	<td  valign="middle" style="font-size:18px;text-align:center;width:150px;" >办理结束时间</td>
+	<td   style="font-size:26px;font-family:FangSong;text-align:left;line-height:48px;padding:14px;">
+	    <input id="sjjs" name="sjjs" zname="结束时间" type="text" />
+	</td>
+    </tr>
+    <tr>
+	<td  valign="middle" style="font-size:18px;height:200px;text-align:center;" >拟办意见</td>
+	<td  colspan="4"  style="font-size:18px;">
+	&nbsp;
+	</td>
+    </tr>
+    <tr>
+	<td  valign="middle" style="font-size:18px;height:200px;text-align:center;" >领导批示</td>
+	<td  colspan="4" style="font-size:18px;">
+	&nbsp;</td>
+    </tr>
+    <tr>
+	<td  valign="middle" style="font-size:18px;height:200px;text-align:center;" >办理情况</td>
+	<td  colspan="4"  style="font-size:18px;">
+	&nbsp;
+	</td>
+    </tr>
+    <tr>
+        <td  valign="middle" style="font-size:18px;height:200px;text-align:center;" >备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注
+        </td>
+	<td  colspan="4"  style="font-size:18px;">
+	&nbsp;
+	</td>
+    </tr>
+</table>
+</div>
+ <trueway:att zname="任务附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" 
+
+deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" 
+
+deleteCallback="loadCss"/>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value=""> 
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

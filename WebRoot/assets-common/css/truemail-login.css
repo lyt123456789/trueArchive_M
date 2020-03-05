@@ -1,0 +1,196 @@
+.tw-logo-small {
+  vertical-align: top;
+}
+.tm-grid {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.tm-login-top {
+  width: 100%;
+  height: 108px;
+  background: url(../img/mail/top-bg.jpg) repeat-x;
+  position: relative;
+  zoom: 1;
+}
+.tm-login-top .tm-logo-wrap {
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  width: 1000px;
+  left: 50%;
+  margin-left: -500px;
+}
+.tm-login-top .tm-login-logo {
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  left: 20px;
+  zoom: 1;
+  font-size: 0;
+}
+.tm-login-top .tm-login-logo .tm-logo-txt {
+  display: inline-block;
+  height: 50px;
+  font-size: 26px;
+  line-height: 50px;
+  margin-left: 10px;
+  letter-spacing: 2px;
+  color: #1683c9;
+}
+.tm-login-top:after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 0px;
+  border-bottom: 1px solid;
+  left: 0;
+  bottom: 1px;
+  border-color: #1184d7;
+}
+.tm-login-body {
+  width: 100%;
+  height: 570px;
+  background: url(../img/mail/body-bg.jpg) repeat-x;
+  position: relative;
+  zoom: 1;
+}
+.tm-login-body .tm-bg-liuxing {
+  width: 100%;
+  height: 100%;
+  background: url(../img/mail/liuxing.png) no-repeat center;
+  position: relative;
+  zoom: 1;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap {
+  height: 100%;
+  position: relative;
+  zoom: 1;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-bg-earth {
+  width: 640px;
+  height: 550px;
+  position: absolute;
+  left: -10px;
+  bottom: 0px;
+  background: url(../img/mail/earth.png) no-repeat;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout {
+  width: 325px;
+  height: 319px;
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  margin-top: -159.5px;
+  background: url(../img/mail/login-bg.png) no-repeat;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-hd {
+  width: 100%;
+  height: 74px;
+  position: relative;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-hd .tm-lghd-cn {
+  color: #1683c9;
+  font-size: 24px;
+  position: absolute;
+  left: 30px;
+  bottom: 10px;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-hd .tm-lghd-en {
+  color: #bad2e2;
+  font-size: 18px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-bd {
+  width: 100%;
+  height: 220px;
+  margin-top: 40px;
+  zoom: 1;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-bd .tm-login-input {
+  padding: 0 25px;
+  height: 40px;
+  margin-bottom: 30px;
+  line-height: 40px;
+  font-size: 14px;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-bd .tm-login-input .tm-input-wrap {
+  height: 100%;
+  border: 1px solid #c0c0c0;
+  background: none;
+  position: relative;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-bd .tm-login-input .tm-input-wrap .icon-login-uname {
+  float: left;
+  display: block;
+  width: 30px;
+  height: 40px;
+  background: url(../img/mail/icon-login-uname.gif) no-repeat center;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-bd .tm-login-input .tm-input-wrap .icon-login-pwd {
+  float: left;
+  display: block;
+  width: 30px;
+  height: 40px;
+  background: url(../img/mail/icon-login-pwd.gif) no-repeat center;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-bd .tm-login-input .tm-input-hasicon {
+  outline: 0;
+  width: 240px;
+  height: 100%;
+  background: none;
+  border: none;
+  float: right;
+  font-size: 16px;
+  line-height: 40px;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-ft {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+}
+.tm-login-body .tm-bg-liuxing .tm-earth-wrap .tm-login-layout .tm-loginlayout-ft .tm-btn-login {
+  width: 147px;
+  height: 40px;
+  border: 0;
+  outline: 0;
+  background: url(../img/mail/login-btn.png) no-repeat;
+  position: absolute;
+  left: 50%;
+  margin-left: -73.5px;
+  font-size: 16px;
+  color: #fff;
+}
+.tm-login-bot {
+  width: 100%;
+  height: 94px;
+  background: url(../img/mail/bot-bg.jpg) repeat-x;
+  position: relative;
+  zoom: 1;
+}
+.tm-login-bot .tm-bot-copy {
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  line-height: 94px;
+  font-size: 14px;
+}
+.tm-login-bot:before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 0px;
+  border-bottom: 1px solid;
+  left: 0;
+  top: 1px;
+  border-color: #1184d7;
+}
+/*# sourceMappingURL=truemail-login.css.map */

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+    <bean id="attachmentAction" class="cn.com.trueway.document.component.taglib.attachment.action.AttachmentAction" scope="prototype" >
+		<property name="flowService" ref="flowService" />
+		<property name="attachmentService" ref="attachmentService" />
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService" />
+		<property name="templateService" ref="templateService" />
+		<property name="tableInfoService" ref="tableInfoService" />
+		
+	</bean>
+	
+	<bean id="commentAction" class="cn.com.trueway.document.component.taglib.comment.action.CommentAction" scope="prototype">
+		<property name="commentService" ref="commentService"/>
+		<property name="tableInfoService" ref="tableInfoService"/>
+	</bean>
+	
+	<bean id="docNumberAction" class="cn.com.trueway.document.component.taglib.docNumber.action.DocNumberAction" scope="prototype">
+		<property name="docNumberService" ref="docNumberService"/>
+			<property name="departmentService" ref="departmentService" ></property>
+	</bean>
+	
+	<bean id="docNumberManagerAction" class="cn.com.trueway.document.component.docNumberManager.action.DocNumberManagerAction" scope="prototype">
+		<property name="docNumberManagerService" ref="docNumberManagerService"/>
+		<property name="selectTreeService"  ref="selectTreeService"/>
+		<property name="departmentService" ref="departmentService" ></property>
+	</bean>
+	
+</beans>
+	

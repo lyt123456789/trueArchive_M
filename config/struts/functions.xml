@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<!--国土function定制-->
+	<package name="functions" extends="common-default">
+		<action name="carwf_*" class="carWFAction" method="{1}">
+			<result name="myApplyList">/WEB-INF/pages/functions/car/myCarApplyList.jsp</result>
+			<result name="pendingCarList">/WEB-INF/pages/functions/car/pendingCarList.jsp</result>
+		</action>
+		
+		<action name="eworkflow_*" class="eworkflowAction" method="{1}">
+			<result name="myApplyList">/WEB-INF/pages/functions/car/myCarApplyList.jsp</result>
+			<result name="pendingCarList">/WEB-INF/pages/functions/car/pendingCarList.jsp</result>
+			<result name="pendingCarList">/WEB-INF/pages/functions/car/pendingCarList.jsp</result>
+			<result name="themeWords">/WEB-INF/pages/functions/eWorkFlowAction/themeWords.jsp</result>
+			<result name="myOverList">/WEB-INF/pages/functions/eWorkFlowAction/myOverList.jsp</result>
+		</action>
+		
+		<action name="meeting_*" class="meetingAction" method="{1}">
+			<result name="myRegisterList">/WEB-INF/pages/functions/meeting/MyRegisterList.jsp</result>
+			<result name="chmdList">/WEB-INF/pages/functions/meeting/chmdPendingList.jsp</result>
+			
+			<result name="chmd">/WEB-INF/pages/functions/meeting/chmd.jsp</result>
+			<result name="hyqj">/WEB-INF/pages/functions/meeting/hyqj.jsp</result>
+			
+			<result name="hylistforqj">/WEB-INF/pages/functions/meeting/hylistforqj.jsp</result>
+			
+			<result name="meetingOutList">/WEB-INF/pages/functions/meeting/MeetingOutList.jsp</result>
+			<result name="chry">/WEB-INF/pages/functions/meeting/plancar_list.jsp</result>
+			
+			<!-- <result name="toAddNew">/WEB-INF/pages/functions/meeting/newadd.jsp</result>
+			<result name="upload">/WEB-INF/pages/functions/meeting/uploadAttsext.jsp</result>
+			<result name="toEditJsp">/WEB-INF/pages/functions/meeting/newedit.jsp</result>
+			<result name="chrylist">/WEB-INF/pages/functions/meeting/chrylist.jsp</result>
+			<result name="toEditchry">/WEB-INF/pages/functions/meeting/tochry.jsp</result>
+			<result name="hymdlist">/WEB-INF/pages/functions/meeting/hymdlist.jsp</result>
+			<result name="viewperson">/WEB-INF/pages/functions/meeting/viewperson.jsp</result>
+			<result name="dkhylist">/WEB-INF/pages/functions/meeting/dkhylist.jsp</result> -->
+		</action>
+	</package>
+</struts>
+

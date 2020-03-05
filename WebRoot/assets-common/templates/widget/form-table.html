@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Document</title>
+    
+    <link href="../../css/common.css" rel="stylesheet" type="text/css" media="screen"/>、
+	
+    	
+    <!--[if lt IE 9]><script src="../../js/jquery-1.11.1.min.js" type="text/javascript"></script><![endif]-->
+    <!--[if gte IE 9]><!--><script src="../../js/jquery-2.1.1.min.js" type="text/javascript"></script><!--<![endif]-->
+
+	
+
+</head>
+
+<body>
+
+    <div class="tw-layout">
+    
+        <div class="tw-container">
+            <form method="get" id="form" name="form" action="#" class="tw-form">
+
+            <table class="tw-table tw-table-form">
+                <colgroup>
+                    <col  width="10%" />
+                    <col />
+                </colgroup>
+                <tr>
+                    <th><em>*</em>用户名：</th>
+                    <td><input type="text" class="tw-form-text" id="" name="username" value=""></td>
+                </tr>
+                <tr>
+                    <th><em>*</em>密码：</th>
+                    <td><input type="password" class="tw-form-text" id="" name="password"></td>
+                </tr>
+                <tr>
+                    <th><em>*</em>确认密码：</th>
+                    <td><input type="password" class="tw-form-text" id="" name="cpassword"></td>
+                </tr>
+                <tr>
+                    <th><em>*</em>Email：</th>
+                    <td><input type="text" class="tw-form-text" id="" name="email"></td>
+                </tr>
+                <tr>
+                    <th><em>*</em>密码：</th>
+                    <td><input type="password" class="tw-form-text" id="" name=""><span class="tw-warning"><i></i>请输入中文名字！</span></td>
+                </tr>
+                <tr>
+                    <th>菜单链接：</th>
+                    <td><input type="text" class="tw-form-text" id="" name=""><span class="tw-error"><i></i>请正确的链接地址！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>菜单链接：</th>
+                    <td><input type="text" class="tw-form-text" id="" name="">
+                        <a class="tw-btn-primary"><i class="tw-icon-search"></i> 选择</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>菜单图片：</th>
+                    <td><input type="text" class="tw-form-text" id="" name=""><span class="tw-info"><i></i>上传成功！</span></td>
+                </tr>
+                <tr>
+                    <th>是否为外部链接：</th>
+                    <td><div class="tw-form-field-rc">    
+                        <label class="tw-form-label-rc"><input type="radio" checked="checked" value="yes" class="tw-form-radio" name="link"><span>是</span></label>
+                        <label class="tw-form-label-rc"><input type="radio" value="no" class="tw-form-radio" name="link"><span>否</span></label>
+                    </div></td>
+                </tr>
+                <tr>
+                    <th><em>*</em> 请选择类别：</th>
+                    <td><div class="tw-form-field-rc">    
+                        <label class="tw-form-label-rc"><input type="checkbox" value="run0" class="tw-form-checkbox" name="run" required="" aria-required="true"><span>全程马拉松</span></label>
+                        <label class="tw-form-label-rc"><input type="checkbox" value="run1" class="tw-form-checkbox" name="run" required="" aria-required="true"><span>半程马拉松</span></label>
+                        <label class="tw-form-label-rc"><input type="checkbox" value="run2" class="tw-form-checkbox" name="run" required="" aria-required="true"><span>迷你马拉松</span></label>
+                        <label class="tw-form-label-rc"><input type="checkbox" value="run3" class="tw-form-checkbox" name="run" required="" aria-required="true"><span>健康跑</span></label>
+                    </div></td>
+                </tr>
+                <tr>
+                    <th>关键字：</th>
+                    <td><select class="tw-form-select" id="">
+                            <option value="option1">选项一...</option>
+                            <option value="option2">选项二.....</option>
+                            <option value="option3">选项三选项三选项三</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <th>关键字：</th>
+                    <td><input type="text" class="tw-form-text tw-form-date" id="" placeholder="输入日期" value="2015-10-10"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button id="btnSuperSearch" class="tw-btn-primary tw-btn-lg" type="submit">
+                        <i class="tw-icon-send"></i> 提交
+                    </button>
+                    <button class="tw-btn tw-btn-lg">
+                        <i class="tw-icon-minus-circle"></i> 取消
+                    </button></td>
+                </tr>
+            </table>
+
+              
+             
+            </form>
+        </div>
+    </div>
+
+
+    <script src="../../plugins/layer/layer.js" type="text/javascript"></script>
+
+    <script src="../../plugins/laydate/laydate.js" type="text/javascript"></script>
+
+    <script src="../../plugins/validate/jquery.validate.min.js"></script>
+    <script src="../../plugins/validate/messages_zh.min.js"></script>
+    
+    <script src="../../js/common-ui.js" type="text/javascript"></script>
+    <script type="text/javascript">
+       
+        
+
+        $(document).ready(function() {
+            var e = "<i></i>";
+            $("#form").validate({
+                rules: { 
+                    username: { 
+                        required: true, 
+                        minlength: 2 
+                    }, 
+                    password: { 
+                        required: true, 
+                        minlength: 5 
+                    }, 
+                    cpassword: { 
+                        required: true, 
+                        minlength: 5, 
+                        equalTo: "#password" 
+                    }, 
+                    email: { 
+                        required: true, 
+                        email: true 
+                    }
+                },
+                messages:{
+                    username: { 
+                        required: e + "请输入您的用户名", 
+                        minlength: e + "用户名必须两个字符以上" 
+                    }, 
+                    password: { 
+                        required: e + "请输入您的密码", 
+                        minlength: e + "密码必须5个字符以上" 
+                    }, 
+                    cpassword: { 
+                        required: e + "请再次输入密码", 
+                        minlength: e + "密码必须5个字符以上", 
+                        equalTo: e + "两次输入的密码不一致" 
+                    }, 
+                    email: e + "请输入您的E-mail"
+                }
+
+            });
+        }); 
+
+    </script>
+    
+</body>
+</html>

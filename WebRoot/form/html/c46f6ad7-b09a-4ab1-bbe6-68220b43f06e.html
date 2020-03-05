@@ -1,0 +1,279 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:17px;}
+.infotan td textarea{width:100%;height:180px;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+		
+<!--以下必须-->
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+.infotan td {
+	text-align:center;
+}
+.topinfotan td {
+	line-height: 30px;
+	text-align:left;
+        padding:5px;
+}
+</style>
+</head>
+
+<body>
+<div class="warp">
+	<center>
+<p style="font-size:30px;line-height:35px;width:819;text-align:center;padding-top:30px;font-family:华文中宋;">
+		<strong style="font-family:华文中宋;">如皋工业园区（如城街道）文件传阅单
+		</strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+	</center>
+	
+	<table align="center" width="819" class="infotan" >
+		<tr>
+			<td width="16%" valign="middle" style="font-size:18px;line-height: 50px;">来文单位</td>
+			<td width="19%"  colspan="2" >
+				<input type="text" id="lwdw" name="lwdw" style="width:140px;line-height:17px" zname="来文单位" />
+			</td>
+			<td width="13%" valign="middle"  style="font-size:18px;line-height: 50px;">来文日期</td>
+			<td width="12%">
+			<input type="text" id="lwtime" name="lwtime" zname="来文日期" style="width: 90px;border: 0px; border-bottom: 1px #cccccc dotted;" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" />
+						</td>
+			<td width="12%" valign="middle"  style="font-size:18px;line-height: 50px;">来文字号</td>
+			<td width="9%">
+			<input type="text" id="lwzh" name="lwzh" style="width:70px;line-height:17px" zname="来文字号" />
+						</td>
+			<td width="12%" valign="middle"  style="font-size:18px;line-height: 50px;">紧急程度</td>
+			<td width="7%">
+				<select id="jjcd" name="jjcd" zname="紧急程度" style="width:40px"></select>
+			</td>		</tr>
+		<tr>
+			<td  style="font-size:18px;line-height: 50px;">文件标题</td>
+			<td colspan="8" style="font-size:18px;">
+				 <textarea id="wjbt" name="wjbt" style="width: 620px;height:45px;" zname="文件标题" ></textarea>
+			</td>
+		</tr>
+		
+		<tr>
+			<td valign="middle" style="font-size:18px;">传阅人</td>
+			<td valign="middle" style="font-size:18px;">传阅日期</td>
+			<td  rowspan="3" colspan="2" valign="middle" style="font-size:18px;">拟办意见：</td>
+			<td colspan="6" rowspan="3" class="tdcol docformTableNoBD">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr1" name="cyr1" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text"  id="cyrq1" name="cyrq1" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr2" name="cyr2" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text"  id="cyrq2" name="cyrq2" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr3" name="cyr3" style="width:100px;line-height:17px"/></td>
+			<td >
+				<span class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqc" name="cyrqc" style="width:110px;line-height:17px" zname="_阅文日期" />
+				</span>
+			</td>
+			<td  rowspan="13"colspan="2" valign="middle" style="font-size:18px;">领导批示：</td>
+			<td colspan="6" rowspan="13" class="tdcol docformTableNoBD">
+				&nbsp;
+			</td>
+		</tr>
+		
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr4" name="cyr4" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqd" name="cyrqd" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr5" name="cyr5" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqe" name="cyrqe" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr6" name="cyr6" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrqf" name="cyrqf" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr7" name="cyr7" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrq7" name="cyrq7" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr8" name="cyr8" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrq8" name="cyrq8" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr9" name="cyr9" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrq9" name="cyrq9" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr10" name="cyr10" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD">
+				<input type="text" id="cyrq10" name="cyrq10" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr11" name="cyr11" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrq11" name="cyrq11" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr12" name="cyr12" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrq12" name="cyrq12" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr13" name="cyr13" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrq13" name="cyrq13" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr15" name="cyr15" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrq14" name="cyrq14" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr16" name="cyr16" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrq15" name="cyrq15" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr14" name="cyr14" style="width:100px;line-height:17px"/></td>
+			<td>
+				<span class="tdcol docformTableNoBD">
+					<input type="text" id="cyrq16" name="cyrq16" style="width:110px;line-height:17px" zname="_阅文日期" />
+				</span>
+			</td>
+			<td colspan="2" rowspan="3" valign="middle" style="font-size:18px;">办理结果：</td>
+			<td colspan="6" rowspan="3" class="tdcol docformTableNoBD">
+				&nbsp;
+			</td>
+		</tr>
+		<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr15" name="cyr15" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrq17" name="cyrq17" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+<tr>
+			<td class="ls" style="height:50px;font-size:18px;line-height: 50px;"><input type="text"  id="cyr16" name="cyr16" style="width:100px;line-height:17px"/></td>
+			<td class="tdcol docformTableNoBD" >
+				<input type="text" id="cyrq18" name="cyrq18" style="width:110px;line-height:17px" zname="_阅文日期" />
+			</td>
+		</tr>
+		
+	</table>
+</div>
+<INPUT userdefine=hidden id="instanceId" name="instanceId" value=""> 
+<INPUT userdefine=hidden id="formId" name="formId" value=""> 
+<INPUT userdefine=hidden id="workFlowId" name="workFlowId" value="">   
+<INPUT userdefine=hidden id="processId" name="processId" value="">
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+<script src="src/mapSelected.js" type="text/javascript" ></script></html>

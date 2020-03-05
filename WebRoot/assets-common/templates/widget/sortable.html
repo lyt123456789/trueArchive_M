@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Document</title>
+    
+    <link href="../../css/common.css" rel="stylesheet" type="text/css" media="screen"/>
+	
+    <script type="text/javascript" src="../../js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="../../plugins/jquery-ui-1.10.4.min.js"></script>
+
+
+</head>
+
+<body>
+    
+
+    <style type="text/css">
+        .sort-item{
+            display: inline-block;
+            float: left;
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin: 10px;
+            background: #f1f1f1;
+            border: 1px solid #ddd;
+        }
+        .placeholder{
+            display: inline-block;
+            float: left;
+            width: 200px;
+            height: 40px;
+            margin: 10px;
+            background: yellow;
+            border: 1px dotted #ddd;
+        }
+    </style>
+
+    <div class="sortable-list" style="width: 600px; margin: 20px auto;">
+        <div class="sort-item">1</div>
+        <div class="sort-item">2</div>
+        <div class="sort-item">3</div>
+        <div class="sort-item">4</div>
+        <div class="sort-item">5</div>
+        <div class="sort-item">6</div>
+        <div class="sort-item">7</div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $( ".sortable-list" ).sortable({
+                cursor: "move",
+                // handle:".JS_sort",
+                item:".sort-item",
+                placeholder: "placeholder",
+                opacity: 0.6, 
+                revert: false,
+                update:function(){
+                    alert("1");
+                    // sortableSort();
+                }
+            });
+        });
+
+    </script>
+
+
+</body>
+
+</html>

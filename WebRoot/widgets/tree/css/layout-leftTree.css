@@ -1,0 +1,33 @@
+@charset "utf-8";
+/* CSS Document */
+*{padding:0; margin:0;}
+body,td,th {
+	font-size: 12px;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color:#999;
+}
+h3{font-size:14px;}
+h3,ul,ol,dl,p{padding:0; margin:0;}
+.max_w{width:1002px; margin:0 auto;}
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+.clear-both{clear:both; height:0px; overflow:hidden;}
+.clear-left{clear:left; height:0px; overflow:hidden;}
+ul,li{list-style:none;}
+
+#treeHead{width:245px; height:9px; overflow:hidden; background:url(../images/leftTree/leftTree_02.gif) right top no-repeat;}
+#treeName{width:245px; height:60px; text-align:center; text-indent:15px; padding:0 0 10px 0; background:url(../images/leftTree/leftTree_05.gif) right repeat-y;}
+#tree{width:245px; background:url(../images/leftTree/leftTree_05.gif) right repeat-y; font-size:12px;}
+#tree ul{padding:0; margin:0;}
+#tree ul li{height:30px; line-height:30px; overflow:hidden; background:url(../images/leftTree/leftTree_07out.gif) no-repeat; cursor:pointer;}
+#tree ul li.hover{height:30px; line-height:30px; overflow:hidden; background:url(../images/leftTree/leftTree_07.gif) no-repeat;}
+#tree ul li a{color:#FFF; height:30px; line-height:30px; display:block; margin-left:30px; text-indent:46px;}
+#tree ul li ul li{background:url(../images/leftTree/leftTree_10.gif) 50px 6px no-repeat;}
+#tree ul li ul li a{color:#333; height:29px; display:block; line-height:29px; width:150px; margin:0 auto; text-indent:30px;  border-bottom:#666 dashed 1px;}
+#tree ul li ul li a:hover{color:#060;}
+#treeFoot{background:url(../images/leftTree/leftTree_13.gif) no-repeat; height:10px; overflow:hidden; width:245px; overflow:hidden;}

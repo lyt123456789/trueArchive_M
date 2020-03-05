@@ -1,0 +1,29 @@
+@charset "utf-8";
+/* CSS Document */
+body{width:190px; background:url(../images/sideBarbg.jpg) repeat-y 0 0;}
+.warp{margin:0 auto;}
+/**sidebar Style**/
+.round-top{background:url(../images/sidebar-top-bg.gif) no-repeat right -10px;}
+.round-top span{background:url(../images/sidebar-top-bg.gif) no-repeat 0 0; height:10px; overflow:hidden; display:block; margin-right:7px;}
+.round-bottom{background:url(../images/sidebar-foot-bg.gif) no-repeat right -6px;}
+.round-bottom span{background:url(../images/sidebar-foot-bg.gif) no-repeat 0 0; height:6px; overflow:hidden; display:block; margin-right:7px;}
+.round-center{background:url(../images/sidebar-body-bg.gif) repeat-y right 0;}
+.round-center .round-center-container{background:url(../images/sidebar-body-bg.gif) repeat-y 0 0; padding:0 6px;}
+.timg{background:url(../images/sidebar-bar-top.jpg) no-repeat 6px 0; height:10px;}
+
+/**tree style reset**/
+.x-scroller-vertical{border-width:0px; background-color:transparent;}
+.x-panel-body{border-width:0px;}  .x-grid-body{border-width:0px;} .x-panel-body-default{border-width:0px;}
+.x-panel-body-default{border-width:0px;} .x-layout-fit{border-width:0px;}
+.x-panel .x-grid-body{border-width:0px; background-color:transparent;}
+.x-tree-panel .x-grid-row .supmenu .x-grid-cell-inner{background:url(../images/sidebar-submenu-bg.gif) no-repeat 0 0; cursor:pointer; width:171px; height:33px;  margin:0 auto; color:#FE8519;text-shadow:1px 1px 1px #FFF; line-height:33px; text-indent:40px; background-color:transparent; font-size:13px; font-weight:bold;}
+.x-tree-panel .x-grid-row .supmenu .x-grid-cell-inner img{background-image:none; display:none;}
+.x-grid-row-selected .x-grid-cell, .x-grid-row-selected .x-grid-rowwrap-div{background-color:transparent !important; border-width:0px;}
+
+.ico-book{background-image:url(../images/system-ico/book.gif);}
+.ico-calender{background:url(../images/system-ico/calender.gif) no-repeat center left;}
+.ico-document{background:url(../images/system-ico/document.gif) no-repeat center left;}
+.ico-folders{background:url(../images/system-ico/folders.gif) no-repeat center left;}
+.ico-mail{background:url(../images/system-ico/mail.gif) no-repeat center left;}
+.ico-new{background:url(../images/system-ico/new.gif) no-repeat center left;}
+.ico-person{background:url(../images/system-ico/person.gif) no-repeat center left;}

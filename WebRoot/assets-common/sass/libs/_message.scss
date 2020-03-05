@@ -1,0 +1,101 @@
+@charset "UTF-8";
+//-----------------------------------------------------	
+// message scss
+// 交互提示信息：包括警告，错误，成功，提示四种状态
+//-----------------------------------------------------
+
+// 变量
+//----------------------------------------------------- 
+$msgIconSwitch:              true !default;// 是否启用icon背景，背景图片使用base64，ie8+支持
+$msgRadius:                  0 !default; // 样式圆角大小，设置为false将不产生圆角。
+$msgClassSwitch:             true true true true !default; //错误 成功 警告 提示
+
+
+// mixin
+//-----------------------------------------------------
+// 基本样式
+@mixin message-basic{
+    padding:8px;
+    a{
+      text-decoration:underline;
+    }
+
+    @if $msgIconSwitch {
+      padding-left:25px;
+      background-position: 5px center;
+      background-repeat: no-repeat;
+    }
+    @if not(unitless($msgRadius)) {
+      border-radius: $msgRadius;
+    }
+} 
+%message-basic{
+  @include message-basic;
+}
+
+// 配色方案，包括文本色，背景色，边框颜色
+@mixin message-skin($textColor, $bgColor, $borderColor ){
+    background-color:$bgColor;
+    border:1px solid $borderColor;
+    color: $textColor;
+
+    a{
+      color: $textColor;
+    }
+}
+
+
+// 样式
+//-----------------------------------------------------
+@if nth($msgClassSwitch, 1){
+  .#{$baseClass}error,
+  .#{$baseClass}has-error .#{$baseClass}help-block{
+    @extend %message-basic;
+    @include message-skin(nth($errorColor,1), nth($errorColor,2), nth($errorColor,3));
+    @if $msgIconSwitch {
+      i{
+        @include fa-icon();
+        &:before { content: $fa-var-times-circle; }
+      }
+    }
+  }
+}
+
+@if nth($msgClassSwitch, 2){
+  .#{$baseClass}success{
+    @extend %message-basic;
+    @include message-skin(nth($successColor,1), nth($successColor,2), nth($successColor,3));
+    @if $msgIconSwitch {
+      i{
+        @include fa-icon();
+        &:before { content: $fa-var-check-circle; }
+      }  
+    }
+  }  
+}
+
+@if nth($msgClassSwitch, 3){
+  .#{$baseClass}warning{
+    @extend %message-basic;
+    @include message-skin(nth($warningColor,1), nth($warningColor,2), nth($warningColor,3));
+    @if $msgIconSwitch {
+      i{
+        @include fa-icon();
+        &:before { content: $fa-var-exclamation-circle; }
+      }
+    }
+  }  
+}
+
+@if nth($msgClassSwitch, 4){
+  .#{$baseClass}info{
+    @extend %message-basic;
+    @include message-skin(nth($infoColor,1), nth($infoColor,2), nth($infoColor,3));
+    @if $msgIconSwitch{
+      i{
+        @include fa-icon();
+        &:before { content: $fa-var-info-circle; }
+      }
+    }
+  }  
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans 
+							http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+        	
+	<bean id="allowAction" class="cn.com.trueway.workflow.set.action.AllowAction">
+		<property name="allowService" ref="allowService"></property>
+		<property name="departmentService" ref="departmentService"></property>
+		<property name="employeeService" ref="employeeService"></property>
+		<property name="groupService" ref="groupService"></property>
+		<property name="workflowBasicFlowService" ref="workflowBasicFlowService"></property>
+	</bean>
+	
+	
+	<bean id="serverPluginAction" class="cn.com.trueway.workflow.set.action.ServerPluginAction">
+		<property name="serverPluginService" ref="serverPluginService"></property>
+	</bean>
+</beans>

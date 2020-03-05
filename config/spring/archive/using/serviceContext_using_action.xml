@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 配置setupAction的Bean-->
+	<bean id="archiveUsingAction" class="cn.com.trueway.archives.using.action.ArchiveUsingAction" singleton="false" autowire="byName">
+		<property name="archiveUsingServiceImpl" ref="archiveUsingServiceImpl"/>
+		<property name="essModelService" ref="essModelService"/>
+	</bean>
+	<bean id="dataUsingAction" class="cn.com.trueway.archives.using.action.DataUsingAction" singleton="false" autowire="byName">
+        <property name="dataUsingService" ref="dataUsingService"/>		
+		<property name="dataUsingServiceImpl" ref="dataUsingServiceImpl"/>
+	</bean>
+	
+</beans>
+	

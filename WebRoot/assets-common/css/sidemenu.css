@@ -1,0 +1,111 @@
+.guidewrap .nav>li>a {
+	color: #333;
+	font-weight: 600;
+	padding: 14px 20px 14px 25px
+}
+
+.guidewrap .nav li>a {
+	display: block
+}
+
+.guidewrap .nav>li.active>a {
+	color: #fff
+}
+
+.guidewrap .nav>li>a:focus,.guidewrap .nav>li>a:hover {
+	background-color: #6a95d3;
+	color: #fff
+}
+
+.guidewrap .nav>li>ul a:focus,.guidewrap .nav>li>ul a:hover {
+	background-color: #a7b1c2;
+	color: #fff
+}
+
+.guidewrap .nav .open>a,.guidewrap .nav .open>a:focus,.guidewrap .nav .open>a:hover {
+	background: #fff
+}
+
+.guidewrap .nav>li>a i {
+	margin-right: 6px
+}
+
+.guidewrap .navbar {
+	border: 0
+}
+
+.guidewrap .navbar-default {
+	background-color: transparent;
+	border-color: #2f4050;
+	position: relative
+}
+.guidewrap .nav>li.active {
+	background: #6a95d3
+}
+.guidewrap .nav>li.active ul.nav-second-level {
+	background: #f4f6f9
+}
+.guidewrap .nav>li ul.nav-second-level a {
+    font-size:13px;
+}
+.guidewrap .nav.nav-second-level>li.active {
+	border: none
+}
+
+.guidewrap .nav.nav-second-level.collapse[style] {
+	height: auto!important
+}
+
+.guidewrap .arrow {
+	float: right;
+	margin-top: 2px
+}
+
+.guidewrap .fa.arrow:before {
+	content: "\f104"
+}
+
+.guidewrap .active>a>.fa.arrow:before {
+	content: "\f107"
+}
+
+.guidewrap .nav-second-level li,.guidewrap .nav-third-level li {
+	border-bottom: none!important
+}
+
+.guidewrap .nav-second-level li a {
+	padding: 7px 15px 7px 10px;
+	padding-left: 52px
+}
+
+.guidewrap .nav-third-level li a {
+	padding-left: 62px
+}
+
+.guidewrap .slimScrollDiv >* {
+	overflow: hidden
+}
+
+
+/****** Add WHorse 2016-10-12 ******/
+.guidewrap .menu-icon {
+    width:20px;
+	height:20px;
+	overflow:hidden;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+	z-index:999999;
+}
+.guidewrap .nav-label {
+    padding-left:20px;
+}
+.guidewrap .menu-icon2 {
+    width:16px;
+	height:16px;
+	overflow:hidden;
+    position: absolute;
+    top: 8px;
+    left: 25px;
+	z-index:999999;
+}

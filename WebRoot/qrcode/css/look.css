@@ -1,0 +1,43 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft YaHei";
+	color: #262626;
+	background: #f5f5f5;
+}
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+.m-form-box {
+	width: 100%;
+	background: #fff;
+	font-size: .34rem;
+}
+.m-form-group {
+	display: flex;
+    align-items: center;
+    width: 100%;
+	padding: .26rem;
+	border-bottom: 1px solid #f5f5f5;
+}
+.m-form-group .name {
+	width: 40%;
+	padding-right: .2rem;
+}
+.m-form-group .cont {
+	width: 100%;
+	color: #248be8;
+	line-height: 1.5;
+	text-align: right;
+}

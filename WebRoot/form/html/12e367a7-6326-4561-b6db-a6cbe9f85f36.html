@@ -1,0 +1,206 @@
+<html>
+<head>
+<title>表单元素说明</title>
+<link type="text/css" rel="stylesheet"  href="${ctx}/dwz/style/css/ued.base.css"  />
+<link type="text/css" rel="stylesheet" href="${ctx}/dwz/style/css/ued.demo.css"  />
+<link rel="stylesheet" href="${ctx}/ued.base.css?t=2011" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/dm/css/ued.module.css?t=2012" />
+<link rel="stylesheet" href="${ctx}/widgets/theme/mice/form.css?t=2012" />   
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/base/jquery.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/writeByHand/js/websign.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/attachment/js/attachment.js" ></script>
+<script type="text/javascript" src="${ctx}/widgets/component/taglib/comment/js/comment.js"></script>
+<script type="text/javascript" src="${ctx}/widgets/plugin/js/sea.js"></script>  
+<script type="text/javascript" src="${ctx }/widgets/component/My97DatePicker/WdatePicker.js" defer="defer"></script>  
+			
+<!--以下必须-->
+<script type="text/javascript" src="src/mapSelected.js" ></script>
+<script type="text/javascript" src="${ctx}/form/jsp/widgets/common/js/doublelist.js" ></script>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.warp{width:595px;overflow:hidden;*zoom:1;}
+.infotan td{height:25px;line-height:25px;font-size:14px;border:1px #333 solid;padding:5px;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+table{border-collapse:collapse;border-spacing:0;}
+.infotan td textarea{width:430px;height:100px;}
+.infotan td select{width:120px;}
+</style>
+</head>
+
+<body>
+<div class="warp">
+<p style="font-size:25px;line-height:35px; text-align:center;padding-top:30px;">
+<strong>南通市国土资源局文书批办单</strong>
+
+<table width="594" class="infotan">
+	<tr>
+      <td width="25%" class="bgs ls"><span class="tdbg">接待编号：</span></td>
+	  <td width="25%"  class="tdcol docformTableNoBD">
+        <input type="text" id="jdbh" name="jdbh" zname="接待编号"/>
+      </td>
+	  <td width="25%" class="bgs ls">接待任务：</td>
+	  <td width="25%" class="tdcol docformTableNoBD"><input type="text" id="jdrw" name="jdrw" zname="接待任务" value="" /></td>
+  </tr>
+   <tr>
+        <td colspan="4">承办部门</td>
+   </tr>
+  <tr>
+      <td   class="bgs ls">部门名称：</td>
+	  <td  class="tdcol docformTableNoBD">
+	  <input type="text" id="bmmc" name="bmmc" zname="部门名称"/>
+	  </td>
+	  <td   class="bgs ls">联&nbsp;&nbsp;系&nbsp;&nbsp;人：</td>
+	  <td   class="tdcol docformTableNoBD">
+             <input type="text" id="lxr" name="lxr" zname="联系人" value=""/></td>
+  </tr>
+  
+    <tr>
+      <td   class="bgs ls">联系电话：</td>
+	  <td  class="tdcol docformTableNoBD">
+	  <input type="text" id="lxdh" name="lxdh" zname="联系电话"/>
+	  </td>
+	  <td   class="bgs ls"><span class="tdbg">通知单位</span>：</td>
+	  <td   class="tdcol docformTableNoBD">
+             <input type="text" id="tzdw" name="tzdw" zname="通知单位" value=""/></td>
+  </tr>
+    <tr>
+      <td   class="bgs ls">陪同领导：</td>
+	  <td  class="tdcol docformTableNoBD">
+	  <input type="text" id="ptld" name="ptld" zname="陪同领导"/>
+	  </td>
+	  <td   class="bgs ls"><span class="tdbg">陪同人数</span>：</td>
+	  <td   class="tdcol docformTableNoBD">
+             <input type="text" id="ptrs" name="ptrs" zname="陪同人数" value=""/></td>
+  </tr>
+  <tr>
+   <td  colspan="4">来宾信息</td>
+  </tr>
+   <tr>
+      <td   class="bgs ls"><span class="tdbg">单位名称</span>：</td>
+	  <td  class="tdcol docformTableNoBD">
+	  <input type="text" id="dwmc" name="dwmc" zname="单位名称"/>
+	  </td>
+	  <td   class="bgs ls"><span class="tdbg">人&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数</span>：</td>
+	  <td   class="tdcol docformTableNoBD">
+             <input type="text" id="rs" name="rs" zname="人数" value=""/></td>
+  </tr>
+    <tr>
+      <td   class="bgs ls">来访日期：</td>
+	  <td  class="tdcol docformTableNoBD">
+	  <input type="text" id="lfrq" name="lfrq" zname="来访日期"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"/>
+	  </td>
+	  <td   class="bgs ls"><span class="tdbg">预计天数</span>：</td>
+	  <td   class="tdcol docformTableNoBD">
+             <input type="text" id="yjts" name="yjts" zname="预计天数" value=""/></td>
+  </tr>
+   <tr>
+    	<td   class="bgs ls">来访说明：</td>
+        <td colspan="3" class="tdcol docformTableNoBD">
+           <div class="cbo" style="height:100px;">
+               <textarea id="lfsm" name="lfsm"></textarea>
+         </div>
+        </td>
+    </tr>
+</table>
+<p class="font1 mt5">来宾人员</p>
+<table width="594" class="infotan">
+    <Tr>
+		<Td  class="bgs ls" style="width: 20%">姓名</Td>
+		<Td  class="bgs ls" style="width: 20%">性别</Td>
+		<Td  class="bgs ls" style="width: 20%">职务</Td>
+		<Td  class="bgs ls" style="width: 20%">备注</Td>
+		<Td  class="bgs ls" style="width: 20%"><input type="button"  value="新增行" onclick="addTr(this)"/></Td>
+	</Tr>
+	<Tr  style="display: none">
+		<Td class="tdcol docformTableNoBD"><input type="text" name="lbry_xm" class="" list="lbry"/></Td>
+		<Td class="tdcol docformTableNoBD"><input type="text" name="lbry_xb" class="" list="lbry"/></Td>
+		<Td class="tdcol docformTableNoBD"><input type="text" name="lbry_zw" class="" list="lbry"/></Td>
+		<Td class="tdcol docformTableNoBD"><input type="text" name="lbry_bz" class="" list="lbry"/></Td>
+		<Td><input type="button"  value="删除行" onclick="delTr(this,3)"/></Td>
+	</Tr>
+
+
+</table>
+<table width="594" class="infotan">
+ <tr>
+   <td  colspan="4">日程安排</td>
+  </tr>
+<tr>
+     
+	  <td width="100%"  colspan="4" class="tdcol docformTableNoBD">
+         <div class="cbo" style="height:100px;">
+               <textarea id="rcap" name="rcap" zname="日程安排"></textarea>
+         </div>
+      </td>
+  </tr>
+</table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+</body>
+<script src=""${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src=""${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

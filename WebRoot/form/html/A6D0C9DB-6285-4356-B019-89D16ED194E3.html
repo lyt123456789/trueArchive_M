@@ -1,0 +1,221 @@
+<html>
+<head>
+<title></title><style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+
+</style>	
+		
+<!--以下必须-->
+<script type="text/javascript" defer>
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<style>
+.infotan{width: 819px;margin:0 auto;border-collapse:collapse;align:center} 
+.infotan td{line-height:28px;border:1px #333 solid;text-align:center}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;}
+.infotan td textarea{width:100%;}
+.caption{
+	font-family:"方正小标宋_GBK";
+	font-size:38px;
+	font-weight:bold;
+}
+tr{
+	
+	font-family:"方正小标宋_GBK";
+	font-size:20px;
+	font-weight:bold;
+}
+.inputOne{
+	width:100%;
+	height:95%;
+}
+.inputTwo{
+	width:80%;
+	height:95%
+}
+</style>
+</HEAD>
+<body>
+	<div class="warp">	
+	<table class="infotan" align="center">
+		<caption class="caption">国投系统工作人员因私出国（境）审批表</caption>
+		<tr>
+			<td style="width:90px;height:20px;border: 0"" ></td>
+			<td style="width:90px;border: 0"></td>
+			<td style="width:110px;border: 0""></td>
+			<td style="width:99px;border: 0""></td>
+			<td style="width:120px;border: 0""></td>
+			<td style="width:130px;border: 0""></td>
+			<td style="width:120px;border: 0""></td>
+			<td style="width:60px;border: 0""></td>				
+		</tr>
+		<tr>
+			<td height="60" rowspan="2">姓名</td>
+			<td rowspan="2">
+				<input type="text" name="xm" style="width: 90px;height:60px"/>
+			</td>
+			<td rowspan="2">性别</td>
+			<td rowspan="2">
+				<input type="text" name="xb" style="width:88px;height:60px" zname="性别"/>
+			</td>
+			<td height="30" style="border-bottom: 0">出生日期(</td>			
+			<td rowspan="2" >
+				<input type="text" name="csrq" style="width:130px;height:60px" zname="出生日期"/>
+			</td>
+			
+			<td rowspan="2">政治面貌</td>
+			<td rowspan="2">
+				<input type="text" name="zzmm" style="width: 50px;height:60px" zname="政治面貌"/>
+			</td>
+		</tr>
+		<tr>
+			<td height="30" style="border:0px"><input style="height:30px;width:30px;" type="text" name="sui"/>岁)</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="40">身份证号码</td>
+			<td colspan="2">
+				<input type="text" name="sfzhm" class="inputOne" zname="身份证号码"/>
+			</td>
+			<td colspan="2">户口所在地</td>
+			<td colspan="2">
+				<input type="text" name="hkszd" class="inputOne" zname="户口所在地" >
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="80">工作单位及职务</td>
+			<td colspan="6">
+				<input type="text" name="dwjzw" class="inputOne" zname="单位及职务"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="60">出国(境)地区及事由</td>
+			<td colspan="6">
+				<input type="text" name="cgdqjsy" class="inputOne" zname="出国地区及事由"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" rowspan="2" height="100">拟定出国(境)日期</br>及在境外停留时间</td>
+			<td colspan="2" style="text-align:left;height:50">
+				日期:<input type="text" name="ndcgrq" style="width:110px;height:40px" zname="拟定出国日期"/>
+			</td>
+			<td colspan="2" rowspan="2">费用金额及来源</td>
+			<td colspan="2" rowspan="2">
+				<input type="text" name="fyjejly" class="inputOne" zname="费用金额及来源"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="text-align:left; ">
+				时间:<input type="text" name="ndcgtlsj" style="width:110px;height:40px" zname="拟定出国停留时间"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="100">邀请方及其与</br>受邀请人之关系</td>
+			<td colspan="2">
+				<input type="text" name="yqfjqysyfzgx" class="inputOne" zname="邀请方及其与受邀请人之关系"/>
+			</td>
+			<td colspan="2">出国(境)期间</br>应急联系电话(国内)</td>
+			<td colspan="2">
+				<input type="text" name="yjdh" class="inputOne" zname="应急电话"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="160">呈报部门(单位)意见</td>
+			<td colspan="6">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="160">分管领导审核意见</td>
+			<td colspan="6">				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="160">党群工作部审核意见</td>
+			<td colspan="6">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="160">主管领导意见</td>
+			<td colspan="6">				
+			</td>
+		</tr>					
+	</table>
+
+<div style="display:none">
+	<span id="fjshow"></span>
+	<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+</div>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value="">  
+
+</body>
+<script src="/trueWorkFlow/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="/trueWorkFlow/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

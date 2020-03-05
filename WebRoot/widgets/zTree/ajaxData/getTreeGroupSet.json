@@ -1,0 +1,13 @@
+[
+	{
+		"name":"流程人员",
+		"domId":"allOrg",
+		"searchOption":{
+			"domId":"mc",
+			"apiUrl":"ztree_getFullJsonTree.do"
+		},
+		"apiUrl":"ztree_getFullJsonTree.do",
+		"level":0,
+		"isCustomGroup":false
+	}
+]

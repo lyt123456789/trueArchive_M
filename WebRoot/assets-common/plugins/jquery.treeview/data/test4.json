@@ -1,0 +1,12 @@
+[
+	{
+		"text":"<b class='checkbox'></b><a  data-id='{CUSTOM-0002}' href='javascript:;'>常用联系人B</a>",
+		"id":"{CUSTOM-0002}",
+		"expanded":true,
+		"hasChildren":true,
+		"classes":"folder",
+		"children":[
+
+		]
+	}
+]

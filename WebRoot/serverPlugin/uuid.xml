@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin name="uuid" zhName="获取主键类" jar="uuid.jar"
+	class="cn.com.trueway.serverplugin.uuid.Uuid" returnMethod = "get32Uuid">
+
+	<server id="1" name="get32Uuid" zhName="产生主键">
+		<inputFields>
+		</inputFields>
+		<outputFields>
+			<field name="uuidStr" zhName="已生成主键返回值" type="varchar" length="50" />
+		</outputFields>
+	</server>
+
+</plugin>

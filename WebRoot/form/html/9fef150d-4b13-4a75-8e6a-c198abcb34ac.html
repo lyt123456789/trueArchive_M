@@ -1,0 +1,195 @@
+<html>
+<head>
+<title>崇川区人民政府办公室文件传阅批办单</title>
+<meta charset="utf-8" />
+<!--以下必须-->
+<style>
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td
+	{
+	margin: 0;
+	padding: 0px;
+}
+
+body,button,input,select,textarea {
+	font: 12px Arial, sans-serif, "Lucida Grande", Helvetica, arial,
+		tahoma, \5b8b\4f53;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-size: 100%;
+}
+
+address,cite,dfn,em,var {
+	font-style: normal;
+}
+
+code,kbd,pre,samp {
+	font-family: courier new, courier, monospace;
+}
+
+small {
+	font-size: 12px;
+}
+
+ul,ol {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* .warp{
+				width: 1024px;
+				max-width:1024px;
+				height: 1448px;
+				min-height: 1448px;
+				overflow: hidden;
+	}*/
+table{border-collapse:collapse;border-spacing:0;}
+.infotan{width: 820px;margin:0 auto;} 
+.infotan td{height:30px;line-height:30px;font-size:18px;border:1px #333 solid;padding:5px;text-align: left;}
+.infotan td input{border:0px;border-bottom:1px #cccccc dotted;line-height:22px;}
+.infotan td textarea{width:100%;}
+.infotan td select{width:120px;}
+/* .infotan .label{
+				font-size: 18px;
+				text-align: center;
+				vertical-align:middle;
+			}
+				td.vam{
+				vertical-align:middle;
+			} */
+</style>
+<script type="text/javascript" defer="defer">
+window.onload=function(){ 
+	var listValues='<%=request.getSession().getAttribute("listValues")==null?"":request.getSession().getAttribute("listValues")%>';
+	var selects='<%=request.getParameter("selects")==null?"":request.getParameter("selects")%>';
+	var limitValue='<%=request.getParameter("limitValue")==null?"":request.getParameter("limitValue")%>';
+	var valuestr='<%=request.getParameter("values")==null?"":request.getParameter("values")%>';	
+	var instanceId = '${instanceId}';  
+	if(instanceId.length!=13)tagvalues(listValues,selects,limitValue,valuestr,instanceId);//标签赋值，权限控制
+	if(instanceId.length==13){registerTag();}//注册标签选中效果
+};
+</script>
+<!--以上必须-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body>
+<div class="warp">
+<div align="center">
+	<br/>
+	<strong style="font-size:28px;margin-right:5px;">崇川区人民政府办公室文件传阅批办单&nbsp;&nbsp;</strong>
+	<br/>
+	<br/>
+</div>
+
+<table class="infotan" width="819px" cellspacing="0" align="center"style="border:1px;">
+<tr>
+	<td width="200px" colspan="2" align="center" valign="middle" style="text-align: center;font-size:20px;border:1px solid ;height:60px;">
+	来文单位	</td>
+	<td  width="180px" style="border:1px solid ;height:60px;"> 
+      <textarea   id="lwdw" style="height:45px" name="lwdw" zname="来文单位"></textarea>
+			</td>
+	<td width="80px" style="text-align:center;border:1px solid ;">来文号</td>
+	<td width="150px"  >
+	<textarea   style="width: 120px;height:45px" id="lwh" name="lwh" zname="来文号"  ></textarea>
+	
+	</td>
+	<td width="80px" align="center" valign="middle" style="text-align: center;font-size:20px;border:1px solid ;">收文号</td>
+	<td width="129px" > 
+		<textarea   id="swh" style="height:45px" name="swh" zname="收文号" maxlength="50"></textarea>	</td>
+</tr>
+<tr>
+<td colspan="2" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">文件标题</td>
+<td colspan="5">
+<textarea id="bt" name="bt" style="width:400px;text-align: center" zname="文件标题" ></textarea>
+</td>
+</tr>
+
+<tr>
+	<td colspan="2" valign="middle" style="text-align:center;font-size:20px;width:100px;border:1px solid ;height:60px;">传阅名单</td>
+	<td colspan="5" rowspan="15" style="width:250px;border:1px solid ; ">&nbsp;</td>
+	</tr>
+	<tr>
+	<td  align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">邵&nbsp;&nbsp;&nbsp;峰</td>
+	<td  align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cyone" name="cyone" zname="传阅一" />	</td>
+	</tr>
+	<tr>
+	  <td  align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">赵&nbsp;&nbsp;&nbsp;江</td>
+	  <td align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cytwo" name="cytwo" zname="传阅二" />	</td>
+	</tr>
+	<tr>
+	  <td  align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">戴继跃</td>
+	  <td align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cythree" name="cythree" zname="传阅三" />	</td>
+	</tr>
+	<tr>
+	  <td valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">张&nbsp;&nbsp;&nbsp;飞</td>
+      <td  align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cyfour" name="cyfour" zname="传阅四" />	</td>
+	</tr>
+	<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">茅慧丽</td>
+      <td  align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cyfive" name="cyfive" zname="传阅五" />	</td>
+	</tr>
+	<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">周卫军</td>
+      <td width="59" align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cysix" name="cysix" zname="传阅六" />	</td>
+	</tr>
+	<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">茅振华</td>
+      <td width="59" align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cyseven" name="cyseven" zname="传阅七" />	</td>
+	</tr>
+	<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">张振杰</td>
+      <td width="59" align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cyeight" name="cyeight" zname="传阅八" />	</td>
+	</tr>
+	<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">刘宇军</td>
+      <td width="59" align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cynigh" name="cynigh" zname="传阅九" />	</td>
+	</tr>
+	<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">范红霞</td>
+      <td width="59" align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cyten" name="cyten" zname="传阅十" />	</td>
+	</tr>
+	<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">袁海鸣</td>
+      <td width="59" align="center" valign="middle" style="font-size:20px;width:100px;height:25px;border:1px solid ;"><input type="text" style="width:80px" id="cyeleven" name="cyeleven" zname="传阅十一" />	</td>
+	</tr>
+	<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">陆&nbsp;&nbsp;&nbsp;扬</td>
+      <td width="59" align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cytwelev" name="cytwelev" zname="传阅十二" />	</td>
+	</tr>
+	<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">樊祥栋</td>
+      <td width="59" align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cythirteen" name="cythirteen" zname="传阅十三" />	</td>
+	</tr>
+<tr>
+	  <td align="center" valign="middle" style="text-align:center;font-size:20px;width:100px;height:60px;border:1px solid ;">李国华</td>
+      <td width="59" align="center" valign="middle" style="font-size:20px;width:100px;border:1px solid ;"><input type="text" style="width:80px" id="cyfourteen" name="cyfourteen" zname="传阅十四" />	</td>
+<div >
+<trueway:att zname="附件" onlineEditAble="true" id="${instanceId}fj" docguid="${instanceId}fj" showId="fjshow" ismain="true" downloadAble="true" uploadAble="true" deleteAble="true" previewAble="true" tocebAble="false" toStampAble="true" openBtnClass="icon-add" otherBtnsClass="icon-help" uploadCallback="loadCss" deleteCallback="loadCss"/>
+	        </div>	
+</tr></table>
+</div>
+<INPUT type="hidden" id="instanceId" name="instanceId" value=""> 
+<INPUT type="hidden" id="formId" name="formId" value=""> 
+<INPUT type="hidden" id="workFlowId" name="workFlowId" value="">   
+<INPUT type="hidden" id="processId" name="processId" value=""> 
+</body>
+<script src="${ctx}/dwz/style/js/jquery-1.7.1.min.js"></script>
+<script src="${ctx}/dwz/style/js/jquery.tab.js"></script>
+<script type="text/javascript"> 
+	//以下必须有
+	function loadCss(){  
+   		seajs.use('lib/form',function(){  
+			$('input[mice-btn]').cssBtn();
+			$('input[mice-input]').cssInput();
+			$('select[mice-select]').cssSelect();
+	    });
+	}
+	//以上必须有
+</script>
+</html>

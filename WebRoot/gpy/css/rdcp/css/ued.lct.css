@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+.conters{height:188px;}
+.divs{width:70px;height:148px; display:block; overflow:hidden;}
+.prw{width:70px;height:40px;display:block; overflow:hidden;text-align:center;}
+.p1{width:70px;height:20px;display:block;line-height:20px; overflow:hidden;text-align:center;}
+.p3{width:70px;height:40px;display:block;line-height:20px; overflow:hidden;text-align:center;}
+.p2begin{width:70px; background:url(../images/lct/h2.png) center no-repeat;height:48px;display:block; overflow:hidden;}
+.p2end{width:70px; background:url(../images/lct/h1.png) center no-repeat;height:48px;display:block; overflow:hidden;}
+.p2db{width:70px; background:url(../images/lct/1-1.png) center no-repeat;height:48px;display:block; overflow:hidden;cursor:pointer;}
+.p2dq{width:70px; background:url(../images/lct/1-4.png) center no-repeat;height:48px;display:block; overflow:hidden;cursor:pointer;}
+.p2yb{width:70px; background:url(../images/lct/1-2.png) center no-repeat;height:48px;display:block; overflow:hidden;cursor:pointer;}
+.p2arr{width:70px; background:url(../images/lct/arrow.png) center no-repeat;height:48px;display:block; overflow:hidden;}
+.left{width:50px;height:188px;/**background:url(../images/lct/left.jpg) left center no-repeat;**/ cursor:pointer;overflow:hidden;}
+.right{width:50px;height:188px; background:url(../images/lct/right.jpg) left center no-repeat; cursor:pointer;overflow:hidden;}
+
+.ticon{width:170px;height:50px;overflow:hidden; background:url(../images/lct/tscon.png) no-repeat; position:absolute; z-index:1000;top:0px;padding:10px;}
+.ticon p{line-height:15px;}
